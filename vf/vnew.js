@@ -16,7 +16,7 @@ x.onload=function( evt ) {
     link = document.createElement("link");
     link.setAttribute("type", "text/css");
     link.setAttribute("rel", "stylesheet");
-    link.setAttribute("href", "https://pikamaiss.tk/d.css?1xx1xx2w2");
+    link.setAttribute("href", "//cdn.jsdelivr.net/gh/gistmib/gistmib/d.css");
     document.getElementsByTagName("head")[0].appendChild(link);
     $(document).ready(function(){
    var needlexs = window.location.href;
