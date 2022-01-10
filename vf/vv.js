@@ -22,7 +22,7 @@ var link;
     link = document.createElement("link");
     link.setAttribute("type", "text/css");
     link.setAttribute("rel", "stylesheet");
-    link.setAttribute("href", "cdn.jsdelivr.net/gh/gistmib/gistmib/d.css");
+    link.setAttribute("href", "//cdn.jsdelivr.net/gh/gistmib/gistmib/d.css");
     document.getElementsByTagName("head")[0].appendChild(link);
     
     $(document).ready(function(){
