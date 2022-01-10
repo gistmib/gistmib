@@ -8,7 +8,7 @@ var link;
     link = document.createElement("link");
     link.setAttribute("type", "text/css");
     link.setAttribute("rel", "stylesheet");
-    link.setAttribute("href", "https://pikamaiss.tk/flixs.css?211wxxx3e32");
+    link.setAttribute("href", "//cdn.jsdelivr.net/gh/gistmib/gistmib/flixs.css");
     document.getElementsByTagName("header")[0].appendChild(link);
 
     $('body').append('<div id="snackbar"><b>Título indisponível nessa lista</b></div><script>function myFunction() {var x = document.getElementById("snackbar");x.className = "show";setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);}$(".icon-chevron-left").replaceWith("Anterior");$(".icon-chevron-right").replaceWith("Próximo");$(".resppages a").addClass("ripple");</script>');
