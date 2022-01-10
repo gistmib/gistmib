@@ -9,7 +9,7 @@ var linkx;
     linkx = document.createElement("link");
     linkx.setAttribute("type", "text/css");
     linkx.setAttribute("rel", "stylesheet");
-    linkx.setAttribute("href", "https://pikamaiss.tk/flixx.css?1wmmmert43e");
+    linkx.setAttribute("href", "//cdn.jsdelivr.net/gh/gistmib/gistmib/flixx.css");
     document.getElementsByTagName("head")[0].appendChild(linkx);
   
     
