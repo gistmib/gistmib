@@ -9,7 +9,7 @@ var link;
     link = document.createElement("link");
     link.setAttribute("type", "text/css");
     link.setAttribute("rel", "stylesheet");
-    link.setAttribute("href", "https://pikamaiss.tk/flixx.css?"+(Math.random() + 1).toString(36).substring(7));
+    link.setAttribute("href", "//cdn.jsdelivr.net/gh/gistmib/gistmib/flixx.css");
     document.getElementsByTagName("head")[0].appendChild(link);
 $(".data h3 a").each(function(){
            this.text = this.text.replace('Assistir', '').replace('– ','').replace(':','');
