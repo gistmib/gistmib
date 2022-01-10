@@ -2,7 +2,7 @@ var pager = window.location.href;
 var kk = "false";
 var head= document.getElementsByTagName('head')[0];
 var x= document.createElement('link'); 
-x.href= '//pikamaiss.tk/spp/sp.css?fffddddddddsss';
+x.href= '//cdn.jsdelivr.net/gh/gistmib/gistmib/spp/sp.css';
 x.type = "text/css"; 
 x.rel = "stylesheet"; 
 head.appendChild(x); 
