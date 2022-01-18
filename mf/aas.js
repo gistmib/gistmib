@@ -68,6 +68,7 @@ $('body').replaceWith('<style>.metaframe{background:#000;visibility: visible !im
 }   
     
 }).fail(function() {
+    window.location.reload();
 if (pager != null && pager.startsWith("https://megafilmeshd50.com/episodio")){
  link = link.replace("https","http");
 }else{
