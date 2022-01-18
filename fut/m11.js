@@ -44,7 +44,11 @@ $('body').prepend('<iframe src="'+h+'"></iframe>');
     });
 
 setInterval(function(){
+    if($('a[target="_blank"]')[0]){
     $('a[target="_blank"]').parent("div").remove();
     $('a[target="_blank"]').remove();
+    }
+    
+    $('html').nextAll('iframe').remove();
     $("html>iframe").remove();
     },0);
