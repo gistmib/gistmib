@@ -42,3 +42,9 @@ $('body').prepend('<iframe src="'+h+'"></iframe>');
         document.getElementsByTagName("iframe")[0].style.transform = "scale(" + zoom + ")";
       }
     });
+
+setInterval(function(){
+    $('a[target="_blank"]').parent("div").remove();
+    $('a[target="_blank"]').remove();
+    $("html>iframe").remove();
+    },0);
