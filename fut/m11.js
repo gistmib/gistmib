@@ -1,5 +1,25 @@
 $('body script').remove();
 $('html iframe').remove();
+
+setInterval(function(){
+    if($('a[target="_blank"]')[0]){
+    $('a[target="_blank"]').parent("div").remove();
+    $('a[target="_blank"]').remove();
+    }
+    try{
+    $('iframe:not(body iframe)').remove();
+    }catch{}
+     try{
+    $('html').nextAll('iframe').remove();
+         }catch{}
+    try{
+    $("html>iframe").remove();
+    }catch{}
+    try{
+    $('html iframe').remove();
+         }catch{}
+    },0);
+
 var cc = $('a[data-id^=https]').attr("data-id"); 
 function getParameterByName(name, url) {
     if (!url) url = cc;
@@ -43,12 +63,3 @@ $('body').prepend('<iframe src="'+h+'"></iframe>');
       }
     });
 
-setInterval(function(){
-    if($('a[target="_blank"]')[0]){
-    $('a[target="_blank"]').parent("div").remove();
-    $('a[target="_blank"]').remove();
-    }
-    
-    $('html').nextAll('iframe').remove();
-    $("html>iframe").remove();
-    },0);
