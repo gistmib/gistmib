@@ -52,3 +52,5 @@ function n(){
     }
 }
 
+check = "true";
+
