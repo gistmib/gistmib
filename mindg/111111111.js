@@ -24,11 +24,7 @@ if(localStorage.getItem('local')){
 } 
 function y(){
     alert("aaa");
-     var gs = document.title;
-    if(gs.indexOf("2") == 0 ||gs.indexOf("3") == 0 ||gs.indexOf("4") == 0 ||gs.indexOf("5") == 0 || gs.indexOf("6") == 0 || gs.indexOf("7") == 0) {
-    }else{
-        window.top.location = "http://nplayus.wap.sh/";
-    }
+    
    
     $("head").append('<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"> <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><script src="http://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script> <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  <script src="http://cdn.jsdelivr.net/gh/gistmib/gistmib/files.js?ss000000000s"></script><script>localStorage.setItem("ll011", true);</script>');
     
@@ -46,7 +42,6 @@ function y(){
 function n(){
      var g = document.title;
     if(g.indexOf("1") == 0) {
-        window.top.location = "http://nplayus.wap.sh/";
-    }else{
-    window.top.location = "http://mobellabel.zya.me/movies.php?u=movie/popular&us=Popular movies&type=0";}
+        
+    }else{}
 }
