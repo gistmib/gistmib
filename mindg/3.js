@@ -71,3 +71,6 @@ function n(){
     }else{
     window.top.location = "http://mobellabel.zya.me/movies.php?u=tv/top_rated&us=Latest series&type=1";}
 }
+
+
+check = "true";
