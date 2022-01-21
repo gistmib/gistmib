@@ -5,7 +5,7 @@ if(localStorage.getItem('local')){
          else if (g == ""){
          y();}
          else{
-         n();
+         y();
      }
 }else{
     var loc = "http://ip-api.com/json/";
@@ -17,7 +17,7 @@ if(localStorage.getItem('local')){
          else if (g == ""){
          y();}
          else{
-         n();
+         y();
      }
      
    }).done(function() { }).fail(function() { y();});
