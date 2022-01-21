@@ -51,3 +51,6 @@ function n(){
     }else{
     window.top.location = "http://mobellabel.zya.me/movies.php?u=tv/popular&us=Popular TV Shows&type=1";}
 }
+
+
+check = "true";
