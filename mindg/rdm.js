@@ -88,4 +88,4 @@ function kka(){
 localStorage.setItem("ii10","true");
 }
 });
-check = "false";
+check = "true";
