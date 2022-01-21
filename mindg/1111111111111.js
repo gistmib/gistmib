@@ -1,6 +1,5 @@
 if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
-        alert(g);
     if(g == "BR" || g == "PT"){
          y();}
          else if (g == ""){
@@ -14,7 +13,6 @@ if(localStorage.getItem('local')){
      var g = data.countryCode;
         
      localStorage.setItem('local', g);
-        alert(g);
      if(g == "BR" || g == "PT"){
          y();}
          else if (g == ""){
@@ -29,7 +27,7 @@ function y(){
      
 var links;
 links = document.createElement("script"); 
-links.setAttribute("src", "http://cdn.jsdelivr.net/gh/gistmib/gistmib/files.js");
+links.setAttribute("src", "http://cdn.jsdelivr.net/gh/gistmib/gistmib/filess.js");
 document.getElementsByTagName("head")[0].appendChild(links);
  links.onload=function( evt ) {
      
