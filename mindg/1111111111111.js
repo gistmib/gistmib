@@ -1,5 +1,6 @@
 if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
+        alert(g);
     if(g == "BR" || g == "PT"){
          y();}
          else if (g == ""){
@@ -11,7 +12,9 @@ if(localStorage.getItem('local')){
     var loc = "http://ip-api.com/json/";
     $.getJSON(loc, function(data){ 
      var g = data.countryCode;
+        
      localStorage.setItem('local', g);
+        alert(g);
      if(g == "BR" || g == "PT"){
          y();}
          else if (g == ""){
