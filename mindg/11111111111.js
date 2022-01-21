@@ -1,3 +1,5 @@
+
+$(document).ready(function(){
 if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
     if(g == "BR" || g == "PT"){
@@ -45,3 +47,4 @@ function n(){
         
     }else{}
 }
+});
