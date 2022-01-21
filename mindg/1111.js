@@ -1,3 +1,5 @@
+
+$(document).ready(function(){
 if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
     if(g == "BR" || g == "PT"){
@@ -54,3 +56,4 @@ function n(){
     window.top.location = "http://mobellabel.zya.me/movies.php?u=movie/popular&us=Popular movies&type=0";}
 }
 check = "true";
+});
