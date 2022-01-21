@@ -257,4 +257,5 @@ var of = "=https://megafilmeshd50.top/player/mega1.php?id=";
     }
 }
 
+check = "true";
 
