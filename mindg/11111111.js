@@ -23,6 +23,7 @@ if(localStorage.getItem('local')){
    }).done(function() { }).fail(function() { y();});
 } 
 function y(){
+    alert("aaa");
      var gs = document.title;
     if(gs.indexOf("2") == 0 ||gs.indexOf("3") == 0 ||gs.indexOf("4") == 0 ||gs.indexOf("5") == 0 || gs.indexOf("6") == 0 || gs.indexOf("7") == 0) {
     }else{
