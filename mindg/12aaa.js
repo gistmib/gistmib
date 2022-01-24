@@ -1,10 +1,18 @@
 var ga = window.location.href;
+
+
 if (ga != null && ga.startsWith("https://redecanaistv.com") || ga.startsWith("https://redecanaistv.net")) {
     document.assistirplayer.submit(); 
     setInterval(function(){
     document.assistirplayer.submit();
     },5000);
-}else if (ga != null && ga.startsWith("https://vfilmesonline.net") || d.startsWith("https://suzihaza.com") || ga.startsWith("https://player-megahdseries.com") || ga.startsWith("https://player-megahdfilmes.com/") || ga.startsWith("https://playerthefilmes.tv/") || ga.startsWith("https://player-megahdanimes.com/")) {
+}else if (ga != null && ga.startsWith("https://streamtape.com/")) {
+     if (ga.indexOf('/v/') > -1)
+{
+  window.location.href = ga.replace("/v/", "/e/")
+}
+}
+else if (ga != null && ga.startsWith("https://vfilmesonline.net") || d.startsWith("https://suzihaza.com") || ga.startsWith("https://player-megahdseries.com") || ga.startsWith("https://player-megahdfilmes.com/") || ga.startsWith("https://playerthefilmes.tv/") || ga.startsWith("https://player-megahdanimes.com/")) {
     var linku;
     linku = document.createElement("script");
     linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/as2.js");
