@@ -61,7 +61,10 @@ var linku;
     document.getElementsByTagName("head")[0].appendChild(linku);
 }
 else if (d != null && d.startsWith("https://streamtape") || d.startsWith("https://streamt") ||  d.startsWith("https://strcloud") || d.startsWith("https://strtapeadblock") || d.startsWith("https://adblockstrtech")) {
-    
+    if (d.indexOf('/v/') > -1)
+{
+  window.location.href = d.replace("/v/", "/e/")
+}
 var nav = userAgent = navigator.userAgent;
 var navs = "Mozilla/5.0 (Linux; Android 10; Pixel 3 XL)";
  
