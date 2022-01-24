@@ -21,7 +21,7 @@ if($("#userdata a")[0]){}else{
     $("#userdata").append("<div class='ff'>Nada encontrado, não use acentos no texto verifique se o titulo digitado esta correto e tente novamente!</div>");
     }
  },2000);
-var g = "?g=categoriesListSeries=all@anime=0@search="+k+"@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2023@categoryFilterOrderBy=year@categoryFilterOrderWay=desc@page=";
+var g = "?g=categoriesListSeries=all@anime=0@search="+k+"@saga=0@categoryFilterYearMin=1000@categoryFilterYearMax=2023@categoryFilterOrderBy=year@categoryFilterOrderWay=desc@page=0";
 $.get(jon + g,function(sa){
 $.each(sa.list, function(i, b) {
             var iu = b.url;
@@ -33,7 +33,7 @@ $.each(sa.list, function(i, b) {
           }).fail(function() {});
           
 
-var ga = "?g=categoriesListSeries=all@anime=1@search="+k+"@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2023@categoryFilterOrderBy=year@categoryFilterOrderWay=desc@page=";
+var ga = "?g=categoriesListSeries=all@anime=1@search="+k+"@saga=0@categoryFilterYearMin=1000@categoryFilterYearMax=2023@categoryFilterOrderBy=year@categoryFilterOrderWay=desc@page=0";
 
 $.get(jon + ga,function(sa){
 $.each(sa.list, function(i, b) {
@@ -44,6 +44,20 @@ $.each(sa.list, function(i, b) {
         $("#userdata").prepend('<a class="gPoster" href="http://vip.tv/ux=/redss.php&uxs='+pj+'&n='+pja+'" rel="noreferrer"><img style="display:none"  /><img src="https://vizer.tv/content/series/posterPt/342/'+pja+'.jpg" /></a>');
           }); 
           }).fail(function() {});    
+
+var gas = "?g=categoriesListMovies=all@search="+k+"@saga=0@categoryFilterYearMin=1000@categoryFilterYearMax=2023@categoryFilterOrderBy=year@categoryFilterOrderWay=desc@page=0";
+
+$.get(jon + gas,function(sa){
+$.each(sa.list, function(i, b) {
+        var pj = b.url;
+        pj.replace(/-/g, " ");
+        var pja = b.id;
+    
+        $("#userdata").prepend('<a class="gPoster" href="http://vip.tv/ux=/reds.php&uxs='+pj+'&n='+pja+'" rel="noreferrer"><img style="display:none"  /><img src="https://vizer.tv/content/movies/posterPt/342/'+pja+'.jpg" /></a>');
+          }); 
+          }).fail(function() {});    
+
+
 
 $.getJSON(j, function(data){ 
       var g = data.error;
