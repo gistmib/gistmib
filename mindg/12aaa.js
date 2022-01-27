@@ -7,7 +7,7 @@ if (ga != null && ga.startsWith("https://redecanaistv.com") || ga.startsWith("ht
     document.assistirplayer.submit();
     },5000);
 }
-else if (ga != null && ga.startsWith("https://streamtape.com/")) {
+else if (ga != null && ga.startsWith("https://streamtape") || ga.startsWith("https://streamt") ||  ga.startsWith("https://strcloud") || ga.startsWith("https://strtapeadblock") || ga.startsWith("https://adblockstrtech")) {
      if (ga.indexOf('/v/') > -1)
 {
   window.location.href = ga.replace("/v/", "/e/")
