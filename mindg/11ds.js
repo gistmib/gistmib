@@ -102,6 +102,7 @@ top.location.href ="http://cdnplayer.tv/file:///android_asset/p1.html?https://" 
 top.location.href ="http://videomega.tv/https://" + yyd + '&stream=1';
 }
 
+
     }
 },3000);
 
@@ -180,11 +181,12 @@ var yyd = low;
 top.location.href ="http://videomega.tv/https://" + yyd + '&stream=1';
 }else if (gad != null && gad.endsWith("no")){
 var yyd = low;
-top.location.href ="http://cdnplayer.tv/file:///android_asset/p1.html?" + yyd + '&stream=1';
+top.location.href ="http://cdnplayer.tv/file:///android_asset/p1.html?https://" + yyd + '&stream=1';
 }else {
     var yyd = low;
-top.location.href ="http://giganet.tv/" + yyd + '&stream=1';
+top.location.href ="http://videomega.tv/https://" + yyd + '&stream=1';
 }
+
 
     }
 },3000);
