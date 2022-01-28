@@ -82,31 +82,18 @@ var tblRow = "<a href='http://tvxe.tv/"+pj+"' class='gPoster'><img src='"+ po +"
   
    }).fail(function() { });
    
-   $.getJSON(ja, function(data){ 
-      var g = data.error;
-  if (g == "no_posts"){
-    $("#userdata").append("<div class='ff'>Nada encontrado, não use acentos no texto verifique se o titulo digitado esta correto e tente novamente!</div>");
-  }
-      $.each(data, function(i, f) {
-         var i = i;
-         var pj = f.url;
-         var title = f.title;
-         var po = f.img;
-         var y = f.extra.date;
-         po = po.replace("90x135","185x278");
-         
-         if (pj != null && pj.startsWith("https://megafilmeshd50.com/filme") || pj.startsWith("http://megafilmeshd50.com/filme")) {
-}else{
-   var tblRow = "<a href='http://tvxe.tv/"+ pj +"' class='gPoster'><img src='"+ po +"' /></a>"
-           $(tblRow).appendTo("#userdata");
-}
+  var jass = "http://zbigs.cf/logg.php"
+var gass = "?g=categoriesListSeries=all@anime=0@search="+k+"@saga=0@categoryFilterYearMin=1000@categoryFilterYearMax=2023@categoryFilterOrderBy=year@categoryFilterOrderWay=desc@page=0";
+$.get(jass + gass,function(sa){
+$.each(sa.list, function(i, b) {
+            var iu = b.url;
+            iu.replace(/-/g, " ");
+            var it = b.id;
+        
+        $("#userdata").prepend('<a class="gPoster" href="http://vip.tv/ux=/redss.php&uxs='+iu+'&n='+it+'" rel="noreferrer"><img style="display:none"  /><img src="https://vizer.tv/content/series/posterPt/342/'+it+'.jpg" /></a>');
+          }); 
+          }).fail(function() {});
           
-           
-     });
-     
-    
-  
-   }).fail(function() {  });
  
 }else{window.top.location = "https://google.com";}
 }
