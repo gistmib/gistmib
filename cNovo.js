@@ -90,7 +90,7 @@ $.each(sa.list, function(i, b) {
             iu.replace(/-/g, " ");
             var it = b.id;
         
-        $("#userdata").prepend('<a class="gPoster" href="http://vip.tv/ux=/redss.php&uxs='+iu+'&n='+it+'" rel="noreferrer"><img style="display:none"  /><img src="https://vizer.tv/content/series/posterPt/342/'+it+'.jpg" /></a>');
+        $("#userdata").append('<a class="gPoster" href="http://vip.tv/ux=/redss.php&uxs='+iu+'&n='+it+'" rel="noreferrer"><img style="display:none"  /><img src="https://vizer.tv/content/series/posterPt/342/'+it+'.jpg" /></a>');
           }); 
           }).fail(function() {});
           
