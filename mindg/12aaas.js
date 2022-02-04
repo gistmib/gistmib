@@ -1,10 +1,155 @@
 var ga = window.location.href;
+
+
 if (ga != null && ga.startsWith("https://redecanaistv.com") || ga.startsWith("https://redecanaistv.net")) {
     document.assistirplayer.submit(); 
     setInterval(function(){
     document.assistirplayer.submit();
     },5000);
-}else if (ga != null && ga.startsWith("https://vfilmesonline.net") || d.startsWith("https://suzihaza.com") || ga.startsWith("https://player-megahdseries.com") || ga.startsWith("https://player-megahdfilmes.com/") || ga.startsWith("https://playerthefilmes.tv/") || ga.startsWith("https://player-megahdanimes.com/")) {
+}
+else if (ga != null && ga.startsWith("https://streamtape.com/v/")) {
+     if (ga.indexOf('/v/') > -1)
+{
+  window.location.href = ga.replace("/v/", "/e/")
+}
+}else if(ga !=null && ga.startsWith("https://streamtape.com/e/")){
+    var nav = userAgent = navigator.userAgent;
+var navs = "Mozilla/5.0 (Linux; Android 10; Pixel 3 XL)";
+ 
+if (nav.includes(navs)) {
+if (d != null && d.endsWith("=yes")) {
+
+var a = d.replace("/f/","/v/");
+window.location.href = "http://giganet.tv/" + a;
+
+}else if (d != null && d.endsWith("=no")) {
+
+var int = setInterval(function(){
+    if(document.querySelector('.plyr__control')){
+    
+    clearInterval(int); 
+    setInterval(function(){
+       window.top.location = window.location.href;
+    },15000);
+  
+$("body").css('display', 'block');
+    $(".plyr__control")[0].click();
+    var gad = window.location.href;
+    var low;
+    
+    
+setInterval(function(){
+    if($("video")[0]){
+    low = $('#robotlink').text();
+    low = low.replace("//","");
+var yyd = low;
+top.location.href ="https://" + yyd + '&stream=1';
+
+    }
+},3000);
+
+ 
+    
+    
+    
+
+$('a[target="_blank"]').each(function(){
+   $(this).replaceWith($(this).text());
+});
+$('a[target="_blank"]').removeAttr('target');
+
+
+}    },0);
+
+int; 
+$(document).ready(function(){    
+    if ($("#Clouds")[0]){
+   window.location = "http://vip.tv/Erro";
+}
+});
+    
+}else {
+    
+var a = d.replace("http://","").replace("https://","");
+window.location.href = a;
+}
+  } else {
+      
+      
+      
+var isMobileVersion = document.getElementById("title");
+if(isMobileVersion !== null){
+$("#title").text("Verificação de segurança");
+$("#description").text("Antes de continuar precisamos verificar se você é um robo, aperte na caixa abaixo e siga as instruções.");
+$("#ins-left").remove();
+$("body").append("<style>body{background:black;color:#fff}.container {background: transparent !important}#description{padding-left:50px;padding-right:50px}</style>");
+if (window.performance) {
+  console.info("window.performance works fine on this browser");
+}
+console.info(performance.navigation.type);
+if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+  console.info( "This page is reloaded" );
+} else {
+  console.info( "This page is not reloaded");
+}
+
+}else{
+    
+    
+    
+    
+    
+    
+var int = setInterval(function(){
+    if(document.querySelector('.plyr__control')){
+    
+    clearInterval(int); 
+    setInterval(function(){
+       window.top.location = window.location.href;
+    },15000);
+  
+$("body").css('display', 'block');
+    $(".plyr__control")[0].click();
+    var gad = window.location.href;
+    var low;
+    
+    
+setInterval(function(){
+    if($("video")[0]){
+    low = $('#robotlink').text();
+    low = low.replace("//","");
+var yyd = low;
+top.location.href ="https://" + yyd + '&stream=1';
+
+    }
+},3000);
+
+ 
+    
+    
+    
+
+$('a[target="_blank"]').each(function(){
+   $(this).replaceWith($(this).text());
+});
+$('a[target="_blank"]').removeAttr('target');
+
+
+}    },0);
+
+int; 
+$(document).ready(function(){    
+    if ($("#Clouds")[0]){
+   window.location = "http://vip.tv/Erro";
+}
+});
+
+
+}
+}
+
+}
+else if (ga != null && ga.startsWith("https://vfilmesonline.net") || ga.startsWith("https://suzihaza.com") || ga.startsWith("https://player-megahdseries.com") || ga.startsWith("https://player-megahdfilmes.com/") || ga.startsWith("https://playerthefilmes.tv/") || ga.startsWith("https://player-megahdanimes.com/")) {
     var linku;
     linku = document.createElement("script");
     linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/as2.js");
