@@ -7,12 +7,12 @@ if (ga != null && ga.startsWith("https://redecanaistv.com") || ga.startsWith("ht
     document.assistirplayer.submit();
     },5000);
 }
-else if (ga != null && ga.startsWith("https://streamtape") || ga.startsWith("https://streamt") ||  ga.startsWith("https://strcloud") || ga.startsWith("https://strtapeadblock") || ga.startsWith("https://adblockstrtech")) {
+else if (ga != null && ga.startsWith("https://streamtape.com/v/")) {
      if (ga.indexOf('/v/') > -1)
 {
   window.location.href = ga.replace("/v/", "/e/")
 }
-}else if(ga !=null && ga.startsWith("https://streamt")){
+}else if(ga !=null && ga.startsWith("https://streamtape.com/e/")){
     var nav = userAgent = navigator.userAgent;
 var navs = "Mozilla/5.0 (Linux; Android 10; Pixel 3 XL)";
  
