@@ -23,7 +23,7 @@ if (getParameterByName("s")){
     var u = "";
 }
 
-  var j = 'http://zbigs.cf/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2022@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc@page=';  
+  var j = 'http://zbigs.cf/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2022@categoryFilterOrderBy=year@categoryFilterOrderWay=desc@page=';  
   if (document.documentElement.clientWidth < 720) { document.querySelector("meta[name=viewport]").setAttribute( 'content', 'width=500'); } 
   $(document).ready(function(){
     $(".ght").click(function(){
