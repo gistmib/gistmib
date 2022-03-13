@@ -59,7 +59,7 @@ jja();
 function go() {
 
     var hh = aa;
-    hh = hh = hh.replace('hlb','').replace('https://play.megafilmeshd50.com','https://redecanais.wf').replace('&rl=rl','');
+    hh = hh = hh.replace('hlb','').replace('https://sinalpublico.com','https://redecanais.wf').replace('https://play.megafilmeshd50.com','https://redecanais.wf').replace('&rl=rl','');
     top.location.href ="http://giganet.tv/" + hh;
    
 }
