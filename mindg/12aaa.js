@@ -329,7 +329,7 @@ var linku;
 }else if (g != null && g.startsWith("https://megafilmeshd50") || g.startsWith("http://megafilmeshd50")) {
     var linku;
     linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/aas.js?55444rrr5555");
+    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/aas.js?55zzz444rrr5555");
     document.getElementsByTagName("head")[0].appendChild(linku);
 
 }else if (g != null && g.startsWith("https://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/player/")) {
