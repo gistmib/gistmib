@@ -1,5 +1,13 @@
 var gh = window.location.href;
-var values = 1;
+var values = 2;
+var next = "";
+var hash = "";
+var jon = "http://zbigs.cf/flix.php"; 
+
+var head= document.getElementsByTagName('head')[0]; var scriptxx= document.createElement('script'); scriptxx.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js'; scriptxx.type = "text/javascript"; scriptxx.async = false; head.appendChild(scriptxx); var x= document.createElement('script'); x.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js'; x.type = "text/javascript"; x.async = false; head.appendChild(x); x.onload=function( evt ) {
+    
+    
+    
 if (gh.indexOf("file") == 0){
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -23,7 +31,10 @@ if (getParameterByName("s")){
     var u = "";
 }
 
-  var j = 'http://zbigs.cf/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2022@categoryFilterOrderBy=year@categoryFilterOrderWay=desc@page=';  
+ next = Math.floor(Math.random() * 900) + 1;
+ hash = CryptoJS.MD5("viaviweb" + next);
+ 
+  var j = 'http://zbigs.cf/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2022@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc@page=';  
   if (document.documentElement.clientWidth < 720) { document.querySelector("meta[name=viewport]").setAttribute( 'content', 'width=500'); } 
   $(document).ready(function(){
     $(".ght").click(function(){
@@ -36,31 +47,46 @@ if (getParameterByName("s")){
   
   if (gh.indexOf("file") == 0){
 $(document).ready(function(){
+var ra = '{"salt":"'+ next +'","sign":"'+ hash +'","method_name":"get_search_series","search_text":"","page":"1"}';
+var ga = "?g=" + btoa(ra);
 
-    
-$.getJSON(j, function(data){ 
-    $.each(data.list, function(i, f) {
-         var pj = f.url;
-         var po = f.id;
-         
-         $("#userdata").prepend('<a class="agPoster" alt="'+f.title+'" href="http://vip.tv/ux=/redss.php&uxs='+pj+'&n='+po+'" rel="noreferrer"><img style="display:none"  /><img src="https://vizer.tv/content/series/posterPt/342/'+po+'.jpg" class="img" /></a>');
-         
-     });
-   }).done(function() { kkl(); }).fail(function() {  });
-   
+$.get(jon + ga,function(sa){
+ var g = sa.LIVETV;
+  if (g.indexOf("[]") == 0){
+  }
+$.each(sa.LIVETV, function(i, b) {
+        var pj = b.series_name;
+        var pja = b.id;
+         var po = b.series_poster;
+            po=po.replace("w300","w200");
+            
+            $("#userdata").prepend('<a alt="'+b.series_name+'" class="agPoster" href="http://vip.tv/ux=/redssx.php&uxs='+pj+'&n='+pja+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="'+po+'" /></a>');
+          }); 
+          }).done(function() { kkl(); }).fail(function() {});       
+
+  
 });
+ }else{window.top.location = "https://google.com";}  
+ 
+}
 
-   function incrementValue(){
-    var hg = j + values++; 
-    $.getJSON(hg, function(data){ 
-    $.each(data.list, function(i, f) {
-       
-         $("#userdata").append('<a class="agPoster" alt="'+f.title+'" href="http://vip.tv/ux=/redss.php&uxs='+f.url+'&n='+f.id+'" rel="noreferrer"><img style="display:none"  /><img src="https://vizer.tv/content/series/posterPt/342/'+f.id+'.jpg" class="img" /></a>');
-         
-     });
-   }).done(function() {  $("input").css('color',"#000");
-        $("input").css('background-size',"0px"); }).fail(function() {  });
-   
+
+function incrementValue(){
+var raa = '{"salt":"'+ next +'","sign":"'+ hash +'","method_name":"get_search_series","search_text":"","page":"'+values++ +'"}';
+var gaa = "?g=" + btoa(raa);
+$.get(jon + gaa, function(sa){ 
+var g = sa.LIVETV;
+  if (g.indexOf("[]") == 0){
+  }
+$.each(sa.LIVETV, function(i, b) {
+        var pj = b.series_name;
+        var pja = b.id;
+        var po = b.series_poster;
+            po=po.replace("w300","w200");
+            $("#userdata").append('<a class="agPoster" href="http://vip.tv/ux=/redssx.php&uxs='+pj+'&n='+pja+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="'+po+'" /></a>');
+          }); 
+          }).done(function() { $("input").css('color',"#000");
+        $("input").css('background-size',"0px"); }).fail(function() {});    
 }
 
 function kkl(){
@@ -72,9 +98,7 @@ $("body").prepend('<style>body{display:block !important}.dts{background: url('+ 
 $("#content-news-container").text(function(index, currentText) {
     return currentText.substr(0, 9);
 });
-
 window.CallToAndroidFunction4.setVisible4();
 $('body').show();
 $('body').css("display", "block");
- }
- }else{window.top.location = "https://google.com";}  
+ } 
