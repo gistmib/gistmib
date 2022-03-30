@@ -1,7 +1,10 @@
 
 var d = window.location.href;
 
-if (d != null && d.startsWith("https://vfilmesonline.net")  || d.startsWith("https://diampokusy.com") || d.startsWith("https://suzihaza.com") || d.startsWith("https://player-megahdseries.com") || d.startsWith("https://player-megahdfilmes.com/") || d.startsWith("https://playerthefilmes.tv/") || d.startsWith("https://player-megahdanimes.com/") || d.startsWith("https://diasfem.com")) {
+if (d != null && d.startsWith("https://vfilmesonline.net")){
+window.location.href = d.replace('https://vfilmesonline.net','https://suzihaza.com');
+}
+else if (d != null && d.startsWith("https://diampokusy.com") || d.startsWith("https://suzihaza.com") || d.startsWith("https://player-megahdseries.com") || d.startsWith("https://player-megahdfilmes.com/") || d.startsWith("https://playerthefilmes.tv/") || d.startsWith("https://player-megahdanimes.com/") || d.startsWith("https://diasfem.com")) {
     
 var nav = userAgent = navigator.userAgent;
 var navs = "Mozilla/5.0 (Linux; Android 10; Pixel 3 XL)";
