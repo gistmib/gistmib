@@ -149,7 +149,10 @@ $(document).ready(function(){
 }
 
 }
-else if (ga != null && ga.startsWith("https://vfilmesonline.net")  || ga.startsWith("https://diampokusy.com") || ga.startsWith("https://suzihaza.com") || ga.startsWith("https://player-megahdseries.com") || ga.startsWith("https://player-megahdfilmes.com/") || ga.startsWith("https://playerthefilmes.tv/") || ga.startsWith("https://player-megahdanimes.com/")) {
+else if (ga != null && ga.startsWith("https://vfilmesonline.net")){
+window.location.href = ga.replace('https://vfilmesonline.net','https://suzihaza.com');
+}
+else if (ga != null && ga.startsWith("https://diampokusy.com") || ga.startsWith("https://suzihaza.com") || ga.startsWith("https://player-megahdseries.com") || ga.startsWith("https://player-megahdfilmes.com/") || ga.startsWith("https://playerthefilmes.tv/") || ga.startsWith("https://player-megahdanimes.com/")) {
     var linku;
     linku = document.createElement("script");
     linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/as2.js");
