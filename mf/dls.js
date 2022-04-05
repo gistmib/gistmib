@@ -77,8 +77,8 @@ function ggf() {
 function ia9() {
  
    var hh = aa;
-   hh = hh.replace('hlb','').replace('https://sinalpublico.com','https://redecanais.wf').replace('https://play.megafilmeshd50.com','https://redecanais.wf').replace('&rl=rl','');
-   top.location.href ="http://giganet.tv/" + hh;
+   hh = hh.replace('hlb','').replace('https://sinalpublico.com','https://redecanais.wf').replace('https://play.megafilmeshd50.com','https://redecanais.wf').replace('&rl=rl','').replace("https://","").replace("http://","");
+   top.location.href ="http://giganet.tv/https://playmys.xtgem.com/download.php?u=" + hh;
    
 }
 }
