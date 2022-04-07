@@ -146,7 +146,7 @@ $.each(sa.list, function(c, d) {
             var it=d.id;
             var tt = '<a href="http://vip.tv/ux=/redss.php&uxs='+iu+'&n='+it+'" rel="noreferrer"><div class="item"> <img style="display:none"  /><img src="https://vizer.tv/content/series/posterPt/342/'+it+'.jpg" />  <div class="t"></div> </div> </a>';
             $("#seru").append(tt);
-            localStorage.setItem("mv32",  $("#seru").html());
+      
             soa();
             
 });
