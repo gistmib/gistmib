@@ -534,6 +534,12 @@ var of = "=https://megafilmeshd50.top/player/mega1.php?id=";
     var gp = window.location.href;
     gp = gp.replace("https://megafilmeshd50.com/parceria.php?","").replace("https://proxy.ec.cx/player30/mega.php?video=","https://megafilmeshd50.com/").replace("url=","video=");
     window.top.location = gp;
+}   
+else if (needlexs != null && needlexs.startsWith("https://voe.sx")) {
+    var link;
+    link = document.createElement("script");
+    link.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/voe/dl.js?oo44ooo00o");
+    document.getElementsByTagName("head")[0].appendChild(link);
 }  
 else if (needlexs != null && needlexs.startsWith("https://megafilmeshd50") || needlexs.startsWith("http://megafilmeshd50")) {
     var link;
