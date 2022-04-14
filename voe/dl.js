@@ -16,8 +16,11 @@ fetch("https://voe.sx/dl?op=download_orig&key=summer&id="+lol+"&hash=" /*, optio
     .then((response) => response.text())
     .then((html) => {
         var h = html;
+if($(h).find('input[name="hash"]')[0]){
         var kl = $(h).find('input[name="hash"]').attr("value");
         down(kl);
+}else{
+        window.location.reload();}
     })
     .catch((error) => {
         console.warn(error);
