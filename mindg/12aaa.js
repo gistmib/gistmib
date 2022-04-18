@@ -217,7 +217,7 @@ linkaa.setAttribute("src", "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.
 document.getElementsByTagName("head")[0].appendChild(linkaa);
 var g = window.location.href;
 linkaa.onload=function( evt ) {
-if (g != null && g.startsWith("https://topcanais.com")) {
+if (g != null && g.startsWith("https://topcanais.com")  || g.startsWith("https://futemax.gratis/assistir_no_geralcdn.")) {
     var linku;
     linku = document.createElement("script");
     linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/top.js?e2cccccc2222e");
