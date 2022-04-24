@@ -1,7 +1,4 @@
-
- var gh = window.location.href;
-
-    
+var kk = "false";
 var k = window.location.href;
 k = k.replace('https://nplay.ml/busca2.php?s=','').replace('file:///android_asset/h6.html?s=','').replace("https://megafilmeshd50.com/?s=","");
   var j = 'https://megafilmeshd50.com/wp-json/dooplay/search/?keyword='+k+'&nonce=ade4993c21';  
@@ -13,7 +10,7 @@ k = k.replace('https://nplay.ml/busca2.php?s=','').replace('file:///android_asse
 $(document).ready(function(){
     $("#dt_contenedor").remove();
     $("body").prepend("<style>img {width: 135px;height: 202px;margin: 10px;background:#333333}body{min-width:500 !important;color:#fff;background:#000}a{color:#000}.ff {padding: 40px;font-family: sans-serif;font-size: 20px;position: absolute;height: max-content;top: 0;bottom: 0;margin: auto;}</style>");
-    var gh = window.location.href;
+
   
   
   $.getJSON(j, function(data){ 
@@ -37,7 +34,7 @@ $(document).ready(function(){
 var tblRow = "<a href='http://vip.tv/ux=/ru.php?a="+ pj +"@b="+ title +"@c="+ i +"@d="+ y +"@' class='gPoster'><img src='"+ po +"' /></a>"
            $(tblRow).prependTo("body");
 }else{
-   var tblRow = "<a href='http://tvxe.tv/"+ pj +"' class='gPoster'><img src='"+ po +"' /></a>"
+   var tblRow = "<a href='javascript:getLink(\""+ pj +"\");' class='gPoster'><img src='"+ po +"' /></a>"
            $(tblRow).prependTo("body");
 }
           
@@ -51,3 +48,29 @@ var tblRow = "<a href='http://vip.tv/ux=/ru.php?a="+ pj +"@b="+ title +"@c="+ i 
   
   
 });
+
+function getLink(a){
+    if(kk == "false"){
+    fetch(a /*, options */)
+    .then((response) => response.text())
+    .then((html) => {
+    
+    var jx = $(html).find("#info .custom_fields:first").text();
+    var yx = $(html).find(".extra .date").text();
+    jx = jx.replace('TÃ­tulo original','');    
+    var cod = $(html).find('#episodes').html();
+    var c = cod.replace(/"/g,'sim').replace(/'/g,'nao');
+    
+    window.location.href = "http://vip.tv/ux=/rr.php&a=" + a + "&b=" +jx+ "&c=" +yx+ "&d=" +c;
+    
+    setTimeout(function(){kk= "false";},3000);
+    })
+    .catch((error) => {
+        kk= "false";
+        console.warn(error);
+    });
+    
+    kk = "true";
+    }
+    
+}
