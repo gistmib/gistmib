@@ -59,7 +59,7 @@ jja();
 function go() {
 
     var hh = aa;
-    hh = hh = hh.replace('hlb','').replace('https://sinalpublico.com','https://redecanais.wf').replace('https://play.megafilmeshd50.com','https://redecanais.wf').replace('&rl=rl','');
+    hh = hh = hh.replace('hlb','').replace('https://sinalpublico.com','https://redecanais.to').replace('https://play.megafilmeshd50.com','https://redecanais.to').replace('&rl=rl','');
     top.location.href ="http://giganet.tv/" + hh;
    
 }
@@ -68,7 +68,7 @@ function go() {
 function ggf() {
    
     var hh = aa;
-    hh = hh.replace('hlb','').replace('https://sinalpublico.com','https://redecanais.wf').replace('https://play.megafilmeshd50.com','https://redecanais.wf').replace('&rl=rl','');
+    hh = hh.replace('hlb','').replace('https://sinalpublico.com','https://redecanais.to').replace('https://play.megafilmeshd50.com','https://redecanais.to').replace('&rl=rl','');
     top.location.href ="http://giganet.tv/" + hh;
    
 }
@@ -77,7 +77,7 @@ function ggf() {
 function ia9() {
  
    var hh = aa;
-   hh = hh.replace('hlb','').replace('https://sinalpublico.com','https://redecanais.wf').replace('https://play.megafilmeshd50.com','https://redecanais.wf').replace('&rl=rl','').replace("https://","").replace("http://","");
+   hh = hh.replace('hlb','').replace('https://sinalpublico.com','https://redecanais.to').replace('https://play.megafilmeshd50.com','https://redecanais.to').replace('&rl=rl','').replace("https://","").replace("http://","");
    top.location.href ="http://giganet.tv/https://playmys.xtgem.com/download.php?u=" + hh;
    
 }
