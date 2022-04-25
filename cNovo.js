@@ -83,7 +83,7 @@ var tblRow = "<a href='http://tvxe.tv/"+pj+"' class='gPoster'><img src='"+ po +"
    }).fail(function() { });
    
   var jass = "http://zbigs.cf/logg.php"
-var gass = "?g=categoriesListSeries=all@anime=0@search="+k+"@saga=0@categoryFilterYearMin=1000@categoryFilterYearMax=2023@categoryFilterOrderBy=year@categoryFilterOrderWay=desc@page=0";
+var gass = "?g=categoriesListSeries=all@anime=0@search="+k+"@page=0@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2022@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc";
 $.get(jass + gass,function(sa){
 $.each(sa.list, function(i, b) {
             var iu = b.url;
