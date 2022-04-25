@@ -85,12 +85,12 @@ var tblRow = "<a href='http://tvxe.tv/"+pj+"' class='gPoster'><img src='"+ po +"
     .then((response) => response.text())
     .then((html) => {
         var h = html;
-        var d = $(h).find(".listItems").html();
-        $(d).find("picture").each(function(){
+        var d = '<div class="aa">'+$(h).find(".listItems").html() +'</div>';
+        $(d).find("a").each(function(){
             var img = $(this).find(".img").attr("src");
             img = img.replace("/con","https://vizer.tv/con");
-            var name = $(this).find("img").attr("alt");
-            name = name.replace("Assistir ","").replace(":","").replace(/ /g,"%20").replace("online","%20").replace("%20%20","");
+            var name = $(this).attr("href");
+            name = name.replace("Assistir ","").replace("serie/online/","").replace("filme/online/","").replace("/","").replace(":","").replace(/ /g,"%20").replace("online","%20").replace("%20%20","");
             var id = $(this).find(".img").attr("src");
             id = id.replace("/content/movies/posterPt/185/","").replace("/content/series/posterPt/185/","").replace(".jpg","").replace(".jpeg","").replace(".gif","").replace(".png","");
             if(img != null && img.startsWith("https://vizer.tv/content/series/")){
@@ -98,7 +98,6 @@ var tblRow = "<a href='http://tvxe.tv/"+pj+"' class='gPoster'><img src='"+ po +"
             var tblRow = "<a href='http://vip.tv/ux=/redss.php&uxs="+name+"&n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
                 
             }else{
-            
             var tblRow = "<a href='http://vip.tv/ux=/reds.php@uxs="+name+"@n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
             }
            $(tblRow).appendTo("#userdata");
