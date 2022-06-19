@@ -2,7 +2,19 @@ var gh = window.location.href;
 var values = 2;
 var next = "";
 var hash = "";
-var jon = "http://zbigs.cf/flix.php"; 
+var jon = "http://zbigs.cf/flix.php";
+
+var hourstop = 24;
+var nows = new Date().getTime();
+var setupTimess = localStorage.getItem('setupTimesss');
+if (setupTimess == null) {
+    localStorage.setItem('setupTimesss', nows);
+} else {
+    if(nows-setupTimess > hourstop*60*60*1000) {
+        localStorage.removeItem('svs');
+        localStorage.setItem('setupTimesss', now);
+    }
+}
 
 var head= document.getElementsByTagName('head')[0]; var scriptxx= document.createElement('script'); scriptxx.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js'; scriptxx.type = "text/javascript"; scriptxx.async = false; head.appendChild(scriptxx); var x= document.createElement('script'); x.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js'; x.type = "text/javascript"; x.async = false; head.appendChild(x); x.onload=function( evt ) {
     
@@ -47,6 +59,14 @@ if (getParameterByName("s")){
   
   if (gh.indexOf("file") == 0){
 $(document).ready(function(){
+    
+    if(localStorage.getItem("svs")){
+    setTimeout(function(){
+ $("#userdata").prepend(localStorage.getItem("svs"));
+        kkl();
+},0);
+}
+else{
 var ra = '{"salt":"'+ next +'","sign":"'+ hash +'","method_name":"get_search_series","search_text":"","page":"1"}';
 var ga = "?g=" + btoa(ra);
 
@@ -59,13 +79,17 @@ $.each(sa.LIVETV, function(i, b) {
         var pja = b.id;
          var po = b.series_poster;
             po=po.replace("w300","w200");
-            
-            $("#userdata").prepend('<a alt="'+b.series_name+'" class="agPoster" href="http://vip.tv/ux=/redssx.php&uxs='+pj+'&n='+pja+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="'+po+'" /></a>');
+            var gg = '<a alt="'+b.series_name+'" class="agPoster" href="http://vip.tv/ux=/redssx.php&uxs='+pj+'&n='+pja+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="'+po+'" /></a>';
+            $("#userdata").prepend(gg);
+    localStorage.setItem("svs", gg)
           }); 
           }).done(function() { kkl(); }).fail(function() {});       
 
-  
+}
+    
 });
+      
+      
  }else{window.top.location = "https://google.com";}  
  
 }
