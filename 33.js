@@ -6,13 +6,13 @@ var jon = "http://zbigs.cf/flix.php";
 
 var hourstop = 24;
 var nows = new Date().getTime();
-var setupTimess = localStorage.getItem('setupTimesss');
+var setupTimess = localStorage.getItem('setupTimesssx');
 if (setupTimess == null) {
-    localStorage.setItem('setupTimesss', nows);
+    localStorage.setItem('setupTimesssx', nows);
 } else {
     if(nows-setupTimess > hourstop*60*60*1000) {
         localStorage.removeItem('svs');
-        localStorage.setItem('setupTimesss', now);
+        localStorage.setItem('setupTimesssx', now);
     }
 }
 
