@@ -114,6 +114,11 @@ $.each(sa.LIVETV, function(i, b) {
 }
 
 function kkl(){
+if(localStorage.getItem("svs")){
+}
+else{      
+localStorage.setItem("svs", $("#userdata").html())
+}
 var link = $(".agPoster").attr("href");
 var t = $(".agPoster").attr("alt");
 var img = $(".agPoster .img").attr("src");
