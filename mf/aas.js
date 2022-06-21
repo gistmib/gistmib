@@ -1,6 +1,7 @@
 var lk = $("#player-option-1").attr("data-post");
 var pager = window.location.href;
 var aa= "";
+var kka = "true"; 
 
 if (pager != null && pager.startsWith("https://megafilmeshd50.com/episodio")){
 var ll = $(".dooplay_player_option").attr("data-post");
@@ -11,8 +12,30 @@ var link = "http://megafilmeshd50.com/wp-json/dooplayer/v2/"+ll+"/movie/1";
 }
 jja();
 function jja(){
-$.getJSON(link, function(data){ 
-aa = data.embed_url;
+    
+    if($(".metaframe")[0]){
+        
+ var jj = $(".metaframe").attr("src");
+        aa = jj;
+        kka = "false";
+    
+}else{
+    
+$('#playcontainer').bind('DOMNodeInserted DOMNodeRemoved', function() {
+    if($(".metaframe")[0]){
+    if(kka == "true"){
+        var jj = $(".metaframe").attr("src");
+        aa = jj;
+        kka = "false";
+    
+    }
+        
+    }
+  
+});   
+    
+}
+
 if(aa == null){
 document.getElementsByTagName("body")[0].innerHTML ="<style>.chatbro_minimized_chat{display:none !important;visibility:hidden}body{background:transparent}</style><div style='background:#555;border-radius:10px;position: fixed;top: 0;bottom: 0;left: 0;right: 0;margin: auto;max-width: 500px;max-height: 140px;font-size:19px;font-weight:bold;color: #fff;padding:40px;margin-left:40px;margin-right:40px'><center>Este video ainda não esta disponível no app na qualidade 1080p.</center></div>";
 window.CallToAndroidFunction1.setVisible();   
@@ -66,14 +89,6 @@ $('body').replaceWith('<style>.metaframe{background:#000;visibility: visible !im
 
 
 }   
-    
-}).fail(function() {
-if (pager != null && pager.startsWith("https://megafilmeshd50.com/episodio")){
- link = link.replace("https","http");
-}else{
- link = link.replace("http","https");
-}
-jja();
-});
+
 
 }
