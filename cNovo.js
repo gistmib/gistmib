@@ -3,7 +3,7 @@ if (gh.indexOf("file") == 0){
     
 var k = window.location.href;
 k = k.replace('https://vipsts.tk/busca.php?s=','').replace('file:///android_asset/h6.html?s=',''); 
-  var j = 'https://superflixfilmes.net/wp-json/dooplay/search/?keyword='+ k +'&nonce=bf0a382498'; 
+  var j = 'https://megafilmesonlinebr.net/wp-json/dooplay/search/?keyword='+ k +'&nonce=bf0a382498'; 
   var ja = 'https://megafilmeshd50.com/wp-json/dooplay/search/?keyword='+ k +'&nonce=ade4993c21';  
   if (document.documentElement.clientWidth < 720) { document.querySelector("meta[name=viewport]").setAttribute( 'content', 'width=500'); } 
   }else{window.top.location = "https://google.com";}
