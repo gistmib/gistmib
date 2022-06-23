@@ -66,10 +66,9 @@ $.getJSON(j, function(data){
          var pj = f.url;
          var title = f.title;
          var po = f.img;
-         var y = f.extra.date;
          po = po.replace("90x135","185x278");
          
-         if (pj != null && pj.startsWith("https://superflixfilmes.net/filme") || pj.startsWith("https://superflixfilmes.net/filme")) {
+         if (pj != null && pj.startsWith("https://megafilmesonlinebr.net/filme") || pj.startsWith("https://superflixfilmes.net/filme")) {
 var tblRow = "<a href='http://tvxe.tv/"+pj+"' class='gPoster'><img src='"+ po +"' /></a>"
            $(tblRow).appendTo("#userdata");
 }else{
