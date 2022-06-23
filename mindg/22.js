@@ -71,11 +71,11 @@ function getParameterByName(name, url) {
 if (getParameterByName("cat")){
 var kiba = getParameterByName("cat");
 kiba = kiba.replace("@","?")
-$("body").append("<a href='https://superflixfilmes.net"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();setInterval(function(){$('#w')[0].click();},5000);<\/script>");
+$("body").append("<a href='https://megafilmesonlinebr.net"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();setInterval(function(){$('#w')[0].click();},5000);<\/script>");
  
 }else{
     
-var kiba = "https://superflixfilmes.net/filme/";
+var kiba = "https://megafilmesonlinebr.net/filme/";
 $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();setInterval(function(){$('#w')[0].click();},5000);<\/script>");
    }
        
