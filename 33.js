@@ -81,7 +81,6 @@ $.each(sa.LIVETV, function(i, b) {
             po=po.replace("w300","w200");
             var gg = '<a alt="'+b.series_name+'" class="agPoster" href="http://vip.tv/ux=/redssx.php&uxs='+pj+'&n='+pja+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="'+po+'" /></a>';
             $("#userdata").prepend(gg);
-    localStorage.setItem("svs", gg)
           }); 
           }).done(function() { kkl(); }).fail(function() {});       
 
