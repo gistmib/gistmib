@@ -1,19 +1,71 @@
-var ga = window.location.href;
+
+var d = window.location.href;
+
+if (d != null && d.startsWith("https://vfilmesonline.net")){
+window.location.href = d.replace('https://vfilmesonline.net','https://suzihaza.com');
+}
+else if (d != null && d.startsWith("https://diampokusy.com") || d.startsWith("https://suzihaza.com") || d.startsWith("https://player-megahdseries.com") || d.startsWith("https://player-megahdfilmes.com/") || d.startsWith("https://playerthefilmes.tv/") || d.startsWith("https://player-megahdanimes.com/") || d.startsWith("https://diasfem.com")) {
+    
+var nav = userAgent = navigator.userAgent;
+var navs = "Mozilla/5.0 (Linux; Android 10; Pixel 3 XL)";
+
+if (nav.includes(navs)) {
+if (d != null && d.endsWith("=yes")) {
+
+var a = d.replace("/f/","/v/");
+window.location.href = "http://giganet.tv/" + a;
+
+}else if (d != null && d.endsWith("=no")) {
+
+var a = d.replace("/f/","/v/")
+window.top.location.href ="http://cdnplayer.com/" + a;
+    
+}else {
+    
+var a = d.replace("http://","").replace("https://","");
+window.location.href = "http://giganet.tv/=" + a;
+}
+  } else {
+var linku;
+    linku = document.createElement("script");
+    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/vf/vnew.js?44xxxx333344");
+    document.getElementsByTagName("head")[0].appendChild(linku);  
+  }
 
 
-if (ga != null && ga.startsWith("https://redecanaistv.com") || ga.startsWith("https://redecanaistv.net")) {
-    document.assistirplayer.submit(); 
-    setInterval(function(){
-    document.assistirplayer.submit();
-    },5000);
+
+     
+     
+var a = document.getElementById("vstr");
+if(!a){
+    window.location.href = "http://vip.tv/Erro";
 }
-else if (ga != null && ga.startsWith("https://streamtape.com/v/")) {
-     if (ga.indexOf('/v/') > -1)
-{
-  window.location.href = ga.replace("/v/", "/e/")
+setInterval(function(){
+var myElement = document.getElementById("gaga");
+if(!myElement){
+    window.location.reload();
 }
-}else if(ga !=null && ga.startsWith("https://streamtape.com/e/")){
-    var nav = userAgent = navigator.userAgent;
+    },30000);
+
+
+}
+else if(d != null && d.startsWith("https://playerhd.org/video/embedteste2.php")){
+var linku;
+    linku = document.createElement("script");
+    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/spp/sppx1.js");
+    document.getElementsByTagName("head")[0].appendChild(linku);
+    
+    setTimeout(function(){window.location.reload();},20000);
+}
+else if(d != null && d.startsWith("https://embedsb") || d.startsWith("http://embedsb") || d.startsWith("https://embedsb.com/dl")){
+var linku;
+    linku = document.createElement("script");
+    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/ass13.js?kk88kxxxdddddddkk");
+    document.getElementsByTagName("head")[0].appendChild(linku);
+}
+else if (d != null && d.startsWith("https://streamtape") || d.startsWith("https://streamt") ||  d.startsWith("https://strcloud") || d.startsWith("https://strtapeadblock") || d.startsWith("https://adblockstrtech")) {
+    
+var nav = userAgent = navigator.userAgent;
 var navs = "Mozilla/5.0 (Linux; Android 10; Pixel 3 XL)";
  
 if (nav.includes(navs)) {
@@ -42,8 +94,17 @@ setInterval(function(){
     if($("video")[0]){
     low = $('#robotlink').text();
     low = low.replace("//","");
+if (gad != null && gad.endsWith("yes")) {
 var yyd = low;
-top.location.href ="https://" + yyd + '&stream=1';
+top.location.href ="http://videomega.tv/https://" + yyd + '&stream=1';
+}else if (gad != null && gad.endsWith("no")){
+var yyd = low;
+top.location.href ="http://cdnplayer.tv/file:///android_asset/p1.html?https://" + yyd + '&stream=1';
+}else {
+    var yyd = low;
+top.location.href ="http://videomega.tv/https://" + yyd + '&stream=1';
+}
+
 
     }
 },3000);
@@ -71,7 +132,7 @@ $(document).ready(function(){
 }else {
     
 var a = d.replace("http://","").replace("https://","");
-window.location.href = a;
+window.location.href = "http://giganet.tv/" + a;
 }
   } else {
       
@@ -118,8 +179,17 @@ setInterval(function(){
     if($("video")[0]){
     low = $('#robotlink').text();
     low = low.replace("//","");
+if (gad != null && gad.endsWith("yes")) {
 var yyd = low;
-top.location.href ="https://" + yyd + '&stream=1';
+top.location.href ="http://videomega.tv/https://" + yyd + '&stream=1';
+}else if (gad != null && gad.endsWith("no")){
+var yyd = low;
+top.location.href ="http://cdnplayer.tv/file:///android_asset/p1.html?https://" + yyd + '&stream=1';
+}else {
+    var yyd = low;
+top.location.href ="http://videomega.tv/https://" + yyd + '&stream=1';
+}
+
 
     }
 },3000);
@@ -148,24 +218,38 @@ $(document).ready(function(){
 }
 }
 
-}
-else if (ga != null && ga.startsWith("https://vfilmesonline.net")){
-window.location.href = ga.replace('https://vfilmesonline.net','https://suzihaza.com');
-}
-else if (ga != null && ga.startsWith("https://diampokusy.com") || ga.startsWith("https://suzihaza.com") || ga.startsWith("https://player-megahdseries.com") || ga.startsWith("https://player-megahdfilmes.com/") || ga.startsWith("https://playerthefilmes.tv/") || ga.startsWith("https://player-megahdanimes.com/")) {
-    var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/as2.js");
-    document.getElementsByTagName("head")[0].appendChild(linku);
 
-}else if (ga != null && ga.startsWith("https://embedsb")) {
-    var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/as3.js?fffff");
-    document.getElementsByTagName("head")[0].appendChild(linku);
 
-}else if (ga != null && ga.startsWith("xhttps://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/r.php")) {
-     function getParameterByName(name, url) {
+
+
+}else if (d != null && d.startsWith("https://www.superflix.net/?") || d.startsWith("https://www.superflix.net/?")) {
+    var ol = document.getElementsByTagName("iframe")[0].getAttribute('src');
+    var ola = new URL(ol);
+    var oga = ola.hostname;
+    oga = oga.replace("sf1player.com","lbsuper2.sfplayer.net");
+    
+    function getParameterByName(name, url) {
+    if (!url) url =  ol;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+   var on = getParameterByName("id");
+   var log = localStorage.getItem("ut");
+   if (log != null && log.startsWith("yes")){
+       window.top.location.href = "http://cdnplayer.com/" + window.location.href; 
+   }else if (log != null && log.startsWith("no")){
+       window.top.location.href = "http://videomega.tv/https://"+ oga +"/playlist/"+ on +"/" + on +".m3u8";
+   }else{
+       window.top.location.href = "http://giganet.tv/"+ oga +"/playlist/"+ on +"/" + on +".m3u8"; 
+       
+   }
+    
+}else if (d != null && d.startsWith("https://www.super") || d.startsWith("https://super")) {
+      function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -174,67 +258,30 @@ else if (ga != null && ga.startsWith("https://diampokusy.com") || ga.startsWith(
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-
-var ok = getParameterByName('data');
-ok = ok.replace("/player3/canaishlb.php?canal=","");
-    document.getElementsByTagName("body")[0].innerHTML = '<form id="myForm" method="post" name="sendData" action="https://lojadebicicleta.com.br/instagram/campanha.php?data=/player3/canaishlb.php?canal='+ ok +'&amp;rc=1"><input type="hidden" name="data" value="/player3/canaishlb.php?canal='+ ok +'&amp;rc=1"><input type="submit" value="ddddddddd" /></form>';
-    
-    document.getElementById("myForm").submit();
-    
-}else if(ga != null && ga.startsWith("https://gamesgo.fun/instagram") || ga.startsWith("https://lojadebicicleta.com.br/instagram")) {
-     function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
-var ok = getParameterByName('data');
-ok = ok.replace("/player3/canaishlb.php?canal=","");
-localStorage.setItem("kk", ok);
-}else if(ga != null && ga.startsWith("https://gamesgo.fun") || ga.startsWith("https://allgamesejogos.fun") || ga.startsWith("https://lojadebicicleta.com.br")) {
-    var lo = localStorage.getItem("kk");
-    var isMobileVersion = document.getElementsByClassName('menu-item');
-if (isMobileVersion.length > 0) {
-    document.getElementsByTagName("body")[0].innerHTML = '<form id="myForm" method="post" name="sendData" action="https://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/r.php?data=/player3/canaishlb.php?canal='+ lo +'&amp;rc=1"><input type="hidden" name="data" value="/player3/canaishlb.php?canal='+ lo +'&amp;rc=1"><input type="submit" value="ddddddddd" /></form>';
-    document.getElementById("myForm").submit();
+ localStorage.setItem("ut",getParameterByName("ut"));
+if (document.querySelector('.comment-reply-link') !== null) {
+var youtubeimgsrc1 = document.getElementsByClassName("comment-reply-link")[0].getAttribute('data-postid');
+window.top.location = "https://www.superflix.net/?trembed=0&trid="+ youtubeimgsrc1 +"&trtype=1";
+}else if (document.querySelector('#comment_post_ID') !== null) {
+var youtubeimgsrc1 = document.getElementById("comment_post_ID").getAttribute('value');
+window.top.location = "https://www.superflix.net/?trembed=0&trid="+ youtubeimgsrc1 +"&trtype=1";
 }else{
-        var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/all.js?haaaaaaaaaaaaahhllaaaaaaaaallllhhh88iiiiiiiu7776");
-    
+var youtubeimgsrc = document.getElementsByTagName("body")[0].getAttribute('class');
+var youtubeimgsrc1 = youtubeimgsrc.split('term-').pop().trim(); 
+var youtubeimgsrc1 = youtubeimgsrc1.replace('%20side-right','').replace(' side-right',''); 
+window.top.location = "https://www.superflix.net/?trembed=0&trid="+ youtubeimgsrc1;
+
 }
-}
+
+
+
+
+
+
+}else if (d != null && d.startsWith("https://megahdfilmes.me/") || d.startsWith("https://megahdfilmes.com/") || d.startsWith("https://megahdseries.com/") || d.startsWith("https://thefilmes.tv/") || d.startsWith("https://megahdanimes.com/")) {
     
-  
-document.getElementsByTagName("body")[0].style.display = 'none';
-var linkaa;
-linkaa = document.createElement("script");
-linkaa.setAttribute("src", "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js");
-document.getElementsByTagName("head")[0].appendChild(linkaa);
-var g = window.location.href;
-linkaa.onload=function( evt ) {
-if (g != null && g.startsWith("https://topcanais.com") || g.startsWith("https://futemax.gratis/assistir_no_geralcdn.") || g.startsWith("https://futemax.app/assistir_no_geralcdn.")) {
-    var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/top.js?e2cccccc2222e");
-    document.getElementsByTagName("body")[0].appendChild(linku);
-}
-else if (g != null && g.startsWith("https://afazenda.fm") || g.startsWith("http://afazenda.fm/")) {
-  $("head").append("<style>.bx-container{position: fixed;top: 0;bottom: 0;left: 0;right: 0;margin: auto !important;width: 100%;height: 100%;z-index: 200000 !important;}header{display:none}.aviso{display:none}body{display:block !important}#player{position: absolute !important;height: 100% !important;width: 100% !important;z-index: 99999 !important;top: 0 !important;background: #000 !important;}</style>");
-    
-}else if (g != null && g.startsWith("https://super") || g.startsWith("http://super") || g.startsWith("https://www.super") || g.startsWith("http://www.super")) {
-    var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/sup.js?e2ccc1111ccc2222e");
-    document.getElementsByTagName("body")[0].appendChild(linku);
-}else if (g != null && g.endsWith("pk")) {
-var cc = $('a[data-id^=https]').attr("data-id"); 
 function getParameterByName(name, url) {
-    if (!url) url = cc;
+    if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
         results = regex.exec(url);
@@ -242,139 +289,210 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-var gf = getParameterByName("canal");
-window.top.location = "https://esporteone.com/?" + gf;
-}else if (g != null && g.startsWith("https://esporteone.com/") || g.startsWith("http://esporteone.com/")) {
-var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/new.js?22w3zzzz3aaaaaa330002w3");
-    document.getElementsByTagName("head")[0].appendChild(linku);
+
+var o = getParameterByName('ut'); 
+function getPlayer(a,c){var f="";switch(c){case"fembed":f=atob(a).replace("/v/","/f/").replace("player-megahdfilmes.com","diasfem.com").replace("playerthefilmes.tv","diasfem.com");break;case"stream":f=atob(a).replace("/e/","/v/");break;case"streamsb":f=atob(a).replace("/e/","/d/");break;default:f=atob(a);break}
+    var href = f;
+   var hg = href.replace("/v/","/e/").replace("player-megahdfilmes.com","diasfem.com").replace("playerthefilmes.tv","diasfem.com");
+   document.getElementsByTagName("body")[0].innerHTML = '<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form action="'+ hg +'" name="vote" method="get" style="display:none;"><input type="text" name="ut" value="'+ o +'" /></form><script>document.forms["vote"].submit();</script>';
+       document.forms["vote"].submit(); 
 }
 
-else if (g != null && g.startsWith("https://canaismax.com/")) {
-  document.getElementsByTagName("body")[0].innerHTML = "<iframe src='https://canaismax.com/bbb.php' class='gt'></iframe><style>body{display:block !important}.gt{position:fixed;width:100%;height:100%;top:0;bottom:0;left:0;right:0;z-index:1000000000000000000000;border:0}</style>";
     
+var isMobileVersion = document.getElementsByClassName('stream');
+var isMobileVersions = document.getElementsByClassName('streamsb');
+
+if (isMobileVersions.length > 0) { 
+    var div1 = document.getElementsByClassName("streamsb")[0];
+    var a = div1.getAttribute("onclick");
+    a = a.replace('getPlayer(','').replace(')','').replace(/'/g,"").replace(", streamsb","").replace('if (!window.__cfRLUnblockHandlers) return false; ','');
+    getPlayer(''+ a +'', 'streamsb');
+}
+else{
+
+if (isMobileVersion.length > 0) {
+    
+    
+    var div1 = document.getElementsByClassName("stream")[0];
+    var a = div1.getAttribute("onclick");
+    a = a.replace('getPlayer(','').replace(')','').replace(/'/g,"").replace(", stream","").replace('if (!window.__cfRLUnblockHandlers) return false; ','');
+    getPlayer(''+ a +'', 'stream');
+
+}else{
+    
+    var div1 = document.getElementsByClassName("fembed")[0];
+    var a = div1.getAttribute("onclick");
+    a = a.replace('getPlayer(','').replace(')','').replace(/'/g,"").replace(", fembed","").replace('if (!window.__cfRLUnblockHandlers) return false; ','');
+    getPlayer(''+ a +'', 'fembed');
 }
 
-else if (g != null && g.startsWith("https://futemax")) {
-var head= document.getElementsByTagName('head')[0]; var scriptxx= document.createElement('script'); scriptxx.src= 'https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js'; scriptxx.type = "text/javascript"; scriptxx.async = false; head.appendChild(scriptxx); var x= document.createElement('script'); x.src= 'https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js'; x.type = "text/javascript"; x.async = false; head.appendChild(x); x.onload=function( evt ) {
-    $('body').css("overflow","hidden");
+}
+
+}else if (d != null && d.startsWith("https://megahdfilmes.tv/")) {
     
-    setInterval(function(){
-    $('iframe:not("body iframe")').remove();
-    },0);
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+var o = getParameterByName('ut'); 
+function getPlayer(a,c){var f="";switch(c){case"fembed":f=atob(a).replace("/v/","/f/").replace("player-megahdfilmes.com","diasfem.com").replace("playerthefilmes.tv","diasfem.com");break;case"stream":f=atob(a).replace("/e/","/v/");break;default:f=atob(a);break}
+    var href = f;
+   var hg = href.replace("/v/","/e/").replace("player-megahdfilmes.com","diasfem.com").replace("playerthefilmes.tv","diasfem.com");
+   document.getElementsByTagName("body")[0].innerHTML = '<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form action="'+ hg +'" name="vote" method="get" style="display:none;"><input type="text" name="ut" value="'+ o +'" /></form><script>document.forms["vote"].submit();</script>';
+       document.forms["vote"].submit(); 
+}
+
+
+if (d != null && d.endsWith("yes")) {
+
+var isMobileVersion = document.getElementsByClassName('fembed');
+if (isMobileVersion.length > 0) {
+    
+    var div1 = document.getElementsByClassName("fembed")[0];
+    var a = div1.getAttribute("onclick");
+    a = a.replace('getPlayer(','').replace(')','').replace(/'/g,"").replace(", fembed","").replace('if (!window.__cfRLUnblockHandlers) return false; ','');
+    getPlayer(''+ a +'', 'fembed');
+}else{
     
     
- $("body").append("<style>.image-post{position: fixed !important;z-index: 900000000000000 !important;width: 100%;height: 100% !important;max-width: 100% !important;top: 0 !important;bottom: 0 !important;padding: 0px !important;margin: 0px !important;}body{display:block !important;}div.replace_html{max-height: 100% !important;width: 100% !important;height: 100% !important;position: absolute !important;}div.options_iframe {z-index: 900000000000000 !important;position: fixed !important;width: 100% !important;bottom: 0 !important;}</style>");
+    var div1 = document.getElementsByClassName("stream")[0];
+    var a = div1.getAttribute("onclick");
+    a = a.replace('getPlayer(','').replace(')','').replace(/'/g,"").replace(", stream","").replace('if (!window.__cfRLUnblockHandlers) return false; ','');
+    getPlayer(''+ a +'', 'stream');
+
+}
+
+
+
+}else if (d != null && d.endsWith("no")){
+
+var isMobileVersion = document.getElementsByClassName('fembed');
+if (isMobileVersion.length > 0) {
+
+    var div1 = document.getElementsByClassName("fembed")[0];
+    var a = div1.getAttribute("onclick");
+    a = a.replace('getPlayer(','').replace(')','').replace(/'/g,"").replace(", fembed","").replace('if (!window.__cfRLUnblockHandlers) return false; ','');
+    getPlayer(''+ a +'', 'fembed');
+    
+}else{
+    
+    var div1 = document.getElementsByClassName("stream")[0];
+    var a = div1.getAttribute("onclick");
+    a = a.replace('getPlayer(','').replace(')','').replace(/'/g,"").replace(", stream","").replace('if (!window.__cfRLUnblockHandlers) return false; ','');
+    getPlayer(''+ a +'', 'stream');
+} 
+
+
+
+
+}else {
  
+var isMobileVersion = document.getElementsByClassName('fembed');
+if (isMobileVersion.length > 0) {
+    
+    var div1 = document.getElementsByClassName("fembed")[0];
+    var a = div1.getAttribute("onclick");
+    a = a.replace('getPlayer(','').replace(')','').replace(/'/g,"").replace(", fembed","").replace('if (!window.__cfRLUnblockHandlers) return false; ','');
+    getPlayer(''+ a +'', 'fembed');
+    
+    
+}else{
+
+    var div1 = document.getElementsByClassName("stream")[0];
+    var a = div1.getAttribute("onclick");
+    a = a.replace('getPlayer(','').replace(')','').replace(/'/g,"").replace(", stream","").replace('if (!window.__cfRLUnblockHandlers) return false; ','');
+    getPlayer(''+ a +'', 'stream');
+}
+
+
     
 }
-    
+
 }
-else if (g != null && g.startsWith("https://futemax")) {
+
+var needlexs = window.location.href;
+if (needlexs != null && needlexs.startsWith("https://vip.tv")) {
+
+
+}else if (needlexs != null && needlexs.endsWith("ch")) {
     var linku;
     linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/f.js?aaaa3333888888xq111x3xxxxx333xxxee");
-    document.getElementsByTagName("body")[0].appendChild(linku);
-}
-else if (g != null && g.startsWith("https://multicanais.tv/assistir-bbb") || g.startsWith("https://www.multicanais.tv/assistir-bbb") || g.startsWith("https://multicanais.tv/assistir-bbb") || g.startsWith("https://multicanais.tv/assistir-bbb")) {
-var head= document.getElementsByTagName('head')[0]; var scriptxx= document.createElement('script'); scriptxx.src= 'https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js'; scriptxx.type = "text/javascript"; scriptxx.async = false; head.appendChild(scriptxx); var x= document.createElement('script'); x.src= 'https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js'; x.type = "text/javascript"; x.async = false; head.appendChild(x); x.onload=function( evt ) {
-    $('body').css("overflow","hidden");
-    
-    setInterval(function(){
-    $('iframe:not("body iframe")').remove();
-    },0);
-    
-    
- var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/m11111.js?6aaa65ccttt");
-    document.getElementsByTagName("html")[0].appendChild(linku);
-    
-}
-    
-}
-else if (g != null && g.startsWith("https://multicanais.com") || g.startsWith("https://multicanais.com") || g.startsWith("https://multicanais.tv") || g.startsWith("https://multicanais.tv")) {
- var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/m.js?000oaaa0");
-    document.getElementsByTagName("html")[0].appendChild(linku);
-    
-}
-else if (g != null && g.startsWith("https://allgamesejogos.fun/pla") || g.startsWith("https://homeingles.fun/pla") || g.startsWith("https://lojadebicicleta.com.br/pla")) {
+    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/allz.js?kkkk");
+    document.getElementsByTagName("head")[0].appendChild(linku);
+}else if (needlexs != null && needlexs.startsWith("https://stin")) {
     var linku;
     linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/allz.js?5555");
+    linku.setAttribute("src", "/chat/c.js?vvvvfffff");
     document.getElementsByTagName("head")[0].appendChild(linku);
 }
-else if (g != null && g.startsWith("https://allgamesejogos.fun/npla") || g.startsWith("https://homeingles.fun/npla") || g.startsWith("https://megafilmeshd50.com/contato.txt?")) {
-
+else if (needlexs != null && needlexs.startsWith("https://allgamesejogos.fun")) {
 var linku;
     linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/aa.js?4445555");
+    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/all.js?dnnnndffff");
     document.getElementsByTagName("head")[0].appendChild(linku);
-}else if (g != null && g.startsWith("https://megafilmeshd50.com/filme/a-fazenda-ao-vivo/")) {
-    var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/mm.js?555rrrr");
-    document.getElementsByTagName("head")[0].appendChild(linku);
-}else if (g != null && g.startsWith("https://sinalpublico.com/player3")) {
-    var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/mms.js?55nnnn98885rrrr");
-    document.getElementsByTagName("head")[0].appendChild(linku);
-}else if (g != null && g.startsWith("https://megafilmeshd50.com/categoria/lancamentos/") ||  g.startsWith("https://megafilmeshd50.com/filme/disney-xd/") ||  g.startsWith("https://megafilmeshd50.com/filme/a-fazenda-ao-vivo/")) {
-    var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/aas12.js?ccccc");
-    document.getElementsByTagName("head")[0].appendChild(linku);
-
-}else if (g != null && g.startsWith("https://megafilmeshd50") || g.startsWith("http://megafilmeshd50")) {
-    var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/aas.js?554xxxxxx44rrr5555");
-    document.getElementsByTagName("head")[0].appendChild(linku);
-
-}else if (g != null && g.startsWith("https://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/player/")) {
-
-var kp = window.location.href;
-    kp = kp.replace("https://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/player/?","").replace("https://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/player/mega.php?video=","https://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/player3/mega.php?video=");
-$('body').replaceWith('<style>iframe{border:0px}.ripple{position:relative;overflow:hidden;transform:translate3d(0,0,0)}.ripple:after{content:"";display:block;position:absolute;width:100%;height:100%;top:0;left:0;pointer-events:none;background-image:radial-gradient(circle,#ccc 10%,transparent 10.01%);background-repeat:no-repeat;background-position:50%;transform:scale(10,10);opacity:0;transition:transform .5s,opacity 1s}.ripple:active:after{transform:scale(0,0);opacity:.2;transition:0s}body{overflow: hidden;}iframe{position:fixed;top:0;bottom:0;left:0;right:0;width:100%;height:100%;z-index:90000000}.tt {position: fixed;top: 0;bottom: 0;margin: auto;right: 10px;height: max-content;z-index:900000000}#zoomOut{position: relativ;z-index: 900000000000;top: 0;bottom: 0;width: 55px;margin: auto;font-size: 28px;right: 4px;height: 55px;border-radius: 28px;border: none;background: rgba(0,0,0,0.6);color: #fff;text-decoration: none;margin-top: 14px;}#x{position: relativ;z-index: 900000000000;top: 0;bottom: 0;width: 55px;margin: auto;font-size: 28px;right: 4px;height: 55px;border-radius: 28px;border: none;background: rgba(0,0,0,0.6);color: #fff;text-decoration: none;margin-top: 14px;}#zoomIn{position: relativ;z-index: 900000000000;top: 0;bottom: 0;width: 55px;margin: auto;font-size: 28px;right: 4px;height: 55px;border-radius: 28px;border: none;background: rgba(0,0,0,0.6);color: #fff;text-decoration: none;}button,button:focus{outline:0}button,button:focus{-webkit-tap-highlight-color:transparent}#x img{display:inline !important}#zoomtext {transform: scale(1);transition: transform 0.2s ease-in-out;}body{display:block !important}</style><iframe src="'+kp+'"></iframe><div class="tt"><button class="ripple" id="zoomIn">+</button><br><button class="ripple" id="zoomOut">-</button><br><button class="ripple" id="x"><img src="https://i.imgur.com/PwzENfV.png?sss" width="18px" height="18px" /></button></div>');$('#x').click(function(){$('.tt').hide();window.CallToAndroidFunction.setVisible();});var zoom=1;var zoomStep=0.2;document.getElementById("zoomIn").addEventListener("click",function(){zoom+=zoomStep;document.getElementsByTagName("iframe")[0].style.transform="scale("+zoom+")";});document.getElementById("zoomOut").addEventListener("click",function(){if(zoom>zoomStep){zoom-=zoomStep;document.getElementsByTagName("iframe")[0].style.transform="scale("+zoom+")";}});
-
-}else if (g != null && g.startsWith("https://megafilmeshd50.top/email.txt")) {
-    var kp = window.location.href;
-    kp = kp.replace("https://megafilmeshd50.top/email.txt?","").replace("&rl=rl","");
-$('body').replaceWith('<style>iframe{border:0px}.ripple{position:relative;overflow:hidden;transform:translate3d(0,0,0)}.ripple:after{content:"";display:block;position:absolute;width:100%;height:100%;top:0;left:0;pointer-events:none;background-image:radial-gradient(circle,#ccc 10%,transparent 10.01%);background-repeat:no-repeat;background-position:50%;transform:scale(10,10);opacity:0;transition:transform .5s,opacity 1s}.ripple:active:after{transform:scale(0,0);opacity:.2;transition:0s}body{overflow: hidden;}iframe{position:fixed;top:0;bottom:0;left:0;right:0;width:100%;height:100%;z-index:90000000}.tt {position: fixed;top: 0;bottom: 0;margin: auto;right: 10px;height: max-content;z-index:900000000}#zoomOut{position: relativ;z-index: 900000000000;top: 0;bottom: 0;width: 55px;margin: auto;font-size: 28px;right: 4px;height: 55px;border-radius: 28px;border: none;background: rgba(0,0,0,0.6);color: #fff;text-decoration: none;margin-top: 14px;}#x{position: relativ;z-index: 900000000000;top: 0;bottom: 0;width: 55px;margin: auto;font-size: 28px;right: 4px;height: 55px;border-radius: 28px;border: none;background: rgba(0,0,0,0.6);color: #fff;text-decoration: none;margin-top: 14px;}#zoomIn{position: relativ;z-index: 900000000000;top: 0;bottom: 0;width: 55px;margin: auto;font-size: 28px;right: 4px;height: 55px;border-radius: 28px;border: none;background: rgba(0,0,0,0.6);color: #fff;text-decoration: none;}button,button:focus{outline:0}button,button:focus{-webkit-tap-highlight-color:transparent}#x img{display:inline !important}#zoomtext {transform: scale(1);transition: transform 0.2s ease-in-out;}body{display:block !important}</style><iframe src="'+kp+'"></iframe><div class="tt"><button class="ripple" id="zoomIn">+</button><br><button class="ripple" id="zoomOut">-</button><br><button class="ripple" id="x"><img src="https://i.imgur.com/PwzENfV.png?sss" width="18px" height="18px" /></button></div>');$('#x').click(function(){$('.tt').hide();window.CallToAndroidFunction.setVisible();});var zoom=1;var zoomStep=0.2;document.getElementById("zoomIn").addEventListener("click",function(){zoom+=zoomStep;document.getElementsByTagName("iframe")[0].style.transform="scale("+zoom+")";});document.getElementById("zoomOut").addEventListener("click",function(){if(zoom>zoomStep){zoom-=zoomStep;document.getElementsByTagName("iframe")[0].style.transform="scale("+zoom+")";}});
-}
-else if (g != null && g.startsWith("https://xencripted-encripted-encripted-encripted")){
-    $("iframe").remove();
-    var o = $('.tb-col').html();
-    o = o.replace(/'/g,'').replace(/"/g,'').replace(/</g,'').replace(/>/g,'');
-    document.getElementsByTagName("body")[0].innerHTML = '<meta nme="referrer" content="never"><meta nme="referrer" content="no-referrer"><form action="https://pikamaiss.tk/novo/kong.php" name="vote" method="post" style="display:none;"><input type="text" name="u" value="' + o + '" /></form><script>document.forms["vote"].submit();</script>';
-       document.forms["vote"].submit();
-    
-}else if (g != null && g.startsWith("https://play.megafilmeshd50.com/player3/mega2.php")) {
-var n = window.location.href;
-$('body').replaceWith('<style>iframe{border:0px}.ripple{position:relative;overflow:hidden;transform:translate3d(0,0,0)}.ripple:after{content:"";display:block;position:absolute;width:100%;height:100%;top:0;left:0;pointer-events:none;background-image:radial-gradient(circle,#ccc 10%,transparent 10.01%);background-repeat:no-repeat;background-position:50%;transform:scale(10,10);opacity:0;transition:transform .5s,opacity 1s}.ripple:active:after{transform:scale(0,0);opacity:.2;transition:0s}body{overflow: hidden;}iframe{position:fixed;top:0;bottom:0;left:0;right:0;width:100%;height:100%;z-index:90000000}.tt {position: fixed;top: 0;bottom: 0;margin: auto;right: 10px;height: max-content;z-index:900000000}#zoomOut{position: relativ;z-index: 900000000000;top: 0;bottom: 0;width: 55px;margin: auto;font-size: 28px;right: 4px;height: 55px;border-radius: 28px;border: none;background: rgba(0,0,0,0.6);color: #fff;text-decoration: none;margin-top: 14px;}#x{position: relativ;z-index: 900000000000;top: 0;bottom: 0;width: 55px;margin: auto;font-size: 28px;right: 4px;height: 55px;border-radius: 28px;border: none;background: rgba(0,0,0,0.6);color: #fff;text-decoration: none;margin-top: 14px;}#zoomIn{position: relativ;z-index: 900000000000;top: 0;bottom: 0;width: 55px;margin: auto;font-size: 28px;right: 4px;height: 55px;border-radius: 28px;border: none;background: rgba(0,0,0,0.6);color: #fff;text-decoration: none;}button,button:focus{outline:0}button,button:focus{-webkit-tap-highlight-color:transparent}#x img{display:inline !important}#zoomtext {transform: scale(1);transition: transform 0.2s ease-in-out;}body{display:block !important}</style><iframe src="'+n+'"></iframe><div class="tt"><button class="ripple" id="zoomIn">+</button><br><button class="ripple" id="zoomOut">-</button><br><button class="ripple" id="x"><img src="https://i.imgur.com/PwzENfV.png?sss" width="18px" height="18px" /></button></div>');$('#x').click(function(){$('.tt').hide();window.CallToAndroidFunction.setVisible();});var zoom=1;var zoomStep=0.2;document.getElementById("zoomIn").addEventListener("click",function(){zoom+=zoomStep;document.getElementsByTagName("iframe")[0].style.transform="scale("+zoom+")";});document.getElementById("zoomOut").addEventListener("click",function(){if(zoom>zoomStep){zoom-=zoomStep;document.getElementsByTagName("iframe")[0].style.transform="scale("+zoom+")";}});
-    
-}
-else if (g != null && g.startsWith("https://megacanais.com")) {
-    var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/spp/mc.js");
-    document.getElementsByTagName("head")[0].appendChild(linku);
-}
-else if (g != null && g.startsWith("https://playerhd.org/")) {
-
-    var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/spp/spplayersxx.js?fdcccccccdddddffff");
-    document.getElementsByTagName("head")[0].appendChild(linku);
-}
-else if (g != null && g.startsWith("http://totv.org")) {
-    $('body').append('<style>header{display:none}#hqplay{position: fixed;width: 100%;height: 100%;z-index: 900000000000000000;}#tvs{display:none}.info{display:none}body{display:block !important}</style>');
+}else if (needlexs != null && needlexs.startsWith("https://megafilmeshd50.top/player/index.php") || needlexs.startsWith("https://megafilmeshd50.com/player/index.php") || needlexs.startsWith("https://megafilmeshd50.top/player/mega.php") || needlexs.startsWith("https://megafilmeshd50.com/player/mega.php")){
+    var u = window.location.href;
+    if (u != null && u.endsWith("=no")){
+    var o = $('.btn-lista').attr('onClick');
+    o = o.replace("window.open('",'').replace("');",'');
+    window.top.location = "http://cdnplayer.tv/file:///android_asset/p3.html?" + o;
+    }else if (u != null && u.endsWith("=yes")){
+    var o = $('.btn-lista').attr('onClick');
+    o = o.replace("window.open('",'').replace("');",'');
+    window.location = "http://videomega.tv/" + o;
+    }else{
+    var o = $('.btn-lista').attr('onClick');
+    o = o.replace("window.open('",'').replace("');",'').replace('https://','').replace('http://','');
+    window.location = "http://giganet.tv/" + o;
     }
-    else if (g != null && g.startsWith("https://proxy.ec.cx/player30/")) {
+    $("iframe").remove();
+}else if (needlexs != null && needlexs.startsWith("https://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/player/")) {
+    function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+var o = getParameterByName('ut'); 
+var k = getParameterByName('video');
+k = k.replace('url=','video=').replace("player/mega1.php?id=",'');
+var of = "=https://megafilmeshd50.top/player/mega1.php?id=";
+     window.location.href = "https://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/player3/mega.php?video=" + k +"&ut=" + o;
+}
+else if (needlexs != null && needlexs.startsWith("https://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/player3/") || needlexs.startsWith("https://megafilmeshd50.top/player/mega1.php") || needlexs.startsWith("https://megafilmeshd50.com/cast/video.php")){
+   
+       
+    $("iframe").remove();
+    var u = window.location.href;
+    if (u != null && u.endsWith("=no")){
+        
+    var a = $(".tb-col").html();
+    a = a.replace('getPlayer(','').replace(/"/g,'').replace(/>/g,'').replace(/</g,'').replace(/'/g,"");
+    document.getElementsByTagName("body")[0].innerHTML = '<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form action="https://nplay.ml/f5.php?ut=no&" name="vote" method="post" style="display:none;"><input type="text" name="u" value="'+ a +'" /><input type="text" name="ut" value="no" /></form><script>document.forms["vote"].submit();</script>';
+       document.forms["vote"].submit(); 
+    
+    }else if (u != null && u.endsWith("=yes")){
+     var a = $(".tb-col").html();
+    a = a.replace('getPlayer(','').replace(/"/g,'').replace(/>/g,'').replace(/</g,'').replace(/'/g,"");
+    document.getElementsByTagName("body")[0].innerHTML = '<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form action="https://nplay.ml/f5.php?ut=no&" name="vote" method="post" style="display:none;"><input type="text" name="u" value="'+ a +'" /><input type="text" name="ut" value="yes" /></form><script>document.forms["vote"].submit();</script>';
+       document.forms["vote"].submit(); 
+    }else{
+     var a = $(".tb-col").html();
+    a = a.replace('getPlayer(','').replace(/"/g,'').replace(/>/g,'').replace(/</g,'').replace(/'/g,"");
+    document.getElementsByTagName("body")[0].innerHTML = '<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form action="https://nplay.ml/f5.php?ut=no&" name="vote" method="post" style="display:none;"><input type="text" name="u" value="'+ a +'" /></form><script>document.forms["vote"].submit();</script>';
+       document.forms["vote"].submit(); 
+    }
+}else if (needlexs != null && needlexs.startsWith("https://proxy.ec.cx/player30/") || needlexs.startsWith("https://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/player30")) {
     function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -390,26 +508,48 @@ var k = getParameterByName('video');
 k = k.replace('url=','video=').replace("player/mega1.php?id=",'');
 var of = "=https://megafilmeshd50.top/player/mega1.php?id=";
      window.location.href = "https://proxy.ec.cx/player3/mega.php?video=" + k +"&ut=" + o;
-}else{
-    setTimeout(function(){
-        var myEle = document.getElementById("modal-aviso");
-    if(myEle){
-    var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/all.js?haaaaaaaaaaaaahhllaaaaaaaaallllhhh88iiiiiiiu7776");
-    document.getElementsByTagName("head")[0].appendChild(linku);
+}else if (needlexs != null && needlexs.startsWith("https://proxy.ec.cx/player3/") || needlexs.startsWith("https://proxy") || needlexs.startsWith("https://encripted-enc") || needlexs.startsWith("https://megafilmeshd50.com/mfhd50/")) {
+    var u = window.location.href;
+    if (u != null && u.endsWith("=no")){
+        
+    var a = $(".tb-col").html();
+    a = a.replace('getPlayer(','').replace(/"/g,'').replace(/>/g,'').replace(/</g,'').replace(/'/g,"");
+    document.getElementsByTagName("body")[0].innerHTML = '<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form action="https://nplay.ml/f5.php?ut=no&" name="vote" method="post" style="display:none;"><input type="text" name="u" value="'+ a +'" /><input type="text" name="ut" value="no" /></form><script>document.forms["vote"].submit();</script>';
+       document.forms["vote"].submit(); 
+    
+    }else if (u != null && u.endsWith("=yes")){
+     
+    var a = $(".tb-col").html();
+    a = a.replace('getPlayer(','').replace(/"/g,'').replace(/>/g,'').replace(/</g,'').replace(/'/g,"");
+    document.getElementsByTagName("body")[0].innerHTML = '<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form action="https://nplay.ml/f5.php?ut=no&" name="vote" method="post" style="display:none;"><input type="text" name="u" value="'+ a +'" /><input type="text" name="ut" value="yes" /></form><script>document.forms["vote"].submit();</script>';
+       document.forms["vote"].submit(); 
+    }else{
+        
+    var a = $(".tb-col").html();
+    a = a.replace('getPlayer(','').replace(/"/g,'').replace(/>/g,'').replace(/</g,'').replace(/'/g,"");
+    document.getElementsByTagName("body")[0].innerHTML = '<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form action="https://nplay.ml/f5.php?ut=no&" name="vote" method="post" style="display:none;"><input type="text" name="u" value="'+ a +'" /></form><script>document.forms["vote"].submit();</script>';
+       document.forms["vote"].submit(); 
     }
-    },2000);
-    var currentUrl = document.referrer;
-    if(currentUrl.indexOf("/player3/") >= 0){
-        var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/all.js?haaaaaaaaaaaaahhllaaaaaaaaallllhhh88iiiiiiiu7776");
-    document.getElementsByTagName("head")[0].appendChild(linku);
-    }
-     document.getElementsByTagName("body")[0].style.display = 'block';   
-    }
-}
+}else if (needlexs != null && needlexs.startsWith("https://megafilmeshd50.com/parceria.php")) {
+    var gp = window.location.href;
+    gp = gp.replace("https://megafilmeshd50.com/parceria.php?","").replace("https://proxy.ec.cx/player30/mega.php?video=","https://megafilmeshd50.com/").replace("url=","video=");
+    window.top.location = gp;
+}   
+else if (needlexs != null && needlexs.startsWith("https://voe.sx")) {
+    var link;
+    link = document.createElement("script");
+    link.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/voe/dl.js?oo44ooo00o");
+    document.getElementsByTagName("head")[0].appendChild(link);
+}  
+else if (needlexs != null && needlexs.startsWith("https://megafilmeshd50") || needlexs.startsWith("http://megafilmeshd50")) {
+    var link;
+    link = document.createElement("script");
+    link.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/dls.js?oo44ooo00o");
+    document.getElementsByTagName("head")[0].appendChild(link);
+    
+    setInterval(function(){window.location.reload();},30000);
+     
+}else if (needlexs != null && needlexs.startsWith("https://play.megafilmeshds.com/embed/")){ var u = window.location.href; if (u != null && u.endsWith("=no")){ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f + "?ut=no"; },10000); }else if (u != null && u.endsWith("=yes")){ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f + "?ut=yes"; },10000); }else{ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f ; },10000); } }
+
 
 check = "true";
-
