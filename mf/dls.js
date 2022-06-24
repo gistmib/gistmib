@@ -32,7 +32,6 @@ if($(".metaframe")[0]){
         
  var jj = $(".metaframe").attr("src");
         aa = jj;
-        kka = "false";
         var gad = window.location.href; 
 if (gad != null && gad.endsWith("yes")) {
 ggf();
@@ -73,7 +72,7 @@ function go() {
 
     var hh = aa;
     top.location.href ="http://giganet.tv/" + hh;
-   
+   kka = "true";   
 }
 
 
@@ -81,7 +80,7 @@ function ggf() {
    
     var hh = aa;
    top.location.href ="http://giganet.tv/" + hh;
-   
+   kka = "true";   
 }
 
 
@@ -89,6 +88,6 @@ function ia9() {
  
    var hh = aa;
    top.location.href ="http://giganet.tv/https://playmys.xtgem.com/download.php?u=" + hh;
-   
+   kka = "true";   
 }
 }
