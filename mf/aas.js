@@ -18,9 +18,8 @@ function jja(){
 $('#playcontainer').bind('DOMNodeInserted DOMNodeRemoved', function() {
     if($(".metaframe")[0]){
     if(kka == "true"){
+         aa = $(".metaframe").attr("src");
         setInterval(function(){
-        var jj = $(".metaframe").attr("src");
-        aa = jj;
         load();
         kka = "false";
     },500);
