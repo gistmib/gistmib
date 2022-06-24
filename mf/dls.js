@@ -23,9 +23,9 @@ window.CallToAndroidFunction1.setVisible();
 jja();
 function jja(){
 if($(".metaframe")[0]){
+aa = $(".metaframe").attr("src");
         
- var jj = $(".metaframe").attr("src");
-        aa = jj;
+setInterval(function(){
         var gad = window.location.href; 
 if (gad != null && gad.endsWith("yes")) {
 ggf();
@@ -34,15 +34,14 @@ go();
 }else {
 ia9();
 }
-    
+},500); 
 }else{
     
 $('#playcontainer').bind('DOMNodeInserted DOMNodeRemoved', function() {
     if($(".metaframe")[0]){
     if(kka == "true"){
+       aa = $(".metaframe").attr("src");
          setInterval(function(){
-     var jj = $(".metaframe").attr("src");
-        aa = jj;
         kka = "false";
         var gad = window.location.href; 
 if (gad != null && gad.endsWith("yes")) {
