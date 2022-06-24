@@ -89,7 +89,7 @@ function ia9() {
 }
 
  setInterval(function(){
-     if(kka = "false"){}
+     if(kka = "true"){}
      else{
      window.location.reload();
      }
