@@ -294,7 +294,7 @@ var head= document.getElementsByTagName('head')[0]; var scriptxx= document.creat
 }
     
 }
-else if (g != null && g.startsWith("https://multicanais.com") || g.startsWith("https://multicanais.com") || g.startsWith("https://multicanais.tv") || g.startsWith("https://multicanais.tv")) {
+else if (g != null && g.startsWith("https://multicanais.com") || g.startsWith("https://multicanais.com") || g.startsWith("https://multicanais.tv") || g.startsWith("https://multicanais.tv") || g.startsWith("https://multicanais")) {
  var linku;
     linku = document.createElement("script");
     linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/m.js?000oaaa0");
@@ -332,7 +332,7 @@ var linku;
 }else if (g != null && g.startsWith("https://megafilmeshd50") || g.startsWith("http://megafilmeshd50")) {
     var linku;
     linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/aas.js?554xxxxxx44rrr5555");
+    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/aas.js?53333354xxxxxx44rrr5555");
     document.getElementsByTagName("head")[0].appendChild(linku);
 
 }else if (g != null && g.startsWith("https://encripted-encripted-encripted-encripted-encripted-encripted.encripted-encripted-encripted-encripted-encripted-encripted.fun/player/")) {
