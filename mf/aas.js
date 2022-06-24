@@ -7,9 +7,8 @@ jja();
 function jja(){
     
     if($(".metaframe")[0]){
+        aa = $(".metaframe").attr("src");
          setInterval(function(){
-        var jj = $(".metaframe").attr("src");
-        aa = jj;
         load();
     },500);
     
