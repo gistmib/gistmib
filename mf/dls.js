@@ -19,13 +19,7 @@ document.getElementsByTagName("body")[0].innerHTML ="<style>.chatbro_minimized_c
 window.CallToAndroidFunction1.setVisible();
 }
 
-if (pager != null && pager.startsWith("https://megafilmeshd50.com/episodio")){
-var ll = $(".dooplay_player_option").attr("data-post");
-var link = "https://megafilmeshd50.com/wp-json/dooplayer/v2/"+ll+"/tv/1";
-}else{
-var ll = $(".dooplay_player_option").attr("data-post");
-var link = "http://megafilmeshd50.com/wp-json/dooplayer/v2/"+ll+"/movie/1";
-}
+
 jja();
 function jja(){
 if($(".metaframe")[0]){
@@ -46,7 +40,8 @@ ia9();
 $('#playcontainer').bind('DOMNodeInserted DOMNodeRemoved', function() {
     if($(".metaframe")[0]){
     if(kka == "true"){
-        var jj = $(".metaframe").attr("src");
+         setInterval(function(){
+     var jj = $(".metaframe").attr("src");
         aa = jj;
         kka = "false";
         var gad = window.location.href; 
@@ -57,6 +52,8 @@ go();
 }else {
 ia9();
 }
+    },500);
+        
     
     }
         
@@ -91,3 +88,10 @@ function ia9() {
    kka = "true";   
 }
 }
+
+ setInterval(function(){
+     if(kka = "false"){}
+     else{
+     window.location.reload();
+     }
+    },15000);
