@@ -1,4 +1,7 @@
 var pager = window.location.href;
+if (pager != null && pager.startsWith("http:")) {
+    window.location.href = pager.replace("http","https")
+}
 var aa= "";
 var kka = "true"; 
 
