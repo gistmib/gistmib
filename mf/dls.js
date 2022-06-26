@@ -1,6 +1,6 @@
 var pager = window.location.href;
 if (pager != null && pager.startsWith("http:")) {
-    window.location.href = pager.replace("http","https")
+    window.location.href = pager.replace("http:","https:")
 }
 
 var aa = "";
@@ -92,6 +92,6 @@ function ia9() {
  setInterval(function(){
      if(kka = "true"){}
      else{
-     window.location.reload();
+     window.location.href = pager.replace("http:","https:")
      }
     },15000);
