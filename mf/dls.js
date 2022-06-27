@@ -1,4 +1,4 @@
-var pager = window.location.href;window.CallToAndroidFunction1.setVisible();
+var pager = window.location.href;
 if (pager != null && pager.startsWith("http:")) {
     window.location.href = pager.replace("http:","https:")
 }
@@ -90,8 +90,7 @@ function ia9() {
 
 
  setInterval(function(){
-     if(kka = "true"){}
-     else{
+     if(aa == ""){
      window.location.href = pager.replace("http:","https:")
      }
     },15000);
