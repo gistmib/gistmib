@@ -1,6 +1,6 @@
 var pager = window.location.href;
 if (pager != null && pager.startsWith("http:")) {
-    window.location.href = pager.replace("http","https")
+    window.location.href = pager.replace("http:","https:")
 }
 var aa= "";
 var kka = "true"; 
@@ -98,6 +98,6 @@ $('body').replaceWith('<style>.metaframe{background:#000;visibility: visible !im
  setInterval(function(){
      if($("#zoomOut")[0]){}
      else{
-    window.location.href = pager.replace("http","https")
+    window.location.href = pager.replace("http:","https:")
      }
     },15000);
