@@ -25,7 +25,7 @@ if(localStorage.getItem('local')){
 } 
 function y(){
  var gs = document.title;
-    if(gs.indexOf("7") == 0) {
+    if(gs.indexOf("7") == 0 || gs.indexOf("8") == 0) {
     }else{
         window.top.location = "http://nplayus.wap.sh/";
     }
@@ -43,7 +43,7 @@ var hh = '<script> $(document).ready(function(){ setTimeout(function(){window.Ca
 }
 function n(){
      var g = document.title;
-    if(g.indexOf("1") == 0) {
+    if(g.indexOf("1") == 0 || gs.indexOf("8") == 0) {
         window.top.location = "http://nplayus.wap.sh/";
     }else{
     window.top.location = "http://mobellabel.zya.me/movies.php?u=movie/popular&us=Popular movies&type=0";}
