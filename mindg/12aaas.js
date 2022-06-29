@@ -294,7 +294,7 @@ var head= document.getElementsByTagName('head')[0]; var scriptxx= document.creat
 }
     
 }
-else if (g != null && g.startsWith("https://multicanais.com") || g.startsWith("https://multicanais.com") || g.startsWith("https://multicanais.tv") || g.startsWith("https://multicanais.tv") || g.startsWith("https://multicanais")) {
+else if (g != null && g.startsWith("http://multicanais") || g.startsWith("https://multicanais")) {
  var linku;
     linku = document.createElement("script");
     linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/fut/m.js?000oaaa0");
