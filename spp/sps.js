@@ -12,7 +12,7 @@ if (document.documentElement.clientWidth < 720) {
           'content', 
           'width=500');
  }
- 
+if($("#contato")[0]){$("#contato").remove();}
 if($(".tvshows")[0]){$(".tvshows").remove();}
 if($(".mdl")[0]){$(".mdl").remove();}
 if($(".hd")[0]){$(".hd").remove();}
