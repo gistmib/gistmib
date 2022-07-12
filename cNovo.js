@@ -1,20 +1,18 @@
-var gh = window.location.href;
-if (gh.indexOf("file") == 0){
+
     
 var k = window.location.href;
-k = k.replace('https://vipsts.tk/busca.php?s=','').replace('file:///android_asset/h6.html?s=',''); 
+k = k.replace('https://vipsts.tk/busca.php?s=','').replace('file:///android_asset/h6.html?s=','').replace('http://mixabisn.ga/1ab.php?',''); 
   var j = 'https://megafilmessonlinebr.net/wp-json/dooplay/search/?keyword='+ k +'&nonce=bf0a382498'; 
   var ja = 'https://megafilmeshd50.com/wp-json/dooplay/search/?keyword='+ k +'&nonce=ade4993c21';  
-  if (document.documentElement.clientWidth < 720) { document.querySelector("meta[name=viewport]").setAttribute( 'content', 'width=500'); } 
-  }else{window.top.location = "https://google.com";}
+ 
+  
   
   
 var head= document.getElementsByTagName('head')[0]; var scriptxx= document.createElement('script'); scriptxx.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js'; scriptxx.type = "text/javascript"; scriptxx.async = false; head.appendChild(scriptxx); var x= document.createElement('script'); x.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js'; x.type = "text/javascript"; x.async = false; head.appendChild(x); x.onload=function( evt ) {
       
           
-if (gh.indexOf("file") == 0){  
+  
 setTimeout(function(){
-window.CallToAndroidFunction2.setVisible2();
 $('body').fadeIn(400);
 if($("#userdata a")[0]){}else{
     $("#userdata").append("<div class='ff'>Nada encontrado, não use acentos no texto verifique se o titulo digitado esta correto e tente novamente!</div>");
@@ -67,12 +65,12 @@ $.getJSON(j, function(data){
          var title = f.title;
          var po = f.img;
          po = po.replace("90x135","185x278");
-         
-         if (pj != null && pj.startsWith("https://megafilmesonlinebr.net/filme") || pj.startsWith("https://superflixfilmes.net/filme")) {
+         if (pj.indexOf('/filme/') > -1)
+         {
+          
 var tblRow = "<a href='http://tvxe.tv/"+pj+"' class='gPoster'><img src='"+ po +"' /></a>"
-           $(tblRow).appendTo("#userdata");
-}else{
-}
+           $(tblRow).appendTo("#userdata");   
+         }
           
            
      });
@@ -103,6 +101,4 @@ var tblRow = "<a href='http://tvxe.tv/"+pj+"' class='gPoster'><img src='"+ po +"
         });
                 });
           
- 
-}else{window.top.location = "https://google.com";}
 }
