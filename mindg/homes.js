@@ -13,6 +13,6 @@ x.onload=function( evt ) { (function($) {
 if (typeof(element) != 'undefined' && element != null)
 {
   var link; link = document.createElement("script"); link.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/spp/sps.js"); document.getElementsByTagName("head")[0].appendChild(link); setInterval(function(){if($(".dts")[0]){clearInterval();}else{window.location.reload();}},30000);}
-  
+  } 
   })(jQuery); }
 check = "true";
