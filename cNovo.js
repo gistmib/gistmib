@@ -13,6 +13,7 @@ var head= document.getElementsByTagName('head')[0]; var scriptxx= document.creat
           
   
 setTimeout(function(){
+    window.CallToAndroidFunction2.setVisible2()
 $('body').fadeIn(400);
 if($("#userdata a")[0]){}else{
     $("#userdata").append("<div class='ff'>Nada encontrado, não use acentos no texto verifique se o titulo digitado esta correto e tente novamente!</div>");
