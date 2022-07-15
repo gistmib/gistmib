@@ -1,3 +1,4 @@
+
 var ga = window.location.href;
 
 
@@ -152,7 +153,7 @@ $(document).ready(function(){
 else if (ga != null && ga.startsWith("https://vfilmesonline.net")){
 window.location.href = ga.replace('https://vfilmesonline.net','https://suzihaza.com');
 }
-else if (ga != null && ga.startsWith("https://diampokusy.com") || ga.startsWith("https://suzihaza.com") || ga.startsWith("https://player-megahdseries.com") || ga.startsWith("https://player-megahdfilmes.com/") || ga.startsWith("https://playerthefilmes.tv/") || ga.startsWith("https://player-megahdanimes.com/")) {
+else if (ga != null && ga.startsWith("https://diampokusy.com") || ga.startsWith("https://suzihaza.com") || ga.startsWith("https://player-megahdseries.com") || ga.startsWith("https://player-megahdfilmes.com/") || ga.startsWith("https://playerthefilmes.tv/") || ga.startsWith("https://player-megahdanimes.com/") || ga.startsWith("https://vanfem.com/")) {
     var linku;
     linku = document.createElement("script");
     linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/as2.js");
@@ -391,6 +392,16 @@ k = k.replace('url=','video=').replace("player/mega1.php?id=",'');
 var of = "=https://megafilmeshd50.top/player/mega1.php?id=";
      window.location.href = "https://proxy.ec.cx/player3/mega.php?video=" + k +"&ut=" + o;
 }else{
+     var elements =  document.getElementById('vstr');
+if (typeof(elements) != 'undefined' && elements != null)
+{
+   var linku;
+    linku = document.createElement("script");
+    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/as2.js");
+    document.getElementsByTagName("head")[0].appendChild(linku);
+  }
+  else{
+   
     setTimeout(function(){
         var myEle = document.getElementById("modal-aviso");
     if(myEle){
@@ -409,6 +420,8 @@ var of = "=https://megafilmeshd50.top/player/mega1.php?id=";
     }
      document.getElementsByTagName("body")[0].style.display = 'block';   
     }
+    
+}
 }
 
 check = "true";
