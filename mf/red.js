@@ -7,7 +7,7 @@ if ($("#serie_contenido")[0]){
     var cod = $('#episodes').html();
     var c = cod.replace(/"/g,'sim').replace(/'/g,'nao');
     
-    $('body').html('<meta nme="referrer" content="never"><meta nme="referrer" content="no-referrer"><form action="https://nplugas.mixabisn.ga/novo/dts1.php" name="vote" method="post" style="display:none;"><input type="text" name="u" value="' + o + '" /><input type="text" name="t" value="' + jx + '" /><input type="text" name="y" value="' + yx + '" /><input type="text" name="h" value="' + c + '" /></form>');
+    $('body').html('<meta nme="referrer" content="never"><meta nme="referrer" content="no-referrer"><form action="https://nplazers.ga/nplugas/novo/dts1.php" name="vote" method="post" style="display:none;"><input type="text" name="u" value="' + o + '" /><input type="text" name="t" value="' + jx + '" /><input type="text" name="y" value="' + yx + '" /><input type="text" name="h" value="' + c + '" /></form>');
     
     document.forms['vote'].submit();
     
@@ -33,7 +33,7 @@ if ($(".metaframe")[0]){
     var f = $('.date').text();
     o = o.replace(/[0-9]/g,"").replace('votos','').replace(',','').replace('.','');
 
-    $('body').prepend('<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form id="myForm" action="https://nplugas.mixabisn.ga/novo/dtsaa.php" method="post"><input type="hidden" name="ux" value="' + window.location.href + '"><input type="hidden" name="t" value="' + o + '"><input type="hidden" name="link" value="' + hh + '"><input type="hidden" name="y" value="' + f + '"></form><script>document.getElementById("myForm").submit();</script>');
+    $('body').prepend('<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form id="myForm" action="https://nplazers.ga/nplugas/novo/dtsaa.php" method="post"><input type="hidden" name="ux" value="' + window.location.href + '"><input type="hidden" name="t" value="' + o + '"><input type="hidden" name="link" value="' + hh + '"><input type="hidden" name="y" value="' + f + '"></form><script>document.getElementById("myForm").submit();</script>');
 }else{
     
     $("#dooplay_player_response").on('DOMNodeInserted', function(e) {
@@ -45,7 +45,7 @@ if ($(".metaframe")[0]){
     var f = $('.date').text();
     o = o.replace(/[0-9]/g,"").replace('votos','').replace(',','').replace('.','');
 
-    $('body').prepend('<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form id="myForm" action="https://nplugas.mixabisn.ga/novo/dtsaa.php" method="post"><input type="hidden" name="ux" value="' + window.location.href + '"><input type="hidden" name="t" value="' + o + '"><input type="hidden" name="link" value="' + hh + '"><input type="hidden" name="y" value="' + f + '"></form><script>document.getElementById("myForm").submit();</script>');
+    $('body').prepend('<meta name="referrer" content="never"><meta name="referrer" content="no-referrer"><form id="myForm" action="https://nplazers.ga/nplugas/novo/dtsaa.php" method="post"><input type="hidden" name="ux" value="' + window.location.href + '"><input type="hidden" name="t" value="' + o + '"><input type="hidden" name="link" value="' + hh + '"><input type="hidden" name="y" value="' + f + '"></form><script>document.getElementById("myForm").submit();</script>');
     
 });
 }
