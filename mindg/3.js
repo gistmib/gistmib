@@ -69,7 +69,7 @@ function n(){
     if(ga.indexOf("1") == 0) {
         window.top.location = "http://nplayus.wap.sh/";
     }else{
-    window.top.location = "http://mobellabel.zya.me/movies.php?u=tv/top_rated&us=Latest series&type=1";}
+    window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=tv/top_rated&us=Latest series&type=1";}
 }
 
 
