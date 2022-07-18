@@ -96,7 +96,7 @@ function n(){
     if(g){
       window.top.location = g;  
     }else{
-    window.top.location = "http://mobellabel.zya.me/movies.php?u=movie/top_rated&us=Latest movies&type=0";
+    window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/top_rated&us=Latest movies&type=0";
 }
         
     }
