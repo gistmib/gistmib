@@ -169,6 +169,7 @@ if(localStorage.getItem('cats')){
 
 
 function kka(){
+    if(navigator.onLine){
     if(aat == "yyx"){}else{
 fetch('//nplazers.ga/one.php?url=' + lots /*, options */)
     .then((response) => response.text())
@@ -187,5 +188,6 @@ fetch('//nplazers.ga/one.php?url=' + lots /*, options */)
         
         console.warn(error);
     });
+    }
     }
 }
