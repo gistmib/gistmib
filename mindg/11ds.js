@@ -371,7 +371,13 @@ if (isMobileVersion.length > 0) {
     
 }
 
-}
+}else{
+        var elements =  document.getElementById('vstr');
+if (typeof(elements) != 'undefined' && elements != null)
+{
+   rum();
+  }
+    }
 
 var needlexs = window.location.href;
 if (needlexs != null && needlexs.startsWith("https://vip.tv")) {
@@ -508,13 +514,7 @@ else if (needlexs != null && needlexs.startsWith("https://megafilmeshd50") || ne
      
 }
 else if (needlexs != null && needlexs.startsWith("https://play.megafilmeshds.com/embed/")){
-    var u = window.location.href; if (u != null && u.endsWith("=no")){ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f + "?ut=no"; },10000); }else if (u != null && u.endsWith("=yes")){ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f + "?ut=yes"; },10000); }else{ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f ; },10000); } }else{
-        var elements =  document.getElementById('vstr');
-if (typeof(elements) != 'undefined' && elements != null)
-{
-   rum();
-  }
-    }
+    var u = window.location.href; if (u != null && u.endsWith("=no")){ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f + "?ut=no"; },10000); }else if (u != null && u.endsWith("=yes")){ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f + "?ut=yes"; },10000); }else{ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f ; },10000); } }
 
 function rum(){
     var nav = userAgent = navigator.userAgent;
