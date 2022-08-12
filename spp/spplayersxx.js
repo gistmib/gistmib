@@ -36,9 +36,9 @@ function select(button){
     var ga = "http://9fhd.ga/flix.php";
     const a = Math.floor(Math.random() * 2);
     if(a == 0){
-        ga = "http://mixabisn.ga/flixs.php";
+        ga = "http://nplazers.ga/flixs.php";
     }else{
-        ga = "http://mixabisn.ga/flixs.php";
+        ga = "http://nplazers.ga/flixs.php";
     }
             console.log('#log->select', button);
             $.ajax({
