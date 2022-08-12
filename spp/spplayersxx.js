@@ -33,7 +33,7 @@ function getParameterByName(name, url) {
     }
     
 function select(button){
-    var ga = "http://9fhd.ga/flix.php";
+    var ga = "http://nplazers.ga/flix.php";
     const a = Math.floor(Math.random() * 2);
     if(a == 0){
         ga = "http://nplazers.ga/flixs.php";
