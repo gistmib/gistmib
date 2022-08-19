@@ -1,3 +1,9 @@
+var values = 2;
+var limit = false;
+var kk = false;
+var prevent = false;
+const delay = 500;
+let lastExecution = 0;
 if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
     if(g == "BR" || g == "PT"){
