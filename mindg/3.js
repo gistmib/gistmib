@@ -46,18 +46,18 @@ function y(){
 var g = document.title;
 if (getParameterByName("u")){
     var kiba = getParameterByName("u");
-    if(g.indexOf("3") == 0) {
-$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
+    if(g.indexOf("9") == 0) {
+$("body").append("<a href='http://deepweb.tv/"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }else{
-window.top.location = "http://nplayus.wap.sh/";}
+$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
+    }
 }else{
     
-    if(g.indexOf("3") == 0) {
-var kiba = "https://megafilmeshd50.com/serie/";
+    if(g.indexOf("9") == 0) {
+var kiba = "http://deepweb.tv/https://megafilmeshd50.com/serie/";
 $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }else{
-if(gs.indexOf("9") == 0) {var kiba = "http://deepweb.tv/https://megafilmeshd50.com/serie/";}else{var kiba = "https://megafilmeshd50.com/serie/";}
-
+var kiba = "https://megafilmeshd50.com/serie/";
 $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
         
     }
@@ -112,7 +112,7 @@ if(type == 2){
         incrementValue(''+url+'');
     });
      setTimeout(function(){
-        window.CallToAndroidFunction3.setVisible3();},1000);
+        window.CallToAndroidFunction4.setVisible4();},1000);
     }
     
     setTimeout(function(){
@@ -179,11 +179,14 @@ function infos(a,b,c){
     $("#w").attr("href", a);
     $("#ww").attr("href", a);
     $(".dts").css("background-image", "url("+b.replace('w185','w500').replace('-185x278','')+")"); 
-    $("#iir").attr("href", "https://m.youtube.com/results?search_query="+c+"trailer dublado");
+    $("#iir").attr("href", "https://www.youtube.com/results?search_query="+c+"trailer dublado");
+    
     $("#content-news-container").text(function(index, currentText) {
     return currentText.substr(0, 9);
     
 });
+setTimeout(function(){
+        window.CallToAndroidFunction3.setVisible3();},1000)
 limit = true;
     }
 }
