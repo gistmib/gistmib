@@ -179,7 +179,7 @@ function infos(a,b,c){
     $("#w").attr("href", a);
     $("#ww").attr("href", a);
     $(".dts").css("background-image", "url("+b.replace('w185','w500').replace('-185x278','')+")"); 
-    $("#iir").attr("href", "https://www.youtube.com/results?search_query="+c+"trailer dublado");
+    $("#iir").attr("href", "https://m.youtube.com/results?search_query="+c+"trailer dublado");
     $("#content-news-container").text(function(index, currentText) {
     return currentText.substr(0, 9);
     
