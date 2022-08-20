@@ -48,23 +48,21 @@ var g = document.title;
 if (getParameterByName("u")){
     var kiba = getParameterByName("u");
     
-    if(gs.indexOf("9") == 0) {
-    if(g.indexOf("6") == 0 || g.indexOf("5") == 0) {
+    if(gs.indexOf("7") == 0 || gs.indexOf("8") == 0 || gs.indexOf("9") == 0) {
+    if(g.indexOf("9") == 0) {
 $("body").append("<a href='http://deepweb.tv/"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }else{
 $("body").append("<a href='http://deepweb.tv/"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
  }
     }else{   
-    if(g.indexOf("6") == 0 || g.indexOf("5") == 0) {
+    
 $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
-    }else{
-$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
- }
+    
     }  
 }else{
     
-    if(g.indexOf("6") == 0 || g.indexOf("5") == 0) {
-var kiba = "https://megafilmeshd50.com/filme/";
+    if(g.indexOf("9") == 0) {
+var kiba = "http://deepweb.tv/https://megafilmeshd50.com/filme/";
 $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }else{
 var kiba = "https://megafilmeshd50.com/filme/";
@@ -95,10 +93,10 @@ $("body").append("<a href='https://megafilmessonlinebr.net"+ kiba +"' id='w'>g</
 }else{
      if(gs.indexOf("9") == 0) {
 var kiba = "http://deepweb.tv/https://megafilmessonlinebr.net/filme/";
-$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();setInterval(function(){$('#w')[0].click();},5000);<\/script>");
+$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
      }else{
 var kiba = "https://megafilmessonlinebr.net/filme/";
-$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();setInterval(function(){$('#w')[0].click();},5000);<\/script>");
+$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
      }
    }
        
