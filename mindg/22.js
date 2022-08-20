@@ -89,7 +89,7 @@ kiba = kiba.replace("@","?")
     if(gs.indexOf("9") == 0) {
     window.location.href = "http://deepweb.tv/https://megafilmessonlinebr.net"+ kiba +"";
     }else{
-$("body").append("<a href='https://megafilmessonlinebr.net"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();setInterval(function(){$('#w')[0].click();},5000);<\/script>");
+$("body").append("<a href='https://megafilmessonlinebr.net"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }
  
 }else{
