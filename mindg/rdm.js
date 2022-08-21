@@ -1,16 +1,86 @@
 var l = window.location.href;
 l = l.replace(/@/g,"&");
+var gsa = document.title;
+var d = "";
+if(gsa.indexOf("9") == 0) {
+   
 $(document).ready(function(){
+  
+if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/reds.")){
+    var b = getParameterByName("uxs");
+    var c = getParameterByName("n");
+    window.location.href = "http://deepweb.tv/http://zbigs.cf/dtn.php?ux="+b+"&n="+c+"";
     
-function getParameterByName(name, url) {
-    if (!url) url = l;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/redss.")){
+    
+var b = getParameterByName("uxs");
+var c = getParameterByName("n");
+    window.location.href = "http://deepweb.tv/http://zbigs.cf/ss.php?ux="+b+"&n="+c+"";
+    
+    
+}else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/redsx.")){
+    var b = getParameterByName("uxs");
+    var c = getParameterByName("n");
+    window.location.href = "http://deepweb.tv/http://zbigs.cf/dtnx.php?ux="+b+"&n="+c+"";
+    
+}else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/redssx.")){
+    
+var b = getParameterByName("uxs");
+var c = getParameterByName("n");
+window.location.href = "http://deepweb.tv/http://zbigs.cf/ssx.php?ux="+b+"&n="+c+"";
+    
 }
+
+else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/r.")){
+
+var b = getParameterByName("uxs");
+
+    window.location.href = "http://deepweb.tv/http://nplazers.ga/nplaz/novo/dt.php?ux="+b+"";
+  
+    
+}
+else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/sred.")){
+    
+var b = getParameterByName("uxs");
+var c = getParameterByName("h");
+    window.location.href = "http://deepweb.tv/http://nplazers.ga/nplaz/flix/ssss.php?u="+b+"&h="+c+"";
+    
+}
+else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/rr.")){
+
+var a = getParameterByName("a");
+var b = getParameterByName("b");
+var c = getParameterByName("c");
+d = getParameterByName("d");
+
+    window.location.href = "http://deepweb.tv/http://nplazers.ga/novo/dts1.php?u="+a+"&t="+b+"&y="+c+"";
+
+    
+    
+}
+else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/ru.")){
+
+var a = getParameterByName("a");
+var b = getParameterByName("b");
+var c = getParameterByName("c");
+d = getParameterByName("d");
+window.location.href = "http://deepweb.tv/http://nplazers.ga/novo/dtsaa.php?ux="+a+"&t="+b+"&link="+c+"&y="+d+"";
+}else{
+    
+    
+var b = getParameterByName("ux");
+
+    window.location.href = "https://nplazers.ga/nplaz/novo/dt.php?ux="+b+"";
+
+    
+}
+
+});
+}
+else{
+    
+$(document).ready(function(){
+   
 
 if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/reds.")){
     var b = getParameterByName("uxs");
@@ -97,8 +167,76 @@ document.getElementById('myForm').submit();
     
 }
 
+
+});
+}
+
 function kka(){
 localStorage.setItem("ii10","true");
 }
-});
+ 
+function getParameterByName(name, url) {
+    if (!url) url = l;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+
+function returns(aa, url,type){
+var da = ""
+if(!d == ""){
+da = "<div>"+d.replace(/merda/g,'<').replace(/bosta/g,'>').replace(/testes/g,'"').replace(/nao/g,"'").replace(/sim/g,'"')+"</div>";
+da = $(da).find("li").each(function(){
+    if(!$(this).find(".iteme")[0]){
+        var t=$(this).find("a").attr("href");
+        $(this).append('<a class="iteme ripples" onclicke="'+t+'"><img src="https://i.imgur.com/3vNCxdL.png" width="35px" style="filter: invert(100%);" /> </a>');
+}
+}).end().html();
+setTimeout(function(){
+    alert(da);
+document.write("<base href='"+getBaseURL(url)+"' />"+b64DecodeUnicode(aa)+"<script>var dc = '"+da+"';$('#episodes').append(dc);$(document).ready(function(){$('.iteme').click(function(){var ff = $(this).attr('onclicke');gguz(ff)});})</script>");
+document.close();
+    
+},0)
+}else{
+    setTimeout(function(){
+    
+document.write("<base href='"+getBaseURL(url)+"' />"+b64DecodeUnicode(aa));
+document.close();
+    
+},0)}
+
+ 
+}
+function getBaseURL(u) {
+    var url = u;  // entire url including querystring - also: window.location.href;
+    var baseURL = url.substring(0, url.indexOf('/', 14));
+    if (baseURL.indexOf('http://localhost') != -1) {
+        // Base Url for localhost
+        var url = u;  // window.location.href;
+        var pathname = location.pathname;  // window.location.pathname;
+        var index1 = url.indexOf(pathname);
+        var index2 = url.indexOf("/", index1 + 1);
+        var baseLocalUrl = url.substr(0, index2);
+        return baseLocalUrl + "/";
+    }
+    else {
+        // Root Url for domain name
+        return baseURL + "/";
+    }
+
+}
+function done(aa){
+    $("#episodes").append(aa);
+}
+function b64DecodeUnicode(str) {
+        // Going backwards: from bytestream, to percent-encoding, to original string.
+        return decodeURIComponent(atob(str).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    }
 check = "true";
