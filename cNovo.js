@@ -1,6 +1,7 @@
 var k = window.location.href;
 var gsa = document.title;
 if(gsa.indexOf("9") == 0) {
+    alert("zzz")
 k = k.replace('https://vipsts.tk/busca.php?s=','').replace('file:///android_asset/h6.html?s=','').replace('http://mixabisn.ga/1ab.php?',''); 
   var j = 'http://deepwebs.tv/https://megafilmessonlinebr.net/?s='+ k +''; 
   var ja = 'http://deepwebs.tv/https://megafilmeshd50.com/wp-json/dooplay/search/?keyword='+ k +'&nonce=ade4993c21';  
@@ -16,7 +17,7 @@ setTimeout(function(){
     
 $('body').fadeIn(400);
 if($("#userdata a")[0]){}else{
-    $("#userdata").append("<div class='ff'>Nada encontrado, nПлкo use acentos no texto verifique se o titulo digitado esta correto e tente novamente!</div>");
+    $("#userdata").append("<div class='ff'>Nada encontrado, não use acentos no texto verifique se o titulo digitado esta correto e tente novamente!</div>");
     }
  },2000);
 var next = Math.floor(Math.random() * 900) + 1;
