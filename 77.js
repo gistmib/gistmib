@@ -1,1 +1,45 @@
-var _0xf70e=["\x68\x72\x65\x66","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x66\x69\x6C\x65\x3A\x2F\x2F\x2F\x61\x6E\x64\x72\x6F\x69\x64\x5F\x61\x73\x73\x65\x74","\x69\x6E\x64\x65\x78\x4F\x66","\x6C\x6F\x67","\x64\x61\x74\x61","\x67\x65\x74\x49\x74\x65\x6D","\x68\x69\x64\x65","\x2E\x6E\x6F\x72\x6D\x61\x6C","\x2E\x68\x64","\x66\x6F\x72\x45\x61\x63\x68","\x64\x6F\x63\x75\x6D\x65\x6E\x74\x45\x6C\x65\x6D\x65\x6E\x74","\x6F\x62\x73\x65\x72\x76\x65","\x61\x64\x75\x6C\x74","\x2E\x6D\x61\x74\x75\x32","\x63\x6C\x69\x63\x6B","\x73\x65\x6C\x65\x63\x74\x65\x64","\x72\x65\x6D\x6F\x76\x65\x43\x6C\x61\x73\x73","\x2E\x66\x69\x6C\x6D\x65\x73\x31\x20\x75\x6C\x20\x6C\x69","\x63\x6C\x61\x73\x73","\x61\x74\x74\x72","\x6F\x6E","\x73\x65\x6C\x65\x63\x74\x65\x64\x33","\x2E\x66\x69\x6C\x6D\x65\x73\x32\x20\x75\x6C\x20\x6C\x69","\x73\x65\x6C\x65\x63\x74\x65\x64\x32","\x2E\x73\x65\x72\x69\x65\x73\x31\x20\x75\x6C\x20\x6C\x69","\x73\x65\x6C\x65\x63\x74\x65\x64\x34","\x2E\x73\x65\x72\x69\x65\x73\x32\x20\x75\x6C\x20\x6C\x69","\x72\x65\x61\x64\x79","\x74\x6F\x70","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x67\x6F\x6F\x67\x6C\x65\x2E\x63\x6F\x6D"];var gh=window[_0xf70e[1]][_0xf70e[0]];if(gh[_0xf70e[3]](_0xf70e[2])== 0){$(document)[_0xf70e[28]](function(){var _0xcc9dx2= new MutationObserver(function(_0xcc9dx3){_0xcc9dx3[_0xf70e[10]](function(_0xcc9dx4){console[_0xf70e[4]](_0xcc9dx4);if(localStorage[_0xf70e[6]](_0xf70e[5])){$(_0xf70e[8])[_0xf70e[7]]()}else {$(_0xf70e[9])[_0xf70e[7]]()}})});_0xcc9dx2[_0xf70e[12]](document[_0xf70e[11]],{attributes:true,characterData:true,childList:true,subtree:true,attributeOldValue:true,characterDataOldValue:true});if(localStorage[_0xf70e[6]](_0xf70e[13])){$(_0xf70e[14])[_0xf70e[7]]()};$(_0xf70e[18])[_0xf70e[21]](_0xf70e[15],function(){$(_0xf70e[18])[_0xf70e[17]](_0xf70e[16]);$(this)[_0xf70e[20]](_0xf70e[19],_0xf70e[16])});$(_0xf70e[23])[_0xf70e[21]](_0xf70e[15],function(){$(_0xf70e[23])[_0xf70e[17]](_0xf70e[22]);$(this)[_0xf70e[20]](_0xf70e[19],_0xf70e[22])});$(_0xf70e[25])[_0xf70e[21]](_0xf70e[15],function(){$(_0xf70e[25])[_0xf70e[17]](_0xf70e[24]);$(this)[_0xf70e[20]](_0xf70e[19],_0xf70e[24])});$(_0xf70e[27])[_0xf70e[21]](_0xf70e[15],function(){$(_0xf70e[27])[_0xf70e[17]](_0xf70e[26]);$(this)[_0xf70e[20]](_0xf70e[19],_0xf70e[26])})})}else {window[_0xf70e[29]][_0xf70e[1]]= _0xf70e[30]}
+$(document).ready(function () {
+
+var mutationObserver = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    console.log(mutation);
+    if(localStorage.getItem('data')){
+$('.normal').hide();
+}else{
+$('.hd').hide();
+}
+    
+  });
+});
+
+mutationObserver.observe(document.documentElement, {
+  attributes: true,
+  characterData: true,
+  childList: true,
+  subtree: true,
+  attributeOldValue: true,
+  characterDataOldValue: true
+});
+if(localStorage.getItem('adult')){
+        $('.matu2').hide();
+}
+$(".filmes1 ul li").on("click", function () {
+    $(".filmes1 ul li").removeClass('selected');
+    $(this).attr('class', 'selected');
+});
+$(".filmes2 ul li").on("click", function () {
+    $(".filmes2 ul li").removeClass('selected3');
+    $(this).attr('class', 'selected3');
+});
+
+$(".series1 ul li").on("click", function () {
+    $(".series1 ul li").removeClass('selected2');
+    $(this).attr('class', 'selected2');
+});
+
+
+$(".series2 ul li").on("click", function () {
+    $(".series2 ul li").removeClass('selected4');
+    $(this).attr('class', 'selected4');
+});
+});
