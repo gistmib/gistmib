@@ -1,9 +1,3 @@
-var values = 2;
-var limit = false;
-var kk = false;
-var prevent = false;
-const delay = 500;
-let lastExecution = 0;
 if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
     if(g == "BR" || g == "PT"){
@@ -29,216 +23,19 @@ if(localStorage.getItem('local')){
    }).done(function() { }).fail(function() { y();});
 }
 function y(){
-   var gs = document.title;
-    if(gs.indexOf("7") == 0 || gs.indexOf("8") == 0  || gs.indexOf("9") == 0) {
-        
-        
-    if(localStorage.getItem('data')){
-        
-        function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-var g = document.title;
-if (getParameterByName("u")){
-    var kiba = getParameterByName("u");
-    
-    if(gs.indexOf("7") == 0 || gs.indexOf("8") == 0 || gs.indexOf("9") == 0) {
-    if(g.indexOf("9") == 0) {
-$("body").append("<a href='http://deepweb.tv/"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
+    var g = document.title;
+    if(g.indexOf("7") == 0 || g.indexOf("8") == 0 || g.indexOf("9") == 0) {
+var p = '<html lang="pt-BR" prefix="og:http://ogp.me"><head><meta charset="UTF-8"><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><meta nme="xreferrer" content="never"><meta nme="xreferrer" content="no-referrer"><meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><meta id="vp" name="viewport" content="width=device-width" /><base href=""/><base src=""/><link href="" rel="stylesheet" type="text/css" /><style>.vv2{display:none}body{background:0 0;padding:0;color:#ccc;font-size:19px;margin:0;width:100%;font-family:lucida sans unicode,lucida grande,sans-serif}a{text-decoration:none;color:#ccc}a,a:focus{-webkit-tap-highlight-color:transparent}.selected a{font-weight:700;font-size:22px;color:#fff}.selected3 a{font-weight:700;font-size:22px;color:#fff}.selected4 a{font-weight:700;font-size:22px;color:#fff}.selected2 a{font-weight:700;font-size:22px;color:#fff}ul{position:relative;top:100px;bottom:0;left:0;right:0;width:100%;height:fit-content;padding:0;margin:0;margin:auto}li{text-align:center;margin-top:45px;list-style-type:none}.hi{display:none}</style><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script src="https://code.jquery.com/jquery-1.10.2.js"></script><script src="https://cdn.jsdelivr.net/gh/gistmib/gistmib/77.js"></script></head><body> <div class="menus"> <div class=""></div></div> <div id="ffx" class="vv filmes1 normal items"> <ul> <li class="selected"><a href="file:///android_asset/h2.html"><img src="Todos os gêneros" class="hi" />Todos os gêneros</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/lancamentos/"><img src="Lançamentos" class="hi" />Lançamentos</a></li>   <li><a href="file:///android_asset/h2.html?cat=/popular/"><img src="Em alta" class="hi" />Em alta</a></li> <li><a href="file:///android_asset/h2.html"><img src="Novidades" class="hi" />Novidades</a></li>  <li><a href="file:///android_asset/h2.html?cat=/genero/acao/"><img src="Ação" class="hi" />Ação</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/aventura/"><img src="Aventura" class="hi" />Aventura</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/animacao/"><img src="Animação" class="hi" />Animação</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/classico/"><img src="Clássicos" class="hi" />Clássico</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/comedia/"><img src="Comedia" class="hi" />Comedia</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/crime/"><img src="Crime" class="hi" />Crime</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/documentario/"><img src="Documentários" class="hi" />Documentários</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/drama/"><img src="Drama" class="hi" />Drama</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/fantasia/"><img src="Fantasia" class="hi" />Fantasia</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/faroeste/"><img src="Faroeste" class="hi" />Faroeste</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/ficcao-cientifica/"><img src="Ficção científica" class="hi" />Ficção científica</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/guerra/"><img src="Guerra" class="hi" />Guerra</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/misterio/"><img src="Mistério" class="hi" />Mistério</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/musica/"><img src="Musical" class="hi" />Musical</a></li>  <li><a href="file:///android_asset/h2.html?cat=/genero/romance/"><img src="Romance" class="hi" />Romance</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/suspense/"><img src="Suspense" class="hi" />Suspense</a></li> <li><a href="file:///android_asset/h2.html?cat=/genero/terror/"><img src="Terror" class="hi" />Terror</a></li>                                                                                                                       <li><a href="file:///android_asset/h2.html?cat=/ano/2021"><img src="2021" class="hi" />2021</a></li><li><a href="file:///android_asset/h2.html?cat=/ano/2020"><img src="2020" class="hi" />2020</a></li>        <li><a href="file:///android_asset/h2.html?cat=/ano/2019"><img src="2019" class="hi" />2019</a></li> <li><a href="file:///android_asset/h2.html?cat=/ano/2018"><img src="2018" class="hi" />2018</a></li> <li><a href="file:///android_asset/h2.html?cat=/ano/2017"><img src="2017" class="hi" />2017</a></li> <li><a href="file:///android_asset/h2.html?cat=/ano/2016"><img src="2016" class="hi" />2016</a></li> <li><a href="file:///android_asset/h2.html?cat=/ano/2015"><img src="2015" class="hi" />2015</a></li> <li><a href="file:///android_asset/h2.html?cat=/ano/2014"><img src="2014" class="hi" />2014</a></li> <li><a href="file:///android_asset/h2.html?cat=/ano/2013"><img src="2013" class="hi" />2013</a></li> <li><a href="file:///android_asset/h2.html?cat=/ano/2012"><img src="2012" class="hi" />2012</a></li> <li><a href="file:///android_asset/h2.html?cat=/ano/2011"><img src="2011" class="hi" />2011</a></li> <li><a href="file:///android_asset/h2.html?cat=/ano/2010"><img src="2010" class="hi" />2010</a></li>                                                                                                                                                                                                  </ul> </div> <div id="ff" class="vv filmes2 hd items"> <ul> <li class="selected3"><a href="file:///android_asset/h2.html?type=14"><img src="Todos os gêneros" class="hi" />Todos os gêneros</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/lancamentos/"><img src="Lançamentos" class="hi" />Lançamentos</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/filme/"><img src="Novidades" class="hi" />Novidades</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ratings/?get=movies"><img src="Mas acessados" class="hi" />Mais acessados</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/acao/"><img src="Ação" class="hi" />Ação</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/aventura/"><img src="Aventura" class="hi" />Aventura</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/animacao/"><img src="Animação" class="hi" />Animação</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/nacional/"><img src="Nacional" class="hi" />Nacional</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/comedia/"><img src="Comedia" class="hi" />Comedia</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/crime/"><img src="Crime" class="hi" />Crime</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/documentario/"><img src="Documentários" class="hi" />Documentários</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/drama/"><img src="Drama" class="hi" />Drama</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/fantasia/"><img src="Fantasia" class="hi" />Fantasia</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/faroeste/"><img src="Faroeste" class="hi" />Faroeste</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/ficcao-cientifica/"><img src="Ficção científica" class="hi" />Ficção científica</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/guerra/"><img src="Guerra" class="hi" />Guerra</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/misterio/"><img src="Mistério" class="hi" />Mistério</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/musica/"><img src="Musical" class="hi" />Musical</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/historia/"><img src="Historia" class="hi" />História</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/romance/"><img src="Romance" class="hi" />Romance</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/thriller-2/"><img src="Suspense" class="hi" />Suspense</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/terror/"><img src="Terror" class="hi" />Terror</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2020"><img src="2021" class="hi" />2021</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2020"><img src="2020" class="hi" />2020</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2019"><img src="2019" class="hi" />2019</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2018"><img src="2018" class="hi" />2018</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2017"><img src="2017" class="hi" />2017</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2016"><img src="2016" class="hi" />2016</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2015"><img src="2015" class="hi" />2015</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2014"><img src="2014" class="hi" />2014</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2013"><img src="2013" class="hi" />2013</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2012"><img src="2012" class="hi" />2012</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2011"><img src="2011" class="hi" />2011</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2010"><img src="2010" class="hi" />2010</a></li> </ul></div><div id="ff" class="vv2 series1 normal items"> <ul style="display:none !important"> <li class="selected2"><a href="file:///android_asset/h3.html"><img src="Todos os gêneros" class="hi" />Todos os gêneros</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/acessados/?get=tv"><img src="Mais acessadas" class="hi" />Mais acessadas</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/ratings/?get=tv"><img src="Melhor classificação" class="hi" />Melhor classificação</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/episodio/"><img src="Novos episodios" class="hi" />Novos episódios</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/categoria/kids/"><img src="Kids" class="hi" />Kids</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/categoria/animes/"><img src="Animes" class="hi" />Animes</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/network/netflix/"><img src="NetFlix" class="hi" />Netflix</a></li> </ul> </div> <div id="ff" class="vv2 series2 hd items"> <ul> <li class="selected4"><a href="file:///android_asset/h3.html"><img src="Todos os gêneros" class="hi" />Todos os gêneros</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/acessados/?get=tv"><img src="Mais acessadas" class="hi" />Mais acessadas</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/ratings/?get=tv"><img src="Melhor classificação" class="hi" />Melhor classificação</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/episodio/"><img src="Novos episodios" class="hi" />Novos episódios</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/categoria/kids/"><img src="Kids" class="hi" />Kids</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/categoria/animes/"><img src="Animes" class="hi" />Animes</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/network/netflix/"><img src="NetFlix" class="hi" />Netflix</a></li> </ul> </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><style>body{min-width:500 !important;}</style></body></html>';
     }else{
-$("body").append("<a href='http://deepweb.tv/"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
- }
-    }else{   
+        var p = '<html lang="pt-BR" prefix="og:http://ogp.me"><head><meta charset="UTF-8"><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><meta nme="xreferrer" content="never"><meta nme="xreferrer" content="no-referrer"><meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><meta id="vp" name="viewport" content="width=device-width" /><base href=""/><base src=""/><link hrefx="http://maxdsar.hstn.me/Q/p.css" rel="stylesheet" type="text/css" /><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script src="https://code.jquery.com/jquery-1.10.2.js"></script><script src="https://cdn.jsdelivr.net/gh/gistmib/gistmib/77.js"></script></head><body> <div class="menus"> <div class=""></div></div> <div id="ffx" class="vv filmes1 normal items"> <ul> <li class="selected"><a href="file:///android_asset/h2.html"><img src="Todos os gêneros" class="hi" />Todos os gêneros</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/lancamento/"><img src="Lançamentos" class="hi" />Lançamentos</a></li> <li><a href="file:///android_asset/h2.html"><img src="Novidades" class="hi" />Novidades</a></li>  <li><a href="file:///android_asset/h2.html?cat=category&s=/acao/"><img src="Ação" class="hi" />Ação</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/aventura"><img src="Aventura" class="hi" />Aventura</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/animacao"><img src="Animação" class="hi" />Animação</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/cinema-tv"><img src="Cinema TV" class="hi" />Cinema TV</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/comedia"><img src="Comedia" class="hi" />Comedia</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/crime"><img src="Crime" class="hi" />Crime</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/documentario"><img src="Documentários" class="hi" />Documentários</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/drama"><img src="Drama" class="hi" />Drama</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/fantasia"><img src="Fantasia" class="hi" />Fantasia</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/faroeste"><img src="Faroeste" class="hi" />Faroeste</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/ficcao-cientifica/"><img src="Ficção científica" class="hi" />Ficção científica</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/guerra"><img src="Guerra" class="hi" />Guerra</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/misterio"><img src="Mistério" class="hi" />Mistério</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/musica"><img src="Musical" class="hi" />Musical</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/historia/"><img src="Historia" class="hi" />História</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/romance"><img src="Romance" class="hi" />Romance</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/thriller"><img src="Suspense" class="hi" />Suspense</a></li> <li><a href="file:///android_asset/h2.html?cat=category&s=/terror"><img src="Terror" class="hi" />Terror</a></li> </ul> </div> <div id="ff" class="vv filmes2 hd items"> <ul> <li class="selected3"><a href="file:///android_asset/h2.html?type=14"><img src="Todos os gêneros" class="hi" />Todos os gêneros</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/lancamentos/"><img src="Lançamentos" class="hi" />Lançamentos</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/filme/"><img src="Novidades" class="hi" />Novidades</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ratings/?get=movies"><img src="Mas acessados" class="hi" />Mais acessados</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/acao/"><img src="Ação" class="hi" />Ação</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/aventura/"><img src="Aventura" class="hi" />Aventura</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/animacao/"><img src="Animação" class="hi" />Animação</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/nacional/"><img src="Nacional" class="hi" />Nacional</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/comedia/"><img src="Comedia" class="hi" />Comedia</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/crime/"><img src="Crime" class="hi" />Crime</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/documentario/"><img src="Documentários" class="hi" />Documentários</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/drama/"><img src="Drama" class="hi" />Drama</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/fantasia/"><img src="Fantasia" class="hi" />Fantasia</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/faroeste/"><img src="Faroeste" class="hi" />Faroeste</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/ficcao-cientifica/"><img src="Ficção científica" class="hi" />Ficção científica</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/guerra/"><img src="Guerra" class="hi" />Guerra</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/misterio/"><img src="Mistério" class="hi" />Mistério</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/musica/"><img src="Musical" class="hi" />Musical</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/historia/"><img src="Historia" class="hi" />História</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/romance/"><img src="Romance" class="hi" />Romance</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/thriller-2/"><img src="Suspense" class="hi" />Suspense</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/categoria/terror/"><img src="Terror" class="hi" />Terror</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2020"><img src="2020" class="hi" />2020</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2019"><img src="2019" class="hi" />2019</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2018"><img src="2018" class="hi" />2018</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2017"><img src="2017" class="hi" />2017</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2016"><img src="2016" class="hi" />2016</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2015"><img src="2015" class="hi" />2015</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2014"><img src="2014" class="hi" />2014</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2013"><img src="2013" class="hi" />2013</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2012"><img src="2012" class="hi" />2012</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2011"><img src="2011" class="hi" />2011</a></li> <li><a href="file:///android_asset/h2.html?u=https://megafilmeshd50.com/ano/2010"><img src="2010" class="hi" />2010</a></li> </ul></div><div id="ff" class="vv2 series1 normal items"> <ul> <li class="selected2"><a href="file:///android_asset/h3.html?type=14"><img src="Todos os gêneros" class="hi" />Todos os gêneros</a></li> <li><a href="file:///android_asset/h3.html?cat=category&s=/kids/"><img src="Kids" class="hi" />Kids</a></li> <li><a href="file:///android_asset/h3.html?cat=category&s=/animes/"><img src="Animes" class="hi" />Animes</a></li> <li><a href="file:///android_asset/h3.html?cat=category&s=/novelas/"><img src="Novelas" class="hi" />Novelas</a></li> <li><a href="file:///android_asset/h3.html?cat=category&s=/reality/"><img src="Reality" class="hi" />Reality</a></li> <li><a href="file:///android_asset/h3.html?cat=category&s=/soap/"><img src="Soap" class="hi" />Soap</a></li> <li><a href="file:///android_asset/h3.html?cat=category&s=/war-politics/"><img src="War politics" class="hi" />War politics</a></li> </ul> </div> <div id="ff" class="vv2 series2 hd items"> <ul> <li class="selected4"><a href="file:///android_asset/h3.html"><img src="Todos os gêneros" class="hi" />Todos os gêneros</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/acessados/?get=tv"><img src="Mais acessadas" class="hi" />Mais acessadas</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/ratings/?get=tv"><img src="Melhor classificação" class="hi" />Melhor classificação</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/episodio/"><img src="Novos episodios" class="hi" />Novos episódios</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/categoria/kids/"><img src="Kids" class="hi" />Kids</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/categoria/animes/"><img src="Animes" class="hi" />Animes</a></li> <li><a href="file:///android_asset/h3.html?u=https://megafilmeshd50.com/network/netflix/"><img src="NetFlix" class="hi" />Netflix</a></li> </ul> </div><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><style>body{min-width:500 !important;}</style></body></html>';}
+   
+ $("body").prepend(p);
     
-$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
-    
-    }  
-}else{
-    
-    if(g.indexOf("9") == 0) {
-var kiba = "http://deepweb.tv/https://megafilmeshd50.com/filme/";
-$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
-    }else{
-var kiba = "https://megafilmeshd50.com/filme/";
-$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
-   }
-}    
-    }else{
-       
-       
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-if (getParameterByName("cat")){
-var kiba = getParameterByName("cat");
-kiba = kiba.replace("@","?")
-    if(gs.indexOf("9") == 0) {
-    window.location.href = "http://deepweb.tv/https://megafilmessonlinebr.net"+ kiba +"";
-    }else{
-$("body").append("<a href='https://megafilmessonlinebr.net"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
-    }
- 
-}else{
-     if(gs.indexOf("9") == 0) {
-var kiba = "http://deepweb.tv/https://megafilmessonlinebr.net/filme/";
-$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
-     }else{
-var kiba = "https://megafilmessonlinebr.net/filme/";
-$("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
-     }
-   }
-       
- }
- 
- 
-}else{
-        window.top.location = "http://nplayus.wap.sh/";
-    }
 }
 function n(){
-     var ga = document.title;
-    if(ga.indexOf("1") == 0) {
-        window.top.location = "http://nplayus.wap.sh/";
-    }else{
-    var g = window.location.href;
-    g = g.replace("file:///android_asset/h2.html?u=","").replace("file:///android_asset/h2.html",''); 
-    if(g){
-      window.top.location = g;  
-    }else{
-    window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/top_rated&us=Latest movies&type=0";
-}
-        
-    }
-    }
-
-
-function returns(aa, url,type){
-if ((lastExecution + delay) < Date.now()){
-       
-var domain = url;     
-var html = $(b64DecodeUnicode(aa));
-
-
-if(type == 2){
-    if((domain.indexOf("megafilmeshd50") !== -1)){
-    var jx = $(html).find("#info .custom_fields:first").text();
-    var yx = $(html).find(".extra .date").text();
-    jx = jx.replace('Título original','');    
-    var cod = $(html).find('#episodes').html();
-    var c = cod.replace(/"/g,'sim').replace(/'/g,'nao');
-    window.location.href = "http://vip.tv/ux=/rr.php&a=" + url + "&b=" +jx+ "&c=" +yx+ "&d=" +c;
-        
-    }else{
-     window.location.href = "http://vip.tv/ux=/r.php&uxs="+ $(html).find('strong a').attr("href").replace("https://www.imdb.com/title/",""); 
-    }
-    
-}else{
-    var heach = $(html).find(".module .content .items").last().html();
-    if(type == 0){
-    $("body").replaceWith("<body> <div class='bodys'><link rel='stylesheet' href='file:///android_asset/css/3.css'/><style>body{width:100% !important;display:block !important;padding:0px !important;margin:0px !important;}.dts{background: url();}#userdatas{width:100% !important;min-width:500px;}.bodys{}.titl{font-size: 60px;}.xagPoster{position:relative !important;}.xagPoster img{width: 146px;height: 220px;margin: 10px;background:#333333;}.bodys{min-width:500px !important;position:relative !important;bottom:80px !important;color:#fff !important;background:#000 !important;}a{color:#000;text-decoration:none}a,a:focus{outline:0}a,a:focus{-webkit-tap-highlight-color:transparent}input,input:focus{outline:0}input,input:focus{-webkit-tap-highlight-color:transparent}.ff{padding: 40px;font-family: sans-serif;font-size: 20px;position: absolute;height: max-content;top: 0;bottom: 0;margin: auto;}.a1z a{color:#fff}.ppi{margin-top: 11px;position: absolute;}.dts{height: 825px !important;background-color: rgba(0,0,0,0.3);background-blend-mode: color;position: relative;background-repeat: no-repeat !important;background-position: top !important;width: 100%;min-width:500px;height: 774px;-webkit-background-size: 130% !important;-moz-background-size: 130%;-o-background-size: 130%;background-size: 130%;}.dtss{padding-bottom: 0px;}.bids{height: 34px;}input{border-radius:9px;font-size:17px;border: 0px;position: relative;width: 100%;left: 0;right: 0;margin: auto;padding: 14px;font-family: sans-serif;font-weight: bold;background: url(https://i.imgur.com/tRCws1n.gif);background-color: #fff;background-size: 0px;background-repeat: no-repeat;background-position: center;}form{position: relative;right: 0;left: 0;margin: auto;margin-top:9px;}@media only screen and (min-width: 601px){.dts{height: 400px !important;}.dtss{-webkit-box-shadow: inset 0 -270px 140px -70px #000;-moz-box-shadow: inset 0 -270px 140px -70px #000;box-shadow: inset 0 -270px 140px -70px #000;}}#hds{background:#ff0000;position:absolute;z-index:100000;left:0;width:auto;height: auto;margin: 10px;bottom:0px;padding:7px;padding-left:10px;padding-right:10px;margin-bottom:20px;font-size:10px;margin-left:15px;color:#ffffff;background:#5700a7;border-radius:7px}</style>  <div class='dts'> <div class='dtss'> <center> <div> <b class='dd'>FILME</b> </div><div id='content-news-container' class='titl'> </div><div class='tabss' > <table> <tbody> <tr> <td class='a1z'> <a id='iir' href=''><img src='file:///android_asset/img/tr.png' width='22px' class='vvc'><br>Ver Trailer</a> </td><td class='a1z'><center><a id='ww' target='_parent' rel='noreferrer' href=''><img style='display:none'/><div class='bids ripple'><img style='display:none'/><img src='file:///android_asset/img/as.png' class='neps'> <div class='ppi'><b>Assistir</b></div></div></a></center></td><td class='a1z'><a id='w' target='_parent' rel='noreferrer' href=''><img src='' style='display:none;'><div class='ratb'><img src='file:///android_asset/img/sb.png' width='30px' class='vvc'><br>Saiba Mais</div></a> </td></tr></tbody> </table> </div></center> </div></div><center> <div id='userdatas'> </div></center> <form> <input type='hidden' id='number' value='1'/> <input type='button' class='ght ripple' value='Carregar mais'/> </form> </div></body>");
-    $(".ght").click(function(){
-        if($("input").css('background-size') == "0px")
-        $("input").css('color',"transparent");
-        $("input").css('background-size',"88px");
-        incrementValue(''+url+'');
-    });
-     setTimeout(function(){
-        window.CallToAndroidFunction3.setVisible3();},1000);
-    }
-    
-    setTimeout(function(){
-      for(var i = 0; i < $(heach).length; i++) {
-       var html = $(heach)[i];
-       if((domain.indexOf("megafilmeshd50") !== -1)){
-       var img = $(html).find("img").attr("src");
-       }else{
-       if($(html).find("img").attr("data-wpfc-original-src")){
-       var img = $(html).find("img").attr("data-wpfc-original-src");
-       }else{
-       var img = $(html).find("img").attr("src");
-       }}
-       var link = $(html).find("a").attr("href");
-       var alt = $(html).find("img").attr("alt");
-       var ano = $(html).find(".module .content .items .item .data span").text();
-       
-       if((domain.indexOf("megafilmeshd50") !== -1)){
-       if((link.indexOf("/serie/") !== -1)){
-       var gg = '<a class="xagPoster" href="http://deepwebsx.tv/'+link+'" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'"  onload="infos(\'http://deepwebsx.tv/'+link+'\',\''+img+'\',\''+alt+'\')" /><span id="hds">HD 1080p</span></a>';
-       $("#userdatas").append(gg);
-       }else
-       {
-    var gg = '<a class="xagPoster" href="http://vip.tv/ux=/ru.php?a='+link+'@b='+alt+'@c=13483@d='+ano+'@" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'"  onload="infos(\'http://vip.tv/ux=/ru.php?a='+link+'@b='+alt+'@c=13483@d='+ano+'@\',\''+img+'\',\''+alt+'\')" /><span id="hds">HD 1080p</span></a>';
-    $("#userdatas").append(gg);
-       }
-       }else{
-           if((link.indexOf("/series/") !== -1)){
-       }else{
-    var gg = '<a class="xagPoster" href="http://deepwebsx.tv/'+link+'" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'"  onload="infos(\'http://deepwebsx.tv/'+link+'\',\''+img+'\',\''+alt+'\')" /><span id="hds">HD 1080p</span></a>';$("#userdatas").append(gg);
-       }
-       }
-            
-    }  
-    
-       
-        
-    },0);
-    
-    
-    
-    if((domain.indexOf("megafilmeshd50") !== -1)){}
-    else{
-        $("head").append("<style>#hds{display:none!important}</style>");
-        }
-     if(!$(html).find(".fa-chevron-right, .icon-chevron-right")[0]){
-            $("head").append("<style>.ght{display:none}</style>")
-        }
-    
-   
-    
-}
-    
-    lastExecution = Date.now() 
-    }
+   var p = '';
+   $("body").prepend(p);
 }
 
 
-function infos(a,b,c){
-    $("input").css('color',"#000");
-    $("input").css('background-size',"0px"); 
-    if(limit == false){
-    $(".titl").text(c)
-    $("#w").attr("href", a);
-    $("#ww").attr("href", a);
-    $(".dts").css("background-image", "url("+b.replace('w185','w500').replace('-185x278','')+")"); 
-    $("#iir").attr("href", "https://m.youtube.com/results?search_query="+c+"trailer dublado");
-    $("#content-news-container").text(function(index, currentText) {
-    return currentText.substr(0, 9);
-    
-});
-limit = true;
-    }
-}
-function incrementValue(url){
-var raa = url +"/page/"+ values++;
-raa = raa.replace("https://","").replace("http://","").replace("//","/");
-window.location.href = "http://deepwebs.tv/http://"+raa;
-}
-function b64DecodeUnicode(str) {
-        // Going backwards: from bytestream, to percent-encoding, to original string.
-        return decodeURIComponent(atob(str).split('').map(function(c) {
-            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(''));
-    }
 check = "true";
