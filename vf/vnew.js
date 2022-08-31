@@ -29,7 +29,7 @@ $.post('/api/source/' + ips, function(res){
                 hh(data);
                 $.getScript(res.player.revenue);
             }else{
-                 window.location.href = "http://vip.tv/Erro";
+                 window.location.reload;
             }
         });
         
