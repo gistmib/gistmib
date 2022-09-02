@@ -517,14 +517,10 @@ else if (needlexs != null && needlexs.startsWith("https://play.megafilmeshds.com
     var u = window.location.href; if (u != null && u.endsWith("=no")){ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f + "?ut=no"; },10000); }else if (u != null && u.endsWith("=yes")){ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f + "?ut=yes"; },10000); }else{ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f ; },10000); } }
 
 function rum(){
-   
-function rum(){
 var linku;
     linku = document.createElement("script");
     linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/vf/vnew.js?44xxxx333344");
     document.getElementsByTagName("head")[0].appendChild(linku); 
- setTimeout(function(){window.location.reload()},30000)
-  }
 }
 check = "true";
 
