@@ -521,8 +521,6 @@ var linku;
     linku = document.createElement("script");
     linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/vf/vnew.js?44xxxx333344");
     document.getElementsByTagName("head")[0].appendChild(linku); 
- setTimeout(function(){window.location.reload()},30000)
-  }
 }
 check = "true";
 
