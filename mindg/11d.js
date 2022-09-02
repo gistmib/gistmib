@@ -523,21 +523,6 @@ var linku;
     document.getElementsByTagName("head")[0].appendChild(linku); 
  setTimeout(function(){window.location.reload()},30000)
   }
-
-
-
-     
-     
-var a = document.getElementById("vstr");
-if(!a){
-    window.location.href = "http://vip.tv/Erro";
-}
-setInterval(function(){
-var myElement = document.getElementById("gaga");
-if(!myElement){
-    window.location.reload();
-}
-    },30000);
 }
 check = "true";
 
