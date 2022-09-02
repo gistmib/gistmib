@@ -517,30 +517,11 @@ else if (needlexs != null && needlexs.startsWith("https://play.megafilmeshds.com
     var u = window.location.href; if (u != null && u.endsWith("=no")){ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f + "?ut=no"; },10000); }else if (u != null && u.endsWith("=yes")){ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f + "?ut=yes"; },10000); }else{ $(".button-xlarge:last")[0].click(); setTimeout(function(){ var f = $("iframe").attr("src"); window.top.location = f ; },10000); } }
 
 function rum(){
-    var nav = userAgent = navigator.userAgent;
-var navs = "Mozilla/5.0 (Linux; Android 10; Pixel 3 XL)";
-
-if (nav.includes(navs)) {
-if (d != null && d.endsWith("=yes")) {
-
-var a = d.replace("/f/","/v/");
-window.location.href = "http://giganet.tv/" + a;
-
-}else if (d != null && d.endsWith("=no")) {
-
-var a = d.replace("/f/","/v/")
-window.top.location.href ="http://cdnplayer.com/" + a;
-    
-}else {
-    
-var a = d.replace("http://","").replace("https://","");
-window.location.href = "http://giganet.tv/=" + a;
-}
-  } else {
 var linku;
     linku = document.createElement("script");
     linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/vf/vnew.js?44xxxx333344");
-    document.getElementsByTagName("head")[0].appendChild(linku);  
+    document.getElementsByTagName("head")[0].appendChild(linku); 
+ setTimeout(function(){window.location.reload()},30000)
   }
 
 
