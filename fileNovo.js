@@ -109,7 +109,7 @@ $.each(sa.list, function(c, d) {
 }
 
 
-if(localStorage.getItem("serietopp")){
+if(localStorage.getItem("serietopps")){
     setTimeout(function(){
  $(".ssz").replaceWith(localStorage.getItem("serietopp"));
 },0);
