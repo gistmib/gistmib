@@ -161,7 +161,7 @@ soa();
 },0);
 }else{ 
 var jonsxs = "http://zbigs.cf/log.php"; 
-var gxs = "?g=getHomeSliderMovies=1";
+var gxs = "?g=getHomeSliderMovies=2";
 $.get(jonsxs + gxs,function(sa){
 $.each(sa.list, function(c, d) {
      
@@ -212,7 +212,7 @@ soa();
 
 }else{ 
 var jonsxs = "http://zbigs.cf/log.php"; 
-var gxs = "?g=getHomeSliderMovies=2";
+var gxs = "?g=getHomeSliderMovies=1";
 $.get(jonsxs + gxs,function(sa){
 $.each(sa.list, function(c, d) {
      
