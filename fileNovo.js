@@ -71,7 +71,7 @@ $(".Legendado").remove();
 var next = Math.floor(Math.random() * 900) + 1;
 var hash = CryptoJS.MD5("viaviweb" + next);
 var jons = "http://zbigs.cf/flix.php"; 
-var hours = 24; var now = new Date().getTime();var setupTimes = localStorage.getItem('setupTimess');if (setupTimes == null) {localStorage.setItem('setupTimess', now);} else {if(now-setupTimes > hours*60*60*1000) {localStorage.removeItem('mv11');localStorage.removeItem('mv22');localStorage.removeItem('mv32');localStorage.setItem('setupTimess', now);}}
+var hours = 24; var now = new Date().getTime();var setupTimes = localStorage.getItem('setupTimess');if (setupTimes == null) {localStorage.setItem('setupTimess', now);} else {if(now-setupTimes > hours*60*60*1000) {localStorage.removeItem('mv11');localStorage.removeItem('mv112');localStorage.removeItem('mv22');localStorage.removeItem('mv32');localStorage.setItem('setupTimess', now);}}
 
 var hourstop = 168;
 var nows = new Date().getTime();
@@ -169,11 +169,10 @@ $.each(sa.list, function(c, d) {
             var it=d.id;
             var tt = '<a class="" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><div class="item"><img style="display:none"  /><img data-src="https://vizer.tv/content/movies/posterPt/342/'+it+'.jpg" /></div> </a>';
             $("#novis").append(tt);
-            localStorage.setItem("mv11",  tt);
 
 });
     
-}); 
+}).done(function() { localStorage.setItem("mv11",  $("#novis").html()); }).fail(function() {}); 
     
 }  
 if(localStorage.getItem("mv22")){
@@ -203,6 +202,15 @@ $.each(sa.list, function(c, d) {
     
 } 
 
+    
+    if(localStorage.getItem("mv22")){
+    
+setTimeout(function(){
+ $("#recs").append(localStorage.getItem("mv112"));
+soa();
+},0);
+
+}else{ 
 var jonsxs = "http://zbigs.cf/log.php"; 
 var gxs = "?g=getHomeSliderMovies=2";
 $.get(jonsxs + gxs,function(sa){
@@ -212,11 +220,12 @@ $.each(sa.list, function(c, d) {
             var it=d.id;
             var tt = '<a class="" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><div class="item"><img style="display:none"  /><img data-src="https://vizer.tv/content/movies/posterPt/342/'+it+'.jpg" /></div> </a>';
             $("#recs").append(tt);
+    soa();
 
 });
     
-}); 
-    
+}).done(function() { localStorage.setItem("mv112",  $("#recs").html()); }).fail(function() {}); 
+}   
 $('body').css('overflow','auto');
 
 $('.uxs').animate({scrollLeft:0},'slow');
