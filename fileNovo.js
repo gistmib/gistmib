@@ -168,8 +168,8 @@ $.each(sa.list, function(c, d) {
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
             var tt = '<a class="" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><div class="item"><img style="display:none"  /><img data-src="https://vizer.tv/content/movies/posterPt/342/'+it+'.jpg" /></div> </a>';
-            $("#novis").append(''+tt+'');
-            localStorage.setItem("mv11",  ''+tt+'');
+            $("#novis").append(tt);
+            localStorage.setItem("mv11",  tt);
 
 });
     
@@ -184,6 +184,8 @@ soa();
 },0);
 
 }else{ 
+ 
+    
     var jonss = "http://zbigs.cf/log.php"; 
 var gs = "?g=getHomeSliderSeries=1";
 $.get(jonss + gs,function(sa){
@@ -209,7 +211,7 @@ $.each(sa.list, function(c, d) {
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
             var tt = '<a class="" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><div class="item"><img style="display:none"  /><img data-src="https://vizer.tv/content/movies/posterPt/342/'+it+'.jpg" /></div> </a>';
-            $("#recs").append(''+tt+'');
+            $("#recs").append(tt);
 
 });
     
