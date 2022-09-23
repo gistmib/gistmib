@@ -3,7 +3,8 @@ var values = 2;
 var next = "";
 var hash = "";
 var jon = "http://zbigs.cf/flix.php";
-
+var j = 'http://zbigs.cf/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2022@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc@page=';  
+  
 var hourstop = 24;
 var nows = new Date().getTime();
 var setupTimess = localStorage.getItem('setupTimesssx');
@@ -46,7 +47,6 @@ if (getParameterByName("s")){
  next = Math.floor(Math.random() * 900) + 1;
  hash = CryptoJS.MD5("viaviweb" + next);
  
-  var j = 'http://zbigs.cf/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2022@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc@page=';  
   if (document.documentElement.clientWidth < 720) { document.querySelector("meta[name=viewport]").setAttribute( 'content', 'width=500'); } 
   $(document).ready(function(){
     $(".ght").click(function(){
@@ -67,48 +67,37 @@ $(document).ready(function(){
 },0);
 }
 else{
-var ra = '{"salt":"'+ next +'","sign":"'+ hash +'","method_name":"get_search_series","search_text":"","page":"1"}';
-var ga = "?g=" + btoa(ra);
-
-$.get(jon + ga,function(sa){
- var g = sa.LIVETV;
-  if (g.indexOf("[]") == 0){
-  }
-$.each(sa.LIVETV, function(i, b) {
-        var pj = b.series_name;
-        var pja = b.id;
-         var po = b.series_poster;
-            po=po.replace("w300","w200");
-            var gg = '<a alt="'+b.series_name+'" class="agPoster" href="http://vip.tv/ux=/redssx.php&uxs='+pj+'&n='+pja+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="'+po+'" /></a>';
-            $("#userdata").prepend(gg);
-          }); 
-          }).done(function() { kkl(); }).fail(function() {});       
-
-}
     
+$.get(j,function(sa){
+$.each(sa.list, function(c, d) {
+    if(c < 1){
+            var iu=d.url.replace(/-/g, " ");
+            var it=d.id;
+            var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://vizer.tv/content/series/posterPt/342/'+it+'.jpg" /></a>';
+             $("#userdata").prepend(tt);
+    }   
 });
-      
-      
- }else{window.top.location = "https://google.com";}  
+    
+}).done(function() { kkl(); }).fail(function() {});    
+}else{
+     window.top.location = "https://google.com";}  
  
 }
 
 
 function incrementValue(){
-var raa = '{"salt":"'+ next +'","sign":"'+ hash +'","method_name":"get_search_series","search_text":"","page":"'+values++ +'"}';
-var gaa = "?g=" + btoa(raa);
-$.get(jon + gaa, function(sa){ 
-var g = sa.LIVETV;
-  if (g.indexOf("[]") == 0){
-  }
-$.each(sa.LIVETV, function(i, b) {
-        var pj = b.series_name;
-        var pja = b.id;
-        var po = b.series_poster;
-            po=po.replace("w300","w200");
-            $("#userdata").append('<a class="agPoster" href="http://vip.tv/ux=/redssx.php&uxs='+pj+'&n='+pja+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="'+po+'" /></a>');
-          }); 
-          }).done(function() { $("input").css('color',"#000");
+    
+$.get(j+values++,function(sa){
+$.each(sa.list, function(c, d) {
+    
+            var iu=d.url.replace(/-/g, " ");
+            var it=d.id;
+            var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://vizer.tv/content/series/posterPt/342/'+it+'.jpg" /></a>';
+             $("#userdata").append(tt);
+     
+});
+     
+}).done(function() { $("input").css('color',"#000");
         $("input").css('background-size',"0px"); }).fail(function() {});    
 }
 
