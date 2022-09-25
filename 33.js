@@ -17,50 +17,14 @@ if (setupTimess == null) {
     }
 }
 
-var head= document.getElementsByTagName('head')[0]; var scriptxx= document.createElement('script'); scriptxx.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js'; scriptxx.type = "text/javascript"; scriptxx.async = false; head.appendChild(scriptxx); var x= document.createElement('script'); x.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js'; x.type = "text/javascript"; x.async = false; head.appendChild(x); x.onload=function( evt ) {
+var head= document.getElementsByTagName('head')[0]; var scriptxx= document.createElement('script'); scriptxx.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js'; scriptxx.type = "text/javascript"; scriptxx.async = false; head.appendChild(scriptxx); var x= document.createElement('script'); x.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js'; x.type = "text/javascript"; x.async = false; head.appendChild(x); 
+x.onload=function( evt ) {
     
     
-    
-if (gh.indexOf("file") == 0){
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-if (getParameterByName("cat")){
-    var cat = getParameterByName("cat");
-}else{
-    var cat = "filmes";
-}
 
-if (getParameterByName("s")){
-    var u = getParameterByName("s");
-    u = u.replace('/','');
-}else{
-    var u = "";
-}
-
- next = Math.floor(Math.random() * 900) + 1;
- hash = CryptoJS.MD5("viaviweb" + next);
- 
-  if (document.documentElement.clientWidth < 720) { document.querySelector("meta[name=viewport]").setAttribute( 'content', 'width=500'); } 
-  $(document).ready(function(){
-    $(".ght").click(function(){
-        $("input").css('color',"transparent");
-        $("input").css('background-size',"88px");
-    });
-  });
-  
-  }else{window.top.location = "https://google.com";}
-  
-  if (gh.indexOf("file") == 0){
 $(document).ready(function(){
     
-    if(localStorage.getItem("svs")){
+if(localStorage.getItem("svs")){
     setTimeout(function(){
  $("#userdata").prepend(localStorage.getItem("svs"));
         kkl();
@@ -79,12 +43,10 @@ $.each(sa.list, function(c, d) {
 });
     
 }).done(function() { kkl(); }).fail(function() {});    
-}else{
-     window.top.location = "https://google.com";}  
- 
 }
 
-
+});
+}
 function incrementValue(){
     
 $.get(j+values++,function(sa){
