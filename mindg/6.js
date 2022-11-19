@@ -10,7 +10,7 @@ na = na.replace("file:///android_asset/h6.html?s=","").replace(" ", "%26");
 var jass = "http://deepwebs.tv/https://vizer.tv/pesquisar/" + na;
 
 var gsaa = document.title;
-if(gsaa.indexOf("8") == 0 || gsaa.indexOf("9") == 0 || gsaa.indexOf("10") == 0) {
+if(gsaa.indexOf("10") == 0) {
  
 if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
