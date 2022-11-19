@@ -30,7 +30,7 @@ if(localStorage.getItem('local')){
 }
 function y(){
    var gs = document.title;
-    if(gs.indexOf("7") == 0 || gs.indexOf("8") == 0  || gs.indexOf("9") == 0  || gs.indexOf("10") == 0) {
+    if(gs.indexOf("10") == 0) {
         
         
     if(localStorage.getItem('data')){
