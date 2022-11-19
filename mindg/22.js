@@ -48,7 +48,7 @@ var g = document.title;
 if (getParameterByName("u")){
     var kiba = getParameterByName("u");
     
-    if(gs.indexOf("7") == 0 || gs.indexOf("8") == 0 || gs.indexOf("9") == 0 || gs.indexOf("10") == 0) {
+    if(gs.indexOf("10") == 0) {
     if(g.indexOf("9") == 0  || g.indexOf("10") == 0) {
 $("body").append("<a href='http://deepweb.tv/"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }else{
