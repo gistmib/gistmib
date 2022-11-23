@@ -111,21 +111,7 @@ $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\
         window.top.location = "http://nplayus.wap.sh/";
     }
 }
-function n(){
-     var ga = document.title;
-    if(ga.indexOf("1") == 0) {
-        window.top.location = "http://nplayus.wap.sh/";
-    }else{
-    var g = window.location.href;
-    g = g.replace("file:///android_asset/h2.html?u=","").replace("file:///android_asset/h2.html",''); 
-    if(g){
-      window.top.location = g;  
-    }else{
-    window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/top_rated&us=Latest movies&type=0";
-}
-        
-    }
-    }
+function n(){ window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/top_rated&us=Latest movies&type=0";  }
 
 
 function returns(aa, url,type){
