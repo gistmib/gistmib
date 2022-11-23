@@ -49,11 +49,7 @@ function y(){
     
 }
 function n(){
-     var ga = document.title;
-    if(ga.indexOf("1") == 0) {
-        window.top.location = "http://nplayus.wap.sh/";
-    }else{
-    window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=tv/popular&us=Popular TV Shows&type=1";}
+window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=tv/popular&us=Popular TV Shows&type=1";
 }
 
 
