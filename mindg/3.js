@@ -76,11 +76,7 @@ $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\
     }
 }
 function n(){
-     var ga = document.title;
-    if(ga.indexOf("1") == 0) {
-        window.top.location = "http://nplayus.wap.sh/";
-    }else{
-    window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=tv/top_rated&us=Latest series&type=1";}
+    window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=tv/top_rated&us=Latest series&type=1";
 }
 
 
