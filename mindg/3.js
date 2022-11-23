@@ -23,10 +23,12 @@ if(localStorage.getItem('local')){
      localStorage.setItem('local', g);
      if(g == "BR" || g == "PT"){
          y();}
+         else if(g == "EN"){
+         n();}
          else if (g == ""){
          y();}
          else{
-         n();
+         y();
      }
      
    }).done(function() { }).fail(function() { y();});
