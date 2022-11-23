@@ -50,11 +50,7 @@ document.getElementsByTagName("head")[0].appendChild(links);
  };
 }
 function n(){
-     var g = document.title;
-    if(g.indexOf("1") == 0) {
-        window.top.location = "http://nplayus.wap.sh/";
-    }else{
-    window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/popular&us=Popular movies&type=0";}
+    window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/popular&us=Popular movies&type=0";
 }
 
 
