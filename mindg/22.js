@@ -8,10 +8,12 @@ if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
     if(g == "BR" || g == "PT"){
          y();}
+         else if(g == "EN"){
+         n();}
          else if (g == ""){
          y();}
          else{
-         n();
+         y();
      }
 }else{
     var loc = "http://ip-api.com/json/";
@@ -20,10 +22,12 @@ if(localStorage.getItem('local')){
      localStorage.setItem('local', g);
      if(g == "BR" || g == "PT"){
          y();}
+         else if(g == "EN"){
+         n();}
          else if (g == ""){
          y();}
          else{
-         n();
+         y();
      }
      
    }).done(function() { }).fail(function() { y();});
