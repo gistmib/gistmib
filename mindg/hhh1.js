@@ -6,29 +6,24 @@ const delay = 500;
 let lastExecution = 0;
 if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
-    if(g == "BR" || g == "PT"){
-         y();}
-         else if(g == "EN"){
-         n();}
-         else if (g == ""){
-         y();}
-         else{
-         y();}
+    if(g == "EN"){
+         n();
+    }
+    else{
+         y();
+    }
 }else{
     var loc = "http://ip-api.com/json/";
     $.getJSON(loc, function(data){ 
      var g = data.countryCode;
         
      localStorage.setItem('local', g);
-     if(g == "BR" || g == "PT"){
-         y();}
-        else if(g == "EN"){
-         n();}
-         else if (g == ""){
-         y();}
-         else{
+     if(g == "EN"){
+         n();
+    }
+    else{
          y();
-     }
+    }
      
    }).done(function() { }).fail(function() { y();});
 } 
