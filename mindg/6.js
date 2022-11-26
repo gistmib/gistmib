@@ -12,12 +12,8 @@ var jass = "http://deepwebs.tv/https://vizer.tv/pesquisar/" + na;
  
 if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
-    if(g == "BR" || g == "PT"){
-         y();}
-         else if(g == "EN"){
+    if(g == "US"){
          n();}
-         else if (g == ""){
-         y();}
          else{
          y();}
 }else{
@@ -25,14 +21,11 @@ if(localStorage.getItem('local')){
     $.getJSON(loc, function(data){ 
      var g = data.countryCode;
      localStorage.setItem('local', g);
-     if(g == "BR" || g == "PT"){
-         y();}
-         else if(g == "EN"){
+     if(g == "US"){
          n();}
-         else if (g == ""){
-         y();}
          else{
-         y(); }
+         y();
+         }
      
    }).done(function() { }).fail(function() { y();});
 } 
