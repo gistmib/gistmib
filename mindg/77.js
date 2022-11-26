@@ -1,11 +1,7 @@
 if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
-    if(g == "BR" || g == "PT"){
-         y();}
-         else if(g == "EN"){
+    if(g == "US"){
          n();}
-         else if (g == ""){
-         y();}
          else{
          y();
      }
@@ -14,12 +10,8 @@ if(localStorage.getItem('local')){
     $.getJSON(loc, function(data){ 
      var g = data.countryCode;
      localStorage.setItem('local', g);
-     if(g == "BR" || g == "PT"){
-         y();}
-         else if(g == "EN"){
+     if(g == "US"){
          n();}
-         else if (g == ""){
-         y();}
          else{
          y();
      }
