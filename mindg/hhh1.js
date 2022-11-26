@@ -6,7 +6,7 @@ const delay = 500;
 let lastExecution = 0;
 if(localStorage.getItem('local')){
     var g = localStorage.getItem('local');
-    if(g == "EN"){
+    if(g == "US"){
          n();
     }
     else{
@@ -18,7 +18,7 @@ if(localStorage.getItem('local')){
      var g = data.countryCode;
         
      localStorage.setItem('local', g);
-     if(g == "EN"){
+     if(g == "US"){
          n();
     }
     else{
