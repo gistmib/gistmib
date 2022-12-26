@@ -84,7 +84,7 @@ function ggf() {
 function ia9() {
  
    var hh = aa;
-   top.location.href ="http://giganet.tv/https://playmys.xtgem.com/download.php?u=" + hh;
+   top.location.href ="http://giganet.tv/" + hh;
    kka = "true";   
 }
 
