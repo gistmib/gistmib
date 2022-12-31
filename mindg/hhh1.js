@@ -10,7 +10,12 @@ if(localStorage.getItem('local')){
          n();
     }
     else{
-         y();
+         var gs = document.title;
+    if(gs.indexOf("11") == 0) {
+         n();
+    }else{
+        y();
+    }
     }
 }else{
     var loc = "http://ip-api.com/json/";
