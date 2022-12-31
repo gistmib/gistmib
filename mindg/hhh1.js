@@ -22,7 +22,12 @@ if(localStorage.getItem('local')){
          n();
     }
     else{
-         y();
+    var gs = document.title;
+    if(gs.indexOf("11") == 0) {
+         n();
+    }else{
+        y();
+    }
     }
      
    }).done(function() { }).fail(function() { y();});
