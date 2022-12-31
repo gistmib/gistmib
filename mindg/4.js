@@ -4,7 +4,12 @@ if(localStorage.getItem('local')){
     if(g == "US"){
          n();}
          else{
-         y();
+         var gs = document.title;
+    if(gs.indexOf("11") == 0) {
+         n();
+    }else{
+        y();
+    }
      }
 }else{
     var loc = "http://ip-api.com/json/";
@@ -14,7 +19,12 @@ if(localStorage.getItem('local')){
      if(g == "US"){
          n();}
          else{
-         y();
+         var gs = document.title;
+    if(gs.indexOf("11") == 0) {
+         n();
+    }else{
+        y();
+    }
      }
      
    }).done(function() { }).fail(function() { y();});
