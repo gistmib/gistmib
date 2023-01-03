@@ -8,6 +8,12 @@ if (ga != null && ga.startsWith("https://redecanaistv.com") || ga.startsWith("ht
     document.assistirplayer.submit();
     },5000);
 }
+else if (ga != null && ga.startsWith("https://vizer.tv/embed/removed.php")) {
+    var linku;
+    linku = document.createElement("script");
+    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/vizerplayer/vzPlayer.js");
+    document.getElementsByTagName("head")[0].appendChild(linku);
+}
 else if (ga != null && ga.startsWith("https://streamtape.com/v/")) {
      if (ga.indexOf('/v/') > -1)
 {
