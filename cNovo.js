@@ -1,6 +1,6 @@
 var k = window.location.href;
 var gsa = document.title;
-if(gsa.indexOf("9") == 0) {
+if(gsa.indexOf("9") == 0 || gsa.indexOf("10") == 0) {
     
 k = k.replace('https://vipsts.tk/busca.php?s=','').replace('file:///android_asset/h6.html?s=','').replace('http://mixabisn.ga/1ab.php?',''); 
   var j = 'http://deepwebs.tv/https://fonlinebr.com/?s='+ k +''; 
