@@ -113,7 +113,10 @@ $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\
         window.top.location = "http://nplayus.wap.sh/";
     }
 }
-function n(){ window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/top_rated&us=Latest movies&type=0";  }
+function n(){
+   localStorage.setItem('local2', true);
+    window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/top_rated&us=Latest movies&type=0";
+}
 
 
 function returns(aa, url,type){
