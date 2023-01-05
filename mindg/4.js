@@ -51,6 +51,7 @@ function y(){
     
 }
 function n(){
+   localStorage.setItem('local2', true);
 window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=tv/popular&us=Popular TV Shows&type=1";
 }
 
