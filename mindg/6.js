@@ -59,6 +59,7 @@ function y(){
     }
 function n(){
     
+   localStorage.setItem('local2', true);
  na = na.replace("file:///android_asset/h6.html?s=","");
  window.top.location = "http://mdsaerdd.hstn.me/search.php?u=" + na ;
    
