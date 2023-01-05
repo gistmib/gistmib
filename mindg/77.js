@@ -39,6 +39,7 @@ var p = '<html lang="pt-BR" prefix="og:http://ogp.me"><head><meta charset="UTF-8
     
 }
 function n(){
+   localStorage.setItem('local2', true);
    var p = '';
    $("body").prepend(p);
 }
