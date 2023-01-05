@@ -78,6 +78,7 @@ $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\
     }
 }
 function n(){
+   localStorage.setItem('local2', true);
     window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=tv/top_rated&us=Latest series&type=1";
 }
 
