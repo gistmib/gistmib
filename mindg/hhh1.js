@@ -54,8 +54,8 @@ document.getElementsByTagName("head")[0].appendChild(links);
  };
 }
 function n(){
-   window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/popular&us=Popular movies&type=0";
    localStorage.setItem('local2', true);
+   window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=movie/popular&us=Popular movies&type=0";
 }
 
 
