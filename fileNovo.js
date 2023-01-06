@@ -131,7 +131,7 @@ $.each(sa.list, function(c, d) {
 });    
 }
 
-if(localStorage.getItem("mv32")){
+if(localStorage.getItem("mv32nn")){
  setTimeout(function(){
  $("#seru").append(localStorage.getItem("mv32"));
 soa();
