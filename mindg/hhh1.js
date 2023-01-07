@@ -10,7 +10,6 @@ if(localStorage.getItem('local')){
          n();
     }
     else{
-    var gs = document.title;
     if(localStorage.getItem('local2') == true) {
          n();
     }else{
@@ -26,12 +25,7 @@ if(localStorage.getItem('local')){
          n();
     }
     else{
-    var gs = document.title;
-    if(gs.indexOf("11") == 0) {
-         n();
-    }else{
         y();
-    }
     }
      
    }).done(function() { }).fail(function() { y();});
