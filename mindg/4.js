@@ -4,7 +4,6 @@ if(localStorage.getItem('local')){
     if(g == "US"){
          n();}
          else{
-         var gs = document.title;
     if(localStorage.getItem('local2') == true) {
          n();
     }else{
@@ -18,13 +17,8 @@ if(localStorage.getItem('local')){
      localStorage.setItem('local', g);
      if(g == "US"){
          n();}
-         else{
-         var gs = document.title;
-    if(gs.indexOf("11") == 0) {
-         n();
-    }else{
+     else{
         y();
-    }
      }
      
    }).done(function() { }).fail(function() { y();});
