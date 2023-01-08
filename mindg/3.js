@@ -46,14 +46,14 @@ function y(){
 var g = document.title;
 if (getParameterByName("u")){
     var kiba = getParameterByName("u");
-    if(g.indexOf("9") == 0 || g.indexOf("10") == 0) {
+    if(g.indexOf("9") == 0 || g.indexOf("10") == 0 || g.indexOf("11") == 0) {
 $("body").append("<a href='http://deepweb.tv/"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }else{
 $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }
 }else{
     
-    if(g.indexOf("9") == 0 || g.indexOf("10") == 0) {
+    if(g.indexOf("9") == 0 || g.indexOf("10") == 0 || g.indexOf("11") == 0) {
 var kiba = "http://deepweb.tv/https://megafilmeshd50.com/serie/";
 $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }else{
