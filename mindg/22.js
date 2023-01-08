@@ -48,8 +48,8 @@ var g = document.title;
 if (getParameterByName("u")){
     var kiba = getParameterByName("u");
     
-    if(gs.indexOf("10") == 0) {
-    if(g.indexOf("9") == 0  || g.indexOf("10") == 0) {
+    if(gs.indexOf("10") == 0 || gs.indexOf("11") == 0) {
+    if(g.indexOf("9") == 0  || g.indexOf("10") == 0 || g.indexOf("11") == 0) {
 $("body").append("<a href='http://deepweb.tv/"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }else{
 $("body").append("<a href='http://deepweb.tv/"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
@@ -61,7 +61,7 @@ $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\
     }  
 }else{
     
-    if(g.indexOf("9") == 0 || g.indexOf("10") == 0) {
+    if(g.indexOf("9") == 0 || g.indexOf("10") == 0|| g.indexOf("11") == 0) {
 var kiba = "http://deepweb.tv/https://megafilmeshd50.com/filme/";
 $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }else{
@@ -84,14 +84,14 @@ function getParameterByName(name, url) {
 if (getParameterByName("cat")){
 var kiba = getParameterByName("cat");
 kiba = kiba.replace("@","?")
-    if(gs.indexOf("9") == 0  || gs.indexOf("10") == 0) {
+    if(gs.indexOf("9") == 0  || gs.indexOf("10") == 0 || gs.indexOf("11") == 0) {
     window.location.href = "http://deepweb.tv/https://megafilmessonlinebr.net"+ kiba +"";
     }else{
 $("body").append("<a href='https://megafilmessonlinebr.net"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
     }
  
 }else{
-     if(gs.indexOf("9") == 0 || gs.indexOf("10") == 0) {
+     if(gs.indexOf("9") == 0 || gs.indexOf("10") == 0 || gs.indexOf("11") == 0) {
 var kiba = "http://deepweb.tv/https://megafilmessonlinebr.net/filme/";
 $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
      }else{
