@@ -69,13 +69,15 @@ var html = $(b64DecodeUnicode(aa));
 
 if(type == 2){
     if((domain.indexOf("megafilmeshd50") !== -1)){
+     
+   window.CallToAndroidFunction2.setVisible2();
+   $('body').fadeIn(400);
     var jx = $(html).find("#info .custom_fields:first").text();
     var yx = $(html).find(".extra .date").text();
     jx = jx.replace('Título original','');    
     var cod = $(html).find('#episodes').html();
     var c = cod.replace(/"/g,'sim').replace(/'/g,'nao');
     window.location.href = "http://vip.tv/ux=/rr.php&a=" + url + "&b=" +jx+ "&c=" +yx+ "&d=" +c;
-        
     }else{
      window.location.href = "http://vip.tv/ux=/r.php&uxs="+ $(html).find('strong a').attr("href").replace("https://www.imdb.com/title/",""); 
     }
@@ -109,10 +111,9 @@ if(type == 2){
             $('body').fadeIn(400);
             
         }
-        if(!localStorage.getItem('data')){
-            
-    window.location.href = "http://deepwebs.tv/https://vizer.tv/pesquisar/" + na; 
-        }
+    if(!localStorage.getItem('data')){
+       window.location.href = "http://deepwebs.tv/https://vizer.tv/pesquisar/" + na; 
+    }
     var heach = $(html).find(".search-page").find('.search_page_form').remove().end().html();
       
     setTimeout(function(){
