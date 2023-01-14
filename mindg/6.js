@@ -112,7 +112,7 @@ if(type == 2){
             
         }
     if(!localStorage.getItem('data')){
-       window.location.href = "http://deepwebs.tv/https://vizer.tv/pesquisar/" + na; 
+       window.location.href = "http://deepweb.tv/https://megafilmeshd50.com/?s=" + na; 
     }
     var heach = $(html).find(".search-page").find('.search_page_form').remove().end().html();
       
