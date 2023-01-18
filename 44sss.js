@@ -4,7 +4,7 @@ var g = window.location.hostname;var head= document.getElementsByTagName('head')
     localStorage.setItem("ll00aax", true);
 function bg(){
     if(localStorage.getItem('kku')){
-   var hours = 4;
+   var hours = 2;
    var now = Date.now();
    var setupTime = localStorage.getItem('setupTime');
    if (setupTime == null) {
