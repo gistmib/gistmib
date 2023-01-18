@@ -14,14 +14,14 @@ var gf = getParameterByName("canal");
 $('a[target="_blank"]').remove();
 $("a[target='_blank']").remove();
 
-$('head').append('<style>body{display:block !important}.wp-block-button{padding: 120px;position: fixed;top: 0;bottom: 0;left: 0;right: 0;background: #000000;overflow: auto;margin: auto;z-index: 10000;text-align: center;}</style>');
+$('head').append('<style>cloudflare-app{display:none !important}body{display:block !important}.wp-block-button{padding: 120px;position: fixed;top: 0;bottom: 0;left: 0;right: 0;background: #000000;overflow: auto;margin: auto;z-index: 10000;text-align: center;}</style>');
  
 
 
 $('.wp-block-button__link').click(function() {
 var h = $(this).attr("data-id");
 
-$('head').append('<style>.Player{position: fixed;width: 100%;height: 100%;top: 0;bottom: 0;left: 0;right: 0;z-index: 10000000;}.Player iframe{position: fixed;width: 100%;height: 100%;top:0;bottom:0;left:0;right:0}</style>');
+$('head').append('<style>cloudflare-app{display:none !important}.Player{position: fixed;width: 100%;height: 100%;top: 0;bottom: 0;left: 0;right: 0;z-index: 10000000;}.Player iframe{position: fixed;width: 100%;height: 100%;top:0;bottom:0;left:0;right:0}</style>');
 
 });
     
