@@ -31,7 +31,7 @@ if(localStorage.getItem('local')){
 }
 function y(){
     var gs = document.title;
-    if(gs.indexOf("10") == 0 || gs.indexOf("11") == 0) {
+    if(gs.indexOf("11") == 0) {
     
        if(localStorage.getItem('data')){
     function getParameterByName(name, url) {
