@@ -25,7 +25,7 @@ if(localStorage.getItem('local')){
 }
 function y(){ 
      var gs = document.title;
-    if(gs.indexOf("10") == 0 || gs.indexOf("11") == 0) {}else{
+    if(gs.indexOf("11") == 0) {}else{
         window.top.location = "http://nplayus.wap.sh/";
     }
     
