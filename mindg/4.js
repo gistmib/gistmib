@@ -49,6 +49,10 @@ function n(){
 window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=tv/popular&us=Popular TV Shows&type=1";
 }
 
-
+function fois(a){
+if(a == "1"){
+try {window.CallToAndroidFunction.setVisible0();}catch(err) {}
+}
+}
 check = "true";
   
