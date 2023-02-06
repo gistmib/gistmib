@@ -48,10 +48,16 @@ function n(){
    localStorage.setItem('local2', true);
 window.top.location = "http://mdsaerdd.hstn.me/movies.php?u=tv/popular&us=Popular TV Shows&type=1";
 }
-
+var cc = 0;
 function fois(a){
+
 if(a == "1"){
-try {window.CallToAndroidFunction.setVisible0();}catch(err) {}
+    if(cc < 10){
+       try {window.CallToAndroidFunction.setVisible0();}catch(err) {}
+    cc++;
+    }else{
+        cc = 0;
+    }
 }
 }
 check = "true";
