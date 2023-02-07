@@ -1,4 +1,4 @@
-if(!getParam("u").includes("xva")){
+if(getParam("u").includes("pt")){
 var gs = document.title;
 if(gs.indexOf("13") == 0) {
     y();
