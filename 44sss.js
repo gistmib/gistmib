@@ -171,7 +171,7 @@ if(localStorage.getItem('cats')){
 function kka(){
     if(navigator.onLine){
     if(aat == "yyx"){}else{
-fetch('http://nplazers.ga/one.php?url=' + lots /*, options */)
+fetch('https://nplazers.ga/one.php?url=' + lots /*, options */)
     .then((response) => response.text())
     .then((html) => {
     var f = html;
