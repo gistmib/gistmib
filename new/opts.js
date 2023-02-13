@@ -20,7 +20,7 @@ $(document).ready(function(){
             window.fct.onLoadSuccess(ads);
         }
         }
-        $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
+        $("body").append('<img src="https://whos.amung.us/widget/29lgbbtjsj.png" width="0" height="0" border="0" />');
         // window.fct.onSynicBanner("e2f22299");
        // window.fct.onAlertMsg("http://google.com", "aaaaaa","bbbbbbbb", 1, true, 0);
        // window.fct.onShareMsg("Baixe ja o melhor aplicativo para series e filmes online!", "Baixe ja o melhor aplicativo para series e filmes online em HD! https://play.google.com/store/apps/details?id=hd.uhds","Compartilhe nosso app");
