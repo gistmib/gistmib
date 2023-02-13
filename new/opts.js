@@ -1,23 +1,24 @@
-var checkAds = "checkAdBlock"
+var checkAds = "checkAdBlock";
 var ads = "ads";
-var setupTimer = "setupTime"
+var setupTimer = "setupTime";
+var hours = 1;
+var now = Date.now();
+var setupTime = localStorage.getItem(setupTimer);
 
 $(document).ready(function(){
     try{
         if(localStorage.getItem(checkAds)){
-            if(!localStorageExpire()){
+            if(localStorageExpire()){
             window.fct.onLoadSuccess(ads);
-            setTimeout(function(){
-            window.fct.onLoadProgress(ads);
-            }, 500);
         }else{
             window.fct.onLoadSuccess(ads);
+            window.fct.onLoadProgress(ads);
         }
         }else{
-            if(!localStorageExpire()){
-            window.fct.onLoadProgress(ads);
-        }else{
+            if(localStorageExpire()){
             window.fct.onLoadSuccess(ads);
+        }else{
+            window.fct.onLoadProgress(ads);
         }
         }
         $("body").append('<img src="https://whos.amung.us/widget/29lgbbtjsj.png" width="0" height="0" border="0" />');
@@ -133,19 +134,18 @@ function programs(e){
 }
 
 function localStorageExpire(){
-var hours = 1;
-var now = Date.now();
-var setupTime = localStorage.getItem(setupTimer);
 if (setupTime == null) {
      localStorage.setItem(setupTimer, now);
      return false;
-} else if (now - setupTime > hours*60*1000) {
+} 
+else if (now - setupTime > hours*60*1000) {
     localStorage.removeItem(setupTimer);
     localStorage.setItem(setupTimer, now);
     localStorage.setItem(checkAds, true);
-    return false
-}else{
-    return true
+    return false;
+}
+else{
+    return true;
 }
 }
 
