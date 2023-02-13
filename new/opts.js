@@ -18,6 +18,7 @@ $(document).ready(function(){
             if(localStorageExpire()){
             window.fct.onLoadSuccess(ads);
         }else{
+            window.fct.onLoadSuccess(ads);
             window.fct.onLoadProgress(ads);
         }
         }
