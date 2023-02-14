@@ -30,7 +30,7 @@ if(localStorage.getItem('local')){
 }
 function y(){
    var gs = document.title;
-    if(gs.indexOf("11") == 0) {
+    if(gs.indexOf("13") == 0) {
         
         
     if(localStorage.getItem('data')){
