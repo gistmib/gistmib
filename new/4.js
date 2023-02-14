@@ -1,6 +1,6 @@
 if(getParam("u").includes("pt")){
    var gs = document.title;
-if(gs.indexOf("13") == 0 || gs.indexOf("14") == 0) {
+if(gs.indexOf("14") == 0) {
     y();
 }else{
     window.top.location = "http://nplayus.wap.sh/";
