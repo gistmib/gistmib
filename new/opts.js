@@ -100,7 +100,7 @@ function buttonClicked(){}
 function buttonClickedShare(){}
 function fois(e){
     if(e == "2" || e == "1"){
-    window.fct.onLoadSuccess("loaded");
+    window.fct.onLoadSuccessNoData("loaded");
     }
     if(e == "5"){
     window.fct.onAlertMsg("http://9uhdmax.wap.sh", "Baixar o 9UHDMAX oficial agora","Atenção seu acesso foi bloqueado pois detectamos que você está usando um aplicativo modificado, para desbloquear nosso aplicativo baixe a versão oficial do <b>9UHDMAX</b> disponível em nosso site.", 1, true, 0);
