@@ -39,6 +39,8 @@ function loadData(e, isDownload){
     if(isDownload){
             isDown = "<style>#assistir{display:none}#transmitir{display:none}</style>"
         }
+    
+    isDown += "<div style='padding-top:15px;padding-bottom:15px'><center>Ajude-nos enviando esse aplicativo para um amigo<br/><div onclick='send()' style='background:#cd0000;color:#ffffff;font-weight: bold;padding:10px;margin:10px'>Compartilhar o 9UHDMAX agora!</div></center></div>"
     if(site == "vizer"){
         var fembed = obj.fembed;
         var streamtape = obj.streamtape;
@@ -149,5 +151,7 @@ else{
     return true;
 }
 }
-
+function send(){
+    window.fct.onShareMsg("Acesse o site e baixe ja o melhor aplicativo para assistir filmes, series e tv online!", "Acesse o site e baixe ja o melhor aplicativo para assistir filmes, series e tv online! https://9uhdmax.wap.sh","Compartilhe nosso app")
+}
 check = true;
