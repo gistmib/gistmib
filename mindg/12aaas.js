@@ -279,7 +279,7 @@ var head= document.getElementsByTagName('head')[0]; var scriptxx= document.creat
     },0);
     
     
- $("body").append("<style>.image-post{position: fixed !important;z-index: 900000000000000 !important;width: 100%;height: 100% !important;max-width: 100% !important;top: 0 !important;bottom: 0 !important;padding: 0px !important;margin: 0px !important;}body{display:block !important;}div.replace_html{max-height: 100% !important;width: 100% !important;height: 100% !important;position: absolute !important;}div.options_iframe {z-index: 900000000000000 !important;position: fixed !important;width: 100% !important;bottom: 0 !important;}</style>");
+ $("body").append("<style>.image-post{position: fixed !important;z-index: 900000000000000 !important;width: 100%;height: 100% !important;max-width: 100% !important;top: 0 !important;bottom: 0 !important;padding: 0px !important;margin: 0px !important;}body{display:block !important;}div.replace_html{max-height: 100% !important;width: 100% !important;height: 100% !important;position: absolute !important;}div.options_iframe {z-index: 900000000000000 !important;position: fixed !important;width: 100% !important;bottom: 0 !important;}div.replace_html iframe {z-index: 900000000000009 !important;position: fixed !important;width: 100% !important;bottom: 0 !important;top: 0 !important;left: 0 !important;right: 0 !important;margin:auto}</style>");
  
     
 }
