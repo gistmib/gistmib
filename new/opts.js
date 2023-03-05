@@ -40,7 +40,7 @@ function loadData(e, isDownload){
             isDown = "<style>#assistir{display:none}#transmitir{display:none}</style>"
         }
     
-    isDown += "<div style='border-radius:10px;background:#333333;padding:15px;margin:5px;margin-bottom:15px;color:#cccccc'><div style='margin:5px'><b>Atenção</b>: se você gosta desse app e não quer que ele pare de funcionar ajude-nos compartilhando o <b>9UHDMAX</b> com um amigo</div><div onclick='send()' style='border-radius:100px;background:#ffffff;color:#000000;font-weight: bold;padding:10px;margin-top:10px;'><center>Compartilhar esse aplicativo agora!</center></div></div>"
+    isDown += "<div style='border-radius:10px;background:#333333;padding:15px;margin-bottom:15px;color:#cccccc'><div style='margin-left:5px'><b>Atenção</b>: se você gosta desse app e não quer que ele pare de funcionar ajude-nos compartilhando o <b>9UHDMAX</b> com um amigo</div><div onclick='send()' style='border-radius:100px;background:#ffffff;color:#000000;font-weight: bold;padding:10px;margin-top:10px;'><center>Compartilhar esse aplicativo agora!</center></div></div>"
     if(site == "vizer"){
         var fembed = obj.fembed;
         var streamtape = obj.streamtape;
