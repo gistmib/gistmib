@@ -1,4 +1,4 @@
-if(getParam("u").includes("pt")){
+if(!getParam("u").includes("en")){
    var gs = document.title;
 if(gs.indexOf("14") == 0) {
     y();
