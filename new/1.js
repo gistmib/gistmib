@@ -41,10 +41,19 @@ function n(){
 function returns(aa, url,type){
 if ((lastExecution + delay) < Date.now()){
        
-var domain = url;     
+var domain = url;
+
+
+if(aa.indexOf("error") !== -1){
+    
+    
+    var html = "<style>body{display:block !important}</style><div style='position:fixed;bottom:0;top:0;left:0;right:0;margin:auto;width:100%;height:100%;background:#333333;color:#cccccc'><div style='position:absolute;bottom:0;top:0;left:0;right:0;margin:auto;height: max-content;width: 90%;'><b>Problema Importante:</b><br/>A sua operadora de internet está bloqueando todo o conteudo do 9UHDMAX!<br/><br/> para fazer o desbloqueio use o aplicativo <b>DNS Changer</b>, é simples e fácil de configurar<br/><div onclick='send(\"http://goooog.xtgem.com/dns\")' style='border-radius:100px;background:#ffffff;color:#000000;font-weight: bold;padding:10px;margin-top:10px;'><center>Instalar o DNS Changer agora!</center></div><div onclick='send(\"http://gooooog.wap.sh/dns.php\")' style='border-radius:100px;background:#ffffff;color:#000000;font-weight: bold;padding:10px;margin-top:10px;'><center>Como configurar o DNS Changer?</center></div></div></div><script>window.CallToAndroidFunction3.setVisible3();$('body').fadeIn(400);</script>"
+    
+     $("body").replaceWith(html);
+    
+    
+}else{
 var html = $(b64DecodeUnicode(aa));
-
-
 if(type == 2){
     if((domain.indexOf("megafilmeshd50") !== -1)){
     var jx = $(html).find("#info .custom_fields:first").text();
@@ -122,9 +131,11 @@ if(type == 2){
    
     
 }
+}
+
     
-    lastExecution = Date.now() 
-    }
+lastExecution = Date.now() 
+}
 }
 function infos(a,b,c){
     $("input").css('color',"#000");
@@ -152,5 +163,8 @@ function b64DecodeUnicode(str) {
         return decodeURIComponent(atob(str).split('').map(function(c) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
-    }
+}
+function send(url){
+    window.location.href = url
+}
 check = "true";
