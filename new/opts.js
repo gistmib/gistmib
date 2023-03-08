@@ -47,10 +47,10 @@ function loadData(e, isDownload){
         var video_id = obj.id;
         var url_principal = "";
         if(streamtape == true){
-            url_principal = "https://vizer.tv/embed/getPlay.php?id="+video_id+"&sv=streamtape";
+            url_principal = "https://vizer.in/embed/getPlay.php?id="+video_id+"&sv=streamtape";
         }
         else{
-            url_principal = "https://vizer.tv/embed/getPlay.php?id="+video_id+"&sv=fembed";
+            url_principal = "https://vizer.in/embed/getPlay.php?id="+video_id+"&sv=fembed";
         }
         var url_secondary = "https://embed.warezcdn.com/video/" + video_id;
         
