@@ -47,8 +47,6 @@ if ((lastExecution + delay) < Date.now()){
        
 domain = url;     
 var html = $(b64DecodeUnicode(aa));
-
-
 if(type == 2){
     if((domain.indexOf("megafilmeshd50") !== -1)){
     var jx = $(html).find("#info .custom_fields:first").text();
@@ -57,55 +55,59 @@ if(type == 2){
     var cod = $(html).find('#episodes').html();
     var c = cod.replace(/"/g,'sim').replace(/'/g,'nao');
     window.location.href = "http://vip.tv/ux=/rr.php&a=" + url + "&b=" +jx+ "&c=" +yx+ "&d=" +c;
-    }else{
+    }
+    else{
      window.location.href = "http://vip.tv/ux=/r.php&uxs="+ $(html).find('strong a').attr("href").replace("https://www.imdb.com/title/",""); 
     }
-    
 }else{
-    if(domain.indexOf("vizer") !== -1){
-   window.CallToAndroidFunction2.setVisible2();
-   $('body').fadeIn(400);
-      var h = html;
-        var d = '<div class="aa">'+$(h).find(".listItems").html() +'</div>';
-        $(d).find("a").each(function(){
-            var img = $(this).find(".img").attr("src");
-            img = img.replace("/con","https://vizer.tv/con");
-            var name = $(this).attr("href");
-            name = name.replace("Assistir ","").replace("serie/online/","").replace("filme/online/","").replace("/","").replace(":","").replace(/ /g,"%20").replace("online","%20").replace("%20%20","");
-            var id = $(this).find(".img").attr("src");
-            id = id.replace("/content/movies/posterPt/185/","").replace("/content/series/posterPt/185/","").replace(".jpg","").replace(".jpeg","").replace(".gif","").replace(".png","");
-            if(img != null && img.startsWith("https://vizer.tv/content/series/")){
-                
-            var tblRow = "<a href='http://vip.tv/ux=/redss.php&uxs="+name+"&n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
-                
-            }else{
-            var tblRow = "<a href='http://vip.tv/ux=/reds.php@uxs="+name+"@n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
-            }
-           $(tblRow).appendTo("#userdata");
-        });
-        
-    }else{
-        if(domain.indexOf("megafilmeshd50") !== -1){
-            window.CallToAndroidFunction2.setVisible2();
-            $('body').fadeIn(400);
-            
-        }
-    if(!localStorage.getItem('data')){
-       window.location.href = "http://deepweb.tv/https://vizer.tv/pesquisar/" + getParameterByName("s"); 
-    }
-    var heach = $(html).find(".search-page").find('.search_page_form').remove().end().html();
+    
+if(domain.indexOf("cinemao") !== -1){
+    
+var heach = $(html).find(".search-page").find('.search_page_form').remove().end().html();
       
-    setTimeout(function(){
+setTimeout(function(){
       for(var i = 0; i < $(heach).length; i++) {
        var html = $(heach)[i];
-       if((domain.indexOf("megafilmeshd50") !== -1)){
-       var img = $(html).find("img").attr("src");
-       }else{
        if($(html).find("img").attr("data-wpfc-original-src")){
        var img = $(html).find("img").attr("data-wpfc-original-src");
        }else{
        var img = $(html).find("img").attr("src");
-       }}
+       }
+       
+       
+       var link = $(html).find("a").attr("href");
+       var alt = $(html).find("img").attr("alt");
+       img = img.replace("150x150","185x278").replace("w92","w200");
+       if($(html).find(".module .content .items .item .data span")[0]){
+       var ano = $(html).find(".module .content .items .item .data span").text();
+       }else{
+          var ano = $(html).find(".result-item article .details .meta span.year").text(); 
+       }
+       
+       
+       if((link.indexOf("/series/") !== -1)){
+       }else{
+    var gg = '<a class="gPoster" href="http://deepwebsx.tv/'+link+'" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'"  /></a>';
+    $("#userdata").append(gg);
+       }
+       
+    }  
+    
+    },0);   
+    
+window.location.href = "http://deepweb.tv/https://vizer.tv/pesquisar/" + getParameterByName("s");
+
+window.CallToAndroidFunction2.setVisible2();
+$('body').fadeIn(400);      
+    
+}
+else if(domain.indexOf("megafilmeshd50") !== -1){
+var heach = $(html).find(".search-page").find('.search_page_form').remove().end().html();
+
+setTimeout(function(){
+      for(var i = 0; i < $(heach).length; i++) {
+       var html = $(heach)[i];
+       var img = $(html).find("img").attr("src");
        var link = $(html).find("a").attr("href");
        var alt = $(html).find("img").attr("alt");
        img = img.replace("150x150","185x278").replace("w92","w200");
@@ -114,7 +116,6 @@ if(type == 2){
           var ano = $(html).find(".result-item article .details .meta span.year").text(); 
        }
        
-       if(domain.indexOf("megafilmeshd50") !== -1){
        if(link.indexOf("/serie/") !== -1){
        var gg = '<a class="xagPoster" href="http://deepwebsx.tv/'+link+'" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'" /><span id="hds">HD 1080p</span></a>';
        
@@ -124,29 +125,43 @@ if(type == 2){
     var gg = '<a class="xagPoster" href="http://vip.tv/ux=/ru.php?a='+link+'@b='+alt+'@c=13483@d='+ano+'@" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'"  /><span id="hds">HD 1080p</span></a>';
     $("#userdata").append(gg);
        } 
-       }else{
-           
-          if((link.indexOf("/series/") !== -1)){
-       }else{
-    var gg = '<a class="gPoster" href="http://deepwebsx.tv/'+link+'" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'"  /><span id="hds">HD 1080p</span></a>';$("#userdata").append(gg);
-       }
-       } 
     }  
     
     },0);    
-    }
-    
-    
-    
-    
-    if((domain.indexOf("megafilmeshd50") !== -1)){}
-    else{
-        $("head").append("<style>#hds{display:none!important}</style>");
-        }
-    
-    
-    
+
+window.CallToAndroidFunction2.setVisible2();
+$('body').fadeIn(400);
+
 }
+else if(domain.indexOf("vizer") !== -1){
+var h = html;
+var d = '<div class="aa">'+$(h).find(".listItems").html() +'</div>';
+$(d).find("a").each(function(){
+var img = $(this).find(".img").attr("src");
+img = img.replace("/con","https://vizer.tv/con");
+var name = $(this).attr("href");
+name = name.replace("Assistir ","").replace("serie/online/","").replace("filme/online/","").replace("/","").replace(":","").replace(/ /g,"%20").replace("online","%20").replace("%20%20","");
+var id = $(this).find(".img").attr("src");
+id = id.replace("/content/movies/posterPt/185/","").replace("/content/series/posterPt/185/","").replace(".jpg","").replace(".jpeg","").replace(".gif","").replace(".png","");
+if(img != null && img.startsWith("https://vizer.tv/content/series/")){
+                
+var tblRow = "<a href='http://vip.tv/ux=/redss.php&uxs="+name+"&n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
+                
+}else{
+var tblRow = "<a href='http://vip.tv/ux=/reds.php@uxs="+name+"@n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
+ }
+ $(tblRow).appendTo("#userdata");
+    
+});
+
+window.CallToAndroidFunction2.setVisible2();
+$('body').fadeIn(400); 
+}
+else { 
+window.location.href = "http://deepweb.tv/https://vizer.tv/pesquisar/" + getParameterByName("s"); 
+}
+}
+
 lastExecution = Date.now() 
 }
 }
