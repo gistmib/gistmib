@@ -51,7 +51,7 @@ if(aa.indexOf("error") !== -1){
     $("body").prepend(html);
     
     setTimeout(function(){
-        window.CallToAndroidFunction3.setVisible3();},1000);
+        window.CallToAndroidFunction4.setVisible4();},1000);
     }
     }
 }else{
