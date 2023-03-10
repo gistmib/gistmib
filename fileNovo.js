@@ -73,7 +73,8 @@ var next = Math.floor(Math.random() * 900) + 1;
 var hash = CryptoJS.MD5("viaviweb" + next);
 var jons = "http://zbigs.cf/flix.php"; 
 
-    var hours = 24; var now = new Date().getTime();
+    var hours = 24; 
+    var now = new Date().getTime();
     var setupTimes = localStorage.getItem('setupTimess');
     
     if (setupTimes == null) {
