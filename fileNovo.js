@@ -72,7 +72,21 @@ $(".Legendado").remove();
 var next = Math.floor(Math.random() * 900) + 1;
 var hash = CryptoJS.MD5("viaviweb" + next);
 var jons = "http://zbigs.cf/flix.php"; 
-var hours = 24; var now = new Date().getTime();var setupTimes = localStorage.getItem('setupTimess');if (setupTimes == null) {localStorage.setItem('setupTimess', now);} else {if(now-setupTimes > hours*60*60*1000) {localStorage.removeItem('mv11');localStorage.removeItem('mv112');localStorage.removeItem('mv22');localStorage.removeItem('mv32');localStorage.setItem('setupTimess', now);}}
+
+    var hours = 24; var now = new Date().getTime();
+    var setupTimes = localStorage.getItem('setupTimess');
+    
+    if (setupTimes == null) {
+        localStorage.setItem('setupTimess', now);
+    } else {
+        if(now-setupTimes > hours*60*60*1000) {  
+            localStorage.removeItem('mv11');                   
+            localStorage.removeItem('mv112');
+            localStorage.removeItem('mv22');
+            localStorage.removeItem('mv32');
+            localStorage.setItem('setupTimess', now);
+        }
+    }
 
 var hourstop = 168;
 var nows = new Date().getTime();
@@ -132,7 +146,7 @@ $.each(sa.list, function(c, d) {
 });    
 }
 
-if(localStorage.getItem("mv32nn")){
+if(localStorage.getItem("mv32")){
  setTimeout(function(){
  $("#seru").append(localStorage.getItem("mv32"));
 soa();
