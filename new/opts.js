@@ -45,7 +45,7 @@ function loadData(e, isDownload){
     if(site == "vizer"){
         
    checkValidUri(
-        'https://vizer.tv/img/favicon.ico', 
+        'http://vizer.tv/img/favicon.ico', 
         function (status) {
             var vizer = ""
         if(status == 404) {
