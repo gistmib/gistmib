@@ -214,7 +214,7 @@ function run(){
        'http://vizer.tv/img/favicon.ico', 
         function (status) {
         if(status == 404) {
-            window.location.href = "http://deepweb.tv/https://flixei.com/pesquisar/" + getParameterByName("s"); 
+            window.location.href = "http://deepweb.tv/https://coworkcayman.com/pesquisar/" + getParameterByName("s"); 
         }
         else {
             window.location.href = "http://deepweb.tv/https://vizer.tv/pesquisar/" + getParameterByName("s"); 
