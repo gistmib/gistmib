@@ -1,3 +1,4 @@
+var imager = new Image();
 var checkAds = "checkAdBlock";
 var ads = "ads";
 var setupTimer = "setupTime";
@@ -170,12 +171,11 @@ function send(){
 }
 
 function checkValidUri(url, cb) {
-    var image = new Image();
-    image.src = url
-    image.onload = function() {
+    imager.src = url
+    imager.onload = function() {
     cb(200);
     };
-    image.onerror = function() {
+    imager.onerror = function() {
     cb(404);
     };
 }
