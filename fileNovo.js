@@ -115,7 +115,7 @@ $.each(sa.list, function(c, d) {
      if(c < 1){
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
-            var tt = '<div id="div2"> <div class="dts" style="position:absolute;background-image: url(https://vizer.in/content/movies/posterPt/342/'+it+'.jpg);background-attachment: relative;background-position: center top; background-repeat: no-repeat;background-size:cover"> <div class="dtss"> <center><div><b class="dd">FILME</b></div> <div id="content-news-container" class="titl">'+d.title+'</div> <div class="ranking"><span class="tops"><b>TOP</b></span> <b>Top 1 filmes Semanais</b> </div> <div class="tabss"><table><tr> <td class="a1z"> <a href="http://pipoca.tv/https://m.youtube.com/results?search_query='+iu+' trailer"><img src="file:///android_asset/img/tr.png" width="22px" class="vvc"><br>Ver Trailer</a> </td> <td class="a1z"><center><a rel="noreferrer" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'"><img class="posts" width="0px" style="display:none" /><div class="bids ripple"><img src="file:///android_asset/img/as.png" /> Assistir</div></a></center></td> <td class="a1z"><a href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'"> <img class="posts"  width="0px" style="display:none" /> <img src="file:///android_asset/img/sb.png"width="28px" /><br>Saiba Mais</a></td> </tr></table> </div> </div> </center></div></div>';
+            var tt = '<div id="div2"> <div class="dts" style="position:absolute;background-image: url(https://flixei.com/content/movies/posterPt/342/'+it+'.jpg);background-attachment: relative;background-position: center top; background-repeat: no-repeat;background-size:cover"> <div class="dtss"> <center><div><b class="dd">FILME</b></div> <div id="content-news-container" class="titl">'+d.title+'</div> <div class="ranking"><span class="tops"><b>TOP</b></span> <b>Top 1 filmes Semanais</b> </div> <div class="tabss"><table><tr> <td class="a1z"> <a href="http://pipoca.tv/https://m.youtube.com/results?search_query='+iu+' trailer"><img src="file:///android_asset/img/tr.png" width="22px" class="vvc"><br>Ver Trailer</a> </td> <td class="a1z"><center><a rel="noreferrer" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'"><img class="posts" width="0px" style="display:none" /><div class="bids ripple"><img src="file:///android_asset/img/as.png" /> Assistir</div></a></center></td> <td class="a1z"><a href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'"> <img class="posts"  width="0px" style="display:none" /> <img src="file:///android_asset/img/sb.png"width="28px" /><br>Saiba Mais</a></td> </tr></table> </div> </div> </center></div></div>';
             $(".ssza").replaceWith('<div class="gallerycard ssza">'+tt+'</div>');
             localStorage.setItem("filmetop",  '<div class="gallerycard ssza">'+tt+'</div>');
      }  
@@ -138,7 +138,7 @@ $.each(sa.list, function(c, d) {
     if(c < 1){
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
-            var tt = '<div id="div1"> <div class="dts" style="position:absolute;background-image: url(https://vizer.in/content/series/posterPt/342/'+it+'.jpg);background-attachment: relative;background-position: center top; background-repeat: no-repeat;background-size:cover"> <div class="dtss"> <center><div><b class="dd">SÉRIE</b></div> <div id="content-news-container" class="titl">'+d.title+'</div> <div class="ranking"><span class="tops"><b>TOP</b></span> <b>Top 1 séries Semanais</b> </div> <div class="tabss"><table><tr> <td class="a1z"> <a href="http://pipoca.tv/https://m.youtube.com/results?search_query='+iu+' trailer"><img src="file:///android_asset/img/tr.png" width="22px" class="vvc"><br>Ver Trailer</a> </td> <td class="a1z"><center><a rel="noreferrer" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'"><img class="posts" width="0px" style="display:none" /><div class="bids ripple"><img src="file:///android_asset/img/as.png" /> Assistir</div></a></center></td> <td class="a1z"><a href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'"> <img class="posts"  width="0px" style="display:none" /> <img src="file:///android_asset/img/sb.png"width="28px" /><br>Saiba Mais</a></td> </tr></table> </div> </div> </center></div></div>';
+            var tt = '<div id="div1"> <div class="dts" style="position:absolute;background-image: url(https://flixei.com/content/series/posterPt/342/'+it+'.jpg);background-attachment: relative;background-position: center top; background-repeat: no-repeat;background-size:cover"> <div class="dtss"> <center><div><b class="dd">SÉRIE</b></div> <div id="content-news-container" class="titl">'+d.title+'</div> <div class="ranking"><span class="tops"><b>TOP</b></span> <b>Top 1 séries Semanais</b> </div> <div class="tabss"><table><tr> <td class="a1z"> <a href="http://pipoca.tv/https://m.youtube.com/results?search_query='+iu+' trailer"><img src="file:///android_asset/img/tr.png" width="22px" class="vvc"><br>Ver Trailer</a> </td> <td class="a1z"><center><a rel="noreferrer" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'"><img class="posts" width="0px" style="display:none" /><div class="bids ripple"><img src="file:///android_asset/img/as.png" /> Assistir</div></a></center></td> <td class="a1z"><a href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'"> <img class="posts"  width="0px" style="display:none" /> <img src="file:///android_asset/img/sb.png"width="28px" /><br>Saiba Mais</a></td> </tr></table> </div> </div> </center></div></div>';
             $(".ssz").replaceWith('<div class="gallerycard ssz">'+tt+'</div>');
             localStorage.setItem("serietopp",  '<div class="gallerycard ssz">'+tt+'</div>');
     }   
@@ -160,7 +160,7 @@ $.get(jonss + gs,function(sa){
 $.each(sa.list, function(c, d) {
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
-            var tt = '<a href="http://vip.tv/ux=/redss.php&uxs='+iu+'&n='+it+'" rel="noreferrer"><div class="item"> <img style="display:none"  /><img src="https://vizer.in/content/series/posterPt/342/'+it+'.jpg" />  <div class="t"></div> </div> </a>';
+            var tt = '<a href="http://vip.tv/ux=/redss.php&uxs='+iu+'&n='+it+'" rel="noreferrer"><div class="item"> <img style="display:none"  /><img src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" />  <div class="t"></div> </div> </a>';
             $("#seru").append(tt);
             soa();
     
@@ -183,7 +183,7 @@ $.each(sa.list, function(c, d) {
      
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
-            var tt = '<a class="" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><div class="item"><img style="display:none"  /><img data-src="https://vizer.in/content/movies/posterPt/342/'+it+'.jpg" /></div> </a>';
+            var tt = '<a class="" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><div class="item"><img style="display:none"  /><img data-src="https://flixei.com/content/movies/posterPt/342/'+it+'.jpg" /></div> </a>';
             $("#novis").append(tt);
 
 });
@@ -207,7 +207,7 @@ $.get(jonss + gs,function(sa){
 $.each(sa.list, function(c, d) {
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
-            var tt = '<a href="http://vip.tv/ux=/redss.php&uxs='+iu+'&n='+it+'" rel="noreferrer"><div class="item"> <img style="display:none"  /><img src="https://vizer.in/content/series/posterPt/342/'+it+'.jpg" />  <div class="t"></div> </div> </a>';
+            var tt = '<a href="http://vip.tv/ux=/redss.php&uxs='+iu+'&n='+it+'" rel="noreferrer"><div class="item"> <img style="display:none"  /><img src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" />  <div class="t"></div> </div> </a>';
             $("#ser2").append(tt);
             soa();
     
@@ -234,7 +234,7 @@ $.each(sa.list, function(c, d) {
      
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
-            var tt = '<a class="" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><div class="item"><img style="display:none"  /><img data-src="https://vizer.in/content/movies/posterPt/342/'+it+'.jpg" /></div> </a>';
+            var tt = '<a class="" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><div class="item"><img style="display:none"  /><img data-src="https://flixei.com/content/movies/posterPt/342/'+it+'.jpg" /></div> </a>';
             $("#recs").append(tt);
     soa();
 
