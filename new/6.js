@@ -174,7 +174,7 @@ var d = '<div class="aa">'+$(h).find(".generalMoviesList").html() +'</div>';
 $(d).find("a").each(function(){
 var img = $(this).find(".img").attr("src");
 var name =  $(this).attr("href");
-name = name.replace("assistir/filme/", "").replace("/online/gratis","").replace("Assistir ","").replace("serie/online/","").replace("filme/online/","").replace("/","").replace(":","").replace(/ /g,"%20").replace("online","%20").replace("%20%20","");
+name = name.replace("assistir/filme/", "").replace("assistir/serie/", "").replace("/online/gratis","").replace("Assistir ","").replace("serie/online/","").replace("filme/online/","").replace("/","").replace(":","").replace(/ /g,"%20").replace("online","%20").replace("%20%20","");
 var id = $(this).find(".img").attr("src");
 id = id.replace("https://flixei.com","").replace("https://flixei.org","").replace("https://flixei.net","").replace("/content/movies/posterPt/185/","").replace("/content/series/posterPt/185/","").replace(".jpg","").replace(".jpeg","").replace(".gif","").replace(".png","").replace(".webp","");
 if(img != null && (img.startsWith("https://flixei.com/content/series/") || img.startsWith("https://flixei.net/content/series/") || img.startsWith("https://flixei.org/content/series/"))){
