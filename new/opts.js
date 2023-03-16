@@ -9,7 +9,7 @@ var ee = ""
 var ii = ""
 $(document).ready(function(){
    checkValidUri(
-        'https://vizer.in/content/movies/posterPt/185/39177.webp', 
+        'https://vizer.in/img/favicon.ico', 
         function (status) {
         if(status == 404) {
            vizer = "https://coworkcayman.com"
