@@ -48,8 +48,7 @@ domain = url;
 
 if(aa.indexOf("error") !== -1){
     
-    
-    if($('#userdata').html() == "") {
+if($('#userdata').html() == "") {
     if(!navigator.onLine){
     window.location.reload();
     } 
@@ -60,7 +59,8 @@ $("#userdata").replaceWith(html);
         }
     }
     
-}else{
+}
+else{
 var html = $(b64DecodeUnicode(aa));
 if(type == 2){
     if((domain.indexOf("megafilmeshd50") !== -1)){
@@ -108,20 +108,8 @@ setTimeout(function(){
     }  
     
     },0);   
-    
-checkValidUri(
-        'https://vizer.in/content/movies/posterPt/185/39177.webp', 
-        function (status) {
-        if(status == 404) {
-            window.location.href = "http://deepweb.tv/https://coworkcayman.com/pesquisar/" + getParameterByName("s"); 
-        }
-        else {
-            window.location.href = "http://deepweb.tv/https://vizer.in/pesquisar/" + getParameterByName("s"); 
-        }
-});
-
-window.CallToAndroidFunction2.setVisible2();
-$('body').fadeIn(400);      
+ 
+run(); 
     
 }
 else if(domain.indexOf("megafilmeshd50") !== -1){
@@ -170,7 +158,29 @@ if(img != null && img.startsWith("https://flixei.com/content/series/")){
                 
 var tblRow = "<a href='http://vip.tv/ux=/redss.php&uxs="+name+"&n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
                 
-}else{
+}
+else{
+var tblRow = "<a href='http://vip.tv/ux=/reds.php@uxs="+name+"@n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
+ }
+ $(tblRow).appendTo("#userdata");
+    
+});
+
+}
+else if(domain.indexOf("flixei") !== -1){
+var h = html;
+var d = '<div class="aa">'+$(h).find(".generalMoviesList").html() +'</div>';
+$(d).find("a").each(function(){
+var img = $(this).find(".img").attr("src");
+var name = $(this).find(".i > span").text();
+var id = $(this).find(".img").attr("src");
+id = id.replace("https://flixei.com","").replace("https://flixei.org","").replace("https://flixei.net","").replace("/content/movies/posterPt/185/","").replace("/content/series/posterPt/185/","").replace(".jpg","").replace(".jpeg","").replace(".gif","").replace(".png","").replace(".webp","");
+if(img != null && (img.startsWith("https://flixei.com/content/series/") || img.startsWith("https://flixei.net/content/series/") || img.startsWith("https://flixei.org/content/series/"))){
+                
+var tblRow = "<a href='http://vip.tv/ux=/redss.php&uxs="+name+"&n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
+                
+}
+else{
 var tblRow = "<a href='http://vip.tv/ux=/reds.php@uxs="+name+"@n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
  }
  $(tblRow).appendTo("#userdata");
@@ -180,18 +190,9 @@ var tblRow = "<a href='http://vip.tv/ux=/reds.php@uxs="+name+"@n="+id+"' class='
 window.CallToAndroidFunction2.setVisible2();
 $('body').fadeIn(400); 
 }
-else { 
-    checkValidUri(
-        'https://vizer.in/content/movies/posterPt/185/39177.webp', 
-        function (status) {
-        if(status == 404) {
-            window.location.href = "http://deepweb.tv/https://coworkcayman.com/pesquisar/" + getParameterByName("s"); 
-        }
-        else {
-            window.location.href = "http://deepweb.tv/https://vizer.in/pesquisar/" + getParameterByName("s"); 
-        }
-        });
 
+else { 
+    run();
 }
 }
 }
@@ -207,7 +208,21 @@ function b64DecodeUnicode(str) {
 function send(url){
     window.location.href = url
 }
-
+function run(){
+    checkValidUri(
+       'https://vizer.in/img/favicon.ico', 
+        function (status) {
+        if(status == 404) {
+            window.location.href = "http://deepweb.tv/https://flixei.com/pesquisar/" + getParameterByName("s"); 
+        }
+        else {
+            window.location.href = "http://deepweb.tv/https://vizer.in/pesquisar/" + getParameterByName("s"); 
+        }
+        
+        window.CallToAndroidFunction2.setVisible2();
+        $('body').fadeIn(400); 
+        });
+}
 function checkValidUri(url, cb) {
     var image = new Image();
     image.src = url
