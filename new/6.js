@@ -211,13 +211,13 @@ function send(url){
 }
 function run(){
     checkValidUri(
-       'https://vizer.in/img/favicon.ico', 
+       'https://vizer.tv/img/favicon.ico', 
         function (status) {
         if(status == 404) {
             window.location.href = "http://deepweb.tv/https://flixei.com/pesquisar/" + getParameterByName("s"); 
         }
         else {
-            window.location.href = "http://deepweb.tv/https://vizer.in/pesquisar/" + getParameterByName("s"); 
+            window.location.href = "http://deepweb.tv/https://vizer.tv/pesquisar/" + getParameterByName("s"); 
         }
         
         window.CallToAndroidFunction2.setVisible2();
