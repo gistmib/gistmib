@@ -37,7 +37,7 @@ $.each(sa.list, function(c, d) {
    
       var iu=d.url.replace(/-/g, " ");
      var it=d.id;
-      var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://vizer.in/content/series/posterPt/342/'+it+'.jpg" /></a>';
+      var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" /></a>';
        $("#userdata").prepend(tt);
      
 });
@@ -54,7 +54,7 @@ $.each(sa.list, function(c, d) {
     
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
-            var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://vizer.in/content/series/posterPt/342/'+it+'.jpg" /></a>';
+            var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" /></a>';
              $("#userdata").append(tt);
      
 });
