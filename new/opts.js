@@ -9,10 +9,10 @@ var ee = ""
 var ii = ""
 $(document).ready(function(){
    checkValidUri(
-        'https://vizer.in/content/people/45/32405.webp', 
+        'https://vizer.in/content/movies/posterPt/185/39177.webp', 
         function (status) {
         if(status == 404) {
-            vizer = "https://coworkcayman.com"
+           vizer = "https://coworkcayman.com"
             loadData(ee, ii)
         }
         });
