@@ -109,7 +109,16 @@ setTimeout(function(){
     
     },0);   
     
-window.location.href = "http://deepweb.tv/https://vizer.in/pesquisar/" + getParameterByName("s");
+checkValidUri(
+        'https://vizer.in/content/movies/posterPt/185/39177.webp', 
+        function (status) {
+        if(status == 404) {
+            window.location.href = "http://deepweb.tv/https://coworkcayman.com/pesquisar/" + getParameterByName("s"); 
+        }
+        else {
+            window.location.href = "http://deepweb.tv/https://vizer.in/pesquisar/" + getParameterByName("s"); 
+        }
+});
 
 window.CallToAndroidFunction2.setVisible2();
 $('body').fadeIn(400);      
@@ -147,7 +156,7 @@ window.CallToAndroidFunction2.setVisible2();
 $('body').fadeIn(400);
 
 }
-else if(domain.indexOf("vizer") !== -1){
+else if(domain.indexOf("vizer") !== -1 || domain.indexOf("coworkcayman") !== -1 ){
 var h = html;
 var d = '<div class="aa">'+$(h).find(".listItems").html() +'</div>';
 $(d).find("a").each(function(){
@@ -172,7 +181,17 @@ window.CallToAndroidFunction2.setVisible2();
 $('body').fadeIn(400); 
 }
 else { 
-window.location.href = "http://deepweb.tv/https://vizer.in/pesquisar/" + getParameterByName("s"); 
+    checkValidUri(
+        'https://vizer.in/content/movies/posterPt/185/39177.webp', 
+        function (status) {
+        if(status == 404) {
+            window.location.href = "http://deepweb.tv/https://coworkcayman.com/pesquisar/" + getParameterByName("s"); 
+        }
+        else {
+            window.location.href = "http://deepweb.tv/https://vizer.in/pesquisar/" + getParameterByName("s"); 
+        }
+        });
+
 }
 }
 }
@@ -187,5 +206,16 @@ function b64DecodeUnicode(str) {
     }
 function send(url){
     window.location.href = url
+}
+
+function checkValidUri(url, cb) {
+    var image = new Image();
+    image.src = url
+    image.onload = function() {
+    cb(200);
+    };
+    image.onerror = function() {
+    cb(404);
+    };
 }
 check = "true";
