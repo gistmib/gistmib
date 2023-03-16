@@ -151,7 +151,7 @@ var d = '<div class="aa">'+$(h).find(".listItems").html() +'</div>';
 $(d).find("a").each(function(){
 var img = $(this).find(".img").attr("src");
 img = img.replace("/con","https://flixei.com/con");
-var name = $(this).attr("href");
+var name = $(this).attr("href").replace(".","").replace("'","").replace("-"," ");
 name = name.replace("Assistir ","").replace("serie/online/","").replace("filme/online/","").replace("/","").replace(":","").replace(/ /g,"%20").replace("online","%20").replace("%20%20","");
 var id = $(this).find(".img").attr("src");
 id = id.replace("/content/movies/posterPt/185/","").replace("/content/series/posterPt/185/","").replace(".jpg","").replace(".jpeg","").replace(".gif","").replace(".png","");
@@ -173,16 +173,16 @@ var h = html;
 var d = '<div class="aa">'+$(h).find(".generalMoviesList").html() +'</div>';
 $(d).find("a").each(function(){
 var img = $(this).find(".img").attr("src");
-var name = $(this).find(".i > span").text();
+var name = $(this).find(".i > span").text().replace(".","").replace("'","").replace(" - ","");
 var id = $(this).find(".img").attr("src");
 id = id.replace("https://flixei.com","").replace("https://flixei.org","").replace("https://flixei.net","").replace("/content/movies/posterPt/185/","").replace("/content/series/posterPt/185/","").replace(".jpg","").replace(".jpeg","").replace(".gif","").replace(".png","").replace(".webp","");
 if(img != null && (img.startsWith("https://flixei.com/content/series/") || img.startsWith("https://flixei.net/content/series/") || img.startsWith("https://flixei.org/content/series/"))){
                 
-var tblRow = "<a href='http://vip.tv/ux=/redss.php&uxs="+name+"&n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
+    var tblRow = "<a href='http://vip.tv/ux=/redss.php&uxs="+name+"&n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
                 
 }
 else{
-var tblRow = "<a href='http://vip.tv/ux=/reds.php@uxs="+name+"@n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
+    var tblRow = "<a href='http://vip.tv/ux=/reds.php@uxs="+name+"@n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
  }
  $(tblRow).appendTo("#userdata");
     
@@ -211,7 +211,7 @@ function send(url){
 }
 function run(){
     checkValidUri(
-       'https://vizer.tv/img/favicon.ico', 
+       'http://vizer.tv/img/favicon.ico', 
         function (status) {
         if(status == 404) {
             window.location.href = "http://deepweb.tv/https://flixei.com/pesquisar/" + getParameterByName("s"); 
