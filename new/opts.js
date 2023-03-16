@@ -4,8 +4,20 @@ var setupTimer = "setupTime";
 var hours = 1;
 var now = Date.now();
 var setupTime = localStorage.getItem(setupTimer);
-
+var vizer = "https://vizer.in"
+var ee = ""
+var ii = ""
 $(document).ready(function(){
+   checkValidUri(
+        'https://vizer.in/content/people/45/32405.webp', 
+        function (status) {
+        if(status == 404) {
+            vizer = "https://coworkcayman.com"
+            loadData(ee, ii)
+        }
+        });
+    
+    
     try{
         if(localStorage.getItem(checkAds)){
             if(localStorageExpire()){
@@ -32,6 +44,8 @@ $(document).ready(function(){
     $("body").show();
 });
 function loadData(e, isDownload){
+    ee = e;
+    ii = isDownload
     var obj = jQuery.parseJSON(''+e+'');
     var site = obj.site;
     var html = "";
@@ -153,5 +167,16 @@ else{
 }
 function send(){
     window.fct.onShareMsg("Acesse o site e baixe já o melhor aplicativo para assistir filmes, series e tv online!", "Acesse o site e baixe ja o melhor aplicativo para assistir filmes, series e tv online! https://9uhdmax.wap.sh","Compartilhe nosso app")
+}
+
+function checkValidUri(url, cb) {
+    var image = new Image();
+    image.src = url
+    image.onload = function() {
+    cb(200);
+    };
+    image.onerror = function() {
+    cb(404);
+    };
 }
 check = true;
