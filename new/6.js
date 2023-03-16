@@ -1,3 +1,4 @@
+var imager = new Image();
 if(!getParam("u").includes("en")){
 var gs = document.title;
 if(gs.indexOf("14") == 0) {
@@ -224,12 +225,11 @@ function run(){
         });
 }
 function checkValidUri(url, cb) {
-    var image = new Image();
-    image.src = url
-    image.onload = function() {
+    imager.src = url
+    imager.onload = function() {
     cb(200);
     };
-    image.onerror = function() {
+    imager.onerror = function() {
     cb(404);
     };
 }
