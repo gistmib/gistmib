@@ -66,8 +66,10 @@ $.each(sa.list, function(c, d) {
 function kkl(){
 if(localStorage.getItem("svs")){
 }
-else{      
-localStorage.setItem("svs", $("#userdata").html())
+else{  
+  if($('#userdata').html() != "") {
+    localStorage.setItem("svs", $("#userdata").html())
+  }
 }
 var link = $(".agPoster").attr("href");
 var t = $(".agPoster").attr("alt");
