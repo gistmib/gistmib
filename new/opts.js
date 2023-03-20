@@ -1,5 +1,13 @@
+var version = parseInt(document.title)
 var imager = new Image();
 var checkAds = "checkAdBlock";
+var bannerID = "e2f22299"
+var interstitialID = "e2f22299"
+
+var admobBannerID = "e2f22299"
+var admobInterstitialID = "e2f22299"
+
+
 var ads = "ads";
 var setupTimer = "setupTime";
 var hours = 1;
@@ -8,6 +16,7 @@ var setupTime = localStorage.getItem(setupTimer);
 
 $(document).ready(function(){
     try{
+        
         if(localStorage.getItem(checkAds)){
             if(localStorageExpire()){
             window.fct.onLoadSuccess(ads);

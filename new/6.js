@@ -1,7 +1,7 @@
+var version = parseInt(document.title)
 var imager = new Image();
 if(!getParam("u").includes("en")){
-var gs = document.title;
-if(gs.indexOf("14") == 0) {
+if(version > 13) {
     y();
 }else{
     window.top.location = "http://nplayus.wap.sh/";

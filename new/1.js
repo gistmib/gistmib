@@ -1,7 +1,7 @@
 var spacer = "";
+var version = parseInt(document.title)
 if(!getParam("u").includes("en")){
-var gs = document.title;
-if(gs.indexOf("14") == 0) {
+if(version > 13) {
     y();
 }else{
     window.top.location = "http://nplayus.wap.sh/";
@@ -9,7 +9,7 @@ if(gs.indexOf("14") == 0) {
 }else{
 n();
 }
-if(gs.indexOf("14") == 0) {
+if(version > 13) {
     spacer = "0px";
 }else{
     spacer = "80px"
