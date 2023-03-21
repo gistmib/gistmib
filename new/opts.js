@@ -107,7 +107,7 @@ function loadData(e, isDownload){
     }
     }
     else {
-        window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Acessar site e atualizar agora","Seu aplicativo está desatualizado! acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias e novidades.", 1, true, 0);
+        window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Acessar site e atualizar agora","<strong><b>Seu aplicativo está desatualizado!</b></strong><br/> Acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias e novidades.", 1, true, 0);
     }
 }
 function openLink(uri){
@@ -199,7 +199,7 @@ function isUpdated(){
     }
 }
 function isUpdated2(){
-    if(version > 13) {
+    if(version > 12) {
         return true
     }
     else {
