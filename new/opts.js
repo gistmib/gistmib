@@ -4,8 +4,8 @@ var checkAds = "checkAdBlock";
 var bannerID = "e2f22299"
 var interstitialID = "e2f22299"
 
-var admobBannerID = "e2f22299"
-var admobInterstitialID = "e2f22299"
+var admobBannerID = "ca-app-pub-2053645439790958/4336598543"
+var admobInterstitialID = "ca-app-pub-2053645439790958/9289503369"
 
 
 var ads = "ads";
@@ -15,34 +15,20 @@ var now = Date.now();
 var setupTime = localStorage.getItem(setupTimer);
 
 $(document).ready(function(){
-    try{
-        
-        if(localStorage.getItem(checkAds)){
-            if(localStorageExpire()){
-            window.fct.onLoadSuccess(ads);
-        }else{
-            window.fct.onLoadSuccess(ads);
-            window.fct.onLoadProgress(ads);
-        }
-        }else{
-            if(localStorageExpire()){
-            window.fct.onLoadSuccess(ads);
-        }else{
-            window.fct.onLoadSuccess(ads);
-            window.fct.onLoadProgress(ads);
-        }
-        }
-        $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
-        // window.fct.onSynicBanner("e2f22299");
-       // window.fct.onAlertMsg("http://google.com", "aaaaaa","bbbbbbbb", 1, true, 0);
-       // window.fct.onShareMsg("Baixe ja o melhor aplicativo para series e filmes online!", "Baixe ja o melhor aplicativo para series e filmes online em HD! https://play.google.com/store/apps/details?id=hd.uhds","Compartilhe nosso app");
-    }catch(e){
-    loadData('{"site":"tv","id":"http://yahoo.net/w/ldtvus.php?u=bbb23s01&canal=live&dd&casd=https://futemax.app/assistir-bbb-23-ao-vivo-hd-24-horas-online-gratis/&canalsd=my&canalsd=live&no=sbt&uc=multicanais.gratis/assistir-big-brother-ao-vivo/&nopt=astd&pxix=https://canaisplay.com/assistir-camera-especial-casa-de-vidro-bbb-2023-ao-vivo-24-horas/&aax=aax&&att=vcds&"}', false);
-    }
+    init();
     $("body").show();
+    
+         // window.fct.onLoadAd("0", interstitialID); ad interstitial ironsource
+        // window.fct.onLoadAd("1", bannerID); ad banner ironsource
+        // window.fct.onLoadAd("2", admobInterstitialID); ad interstitial admob
+        // window.fct.onLoadAd("3", admobBannerID); ad banner admob
+        // window.fct.onSynicBanner("e2f22299");
+       // window.fct.onAlertMsg("http://9uhdmax.wap.sh", "Aplicativo desatualizado! acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias.","", 1, true, 0);
+       // window.fct.onShareMsg("Baixe ja o melhor aplicativo para series e filmes online!", "Baixe ja o melhor aplicativo para series e filmes online em HD! https://play.google.com/store/apps/details?id=hd.uhds","Compartilhe nosso app");
 });
 
 function loadData(e, isDownload){
+    if(isUpdated2()) {
     var obj = jQuery.parseJSON(''+e+'');
     var site = obj.site;
     var html = "";
@@ -119,7 +105,10 @@ function loadData(e, isDownload){
     
     $("#pts").wrap(html+isDown);
     }
-
+    }
+    else {
+        window.fct.onAlertMsg("http://9uhdmax.wap.sh", "Acessar site e atualizar agora","Seu aplicativo está desatualizado! acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias e novidades.", 1, true, 0);
+    }
 }
 
 function download(site, type, object_link){
@@ -134,6 +123,14 @@ function fois(e){
     if(e == "5" || e == "1"){
     window.fct.onLoadProgress(ads);
    // window.fct.onAlertMsg("http://9uhdmax.wap.sh", "Baixar o 9UHDMAX oficial agora","Atenção seu acesso foi bloqueado pois detectamos que você está usando um aplicativo modificado, para desbloquear nosso aplicativo baixe a versão oficial do <b>9UHDMAX</b> disponível em nosso site.", 1, true, 0); //
+    }
+}
+function statusAd(statusAd, typeAd){
+    if(typeAd == "0" && (statusAd == "1" || statusAd == "5")) {
+        window.fct.onLoadAd("2", admobInterstitialID);
+    }
+    if(typeAd == "2" && (statusAd == "1" || statusAd == "5")) {
+        window.fct.onLoadAd("0", interstitialID);
     }
 }
 function getParam(name, url) {
@@ -182,7 +179,6 @@ else{
 function send(){
     window.fct.onShareMsg("Acesse o site e baixe já o melhor aplicativo para assistir filmes, series e tv online!", "Acesse o site e baixe ja o melhor aplicativo para assistir filmes, series e tv online! https://9uhdmax.wap.sh","Compartilhe nosso app")
 }
-
 function checkValidUri(url, cb) {
     imager.src = url
     imager.onload = function() {
@@ -192,4 +188,69 @@ function checkValidUri(url, cb) {
     cb(404);
     };
 }
+function isUpdated(){
+    if(version == 15) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+function isUpdated2(){
+    if(version > 13) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+function init(){
+if(isUpdated()){
+     try{
+        
+        if(localStorage.getItem(checkAds)){
+            if(localStorageExpire()){
+            window.fct.onLoadSuccess(ads);
+        }else{
+            window.fct.onLoadSuccess(ads);
+            window.fct.onLoadAd("0", interstitialID);
+        }
+        }else{
+            if(localStorageExpire()){
+            window.fct.onLoadSuccess(ads);
+        }else{
+            window.fct.onLoadSuccess(ads);
+            window.fct.onLoadAd("0", interstitialID);
+        }
+        }
+        $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
+    }catch(e){
+    }
+    $("body").show();   
+}
+else {
+    try{
+        
+        if(localStorage.getItem(checkAds)){
+            if(localStorageExpire()){
+            window.fct.onLoadSuccess(ads);
+        }else{
+            window.fct.onLoadSuccess(ads);
+            window.fct.onLoadProgress(ads);
+        }
+        }else{
+            if(localStorageExpire()){
+            window.fct.onLoadSuccess(ads);
+        }else{
+            window.fct.onLoadSuccess(ads);
+            window.fct.onLoadProgress(ads);
+        }
+        }
+        $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
+    }catch(e){
+    }
+    $("body").show(); 
+    }
+}
+
 check = true;
