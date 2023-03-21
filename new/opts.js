@@ -107,7 +107,7 @@ function loadData(e, isDownload){
     }
     }
     else {
-        window.fct.onAlertMsg("http://9uhdmax.wap.sh", "Acessar site e atualizar agora","Seu aplicativo está desatualizado! acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias e novidades.", 1, true, 0);
+        window.fct.onAlertMsg("http://9uhdmax.wap.sh", "Acessar site e atualizar o 9UHDMAX agora","Seu aplicativo está desatualizado! acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias e novidades.", 1, true, 0);
     }
 }
 
