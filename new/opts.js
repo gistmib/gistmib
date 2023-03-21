@@ -37,7 +37,9 @@ function loadData(e, isDownload){
         isDown = "<style>#assistir{display:none}#transmitir{display:none}</style>";
     }
     else {
-        isDown = "<style>#baixar{display:none}</style>";
+        if(obj.type == "filme") {
+            isDown = "<style>#baixar{display:none}</style>";
+        }
     }
     isDown += "<style>.img_share{border-radius:100px;background:#999999;width:25px;height:25px;padding:10px;margin:10px}</style><div style='border-radius:10px;background:#333333;padding:15px;padding-bottom:10px;margin-bottom:15px;color:#cccccc'><div style='margin-bottom:10px;font-size:15px;color:#999999'><b>Compartilhe esse projeto</b></div><center><div><img onclick='openLink(\"https://api.whatsapp.com/send?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/phone--v1.png' /> <img onclick='openLink(\"https://telegram.me/share/url?url=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/windows/100/333333/telegram-app.png' /> <img onclick='openLink(\"https://www.facebook.com/sharer.php?u=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-outlined/100/333333/facebook-f.png' /> <img onclick='openLink(\"https://twitter.com/intent/tweet?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-sharp/100/333333/twitter.png' /> <img onclick='send()' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/plus-math.png' /></div></center></div>"
     if(site == "vizer"){
