@@ -23,7 +23,7 @@ $(document).ready(function(){
         // window.fct.onLoadAd("2", admobInterstitialID); ad interstitial admob
         // window.fct.onLoadAd("3", admobBannerID); ad banner admob
         // window.fct.onSynicBanner("e2f22299");
-       // window.fct.onAlertMsg("http://9uhdmax.wap.sh", "Aplicativo desatualizado! acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias.","", 1, true, 0);
+       // window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Aplicativo desatualizado! acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias.","", 1, true, 0);
        // window.fct.onShareMsg("Baixe ja o melhor aplicativo para series e filmes online!", "Baixe ja o melhor aplicativo para series e filmes online em HD! https://play.google.com/store/apps/details?id=hd.uhds","Compartilhe nosso app");
 });
 
@@ -36,7 +36,7 @@ function loadData(e, isDownload){
     if(isDownload){
     isDown = "<style>#assistir{display:none}#transmitir{display:none}</style>";
     }
-    isDown += "<div style='border-radius:10px;background:#333333;padding:15px;margin-bottom:15px;color:#cccccc'><div style='margin-left:5px'><b>Atenção</b>: se você gosta desse app e não quer que ele pare de funcionar ajude-nos compartilhando o <b>9UHDMAX</b> com um amigo</div><div onclick='send()' style='border-radius:100px;background:#ffffff;color:#000000;font-weight: bold;padding:10px;margin-top:10px;'><center>Compartilhar esse aplicativo agora!</center></div></div>"
+    isDown += "<style>.img_share{border-radius:100px;background:#ffffff;width:25px;height:25px;padding:10px;margin:10px}</style><div style='border-radius:10px;background:#333333;padding:15px;margin-bottom:15px;color:#cccccc'><div style='margin-bottom:10px;font-size:15px;color:#ffffff'><b>Compartilhe esse projeto</b></div><div><img onclick='openLink(\"https://api.whatsapp.com/send?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/ios-glyphs/100/null/phone--v1.png' /> <img onclick='openLink(\"https://www.facebook.com/sharer.php?u=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-outlined/100/null/facebook-f.png' /> <img onclick='openLink(\"https://twitter.com/intent/tweet?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-sharp/100/null/twitter.png' /> <img onclick='openLink(\"https://telegram.me/share/url?url=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/windows/100/null/telegram-app.png' />  <img onclick='send()' class='img_share' src='https://img.icons8.com/ios-glyphs/100/null/plus-math.png' /></div></div>"
     if(site == "vizer"){
         
    checkValidUri(
@@ -107,10 +107,12 @@ function loadData(e, isDownload){
     }
     }
     else {
-        window.fct.onAlertMsg("http://9uhdmax.wap.sh", "Acessar site e atualizar o 9UHDMAX agora","Seu aplicativo está desatualizado! acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias e novidades.", 1, true, 0);
+        window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Acessar site e atualizar agora","Seu aplicativo está desatualizado! acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias e novidades.", 1, true, 0);
     }
 }
-
+function openLink(uri){
+    window.fct.onSynicLink(uri)
+}
 function download(site, type, object_link){
         window.fct.onSynicPlayer(object_link, type);
 }
@@ -122,7 +124,7 @@ function fois(e){
     }
     if(e == "5" || e == "1"){
     window.fct.onLoadProgress(ads);
-   // window.fct.onAlertMsg("http://9uhdmax.wap.sh", "Baixar o 9UHDMAX oficial agora","Atenção seu acesso foi bloqueado pois detectamos que você está usando um aplicativo modificado, para desbloquear nosso aplicativo baixe a versão oficial do <b>9UHDMAX</b> disponível em nosso site.", 1, true, 0); //
+   // window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Baixar o 9UHDMAX oficial agora","Atenção seu acesso foi bloqueado pois detectamos que você está usando um aplicativo modificado, para desbloquear nosso aplicativo baixe a versão oficial do <b>9UHDMAX</b> disponível em nosso site.", 1, true, 0); //
     }
 }
 function statusAd(statusAd, typeAd){
@@ -225,8 +227,7 @@ if(isUpdated()){
         }
         $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
     }catch(e){
-    }
-    $("body").show();   
+    } 
 }
 else {
     try{
@@ -249,7 +250,6 @@ else {
         $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
     }catch(e){
     }
-    $("body").show(); 
     }
 }
 
