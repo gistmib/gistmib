@@ -1,5 +1,6 @@
 var version = parseInt(document.title)
 var imager = new Image();
+var userID = synicUID();
 var checkAds = "checkAdBlock";
 var bannerID = "e2f22299"
 var interstitialID = "e2f22299"
@@ -207,12 +208,12 @@ if(isUpdated()){
     localStorageExpire(adsTimerName, adsExpireTimer, function(e){
         switch(e) {
             case 0:
-                //$("body").append("time expired or null")
+                //$("body").append("time expired or null" + userID)
                 window.fct.onLoadAd("0", interstitialID);
                 // time expired or null.
                 break;
             case 2:
-                //$("body").append("time running")
+                //$("body").append("time running" + userID)
                 // time runing
                 break;
         }
