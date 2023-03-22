@@ -217,9 +217,8 @@ if(isUpdated()){
                 break;
         }
     });
-        
-        window.fct.onLoadSuccess(ads);
-     
+
+window.fct.onLoadSuccess(ads);
 }
 else {
 window.fct.onLoadSuccess(ads);
