@@ -1,7 +1,15 @@
 var version = parseInt(document.title)
+const pemiumUsers = 
+[
+    "408c5e89-c94d-4064-91fa-3fbf2b49c082",
+    "0dc61b3a-f8a1-4020-a765-1eada0f9687ex"
+];
+let i = 0;
+
 var imager = new Image();
 var userID = synicUID();
 var checkAds = "checkAdBlock";
+
 var bannerID = "e2f22299"
 var interstitialID = "e2f22299"
 
@@ -18,7 +26,7 @@ $(document).ready(function(){
 
 init();
 $("body").show();
-$("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
+    
     // window.fct.onLoadAd("0", interstitialID); ad interstitial ironsource
     // window.fct.onLoadAd("1", bannerID); ad banner ironsource
     // window.fct.onLoadAd("2", admobInterstitialID); ad interstitial admob
@@ -205,6 +213,7 @@ function isUpdated(){
 }
 function init(){
 if(isUpdated()){
+    //$("body").append("is premium --- " + isPremiumUser())
     localStorageExpire(adsTimerName, adsExpireTimer, function(e){
         switch(e) {
             case 0:
@@ -218,28 +227,28 @@ if(isUpdated()){
                 break;
         }
     });
-
-window.fct.onLoadSuccess(ads);
+    window.fct.onLoadSuccess(ads);
 }
 else {
 window.fct.onLoadSuccess(ads);
 }
 }
-
+function isPremiumUser(){
+    var checker = false
+    for (let i = 0; i < pemiumUsers.length; i++) {
+        if(pemiumUsers[i] == userID){
+        checker = true
+        }
+    }
+return checker
+}
 function synicUID() {
-    var s = [];
-    var hexDigits = "0123456789abcdef";
-    for (var i = 0; i < 36; i++) {
-        s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
-    }
-    s[14] = "4";
-    s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);  
-    s[8] = s[13] = s[18] = s[23] = "-";
-    var uuid = s.join("");
     if(localStorage.getItem("uid") == null){
-    localStorage.setItem("uid", uuid);
+        localStorage.setItem("uid", ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  ));
     }
-    return localStorage.getItem("uid", uuid);
+    return localStorage.getItem("uid", "null");
 }
 
 check = true;
