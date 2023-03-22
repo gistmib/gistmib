@@ -180,7 +180,7 @@ function localStorageExpire(timerName, timeExpire, returnCode){
 var setupTime = localStorage.getItem(timerName);
 if (setupTime == null) {
      localStorage.setItem(timerName, now);
-     returnCode(0);
+     returnCode(1);
 } 
 else if (now - setupTime > timeExpire*60*1000) {
     localStorage.removeItem(timerName);
