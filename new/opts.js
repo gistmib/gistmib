@@ -9,10 +9,9 @@ var admobInterstitialID = "ca-app-pub-2053645439790958/9289503369"
 
 
 var ads = "ads";
-var setupTimer = "setupTime";
-var hours = 1;
+var adsTimerName = "setupTime";
+var adsExpireTimer = 1;
 var now = Date.now();
-var setupTime = localStorage.getItem(setupTimer);
 
 $(document).ready(function(){
 
@@ -168,15 +167,16 @@ function programs(e){
     }); 
 }
 
-function localStorageExpire(hours, returnCode){
+function localStorageExpire(timerName, timeExpire, returnCode){
+var setupTime = localStorage.getItem(timerName);
 if (setupTime == null) {
-     localStorage.setItem(setupTimer, now);
+     localStorage.setItem(timerName, now);
      returnCode(0);
 } 
-else if (now - setupTime > hours*60*1000) {
-    localStorage.removeItem(setupTimer);
-    localStorage.setItem(setupTimer, now);
-    returnCode(1);
+else if (now - setupTime > timeExpire*60*1000) {
+    localStorage.removeItem(timerName);
+    localStorage.setItem(timerName, now);
+    returnCode(0);
 }
 else{
     returnCode(2);
@@ -205,13 +205,15 @@ function isUpdated(){
 function init(){
 if(isUpdated()){
      try{
-         localStorageExpire(hours, function(e){
+         localStorageExpire(adsTimerName, adsExpireTimer, function(e){
              switch(e) {
-                 case 0, 1:
+                 case 0:
                      window.fct.onLoadAd("0", interstitialID);
+                     //$("body").append("time expired or null")
                      // time expired or null
                      break;
                  case 2:
+                     //$("body").append("time running")
                      // time not expired
                      break;
              }
