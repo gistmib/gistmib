@@ -204,7 +204,7 @@ function isUpdated(){
     }
 }
 function isUpdated2(){
-    if(version > 15) {
+    if(version == 16) {
         return true
     }
     else {
@@ -219,14 +219,14 @@ if(isUpdated()){
             window.fct.onLoadSuccess(ads);
         }else{
             window.fct.onLoadSuccess(ads);
-            window.fct.onLoadAd("0", interstitialID);
+            //window.fct.onLoadAd("0", interstitialID);
         }
         }else{
             if(localStorageExpire()){
             window.fct.onLoadSuccess(ads);
         }else{
             window.fct.onLoadSuccess(ads);
-            window.fct.onLoadAd("0", interstitialID);
+            //window.fct.onLoadAd("0", interstitialID);
         }
         }
         $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
