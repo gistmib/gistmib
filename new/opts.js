@@ -15,7 +15,7 @@ var now = Date.now();
 var setupTime = localStorage.getItem(setupTimer);
 
 $(document).ready(function(){
-    
+    init();
     $("body").show();
     
          // window.fct.onLoadAd("0", interstitialID); ad interstitial ironsource
@@ -29,7 +29,6 @@ $(document).ready(function(){
 
 function loadData(e, isDownload){
     if(isUpdated2()) {
-    init();
     var obj = jQuery.parseJSON(''+e+'');
     var site = obj.site;
     var html = "";
@@ -215,7 +214,6 @@ function isUpdated2(){
 function init(){
 if(isUpdated()){
      try{
-        
         if(localStorage.getItem(checkAds)){
             if(localStorageExpire()){
             window.fct.onLoadSuccess(ads);
