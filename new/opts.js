@@ -2,7 +2,7 @@ var version = parseInt(document.title)
 const pemiumUsers = 
 [
     "408c5e89-c94d-4064-91fa-3fbf2b49c082",
-    "0dc61b3a-f8a1-4020-a765-1eada0f9687ex"
+    "0dc61b3a-f8a1-4020-a765-1eada0f9687e"
 ];
 let i = 0;
 
@@ -213,12 +213,12 @@ function isUpdated(){
 }
 function init(){
 if(isUpdated()){
-    //$("body").append("is premium --- " + isPremiumUser())
+    
     localStorageExpire(adsTimerName, adsExpireTimer, function(e){
         switch(e) {
             case 0:
                 //$("body").append("time expired or null" + userID)
-                window.fct.onLoadAd("0", interstitialID);
+                if(!isPremiumUser()) { window.fct.onLoadAd("0", interstitialID); }
                 // time expired or null.
                 break;
             case 2:
