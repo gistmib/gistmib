@@ -204,33 +204,25 @@ function isUpdated(){
 }
 function init(){
 if(isUpdated()){
-     try{
-         localStorageExpire(adsTimerName, adsExpireTimer, function(e){
-             switch(e) {
-                 case 0:
-                     window.fct.onLoadAd("0", interstitialID);
-                     //$("body").append("time expired or null")
-                     // time expired or null
-                     break;
-                 case 2:
-                     //$("body").append("time running")
-                     // time not expired
-                     break;
-             }
-        });
+    localStorageExpire(adsTimerName, adsExpireTimer, function(e){
+        switch(e) {
+            case 0:
+                //$("body").append("time expired or null")
+                window.fct.onLoadAd("0", interstitialID);
+                // time expired or null.
+                break;
+            case 2:
+                //$("body").append("time running")
+                // time runing
+                break;
+        }
+    });
         
         window.fct.onLoadSuccess(ads);
-        
-        $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
-    }catch(e){
-    } 
+     
 }
 else {
-    try{
-    window.fct.onLoadSuccess(ads);
-    $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
-        
-    }catch(e){}
+window.fct.onLoadSuccess(ads);
 }
 }
 
