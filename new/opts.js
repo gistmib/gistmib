@@ -112,7 +112,7 @@ function loadData(e, isDownload){
     }
     }
     else {
-        window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Acessar site e atualizar agora","<big><b>Seu aplicativo está desatualizado!</b></big><br/><br/> Acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias e novidades.", 1, true, 0);
+        window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Acessar site e atualizar agora","<big><b>Seu aplicativo está desatualizado!</b></big><br/><br/> Acesse o nosso site e baixe já a nossa nova versão atualizada repleta de melhorias e novidades.", 1, true, 0);
     }
 }
 function openLink(uri){
@@ -227,26 +227,11 @@ if(isUpdated()){
 }
 else {
     try{
+    window.fct.onLoadSuccess(ads);
+    $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
         
-        if(localStorage.getItem(checkAds)){
-            if(localStorageExpire()){
-            window.fct.onLoadSuccess(ads);
-        }else{
-            window.fct.onLoadSuccess(ads);
-            window.fct.onLoadProgress(ads);
-        }
-        }else{
-            if(localStorageExpire()){
-            window.fct.onLoadSuccess(ads);
-        }else{
-            window.fct.onLoadSuccess(ads);
-            window.fct.onLoadProgress(ads);
-        }
-        }
-        $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
-    }catch(e){
-    }
-    }
+    }catch(e){}
+}
 }
 
 check = true;
