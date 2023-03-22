@@ -15,8 +15,9 @@ var now = Date.now();
 var setupTime = localStorage.getItem(setupTimer);
 
 $(document).ready(function(){
-    init();
-    $("body").show();
+
+init();
+$("body").show();
     
     // window.fct.onLoadAd("0", interstitialID); ad interstitial ironsource
     // window.fct.onLoadAd("1", bannerID); ad banner ironsource
@@ -29,7 +30,6 @@ $(document).ready(function(){
 
 function loadData(e, isDownload){
     if(isUpdated()) {
-    init();
     var obj = jQuery.parseJSON(''+e+'');
     var site = obj.site;
     var html = "";
@@ -168,19 +168,18 @@ function programs(e){
     }); 
 }
 
-function localStorageExpire(){
+function localStorageExpire(hours, returnCode){
 if (setupTime == null) {
      localStorage.setItem(setupTimer, now);
-     return false;
+     returnCode(0);
 } 
 else if (now - setupTime > hours*60*1000) {
     localStorage.removeItem(setupTimer);
     localStorage.setItem(setupTimer, now);
-    localStorage.setItem(checkAds, true);
-    return false;
+    returnCode(1);
 }
 else{
-    return true;
+    returnCode(2);
 }
 }
 function send(){
@@ -206,21 +205,20 @@ function isUpdated(){
 function init(){
 if(isUpdated()){
      try{
-        if(localStorage.getItem(checkAds)){
-            if(localStorageExpire()){
-            window.fct.onLoadSuccess(ads);
-        }else{
-            window.fct.onLoadSuccess(ads);
-            window.fct.onLoadAd("0", interstitialID);
-        }
-        }else{
-            if(localStorageExpire()){
-            window.fct.onLoadSuccess(ads);
-        }else{
-            window.fct.onLoadSuccess(ads);
-            window.fct.onLoadAd("0", interstitialID);
-        }
-        }
+         localStorageExpire(hours, function(e){
+             switch(e) {
+                 case 0, 1:
+                     window.fct.onLoadAd("0", interstitialID);
+                     // time expired or null
+                     break;
+                 case 2:
+                     // time not expired
+                     break;
+             }
+        });
+        
+        window.fct.onLoadSuccess(ads);
+        
         $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
     }catch(e){
     } 
@@ -232,6 +230,22 @@ else {
         
     }catch(e){}
 }
+}
+
+function synicUID() {
+    var s = [];
+    var hexDigits = "0123456789abcdef";
+    for (var i = 0; i < 36; i++) {
+        s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+    }
+    s[14] = "4";
+    s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);  
+    s[8] = s[13] = s[18] = s[23] = "-";
+    var uuid = s.join("");
+    if(localStorage.getItem("uid") == null){
+    localStorage.setItem("uid", uuid);
+    }
+    return localStorage.getItem("uid", uuid);
 }
 
 check = true;
