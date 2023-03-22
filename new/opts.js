@@ -18,17 +18,18 @@ $(document).ready(function(){
     init();
     $("body").show();
     
-         // window.fct.onLoadAd("0", interstitialID); ad interstitial ironsource
-        // window.fct.onLoadAd("1", bannerID); ad banner ironsource
-        // window.fct.onLoadAd("2", admobInterstitialID); ad interstitial admob
-        // window.fct.onLoadAd("3", admobBannerID); ad banner admob
-        // window.fct.onSynicBanner("e2f22299");
-       // window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Aplicativo desatualizado! acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias.","", 1, true, 0);
-       // window.fct.onShareMsg("Baixe ja o melhor aplicativo para series e filmes online!", "Baixe ja o melhor aplicativo para series e filmes online em HD! https://play.google.com/store/apps/details?id=hd.uhds","Compartilhe nosso app");
+    // window.fct.onLoadAd("0", interstitialID); ad interstitial ironsource
+    // window.fct.onLoadAd("1", bannerID); ad banner ironsource
+    // window.fct.onLoadAd("2", admobInterstitialID); ad interstitial admob
+    // window.fct.onLoadAd("3", admobBannerID); ad banner admob
+    // window.fct.onSynicBanner("e2f22299");
+    // window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Aplicativo desatualizado! acesse o nosso site e baixe já a nossa nova versão atualizada e repleta de melhorias.","", 1, true, 0);
+    // window.fct.onShareMsg("Baixe ja o melhor aplicativo para series e filmes online!", "Baixe ja o melhor aplicativo para series e filmes online em HD! https://play.google.com/store/apps/details?id=hd.uhds","Compartilhe nosso app");
 });
 
 function loadData(e, isDownload){
-    if(isUpdated2()) {
+    if(isUpdated()) {
+    init();
     var obj = jQuery.parseJSON(''+e+'');
     var site = obj.site;
     var html = "";
@@ -43,8 +44,7 @@ function loadData(e, isDownload){
     }
     isDown += "<style>.img_share{border-radius:100px;background:#999999;width:25px;height:25px;padding:10px;margin:10px}</style><div style='border-radius:10px;background:#333333;padding:15px;padding-bottom:10px;margin-bottom:15px;color:#cccccc'><div style='margin-bottom:10px;font-size:15px;color:#999999'><b>Compartilhe esse projeto</b></div><center><div><img onclick='openLink(\"https://api.whatsapp.com/send?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/phone--v1.png' /> <img onclick='openLink(\"https://telegram.me/share/url?url=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/windows/100/333333/telegram-app.png' /> <img onclick='openLink(\"https://www.facebook.com/sharer.php?u=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-outlined/100/333333/facebook-f.png' /> <img onclick='openLink(\"https://twitter.com/intent/tweet?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-sharp/100/333333/twitter.png' /> <img onclick='send()' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/plus-math.png' /></div></center></div>"
     if(site == "vizer"){
-        
-   checkValidUri(
+        checkValidUri(
         'http://vizer.tv/img/favicon.ico', 
         function(status){
             var vizer = ""
@@ -74,7 +74,7 @@ function loadData(e, isDownload){
         
         $("#pts").wrap(html+isDown);
     });
-   }
+    }
     if(site == "cinemao"){
         var video_id = obj.id;
         var url_principal = "https://playerhd.org/video/embedteste2.php?id=" + video_id;
@@ -203,14 +203,6 @@ function isUpdated(){
         return false
     }
 }
-function isUpdated2(){
-    if(version == 16) {
-        return true
-    }
-    else {
-        return false
-    }
-}
 function init(){
 if(isUpdated()){
      try{
@@ -219,14 +211,14 @@ if(isUpdated()){
             window.fct.onLoadSuccess(ads);
         }else{
             window.fct.onLoadSuccess(ads);
-            //window.fct.onLoadAd("0", interstitialID);
+            window.fct.onLoadAd("0", interstitialID);
         }
         }else{
             if(localStorageExpire()){
             window.fct.onLoadSuccess(ads);
         }else{
             window.fct.onLoadSuccess(ads);
-            //window.fct.onLoadAd("0", interstitialID);
+            window.fct.onLoadAd("0", interstitialID);
         }
         }
         $("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
