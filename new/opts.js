@@ -13,7 +13,7 @@ var bannerID = "e2f22299"
 var interstitialID = "e2f22299"
 
 var admobBannerID = "ca-app-pub-2053645439790958/4336598543"
-var admobInterstitialID = "ca-app-pub-2053645439790958/9289503369"
+var admobInterstitialID = "ca-app-pub-3940256099942544/1033173712"
 
 
 var ads = "ads";
@@ -203,7 +203,7 @@ function checkValidUri(url, cb) {
     };
 }
 function isUpdated(){
-    if(version == 16) {
+    if(version > 15) {
         return true
     }
     else {
@@ -212,7 +212,8 @@ function isUpdated(){
 }
 function init(){
 if(isUpdated()){
-    //$("body").append("is premium --- " + isPremiumUser())
+    //window.fct.onLoadAd("2", admobInterstitialID);
+    //$("body").append("id > "+ userID + " is premium > " + isPremiumUser())
     localStorageExpire(adsTimerName, adsExpireTimer, function(e){
         switch(e) {
             case 0:
