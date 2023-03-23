@@ -13,7 +13,7 @@ var bannerID = "e2f22299"
 var interstitialID = "e2f22299"
 
 var admobBannerID = "ca-app-pub-2053645439790958/4336598543"
-var admobInterstitialID = "ca-app-pub-3940256099942544/1033173712"
+var admobInterstitialID = "ca-app-pub-2053645439790958/9289503369"
 
 
 var ads = "ads";
