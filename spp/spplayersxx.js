@@ -14,10 +14,10 @@ head.appendChild(x); x.onload=function( evt ) { (function($) {
     $(this).parent().prepend(this);
     
     $('button:contains("VF DUB"), button:contains("VF LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Principal ");
-    $('button:contains("NT DUB"), button:contains("NT LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional 2");
+    $('button:contains("SD DUB"), button:contains("SD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional 2");
     $('button:contains("GD DUB"), button:contains("GD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional 3");
-    //$('button:contains("NT DUB"), button:contains("NT LEG")').remove();
-    $('button:contains("SD DUB"), button:contains("SD LEG")').remove();
+    $('button:contains("NT DUB"), button:contains("NT LEG")').remove();
+    //$('button:contains("SD DUB"), button:contains("SD LEG")').remove();
 });
     if($(".footer")[0]){$(".footer").remove();}
     
