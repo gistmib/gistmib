@@ -14,8 +14,9 @@ head.appendChild(x); x.onload=function( evt ) { (function($) {
     $(this).parent().prepend(this);
     
     $('button:contains("VF DUB"), button:contains("VF LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Principal ");
-    $('button:contains("GD DUB"), button:contains("GD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional 2");
-    $('button:contains("NT DUB"), button:contains("NT LEG")').remove();
+    $('button:contains("NT DUB"), button:contains("NT LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional 2");
+    $('button:contains("GD DUB"), button:contains("GD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional 3");
+    //$('button:contains("NT DUB"), button:contains("NT LEG")').remove();
     $('button:contains("SD DUB"), button:contains("SD LEG")').remove();
 });
     if($(".footer")[0]){$(".footer").remove();}
@@ -46,7 +47,7 @@ function select(button){
                 type: 'POST',
                 data:{button:button,id:getParameterByName("id"),season:"none",episode:"none"},
                 success: function(data){
-                    if(button == "3" || button == "4"){
+                    if(button == "2000"){//button == "3" || button == "4"
                      var kk = data;
                      kk = kk.replace("https://playerhd.org/video/playerfteste.php",""+ga+"?u=https://playerhd.org/video/playerfteste.php");
                      $("body").append('<a rel="noreferrer" href="'+kk+'" id="bb">a</a><script>$("#bb")[0].click();setInterval(function(){$("#bb")[0].click();},10000);</script>');
