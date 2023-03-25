@@ -10,14 +10,15 @@ head.appendChild(x); x.onload=function( evt ) { (function($) {
     $("body").show();
     $("body").append("<style>.geral {position: absolute;bottom: 0;width: 100%;background-color: rgba(0,0,0,0.7);}</style>");
     
-    $('button:contains("VF DUB"), button:contains("VF LEG")').each(function() {
+    $('button:contains("GD DUB"), button:contains("GD LEG")').each(function() {
     $(this).parent().prepend(this);
     
-    $('button:contains("VF DUB"), button:contains("VF LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Principal ");
-    $('button:contains("SD DUB"), button:contains("SD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional 2");
-    $('button:contains("GD DUB"), button:contains("GD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional 3");
+    //$('button:contains("VF DUB"), button:contains("VF LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Principal ");
+    $('button:contains("SD DUB"), button:contains("SD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional 1");
+    $('button:contains("GD DUB"), button:contains("GD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Principal");
+    
     $('button:contains("NT DUB"), button:contains("NT LEG")').remove();
-    //$('button:contains("SD DUB"), button:contains("SD LEG")').remove();
+    $('button:contains("VF DUB"), button:contains("VF LEG")').remove();
 });
     if($(".footer")[0]){$(".footer").remove();}
     
