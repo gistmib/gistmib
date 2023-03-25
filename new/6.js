@@ -106,9 +106,9 @@ setTimeout(function(){
        
     }  
     $("#userdata").append(htmls);
+    run(); 
     },0);   
  
-run(); 
     
 }
 else if(domain.indexOf("megafilmeshd50") !== -1){
