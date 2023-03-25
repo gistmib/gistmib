@@ -81,6 +81,7 @@ if(domain.indexOf("cinemao") !== -1){
 var heach = $(html).find(".search-page").find('.search_page_form').remove().end().html();
       
 setTimeout(function(){
+    var htmls = "";
       for(var i = 0; i < $(heach).length; i++) {
        var html = $(heach)[i];
        if($(html).find("img").attr("data-wpfc-original-src")){
@@ -99,15 +100,12 @@ setTimeout(function(){
           var ano = $(html).find(".result-item article .details .meta span.year").text(); 
        }
        
-       
-       if((link.indexOf("/series/") !== -1)){
-       }else{
-    var gg = '<a class="gPoster" href="http://deepwebsx.tv/'+link+'" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'"  /></a>';
-    $("#userdata").append(gg);
+       if((link.indexOf("/series/") !== -1)){}else{
+           htmls += '<a class="gPoster" href="http://deepwebsx.tv/'+link+'" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'"  /></a>';
        }
        
     }  
-    
+    $("#userdata").append(htmls);
     },0);   
  
 run(); 
@@ -117,32 +115,32 @@ else if(domain.indexOf("megafilmeshd50") !== -1){
 var heach = $(html).find(".search-page").find('.search_page_form').remove().end().html();
 
 setTimeout(function(){
-      for(var i = 0; i < $(heach).length; i++) {
+    var htmls = "";
+    for(var i = 0; i < $(heach).length; i++) {
        var html = $(heach)[i];
        var img = $(html).find("img").attr("src");
        var link = $(html).find("a").attr("href");
        var alt = $(html).find("img").attr("alt");
        img = img.replace("150x150","185x278").replace("w92","w200");
-       if($(html).find(".module .content .items .item .data span")[0]){
+       if($(html).find(".module .content .items .item .data span")[0]) {
        var ano = $(html).find(".module .content .items .item .data span").text();}else{
           var ano = $(html).find(".result-item article .details .meta span.year").text(); 
        }
        
        if(link.indexOf("/serie/") !== -1){
-       var gg = '<a class="xagPoster" href="http://deepwebsx.tv/'+link+'" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'" /><span id="hds">HD 1080p</span></a>';
-       
-       $("#userdata").append(gg);
-       }else
+           htmls += '<a class="xagPoster" href="http://deepwebsx.tv/'+link+'" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'" /><span id="hds">HD 1080p</span></a>';
+       }
+       else
        {
-    var gg = '<a class="xagPoster" href="http://vip.tv/ux=/ru.php?a='+link+'@b='+alt+'@c=13483@d='+ano+'@" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'"  /><span id="hds">HD 1080p</span></a>';
-    $("#userdata").append(gg);
+           htmls += '<a class="xagPoster" href="http://vip.tv/ux=/ru.php?a='+link+'@b='+alt+'@c=13483@d='+ano+'@" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'"  /><span id="hds">HD 1080p</span></a>';
        } 
-    }  
+    } 
+    $("#userdata").append(htmls);
+    window.CallToAndroidFunction2.setVisible2();
+    $('body').fadeIn(400);
     
-    },0);    
+},0);    
 
-window.CallToAndroidFunction2.setVisible2();
-$('body').fadeIn(400);
 
 }
 else if(domain.indexOf("vizer") !== -1 || domain.indexOf("coworkcayman") !== -1 ){
