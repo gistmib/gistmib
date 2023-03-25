@@ -1,15 +1,5 @@
 var head= document.getElementsByTagName('head')[0]; var scriptxx= document.createElement('script'); scriptxx.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js'; scriptxx.type = "text/javascript"; scriptxx.async = false; head.appendChild(scriptxx); var x= document.createElement('script'); x.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js'; x.type = "text/javascript"; x.async = false; head.appendChild(x); x.onload=function( evt ) {
     
-    var cards=$(".gallerycard");for(var i=0;i<cards.length;i++){
-    
-    var target=Math.floor(Math.random()*cards.length-1)+1;
-    var target2=Math.floor(Math.random()*cards.length-1)+1;
-    cards.eq(target).before(cards.eq(target2));
-    
-    
-}
-
-
  var g = document.title;
         if(g.indexOf("8") == 0) {
             if(localStorage.getItem("lombarsd")){}else{localStorage.setItem("lombarsd", true);
@@ -23,17 +13,31 @@ var head= document.getElementsByTagName('head')[0]; var scriptxx= document.creat
         else{
             $('body').prepend('<div style="background-image: url(file:///android_asset/img/pugs.jpg);background-size: cover;background-position: 0 center,0 center;" class="fieldssxz"><div class="contu"><div class="vvv"><div class="slider animation" style="transform: translate3d(0%, 0px, 0px);"><div data-target="1" class="slide slide--1"><div class="ggt"><center><div class="df"><img src="file:///android_asset/img/puga.png" width="370px"  class="ddd"></div><span class="mek"><h1>Assista onde e como quiser!</h1></span><div class="movex">Projeto feito de fás para fás, antes de continuar queremos deixar claro que todo o conteúdo encontrado aqui vem de sites terceiros da internet como superflix, vizer, multicanais e outros apenas agregamos todos os links em um unico lugar então não somos responsaveis nem administramos nada encotrado aqui.</div></center></div></div><ul class="nav"></div><div class="ur is-success1 ripples">CONCORDO COM OS TERMOS</div></div></div><style>body{overflow:hidden !important}</style><script>$(".ur").click(function(){$("body").append("<style>body{overflow:auto !important}</style>");$(".fieldssxz").fadeOut("slow").animate({marginTop:"200%"},{duration:"fast",queue:!1},function(){});localStorage.setItem("dd3",true);});</script>');}
     
-    var ga = document.title;localStorage.setItem("ll01",true);$(document).ready(function(){if(localStorage.getItem("axpicvhaxaaa11111")){if(!localStorage.getItem("axcxzawzaz1aaAccca1aaa1aaaa11aa22s")){  
+var ga = document.title;
+localStorage.setItem("ll01",true);
+$(document).ready(function(){
+    if(localStorage.getItem("axpicvhaxaaa11111")){
+        if(!localStorage.getItem("axcxzawzaz1aaAccca1aaa1aaaa11aa22s")){  
 
- if(parseInt(document.title) > 16) {$('body').prepend('<div class="alertd"><div class="alertd1"><center><img src="https://i.ibb.co/JRfWyY8/icons8-warning-48.png" width="40px" /></center><br/><span class="txt">Aviso importante precisamos da sua ajuda! </span> <br> <br> Se você gostou do aplicativo e não quer que ele pare de functionar envie ele para seus amigos ou compartilhe nosso site em suas redes sociais, isso é muito importante pois não sabemos se conseguiremos manter o 9UHD funcionando por falta de acessos, contamos com a ajuda de todos vocês! <a href="http://goooog.wap.sh"><div class="sxxxa dfc ripple" style="font-size:19px">Abrir site e compartilhar o 9UHD agora</div></a> <a href="#"><div class="sxxxa dfc ripple">Pular</div></a></div></div><script>$(".dfcv").click(function(){$(".alertd").fadeOut(300);});$(".dfc").click(function(){$(".alertd").fadeOut(300);localStorage.setItem("axcxzawzaz1aaAccca1aaa1aaaa11aa22s", true);});<\/script>');}else{
+ if(parseInt(document.title) > 16) {
+     $('body').prepend('<div class="alertd"><div class="alertd1"><center><img src="https://i.ibb.co/JRfWyY8/icons8-warning-48.png" width="40px" /></center><br/><span class="txt">Aviso importante precisamos da sua ajuda! </span> <br> <br> Se você gostou do aplicativo e não quer que ele pare de functionar envie ele para seus amigos ou compartilhe nosso site em suas redes sociais, isso é muito importante pois não sabemos se conseguiremos manter o 9UHD funcionando por falta de acessos, contamos com a ajuda de todos vocês! <a href="http://goooog.wap.sh"><div class="sxxxa dfc ripple" style="font-size:19px">Abrir site e compartilhar o 9UHD agora</div></a> <a href="#"><div class="sxxxa dfc ripple">Pular</div></a></div></div><script>$(".dfcv").click(function(){$(".alertd").fadeOut(300);});$(".dfc").click(function(){$(".alertd").fadeOut(300);localStorage.setItem("axcxzawzaz1aaAccca1aaa1aaaa11aa22s", true);});<\/script>');}else{
      
         
         $('body').prepend('<div class="alertd"><div class="alertd1"><center><img src="https://i.ibb.co/JRfWyY8/icons8-warning-48.png" width="40px" /></center><br/><span class="txt">ATUALIZAÇÃO PENDENTE 9UHDMAX V16</span> <br> <br> O aplicativo que você está acessando vai parar de funcionar em breve pois está desatualizado e obsoleto, vem conhecer nossa nova atualização do aplicativo cheia de novidades e melhorias no desempenho já disponível pelo nosso site oficial do 9UHD!<a href="http://goooog.wap.sh"><div class="zac sxxxa dfc ripple" style="font-size:19px">Acessar site e atualizar o 9UHDMAX agora</div></a> <a href="#"><div class="zac sxxxa dfco ripple">Pular</div></a></div></div><script>$(".zac").click(function(){ $("body").css("overflow", "auto");});$(".dfcv").click(function(){$(".alertd").fadeOut(300);});$(".dfc").click(function(){$(".alertd").fadeOut(300);localStorage.setItem("axcxzawzq", true);});$(".dfco").click(function(){$(".alertd").fadeOut(300);});<\/script>');
     }
     
-}}else{localStorage.setItem("axpicvhaxaaa11111",true);}
-if(localStorage.getItem("dns")){$(".nata").hide();}else{$(".pik").show();}
-$(".merts").click(function(){$(".pik").fadeOut(300);$("body").css("overflow","hidden");$('body').prepend('<div class="cccc alertd"><div class="alertd1"><center><img src="https://i.ibb.co/JRfWyY8/icons8-warning-48.png" width="40px" /></center><br/><span class="txt">Solução para lentidão </span> <br> <br> Para quem está com o 9UHDMAX muito lento demorando para carregar listas de filmes e séries e gerando erros, isso se deve ao fato de que sua operadora de internet esta limitando a velocidade da sua internet no app, Uma solução para resolver isso é utilizar um aplicativo de <b>DNS</b> para desfazer esse bloqueio de internet, instale já basta abrir-lo clicar em ativar e o 9UHDMAX voltarar a funcionar normalmente.<a href="http://goooog.xtgem.com/dns"><div class="sxxxa dfc ripple" style="font-size:19px">Instalar o app de DNS agora</div></a> <a href="#"><div class="sxxxa dfc ripple">Descartar</div></a></div></div><style>.alertd{display:none}</style><script>$(".cccc").fadeIn(300);$(".dfcv").click(function(){$(".cccc").fadeOut(300);});$(".dfc").click(function(){localStorage.setItem("dns",true);$(".cccc").fadeOut(300);$("body").css("overflow","auto");});<\/script>');});});
+    }
+        
+}
+else{
+    localStorage.setItem("axpicvhaxaaa11111",true);}
+    if(localStorage.getItem("dns")){
+        $(".nata").hide();}
+        else{
+            $(".pik").show();}
+
+$(".merts").click(function(){
+    $(".pik").fadeOut(300);$("body").css("overflow","hidden");$('body').prepend('<div class="cccc alertd"><div class="alertd1"><center><img src="https://i.ibb.co/JRfWyY8/icons8-warning-48.png" width="40px" /></center><br/><span class="txt">Solução para lentidão </span> <br> <br> Para quem está com o 9UHDMAX muito lento demorando para carregar listas de filmes e séries e gerando erros, isso se deve ao fato de que sua operadora de internet esta limitando a velocidade da sua internet no app, Uma solução para resolver isso é utilizar um aplicativo de <b>DNS</b> para desfazer esse bloqueio de internet, instale já basta abrir-lo clicar em ativar e o 9UHDMAX voltarar a funcionar normalmente.<a href="http://goooog.xtgem.com/dns"><div class="sxxxa dfc ripple" style="font-size:19px">Instalar o app de DNS agora</div></a> <a href="#"><div class="sxxxa dfc ripple">Descartar</div></a></div></div><style>.alertd{display:none}</style><script>$(".cccc").fadeIn(300);$(".dfcv").click(function(){$(".cccc").fadeOut(300);});$(".dfc").click(function(){localStorage.setItem("dns",true);$(".cccc").fadeOut(300);$("body").css("overflow","auto");});<\/script>');});});
 
 function reloadIFrame(){$('#ffrg').attr('src',function(i,src){return src;});}
 
@@ -41,7 +45,6 @@ function reloadIFrame(){$('#ffrg').attr('src',function(i,src){return src;});}
 var arr=Math.floor(Math.random()*3);
 $(document).ready(function(){
 var myVar = setInterval(myTimer, 1000);
-
 function myTimer() {
     if($("#novis a,#ser2 a,#viewad a,#ser3 a,#div3 a")[0]){
  var cards=$("#novis a");
@@ -52,14 +55,7 @@ function myTimer() {
  clearInterval(myVar);}
 }
 }
-     
-     
-     
-     
-
-
 [].forEach.call(document.querySelectorAll('img[data-src]'),function(img){img.setAttribute('src',img.getAttribute('data-src'));img.onload=function(){img.removeAttribute('data-src');};});
-
 function soa(){
     
 [].forEach.call(document.querySelectorAll('img[data-src]'),function(img){img.setAttribute('src',img.getAttribute('data-src'));img.onload=function(){img.removeAttribute('data-src');};});
@@ -102,50 +98,12 @@ if (setupTimess == null) {
     }
 }
 
-if(localStorage.getItem("filmetop")){
-    setTimeout(function(){
- $(".ssza").replaceWith(localStorage.getItem("filmetop"));
-},0);
-}
-else{
-var jonsxs = "http://zbigs.cf/log.php"; 
-var gxs = "?g=getHomeSliderMovies=1";
-$.get(jonsxs + gxs,function(sa){
-$.each(sa.list, function(c, d) {
-     if(c < 1){
-            var iu=d.url.replace(/-/g, " ");
-            var it=d.id;
-            var tt = '<div id="div2"> <div class="dts" style="position:absolute;background-image: url(https://flixei.com/content/movies/posterPt/342/'+it+'.jpg);background-attachment: relative;background-position: center top; background-repeat: no-repeat;background-size:cover"> <div class="dtss"> <center><div><b class="dd">FILME</b></div> <div id="content-news-container" class="titl">'+d.title+'</div> <div class="ranking"><span class="tops"><b>TOP</b></span> <b>Top 1 filmes Semanais</b> </div> <div class="tabss"><table><tr> <td class="a1z"> <a href="http://pipoca.tv/https://m.youtube.com/results?search_query='+iu+' trailer"><img src="file:///android_asset/img/tr.png" width="22px" class="vvc"><br>Ver Trailer</a> </td> <td class="a1z"><center><a rel="noreferrer" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'"><img class="posts" width="0px" style="display:none" /><div class="bids ripple"><img src="file:///android_asset/img/as.png" /> Assistir</div></a></center></td> <td class="a1z"><a href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'"> <img class="posts"  width="0px" style="display:none" /> <img src="file:///android_asset/img/sb.png"width="28px" /><br>Saiba Mais</a></td> </tr></table> </div> </div> </center></div></div>';
-            $(".ssza").replaceWith('<div class="gallerycard ssza">'+tt+'</div>');
-            localStorage.setItem("filmetop",  '<div class="gallerycard ssza">'+tt+'</div>');
-     }  
+topSemanal(
+    randomIntFromInterval(0, 1), 
+    function onResult(html){
+    $(".gallerycard").replaceWith(html);
 });
-    
-});    
-}
 
-
-if(localStorage.getItem("serietopp")){
-    setTimeout(function(){
- $(".ssz").replaceWith(localStorage.getItem("serietopp"));
-},0);
-}
-else{
-var jonssa = "http://zbigs.cf/log.php"; 
-var gsa = "?g=getHomeSliderSeries=1";
-$.get(jonssa + gsa,function(sa){
-$.each(sa.list, function(c, d) {
-    if(c < 1){
-            var iu=d.url.replace(/-/g, " ");
-            var it=d.id;
-            var tt = '<div id="div1"> <div class="dts" style="position:absolute;background-image: url(https://flixei.com/content/series/posterPt/342/'+it+'.jpg);background-attachment: relative;background-position: center top; background-repeat: no-repeat;background-size:cover"> <div class="dtss"> <center><div><b class="dd">SÉRIE</b></div> <div id="content-news-container" class="titl">'+d.title+'</div> <div class="ranking"><span class="tops"><b>TOP</b></span> <b>Top 1 séries Semanais</b> </div> <div class="tabss"><table><tr> <td class="a1z"> <a href="http://pipoca.tv/https://m.youtube.com/results?search_query='+iu+' trailer"><img src="file:///android_asset/img/tr.png" width="22px" class="vvc"><br>Ver Trailer</a> </td> <td class="a1z"><center><a rel="noreferrer" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'"><img class="posts" width="0px" style="display:none" /><div class="bids ripple"><img src="file:///android_asset/img/as.png" /> Assistir</div></a></center></td> <td class="a1z"><a href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'"> <img class="posts"  width="0px" style="display:none" /> <img src="file:///android_asset/img/sb.png"width="28px" /><br>Saiba Mais</a></td> </tr></table> </div> </div> </center></div></div>';
-            $(".ssz").replaceWith('<div class="gallerycard ssz">'+tt+'</div>');
-            localStorage.setItem("serietopp",  '<div class="gallerycard ssz">'+tt+'</div>');
-    }   
-});
-    
-});    
-}
 
 if(localStorage.getItem("mv32")){
  setTimeout(function(){
@@ -219,7 +177,7 @@ $.each(sa.list, function(c, d) {
 } 
 
     
-    if(localStorage.getItem("mv22")){
+if(localStorage.getItem("mv22")){
     
 setTimeout(function(){
  $("#recs").append(localStorage.getItem("mv112"));
@@ -252,9 +210,6 @@ $('.ss').show();$('.ssz').show();$('.ssza').show();
 $('.att').show();$('.cc b').replaceWith('<b>Mais acessados</b>');
 
 $('body').css('overflow','auto');
-
-        
-    
 
 });
 
@@ -339,6 +294,57 @@ if($(".btn-danger")[0]){
     
 }
 
+}
+
+function topSemanal(randomValue, onResult){
+
+if(randomValue == 0) {
+if(localStorage.getItem("filmetop")){
+    setTimeout(function(){
+ onResult(localStorage.getItem("filmetop"));
+},0);
+}
+else{
+var jonsxs = "http://zbigs.cf/log.php"; 
+var gxs = "?g=getHomeSliderMovies=1";
+$.get(jonsxs + gxs,function(sa){
+$.each(sa.list, function(c, d) {
+     if(c < 1){
+            var iu=d.url.replace(/-/g, " ");
+            var it=d.id;
+            var tt = '<div id="div2"> <div class="dts" style="position:absolute;background-image: url(https://flixei.com/content/movies/posterPt/342/'+it+'.jpg);background-attachment: relative;background-position: center top; background-repeat: no-repeat;background-size:cover"> <div class="dtss"> <center><div><b class="dd">FILME</b></div> <div id="content-news-container" class="titl">'+d.title+'</div> <div class="ranking"><span class="tops"><b>TOP</b></span> <b>Top 1 filmes Semanais</b> </div> <div class="tabss"><table><tr> <td class="a1z"> <a href="http://pipoca.tv/https://m.youtube.com/results?search_query='+iu+' trailer"><img src="file:///android_asset/img/tr.png" width="22px" class="vvc"><br>Ver Trailer</a> </td> <td class="a1z"><center><a rel="noreferrer" href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'"><img class="posts" width="0px" style="display:none" /><div class="bids ripple"><img src="file:///android_asset/img/as.png" /> Assistir</div></a></center></td> <td class="a1z"><a href="http://vip.tv/ux=/reds.php@uxs='+iu+'@n='+it+'"> <img class="posts"  width="0px" style="display:none" /> <img src="file:///android_asset/img/sb.png"width="28px" /><br>Saiba Mais</a></td> </tr></table> </div> </div> </center></div></div>';
+            onResult('<div class="gallerycard">'+tt+'</div>');
+            localStorage.setItem("filmetop",  '<div class="gallerycard">'+tt+'</div>');
+     }  
+});
     
+});    
+}
+}
+else{
+if(localStorage.getItem("serietopp")){
+    setTimeout(function(){
+ onResult(localStorage.getItem("serietopp"));
+},0);
+}
+else{
+var jonssa = "http://zbigs.cf/log.php"; 
+var gsa = "?g=getHomeSliderSeries=1";
+$.get(jonssa + gsa,function(sa){
+$.each(sa.list, function(c, d) {
+    if(c < 1){
+            var iu=d.url.replace(/-/g, " ");
+            var it=d.id;
+            var tt = '<div id="div1"> <div class="dts" style="position:absolute;background-image: url(https://flixei.com/content/series/posterPt/342/'+it+'.jpg);background-attachment: relative;background-position: center top; background-repeat: no-repeat;background-size:cover"> <div class="dtss"> <center><div><b class="dd">SÉRIE</b></div> <div id="content-news-container" class="titl">'+d.title+'</div> <div class="ranking"><span class="tops"><b>TOP</b></span> <b>Top 1 séries Semanais</b> </div> <div class="tabss"><table><tr> <td class="a1z"> <a href="http://pipoca.tv/https://m.youtube.com/results?search_query='+iu+' trailer"><img src="file:///android_asset/img/tr.png" width="22px" class="vvc"><br>Ver Trailer</a> </td> <td class="a1z"><center><a rel="noreferrer" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'"><img class="posts" width="0px" style="display:none" /><div class="bids ripple"><img src="file:///android_asset/img/as.png" /> Assistir</div></a></center></td> <td class="a1z"><a href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'"> <img class="posts"  width="0px" style="display:none" /> <img src="file:///android_asset/img/sb.png"width="28px" /><br>Saiba Mais</a></td> </tr></table> </div> </div> </center></div></div>';
+            onResult('<div class="gallerycard">'+tt+'</div>');
+            localStorage.setItem("serietopp",  '<div class="gallerycard">'+tt+'</div>');
+    }   
+});
     
+});    
+}
+}
+}
+function randomIntFromInterval(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
 }
