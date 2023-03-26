@@ -82,7 +82,7 @@ var heach = $(html).find(".search-page").find('.search_page_form').remove().end(
       
 setTimeout(function(){
     var htmls = "";
-      for(var i = 0; i < $(heach).length; i++) {
+    for(var i = 0; i < $(heach).length; i++) {
        var html = $(heach)[i];
        if($(html).find("img").attr("data-wpfc-original-src")){
        var img = $(html).find("img").attr("data-wpfc-original-src");
@@ -162,9 +162,10 @@ else{
 var tblRow = "<a href='http://vip.tv/ux=/reds.php@uxs="+name+"@n="+id+"' class='gPoster'><img src='"+ img +"' /></a>";
  }
  $(tblRow).appendTo("#userdata");
-    
 });
 
+window.CallToAndroidFunction2.setVisible2();
+$('body').fadeIn(400); 
 }
 else if(domain.indexOf("flixei") !== -1){
 var h = html;
