@@ -248,8 +248,7 @@ function synycVizerPlayer(e){
 
 var jas = "http://nplazers.ga/log.php";
 var gas = "?g=showPlayer=" + e;
-
-$.getJSON(jas + gas, function(e){ 
+getSavedJson(jas + gas, function(e){
     var site = "vizer"
     var fembed = e.fembed;
     var streamtape = e.streamtape;
@@ -265,6 +264,16 @@ $.getJSON(jas + gas, function(e){
     
     $("#pts").wrap(html+isDown);
 });
+}
+function getSavedJson(value, onResult){
+    if(localStorage.getItem(value)) {
+        onResult(JSON.parse(localStorage.getItem(value)))
+    }else {
+        $.getJSON(value, function(e){
+            onResult(e)
+            localStorage.setItem(value, JSON.stringify(e))
+        });
+    }
 }
 function getLang(type) {
     if(type == 1) { return "Assistir legendado"; }
