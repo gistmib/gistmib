@@ -186,11 +186,11 @@ function isUpdated(){
 }
 function init(){
 if(isUpdated()){
-    //window.fct.onLoadAd("2", "ca-app-pub-3940256099942544/1033173712");
     //$("body").append("id > "+ userID + " is premium > " + isPremiumUser())
     localStorageExpire(adsTimerName, adsExpireTimer, function(e){
         switch(e) {
             case 0:
+                //window.fct.onLoadAd("2", "ca-app-pub-3940256099942544/1033173712");
                 //$("body").append("time expired or null" + userID)
                 if(!isPremiumUser()) { window.fct.onLoadAd("0", interstitialID); }
                 // time expired or null.
