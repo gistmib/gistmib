@@ -281,13 +281,10 @@ if($(".btn-danger")[0]){
 
 
 
-setInterval(function(){
-    fetchBookMarks();
-    $('#my').append($('#my').find('.miss').get().reverse());
-    
-},1000);
+//setInterval(function(){ fetchBookMarks(); $('#my').append($('#my').find('.miss').get().reverse()); },1000);
 
 fetchBookMarks();
+$('#my').append($('#my').find('.miss').get().reverse());
 
 if($(".btn-danger")[0]){
     $('.ccvzu').hide();
