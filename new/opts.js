@@ -272,18 +272,18 @@ function getSavedJson(value, onResult){
 function getLang(type, count) {
     if(count == 2) {
         if(type == 1) { 
-            return "Legendado";
+            return "Inglês (Legendado)";
         }
         else { 
-            return "Dublado";
+            return "Português";
         }
     }
     else {
         if(type == 1) { 
-            return "Disponível apenas legendado";
+            return "Disponível apenas inglês (Legendado)";
         }
         else { 
-            return "Disponível apenas dublado";
+            return "Disponível apenas português";
         }
     }
 }
