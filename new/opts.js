@@ -100,7 +100,20 @@ function openLink(uri){
     window.fct.onSynicLink(uri)
 }
 function download(site, type, object_link){
-        window.fct.onSynicPlayer(object_link, type);
+    localStorageExpire(adsTimerName, adsExpireTimer, function(e){
+        switch(e) {
+            case 0:
+                //$("body").append("time expired or null" + userID)
+                if(!isPremiumUser()) { window.fct.onLoadAd("0", interstitialID); }
+                // time expired or null.
+                break;
+            case 2:
+                //$("body").append("time running" + userID)
+                // time runing
+                break;
+        }
+    });
+    window.fct.onSynicPlayer(object_link, type);
 }
 function buttonClicked(){}
 function buttonClickedShare(){}
@@ -153,7 +166,7 @@ function localStorageExpire(timerName, timeExpire, returnCode){
 var setupTime = localStorage.getItem(timerName);
 if (setupTime == null) {
      localStorage.setItem(timerName, now);
-     returnCode(0);
+     returnCode(1);
 } 
 else if (now - setupTime > timeExpire*60*1000) {
     localStorage.removeItem(timerName);
@@ -188,19 +201,6 @@ function init(){
 if(isUpdated()){
     //window.fct.onLoadAd("2", "ca-app-pub-3940256099942544/1033173712");
     //$("body").append("id > "+ userID + " is premium > " + isPremiumUser())
-    localStorageExpire(adsTimerName, adsExpireTimer, function(e){
-        switch(e) {
-            case 0:
-                //$("body").append("time expired or null" + userID)
-                if(!isPremiumUser()) { window.fct.onLoadAd("0", interstitialID); }
-                // time expired or null.
-                break;
-            case 2:
-                //$("body").append("time running" + userID)
-                // time runing
-                break;
-        }
-    });
     window.fct.onLoadSuccess(ads);
 }
 else {
