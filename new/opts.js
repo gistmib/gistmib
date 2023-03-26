@@ -272,10 +272,10 @@ function getSavedJson(value, onResult){
 function getLang(type, count) {
     if(count == 2) {
         if(type == 1) { 
-            return "Assistir legendado";
+            return "Legendado";
         }
         else { 
-            return "Assistir dublado";
+            return "Dublado";
         }
     }
     else {
