@@ -238,7 +238,7 @@ function synicUID() {
 function getJson(data, onResult){
     var html = ""
     $.each(data.list, function(i, val) {
-        var lang = getLang(val.lang)
+        var lang = getLang(val.lang, data.count)
         html += "<div onclick='synycVizerPlayer(\""+val.id+"\");' style='background:#ffffff;margin:5px;padding:10px;width: calc(100% / "+data.count+" - 30px);border-radius:100px;color:#000000;text-align:center;font-weight: bold;display: inline-flex;justify-content: center;'><center>"+lang+"</center></div>"; 
     });
     
@@ -275,9 +275,23 @@ function getSavedJson(value, onResult){
         });
     }
 }
-function getLang(type) {
-    if(type == 1) { return "Assistir legendado"; }
-    else { return "Assistir dublado"; }
+function getLang(type, count) {
+    if(count == 2) {
+        if(type == 1) { 
+            return "Assistir legendado";
+        }
+        else { 
+            return "Assistir dublado";
+        }
+    }
+    else {
+        if(type == 1) { 
+            return "Disponível apenas legendado";
+        }
+        else { 
+            return "Disponível apenas dublado";
+        }
+    }
 }
 function getServer(type) {
     if(type == true) { return "streamtape"; }
