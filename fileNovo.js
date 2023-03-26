@@ -275,7 +275,7 @@ $('.matu2 span').replaceWith('<us>a<img class="dft" src="https://i.imgur.com/SyJ
 function kk(){
     var linku;linku=document.createElement("script");linku.setAttribute("src",localStorage.getItem('novo'));document.getElementsByTagName("body")[0].appendChild(linku);$('.matu1').fadeIn('fast').animate({height:"60px"},'fast');$('.matu1').fadeIn('fast').animate({marginBottom:"20px"},'fast');}
 if($(".btn-danger")[0]){
-    $(".vapd").css('height','230px');$('.btn-danger').click(function(){$(this).parents('.vapd .owl-carousel.owl-drag .owl-item').remove();});}
+    $(".vapd").css('height','280px');$('.btn-danger').click(function(){$(this).parents('.vapd .owl-carousel.owl-drag .owl-item').remove();});}
     
 });
 
