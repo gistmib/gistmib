@@ -280,10 +280,10 @@ function getLang(type, count) {
     }
     else {
         if(type == 1) { 
-            return "Disponível apenas inglês (Legendado)";
+            return "Disponível apenas em inglês (Legendado)";
         }
         else { 
-            return "Disponível apenas português";
+            return "Disponível apenas em português";
         }
     }
 }
