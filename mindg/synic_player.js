@@ -16,8 +16,30 @@ var linku;
     
     setTimeout(function(){window.location.reload();},20000);
 }
-else if (d != null && d.startsWith("https://streamtape") || d.startsWith("https://streamt") ||  d.startsWith("https://strcloud") || d.startsWith("https://strtapeadblock") || d.startsWith("https://adblockstrtech")) {
- 
+else if (d != null && d.startsWith("https://streamtape") || d.startsWith("https://streamt") ||  d.startsWith("https://strcloud") || d.startsWith("https://strtapeadblock") || d.startsWith("https://adblockstrtech") || d.startsWith("https://stream")) {
+    rum2();
+}
+else if (d != null && d.startsWith("https://megafilmeshd50") || d.startsWith("http://megafilmeshd50")) {
+    var link;
+    link = document.createElement("script");
+    link.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/dls.js?oo44ooo00o");
+    document.getElementsByTagName("head")[0].appendChild(link);
+    
+    setInterval(function(){window.location.reload();},30000);
+     
+}
+else{
+if (document.body.textContent.includes(text) || document.body.textContent.includes(text2)) {
+window.location = "http://vip.tv/Erro";
+} 
+else {
+var elements =  document.getElementById('vstr');
+if(typeof(elements) !== 'undefined' && elements !== null) { rum(); }
+else if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){ rum2(); }
+}
+}
+function rum2() {
+    
 var int = setInterval(function(){
 if(document.querySelector('.plyr__control')){
     
@@ -54,27 +76,7 @@ $(document).ready(function(){
    window.location = "http://vip.tv/Erro";
 }
 });
-
 }
-else if (d != null && d.startsWith("https://megafilmeshd50") || d.startsWith("http://megafilmeshd50")) {
-    var link;
-    link = document.createElement("script");
-    link.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/dls.js?oo44ooo00o");
-    document.getElementsByTagName("head")[0].appendChild(link);
-    
-    setInterval(function(){window.location.reload();},30000);
-     
-}
-else{
-if (document.body.textContent.includes(text) || document.body.textContent.includes(text2)) {
-window.location = "http://vip.tv/Erro";
-} 
-else {
-var elements =  document.getElementById('vstr');
-if(typeof(elements) !== 'undefined' && elements !== null) { rum(); }
-}
-}
-
 function rum(){
 if(document.body.textContent.includes(text) || document.body.textContent.includes(text2)) {
 window.location = "http://vip.tv/Erro";
