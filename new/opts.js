@@ -226,12 +226,17 @@ function synicUID() {
 }
 function getJson(data, onResult){
     var html = ""
-    $.each(data.list, function(i, val) {
-        var lang = getLang(val.lang, data.count)
-        html += "<div onclick='synycVizerPlayer(\""+val.id+"\");' style='background:#ffffff;margin:5px;padding:10px;width: calc(100% / "+data.count+" - 30px);border-radius:100px;color:#000000;text-align:center;font-weight: bold;display: inline-flex;justify-content: center;'><center>"+lang+"</center></div>"; 
-    });
-    
-    onResult("<center><div style='font-size:20px;'>Escolha abaixo o idioma desse vídeo</div></center><br/><br/><div style='width:100%;height:auto'>"+html+"</div>")
+    if(typeof(data.list)  === "undefined" || data.list === null || data.list === "" || typeof(data.list)  === "") {
+        html = "<center>Este episódio ainda não foi lançado.</center>";
+        onResult("<center><br/><br/><br/><div style='width:100%;height:auto'>"+html+"</div>")
+    }else{
+        $.each(data.list, function(i, val) {
+            var lang = getLang(val.lang, data.count)
+            html += "<div onclick='synycVizerPlayer(\""+val.id+"\");' style='background:#ffffff;margin:5px;padding:10px;width: calc(100% / "+data.count+" - 30px);border-radius:100px;color:#000000;text-align:center;font-weight: bold;display: inline-flex;justify-content: center;'><center>"+lang+"</center></div>"; 
+            
+        });
+        onResult("<center><div style='font-size:20px;'>Escolha abaixo o idioma desse vídeo</div></center><br/><br/><div style='width:100%;height:auto'>"+html+"</div>")
+    }
 }
 function synycVizerPlayer(e){
 
