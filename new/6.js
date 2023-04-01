@@ -1,4 +1,5 @@
-var version = parseInt(document.title)
+var version = parseInt(document.title);
+
 var imager = new Image();
 if(!getParam("u").includes("en")){
 if(version > 16) {
@@ -59,10 +60,10 @@ if($('#userdata').html() == "") {
 $("#userdata").replaceWith(html);
         }
     }
-    
 }
 else{
 var html = $(b64DecodeUnicode(aa));
+
 if(type == 2){
     if((domain.indexOf("megafilmeshd50") !== -1)){
     var jx = $(html).find("#info .custom_fields:first").text();
@@ -77,11 +78,11 @@ if(type == 2){
     }
 }else{ 
 if(domain.indexOf("cinemao") !== -1){
-    
 var heach = $(html).find(".search-page").find('.search_page_form').remove().end().html();
       
 setTimeout(function(){
     var htmls = "";
+    try{
     for(var i = 0; i < $(heach).length; i++) {
        var html = $(heach)[i];
        if($(html).find("img").attr("data-wpfc-original-src")){
@@ -106,7 +107,10 @@ setTimeout(function(){
        
     }  
     $("#userdata").append(htmls);
-    run(); 
+    }
+    catch(e){
+    }
+    run();
     },0);   
  
     
@@ -200,6 +204,7 @@ else {
 lastExecution = Date.now() 
 }
 }
+
 function b64DecodeUnicode(str) {
         // Going backwards: from bytestream, to percent-encoding, to original string.
         return decodeURIComponent(atob(str).split('').map(function(c) {
@@ -219,18 +224,24 @@ function run(){
         else {
             window.location.href = "http://deepweb.tv/https://vizer.tv/pesquisar/" + getParameterByName("s"); 
         }
-        
         window.CallToAndroidFunction2.setVisible2();
         $('body').fadeIn(400); 
         });
 }
 function checkValidUri(url, cb) {
+    var savedSession = localStorage.getItem(url, "");
+    if(savedSession){
+     cb(savedSession);   
+    }
+    else {
     imager.src = url
     imager.onload = function() {
     cb(200);
+    localStorage.setItem(url, 200)
     };
     imager.onerror = function() {
     cb(404);
     };
+    }
 }
 check = "true";
