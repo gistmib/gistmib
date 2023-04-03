@@ -1,32 +1,28 @@
+
 var gh = window.location.href;
 var values = 2;
 var next = "";
 var hash = "";
 var jon = "http://zbigs.cf/flix.php";
-var j = 'http://zbigs.cf/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2023@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc@page=';  
-  
+var j = 'http://zbigs.cf/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2023@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc@page=';
+
 var hourstop = 24;
 var nows = new Date().getTime();
 var setupTimess = localStorage.getItem('setupTimesssx');
+
 if (setupTimess == null) {
     localStorage.setItem('setupTimesssx', nows);
 } else {
     if(nows-setupTimess > hourstop*60*60*1000) {
         localStorage.removeItem('svs');
-        localStorage.setItem('setupTimesssx', now);
+        localStorage.setItem('setupTimesssx', nows);
     }
 }
 
-var head= document.getElementsByTagName('head')[0]; var scriptxx= document.createElement('script'); scriptxx.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js'; scriptxx.type = "text/javascript"; scriptxx.async = false; head.appendChild(scriptxx); var x= document.createElement('script'); x.src= 'https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js'; x.type = "text/javascript"; x.async = false; head.appendChild(x); 
-x.onload=function( evt ) {
-    
-    
-
 $(document).ready(function(){
-    
 if(localStorage.getItem("svs")){
     setTimeout(function(){
- $("#userdata").prepend(localStorage.getItem("svs"));
+        $("#userdata").prepend(localStorage.getItem("svs"));
         kkl();
 },0);
 }
@@ -46,7 +42,7 @@ $.each(sa.list, function(c, d) {
 }
 
 });
-}
+
 function incrementValue(){
     
 $.get(j+values++,function(sa){
@@ -67,7 +63,7 @@ function kkl(){
 if(localStorage.getItem("svs")){
 }
 else{
-  if($(".agPoster").length !== 0) {
+  if($(".agPoster").length) {
     localStorage.setItem("svs", $("#userdata").html())
   }else{
     window.location.reload();
