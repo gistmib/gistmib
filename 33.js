@@ -67,7 +67,7 @@ function kkl(){
 if(localStorage.getItem("svs")){
 }
 else{
-  if($(".agPoster").length) {
+  if($(".agPoster").length !== 0) {
     localStorage.setItem("svs", $("#userdata").html())
   }else{
     window.location.reload();
