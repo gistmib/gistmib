@@ -231,16 +231,17 @@ function run(){
 function checkValidUri(url, cb) {
     var savedSession = localStorage.getItem(url, "");
     if(savedSession){
-     cb(savedSession);   
+     cb(savedSession);  
     }
     else {
     imager.src = url
     imager.onload = function() {
     cb(200);
-    localStorage.setItem(url, 200)
+    localStorage.setItem(url, 200);
     };
     imager.onerror = function() {
     cb(404);
+    localStorage.setItem(url, 404);
     };
     }
 }
