@@ -228,7 +228,7 @@ function isPremiumUser(){
     
 }
 function fetchJSON(uri, onResult) {
-    localStorageExpire(uri+"---", 120, function(e){
+    localStorageExpire(uri+"---", 240, function(e){
         switch(e) {
             case 0: case 1:
                 $.get(uri, function(json) {
