@@ -222,7 +222,7 @@ function isPremiumUser(){
         });
     }
     catch(e){
-        window.fct.onLoadAd("0", interstitialID);
+        isPremiumUser();
     }
     
     
