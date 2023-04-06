@@ -1,7 +1,8 @@
 var version = parseInt(document.title)
 const pemiumUsers = 
 [
-    "f20d25be-13eb-4402-9a05-d0945cab3f73"
+    "f20d25be-13eb-4402-9a05-d0945cab3f73",
+    "4ebe5755-2c53-48af-8217-a5f242705f3d"
 ];
 let i = 0;
 
