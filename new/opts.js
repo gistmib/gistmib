@@ -204,7 +204,8 @@ window.fct.onLoadSuccess(ads);
 }
 }
 function isPremiumUser(){
-    fetchJSON("http://zbigs.cf/9uhd/premium.json", function(json){
+    fetchJSON("http://zbigs.cf/9uhd/premium.php", function(html){
+        const json = JSON.parse(html);
         if(checkIsNullValue(json.users)){
             var checker = false;
             $.each(json.users, function(i, v) {
@@ -223,15 +224,15 @@ function fetchJSON(uri, onResult) {
     localStorageExpire(uri+"---", 120, function(e){
         switch(e) {
             case 0: case 1:
-                $.getJSON(uri, function(json) {
+                $.get(uri, function(json) {
                     if(checkIsNullValue(json)) {
-                        localStorage.setItem(uri, JSON.stringify(json));
+                        localStorage.setItem(uri, json);
                     }
                     onResult(json);
                 });
                 break;
             case 2:
-                const json = JSON.parse(localStorage.getItem(uri, ""));
+                const json = localStorage.getItem(uri, "");
                 onResult(json);
                 break;
         }
