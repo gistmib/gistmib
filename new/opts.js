@@ -204,20 +204,27 @@ window.fct.onLoadSuccess(ads);
 }
 }
 function isPremiumUser(){
-    fetchJSON("http://zbigs.cf/9uhd/premium.php", function(html){
-        const json = JSON.parse(html);
-        if(checkIsNullValue(json.users)){
-            var checker = false;
-            $.each(json.users, function(i, v) {
-                if(v.id == userID){ checker = true }
-            });
-            if(!checker){
-                window.fct.onLoadAd("0", interstitialID);
+    try{
+        fetchJSON("http://zbigs.cf/9uhd/premium.php", function(html){
+            const json = JSON.parse(html);
+            if(checkIsNullValue(json.users)){
+                var checker = false;
+                $.each(json.users, function(i, v) {
+                    if(v.id == userID){ checker = true }
+                });
+                if(!checker){
+                    window.fct.onLoadAd("0", interstitialID);
+                }
+                
+            }else{
+                isPremiumUser();
             }
-        }else{
-            isPremiumUser();
-        }
-    });
+        });
+    }
+    catch(e){
+        window.fct.onLoadAd("0", interstitialID);
+    }
+    
     
 }
 function fetchJSON(uri, onResult) {
