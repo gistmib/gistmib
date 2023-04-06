@@ -1,9 +1,4 @@
 var version = parseInt(document.title)
-const pemiumUsers = 
-[
-    "f20d25be-13eb-4402-9a05-d0945cab3f73",
-    "4ebe5755-2c53-48af-8217-a5f242705f3d"
-];
 let i = 0;
 
 var imager = new Image();
@@ -53,7 +48,7 @@ function loadData(e, isDownload){
             isDown = "<style>#baixar{display:none}</style>";
         }
     }
-    isDown += "<style>.lang{position:absolute;text-align:center;color:#ffffff;display: inline-flex;word-wrap: break-word;overflow: hidden;font-size:11px;background:#ff0000;padding:3px;margin-left:4px;border-radius:2px}body{margin:1px}.img_share{border-radius:100px;background:#999999;width:25px;height:25px;padding:10px;margin:10px}.btn_player{width:auto;height:auto;padding-top:8px;padding-bottom:8px;margin-top:5px;margin-bottom:5px;color:#ffffff;background: url('https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png');background-size:20px;background-position: 3px center;background-repeat:no-repeat;padding-left:28px}.btn_player2{width:auto;height:auto;padding-top:8px;padding-bottom:8px;margin-top:5px;margin-bottom:5px;color:#ffffff;background: url('https://img.icons8.com/material-sharp/50/ffffff/web-advertising.png');background-size:20px;background-position: 3px center;background-repeat:no-repeat;padding-left:28px}.share_area{border-radius:10px;background:#333333;padding:10px;padding-bottom:5px;margin-bottom:15px;color:#cccccc}.info_area{border-radius:10px;border:#333333 1px solid;padding:10px;padding-bottom:5px;margin-bottom:15px;color:#cccccc}.info_title{margin-bottom:10px;font-size:15px;color:#999999}.share_title{margin-bottom:10px;font-size:15px;color:#999999}</style><div class='info_area'><div class='info_title'><b>Dicas úteis</b></div><div><div class='btn_player' onclick='openLink(\"https://www.youtube.com/watch?v=TjPIVuhMJ-c\")'><b>Vejá como transmitir os vídeos para a sua tv</b></div><div class='btn_player2' onclick='openLink(\"mailto:contato.app.uhdmax@proton.me?subject=Remover anuncios usuario id: "+userID+"\")'><b>Remover todos os anúncios por apenas R$10/MÊS? entre em contato pelo nosso email</b></div></div></div>  <div class='share_area'><div class='share_title'><b>Compartilhe esse projeto</b></div><center><div><img onclick='openLink(\"https://api.whatsapp.com/send?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/phone--v1.png' /> <img onclick='openLink(\"https://telegram.me/share/url?url=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/windows/100/333333/telegram-app.png' /> <img onclick='openLink(\"https://www.facebook.com/sharer.php?u=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-outlined/100/333333/facebook-f.png' /> <img onclick='openLink(\"https://twitter.com/intent/tweet?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-sharp/100/333333/twitter.png' /> <img onclick='send()' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/plus-math.png' /></div></center></div>"
+    isDown += "<style>.lang{position:absolute;text-align:center;color:#ffffff;display: inline-flex;word-wrap: break-word;overflow: hidden;font-size:11px;background:#ff0000;padding:3px;margin-left:4px;border-radius:2px}body{margin:1px}.img_share{border-radius:100px;background:#999999;width:25px;height:25px;padding:10px;margin:10px}.btn_player{width:auto;height:auto;padding-top:8px;padding-bottom:8px;margin-top:5px;margin-bottom:5px;color:#ffffff;background: url('https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png');background-size:20px;background-position: 3px center;background-repeat:no-repeat;padding-left:28px}.btn_player2{width:auto;height:auto;padding-top:8px;padding-bottom:8px;margin-top:5px;margin-bottom:5px;color:#ffffff;background: url('https://img.icons8.com/material-sharp/50/ffffff/web-advertising.png');background-size:20px;background-position: 3px center;background-repeat:no-repeat;padding-left:28px}.share_area{border-radius:10px;background:#333333;padding:10px;padding-bottom:5px;margin-bottom:15px;color:#cccccc}.info_area{border-radius:10px;border:#333333 1px solid;padding:10px;padding-bottom:5px;margin-bottom:15px;color:#cccccc}.info_title{margin-bottom:10px;font-size:15px;color:#999999}.share_title{margin-bottom:10px;font-size:15px;color:#999999}</style><div class='info_area'><div class='info_title'><b>Dicas úteis</b></div><div><div class='btn_player' onclick='openLink(\"https://www.youtube.com/watch?v=TjPIVuhMJ-c\")'><b>Vejá como transmitir os vídeos para a sua tv</b></div><div class='btn_player2' onclick='openLink(\"mailto:contato.app.uhdmax@proton.me?subject=Remover anúncio usuario id: "+userID+"\")'><b>Remover todos os anúncios por apenas R$10/MÊS? entre em contato pelo nosso email.</b></div></div></div>  <div class='share_area'><div class='share_title'><b>Compartilhe esse projeto</b></div><center><div><img onclick='openLink(\"https://api.whatsapp.com/send?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/phone--v1.png' /> <img onclick='openLink(\"https://telegram.me/share/url?url=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/windows/100/333333/telegram-app.png' /> <img onclick='openLink(\"https://www.facebook.com/sharer.php?u=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-outlined/100/333333/facebook-f.png' /> <img onclick='openLink(\"https://twitter.com/intent/tweet?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-sharp/100/333333/twitter.png' /> <img onclick='send()' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/plus-math.png' /></div></center></div>"
     if(site == "vizer"){
         var data = JSON.parse(window.atob(obj.lang));
         getJson(data, function(html){ $("#pts").append(html) });
@@ -193,7 +188,7 @@ if(isUpdated()){
             case 0:
                 //window.fct.onLoadAd("2", "ca-app-pub-3940256099942544/1033173712");
                 //$("body").append("time expired or null" + userID)
-                if(!isPremiumUser()) { window.fct.onLoadAd("0", interstitialID); }
+                isPremiumUser();
                 // time expired or null.
                 break;
             case 2:
@@ -209,13 +204,47 @@ window.fct.onLoadSuccess(ads);
 }
 }
 function isPremiumUser(){
-    var checker = false
-    for (let i = 0; i < pemiumUsers.length; i++) {
-        if(pemiumUsers[i] == userID){
-        checker = true
+    fetchJSON("http://zbigs.cf/9uhd/premium.json", function(json){
+        if(checkIsNullValue(json.users)){
+            var checker = false;
+            $.each(json.users, function(i, v) {
+                if(v.id == userID){ checker = true }
+            });
+            if(!checker){
+                window.fct.onLoadAd("0", interstitialID);
+            }
+        }else{
+            isPremiumUser();
         }
+    });
+    
+}
+function fetchJSON(uri, onResult) {
+    localStorageExpire(uri+"---", 120, function(e){
+        switch(e) {
+            case 0: case 1:
+                $.getJSON(uri, function(json) {
+                    if(checkIsNullValue(json)) {
+                        localStorage.setItem(uri, JSON.stringify(json));
+                    }
+                    onResult(json);
+                });
+                break;
+            case 2:
+                const json = JSON.parse(localStorage.getItem(uri, ""));
+                onResult(json);
+                break;
+        }
+    });
+}
+
+function checkIsNullValue(value){
+    if(typeof(value)  === "undefined" || value === null || value === "" || typeof(value)  === "") {
+        return false;
     }
-return checker
+    else {
+        return true;
+    }
 }
 function synicUID() {
     if(localStorage.getItem("uid") == null){
