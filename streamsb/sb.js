@@ -8,7 +8,7 @@ scriptxx.type = "text/javascript";
 scriptxx.async = false;
 head.appendChild(scriptxx); 
 scriptxx.onload = function(event) {
- if($('button').length){
+ if($('.g-recaptcha').length){
                 setTimeout(function(){$('button')[0].click();},10000);
    }
   else{
