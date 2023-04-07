@@ -11,7 +11,7 @@ rum();
 else if(d != null && d.startsWith("https://playerhd.org/video/embedteste2.php")){
 var linku;
     linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/spp/sppx1.js");
+    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/streamsb/cinemao.js");
     document.getElementsByTagName("head")[0].appendChild(linku);
     
     setTimeout(function(){window.location.reload();},20000);
@@ -27,6 +27,12 @@ else if (d != null && d.startsWith("https://megafilmeshd50") || d.startsWith("ht
     
     setInterval(function(){window.location.reload();},30000);
      
+}
+else if(d.indexOf("sbface.com") !== -1 || d.indexOf("streamsb.com") !== -1){
+    var link;
+    link = document.createElement("script");
+    link.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/streamsb/sbb.js");
+    document.getElementsByTagName("head")[0].appendChild(link);
 }
 else{
 if (document.body.textContent.includes(text) || document.body.textContent.includes(text2)) {
