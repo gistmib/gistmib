@@ -17,6 +17,9 @@ function getLocation(uri, onResult){
             onResult(i);
             return true;
         }
+        if(i == locations.length -1){
+            onResult(100);
+        }
         i++;
     }
     while(i < locations.length);
@@ -29,7 +32,7 @@ function init(value){
     script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/getfile/' + value;
     script.type = "text/javascript";
     script.async = false;
-    head.appendChild(script);
+    head.appendChild(script); 
 }
 function req(value){
     switch (value) {
@@ -44,6 +47,8 @@ function req(value){
         else if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){
             return "streamtape.js";
          }
-        else { return = ""; }
+         else {
+             return "";
+         }
     }
 }
