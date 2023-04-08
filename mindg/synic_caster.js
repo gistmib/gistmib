@@ -52,3 +52,5 @@ function req(value){
          }
     }
 }
+
+check = "true";
