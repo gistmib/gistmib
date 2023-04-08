@@ -1,6 +1,6 @@
 var local = window.location.hostname;
 var locations = [
-    "streamtape strcloud strtapeadblock adblockstrtech", 
+    "streamtape strcloud strtapeadblock adblockstrtech streamtape.net streamtape.com", 
     "megafilmeshd50.com megafilmeshd50.net",
     "playerhd.org",
     "diampokusy.com suzihaza.com vfilmesonline.net vanfem.com diasfem.com fembed.com",
