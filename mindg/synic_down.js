@@ -1,9 +1,9 @@
 var local = window.location.hostname;
 var locations = [
     "streamtape strcloud strtapeadblock adblockstrtech", 
-    "megafilmeshd50",
+    "megafilmeshd50.com megafilmeshd50.net",
     "playerhd.org",
-    "diampokusy.com suzihaza.com vfilmesonline.net vanfem.com diasfem.com",
+    "diampokusy.com suzihaza.com vfilmesonline.net vanfem.com diasfem.com fembed.com",
     "streamsb.com sbface.com sbbrisk.com"];
 
 getLocation(local, function(position){
