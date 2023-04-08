@@ -7,38 +7,7 @@ var locations = [
     "streamsb.com sbface.com"];
 
 getLocation(local, function(position){
-    var value = "";
-    if(position === 0){
-        value = "streamtapes.js";
-        //streamtape
-    }
-    else if(position === 1) {
-        value = "mfhd50.js";
-        // mfhd50
-    }
-    else if(position === 2) {
-        value = "playerhdd.js";
-        // playerhd
-    }
-    else if(position === 3) {
-        value = "fembeed.js";
-        // fembed
-    }
-    else if(position === 4) {
-        value = "streamsb.js";
-        // streamsb
-    }
-    else {
-        if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
-            value = "fembeed.js"; 
-            // fembed
-         }
-        else if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){
-            value = "streamtape.js";
-            // streamtape
-         }
-    }
-    init(value);
+    init(req(position));
 });
 
 function getLocation(uri, onResult){
@@ -60,5 +29,20 @@ function init(value){
     script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/getfile/' + value;
     script.type = "text/javascript";
     script.async = false;
-    head.appendChild(script); 
+    head.appendChild(script);
+}
+function req(value){
+    switch (value) {
+        case 0: return "streamtapes.js";
+        case 1: return "mfhd50.js";
+        case 2: return "playerhdd.js";
+        case 3: return "fembeed.js";
+        case 4: return "streamsb.js";
+        default: if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
+            return "fembeed.js"; 
+         }
+        else if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){
+            return "streamtape.js";
+         }
+    }
 }
