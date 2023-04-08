@@ -3,13 +3,17 @@ var servers = [3,5,4,6];
 var i = 0;
 var head= document.getElementsByTagName('head')[0]; 
 var scriptxx= document.createElement('script'); 
-scriptxx.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
-scriptxx.type = "text/javascript";
-scriptxx.async = false;
-head.appendChild(scriptxx); 
-scriptxx.onload = function(event) {
+script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
+script.type = "text/javascript";
+script.async = false;
+head.appendChild(script); 
+script.onload = function(event) {
     var link = "https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+getParam("id")+"/none/none");
     getFinalUrl(link);
+}
+
+script.onerror = function(event) {
+    window.location.reload();
 }
 
 function getFinalUrl(uris){
