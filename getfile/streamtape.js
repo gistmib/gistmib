@@ -25,6 +25,7 @@ function getElement(element, onResult){
                 var link = $('#robotlink').text().replace("//","");
                 if(checkIsNullValue(link)) {
                     onResult("https://" + link + '&stream=1');
+                    $(document).unbind('DOMNodeInserted');
                 }
                 else {
                     window.location.reload();
