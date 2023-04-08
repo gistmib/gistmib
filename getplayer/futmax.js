@@ -8,6 +8,7 @@ head.innerHTML = initHead();
 head.appendChild(script); 
 script.onload = function(event) {
 
+    $("body").css("display", "block");
     getButtons($(".options_iframe"), function(html){
         $("body").html(html);
         
