@@ -55,7 +55,6 @@ function getPlayer(uri){
     document.getElementById("zoomIn").addEventListener("click", function(){
         zoom+=zoomStep;
         document.getElementsByClassName("myFrame")[0].style.transform="scale("+zoom+")";
-        $("div.options_iframe").hide();
     });
     document.getElementById("zoomOut").addEventListener("click", function(){
         if(zoom>zoomStep){
