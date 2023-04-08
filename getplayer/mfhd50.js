@@ -6,6 +6,8 @@ script.type = "text/javascript";
 script.async = false;
 head.appendChild(script); 
 script.onload = function(event) {
+     
+    $("body").css("display", "block");
      getElement($(".metaframe"), function(elem){
         if(checkIsNullValue(elem.attr("src"))) {
             getPlayer(elem.attr("src"));
