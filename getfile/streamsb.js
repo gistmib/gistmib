@@ -36,3 +36,7 @@ script.onload = function(event) {
         }
     });
 }
+
+script.onerror = function(event) {
+    window.location.reload();
+}
