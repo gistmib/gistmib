@@ -1,97 +1,60 @@
-const text = 'Sorry this video does not exist';
-const text2 = 'Sorry this video is unavailable: DMCA Takedown';
+var local = window.location.hostname;
+var locations = ["streamtape","strcloud","strtapeadblock","adblockstrtech","megafilmeshd50","playerhd.org","diampokusy.com","suzihaza.com","vfilmesonline.net","vanfem.com","diasfem.com","streamsb.com","sbface.com"];
 
-var d = window.location.href;
-if (d != null && d.startsWith("https://diampokusy.com") || d.startsWith("https://suzihaza.com") || d.startsWith("https://player-megahdseries.com") || d.startsWith("https://player-megahdfilmes.com/") || d.startsWith("https://playerthefilmes.tv/") || d.startsWith("https://player-megahdanimes.com/") || d.startsWith("https://diasfem.com") || d.startsWith("https://vanfem.com/") || d.startsWith("https://vfilmesonline.net")) {
-    
-rum();
-
-
-}
-else if(d != null && d.startsWith("https://playerhd.org/video/embedteste2.php")){
-var linku;
-    linku = document.createElement("script");
-    linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/streamsb/cinemao.js");
-    document.getElementsByTagName("head")[0].appendChild(linku);
-    
-    setTimeout(function(){window.location.reload();},20000);
-}
-else if (d != null && d.startsWith("https://streamtape") || d.startsWith("https://streamt") ||  d.startsWith("https://strcloud") || d.startsWith("https://strtapeadblock") || d.startsWith("https://adblockstrtech") || d.startsWith("https://stream")) {
-    rum2();
-}
-else if (d != null && d.startsWith("https://megafilmeshd50") || d.startsWith("http://megafilmeshd50")) {
-    var link;
-    link = document.createElement("script");
-    link.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/mf/dls.js?oo44ooo00o");
-    document.getElementsByTagName("head")[0].appendChild(link);
-    
-    setInterval(function(){window.location.reload();},30000);
-     
-}
-else if(d.indexOf("sbface.com") !== -1 || d.indexOf("streamsb.com") !== -1){
-    var link;
-    link = document.createElement("script");
-    link.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/streamsb/sbb.js");
-    document.getElementsByTagName("head")[0].appendChild(link);
-}
-else{
-if (document.body.textContent.includes(text) || document.body.textContent.includes(text2)) {
-window.location = "http://vip.tv/Erro";
-} 
-else {
-var elements =  document.getElementById('vstr');
-if(typeof(elements) !== 'undefined' && elements !== null) { rum(); }
-else if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){ rum2(); }
-}
-}
-function rum2() {
-    
-var int = setInterval(function(){
-if(document.querySelector('.plyr__control')){
-    
-clearInterval(int); 
-setInterval(function(){
-    window.top.location = window.location.href;
-},15000);
-  
-$("body").css('display', 'block');
-    $(".plyr__control")[0].click();
-    var gad = window.location.href;
-    var low;
-    
-    
-setInterval(function(){
-    if($("video")[0]){
-    low = $('#robotlink').text();
-    low = low.replace("//","");
-    top.location.href ="http://videomega.tv/https://" + low + '&stream=1';
+getLocation(local, function(position){
+    var value = "";
+    if(position < 4){
+        value = "streamtapes.js";
+        //streamtape
     }
-},3000);
-
-$('a[target="_blank"]').each(function(){
-   $(this).replaceWith($(this).text());
+    else if(position == 4) {
+        value = "mfhd50.js";
+        // mfhd50
+    }
+    else if(position == 5) {
+        value = "playerhdd.js";
+        // playerhd
+    }
+    else if(position > 5 && position < 11) {
+        value = "fembeed.js";
+        // fembed
+    }
+    else if(position > 10 && position < 13) {
+        value = "streamsb.js";
+        // streamsb
+    }
+    else {
+        if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
+            value = "fembeed.js"; 
+            // fembed
+         }
+        else if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){
+            value = "streamtape.js";
+            // streamtape
+         }
+    }
+    init(value);
 });
-$('a[target="_blank"]').removeAttr('target');
 
-}  
-},0);
+function getLocation(uri, onResult){
+    let i = 0;
+    do {
+        console.log(locations[i]);
+        if(uri.indexOf(locations[i]) !== -1){
+            onResult(i);
+            return true;
+        }
+        i++;
+    }
+    while(i < locations.length);
+}
 
-int;
-$(document).ready(function(){    
-    if ($("#realcontent")[0]){
-   window.location = "http://vip.tv/Erro";
+function init(value){
+    //alert(value);
+    var head= document.getElementsByTagName('head')[0]; 
+    var script= document.createElement('script'); 
+    script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/getfile/' + value;
+    script.type = "text/javascript";
+    script.async = false;
+    head.appendChild(script); 
 }
-});
-}
-function rum(){
-if(document.body.textContent.includes(text) || document.body.textContent.includes(text2)) {
-window.location = "http://vip.tv/Erro";
-} 
-else {
-var linku;
-linku = document.createElement("script");
-linku.setAttribute("src", "//cdn.jsdelivr.net/gh/gistmib/gistmib/vf/vnew.js");
-document.getElementsByTagName("head")[0].appendChild(linku); 
-}
-}
-check = "true";
