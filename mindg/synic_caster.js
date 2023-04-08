@@ -42,7 +42,7 @@ function req(value){
         case 3: return "fembed.js";
         case 4: return "streamsb.js";
         default: if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
-            return "fembeed.js"; 
+            return "fembed.js"; 
          }
         else if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){
             return "streamtape.js";
