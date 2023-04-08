@@ -4,7 +4,7 @@ var locations = [
     "megafilmeshd50",
     "playerhd.org",
     "diampokusy.com suzihaza.com vfilmesonline.net vanfem.com diasfem.com",
-    "streamsb.com sbface.com"];
+    "streamsb.com sbface.com sbbrisk.com"];
 
 getLocation(local, function(position){
     init(req(position));
