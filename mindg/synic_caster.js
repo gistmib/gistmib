@@ -44,5 +44,6 @@ function req(value){
         else if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){
             return "streamtape.js";
          }
+        else { return = ""; }
     }
 }
