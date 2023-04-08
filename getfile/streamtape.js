@@ -33,6 +33,7 @@ function getElement(element, onResult){
             });
         });
     }
+    
 }
 
 function checkIsNullValue(value){
@@ -43,3 +44,4 @@ function checkIsNullValue(value){
         return true;
     }
 }
+
