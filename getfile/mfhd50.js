@@ -1,6 +1,4 @@
 var local = window.location.href;
-var servers = [3,5,4,6];
-var i = 0;
 var head= document.getElementsByTagName('head')[0]; 
 var script= document.createElement('script'); 
 script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
