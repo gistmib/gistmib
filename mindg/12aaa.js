@@ -3,7 +3,7 @@ var local = window.location.hostname;
 var locations = [
     "multicanais.vc bbbgratis.com", 
     "futemax.app",
-    "megafilmeshd50.com",
+    "megafilmeshd50.com megafilmeshd50.net",
     "canaisplay.com",
     "embed.warezcdn.net embed.warezcdn.com warezcdn.com warezcdn.net",
     "playerhd.org"];
