@@ -10,11 +10,12 @@ script.onload = function(event) {
 
     getButtons($(".options_iframe"), function(html){
         $("body").html(html);
+        
+        $(document).bind('DOMNodeInserted', function() {
+            $('body').contents(':not(#content_area)').remove();
+        });
     });
 
-    $(document).bind('DOMNodeInserted', function() {
-        $('body').contents(':not(#content_area)').remove();
-    });
 }
 script.onerror = function(event) {
     window.location.reload();
