@@ -36,10 +36,10 @@ function init(value){
 }
 function req(value){
     switch (value) {
-        case 0: return "streamtapes.js";
+        case 0: return "streamtape.js";
         case 1: return "mfhd50.js";
-        case 2: return "playerhdd.js";
-        case 3: return "fembeed.js";
+        case 2: return "playerhd.js";
+        case 3: return "fembed.js";
         case 4: return "streamsb.js";
         default: if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
             return "fembeed.js"; 
