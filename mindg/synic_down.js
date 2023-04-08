@@ -1,25 +1,30 @@
 var local = window.location.hostname;
-var locations = ["streamtape","strcloud","strtapeadblock","adblockstrtech","megafilmeshd50","playerhd.org","diampokusy.com","suzihaza.com","vfilmesonline.net","vanfem.com","diasfem.com","streamsb.com","sbface.com"];
+var locations = [
+    "streamtape strcloud strtapeadblock adblockstrtech", 
+    "megafilmeshd50",
+    "playerhd.org",
+    "diampokusy.com suzihaza.com vfilmesonline.net vanfem.com diasfem.com",
+    "streamsb.com sbface.com"];
 
 getLocation(local, function(position){
     var value = "";
-    if(position < 4){
+    if(position === 0){
         value = "streamtapes.js";
         //streamtape
     }
-    else if(position == 4) {
+    else if(position === 1) {
         value = "mfhd50.js";
         // mfhd50
     }
-    else if(position == 5) {
+    else if(position === 2) {
         value = "playerhdd.js";
         // playerhd
     }
-    else if(position > 5 && position < 11) {
+    else if(position === 3) {
         value = "fembeed.js";
         // fembed
     }
-    else if(position > 10 && position < 13) {
+    else if(position === 4) {
         value = "streamsb.js";
         // streamsb
     }
@@ -39,8 +44,7 @@ getLocation(local, function(position){
 function getLocation(uri, onResult){
     let i = 0;
     do {
-        console.log(locations[i]);
-        if(uri.indexOf(locations[i]) !== -1){
+        if(locations[i].indexOf(uri) >= 0){
             onResult(i);
             return true;
         }
