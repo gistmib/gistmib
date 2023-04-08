@@ -18,12 +18,12 @@ script.onload = function(event) {
 
     document.getElementById("zoomIn").addEventListener("click", function(){
         zoom+=zoomStep;
-        document.getElementsByTagName("body")[0].style.transform="scale("+zoom+")";
+        document.getElementsByTagName("iframe")[0].style.transform="scale("+zoom+")";
     });
     document.getElementById("zoomOut").addEventListener("click", function(){
         if(zoom>zoomStep){
             zoom-=zoomStep;
-            document.getElementsByTagName("body")[0].style.transform="scale("+zoom+")";
+            document.getElementsByTagName("iframe")[0].style.transform="scale("+zoom+")";
         }
     }); 
     },100);
