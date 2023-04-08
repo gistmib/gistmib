@@ -28,7 +28,7 @@ function getLocation(uri, onResult){
 }
 
 function init(value){
-    alert(value);
+    //alert(value);
     var head= document.getElementsByTagName('head')[0]; 
     var script= document.createElement('script'); 
     script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/getplayer/' + value;
