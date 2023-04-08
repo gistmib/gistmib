@@ -20,16 +20,14 @@ script.onload = function(event) {
             $.getScript(res.player.revenue);
         }
         else{
-            window.location.reload;
+            window.location.href = "http://vip.tv/Erro";
         }
     });
 
-setInterval(function(){ var isMobileVersion = document.getElementsByClassName('ffr');
-if (isMobileVersion.length > 0) {
-}else{window.location.reload();} },30000);
-
 }
-
+script.onerror = function(event) {
+    window.location.reload();
+}
      
 function hh(datas) {
     var html = "";
