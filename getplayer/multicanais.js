@@ -7,7 +7,7 @@ script.async = false;
 head.innerHTML = initHead();
 head.appendChild(script); 
 script.onload = function(event) {
-
+    $("body").css("display", "block");
     getButtons($(".wp-block-button.aligncenter, .wp-block-calendar"), function(html){
         $("body").html(html);
         
