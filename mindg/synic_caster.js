@@ -4,7 +4,7 @@ var locations = [
     "megafilmeshd50.com megafilmeshd50.net",
     "playerhd.org",
     "diampokusy.com suzihaza.com vfilmesonline.net vanfem.com diasfem.com fembed.com",
-    "streamsb.com sbface.com sbbrisk.com"];
+    "streamsb.com sbface.com sbbrisk.com lvturbo.com"];
 
 getLocation(local, function(position){
     init(req(position));
@@ -26,7 +26,7 @@ function getLocation(uri, onResult){
 }
 
 function init(value){
-    //alert(value);
+    alert(value);
     var head= document.getElementsByTagName('head')[0]; 
     var script= document.createElement('script'); 
     script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/getfile/' + value;
@@ -46,6 +46,9 @@ function req(value){
          }
         else if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){
             return "streamtape.js";
+         }
+         else if(typeof(document.getElementsByClassName('modal-footer')[0]) !== 'undefined' && document.getElementsByClassName('modal-footer')[0] !== null || document.title === "StreamSB"){
+            return "streamsb.js";
          }
          else {
              return "";
