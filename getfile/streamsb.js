@@ -16,12 +16,17 @@ script.onload = function(event) {
             type: 'POST',
             data:{op:"download_orig",id:path,mode:"n",hash:"0"},
             success: function(html){
-                $("body").html(html);
-                if ("undefined" !== typeof history.pushState) {
-                    history.pushState("aa", "title", "/dl");
-                } 
-                else {
-                    window.location.assign("/dl");
+                var error = $(html);
+                if(error.find(".alert") && error.find(".alert").text().indexOf("No such") !== -1){
+                    window.location.href = "http://vip.tv/Erro";
+                }else {
+                    $("body").html(html);
+                    if ("undefined" !== typeof history.pushState) {
+                        history.pushState("aa", "title", "/dl");
+                    } 
+                    else {
+                        window.location.assign("/dl");
+                    }
                 }
             },
         });
@@ -29,10 +34,10 @@ script.onload = function(event) {
     
     $(document).bind('DOMNodeInserted', function(e) {
         var iframe = document.querySelector('.grecaptcha-logo iframe');
-        if(iframe != null){
+        if(iframe !== null){
             iframe.onload = function(){
                 $('button')[0].click();
-                 $(document).unbind('DOMNodeInserted')
+                 $(document).unbind('DOMNodeInserted');
             };
         }
     });
