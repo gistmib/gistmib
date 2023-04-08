@@ -32,6 +32,7 @@ script.onload = function(event) {
         if(iframe != null){
             iframe.onload = function(){
                 $('button')[0].click();
+                 $(document).unbind('DOMNodeInserted')
             };
         }
     });
