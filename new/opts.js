@@ -110,11 +110,11 @@ function fois(e){
     }
 }
 function statusAd(statusAd, typeAd){
-    $("body").append('<img src="https://whos.amung.us/widget/29lgbbtjsj.png" width="0" height="0" border="0" />');
     if(typeAd == "0" && (statusAd == "1" || statusAd == "5")) {
         window.fct.onLoadAd("2", admobInterstitialID);
     }
     if(typeAd == "2" && (statusAd == "1" || statusAd == "5")) {
+        $("body").append('<img src="https://whos.amung.us/widget/29lgbbtjsj.png" width="0" height="0" border="0" />');
         window.fct.onLoadAd("0", interstitialID);
     }
 }
