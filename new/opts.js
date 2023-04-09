@@ -309,7 +309,7 @@ function getSavedJson(value, onResult){
     }else {
         $.getJSON(value, function(e){
             onResult(e)
-            if(e.streamtape.toString() !== "false" || e.warezcdn.toString() !== "false" || e.mixdrope.toString() !== "false"){
+            if(e.streamtape.toString() !== "false"){
                 localStorage.setItem(value, JSON.stringify(e))
             }
         });
