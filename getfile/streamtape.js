@@ -6,8 +6,10 @@ script.type = "text/javascript";
 script.async = false;
 head.appendChild(script); 
 script.onload = function(event) {
+    $(document).ready(function(){
     getElement($('#robotlink'), function(uri){
         window.location.href = "http://videomega.tv/" + uri;
+    });
     });
 }
 script.onerror = function(event) {
