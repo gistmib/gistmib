@@ -10,6 +10,7 @@ script.async = false;
 head.innerHTML = initHead();
 head.appendChild(script); 
 script.onload = function(event) {
+    $(document).ready(function(){
     $("body").css("display", "block");
     getButtons($("ul.uppercase"), function(html){
         $("body").html(html);
@@ -17,6 +18,7 @@ script.onload = function(event) {
         $(document).bind('DOMNodeInserted', function() {
             $('body').contents(':not(#content_area)').remove();
         });
+    });
     });
 
 }
