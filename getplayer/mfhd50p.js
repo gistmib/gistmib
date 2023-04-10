@@ -6,7 +6,7 @@ script.type = "text/javascript";
 script.async = false;
 head.appendChild(script); 
 script.onload = function(event) {
-     
+     $(document).ready(function(){
     $("body").css("display", "block");
      getElement($(".metaframe"), function(elem){
         if(checkIsNullValue(elem.attr("src"))) {
@@ -16,6 +16,7 @@ script.onload = function(event) {
             window.location.reload();
         }
      });
+    });
 }
 script.onerror = function(event) {
     window.location.reload();
