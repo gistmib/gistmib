@@ -6,6 +6,7 @@ script.type = "text/javascript";
 script.async = false;
 head.appendChild(script); 
 script.onload = function(event) {
+     $(document).ready(function(){
      getElement($(".metaframe"), function(elem){
         if(checkIsNullValue(elem.attr("src"))) {
             window.location.href = "http://videomega.tv/" + elem.attr("src");
@@ -14,6 +15,7 @@ script.onload = function(event) {
             window.location.reload();
         }
      });
+    });
 }
 script.onerror = function(event) {
     window.location.reload();
