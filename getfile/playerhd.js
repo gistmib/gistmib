@@ -9,8 +9,10 @@ script.type = "text/javascript";
 script.async = false;
 head.appendChild(script); 
 script.onload = function(event) {
+    $(document).ready(function(){
     var link = "https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+getParam("id")+"/none/none");
     getFinalUrl(link);
+    });
 }
 
 script.onerror = function(event) {
