@@ -6,6 +6,7 @@ script.type = "text/javascript";
 script.async = false;
 head.appendChild(script); 
 script.onload = function(event) {
+   $(document).ready(function(){
    $("body").show();
     $("body").append("<style>.geral {position: absolute;bottom: 0;width: 100%;background-color: rgba(0,0,0,0.7);}</style>");
     
@@ -20,6 +21,7 @@ script.onload = function(event) {
     $('button:contains("VF DUB"), button:contains("VF LEG")').remove();
 });
     if($(".footer")[0]){$(".footer").remove();}
+    });
 }
 script.onerror = function(event) {
     window.location.reload();
