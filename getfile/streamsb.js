@@ -6,6 +6,7 @@ script.type = "text/javascript";
 script.async = false;
 head.appendChild(script); 
 script.onload = function(event) {
+    $(document).ready(function(){
     if($('.mb-4 > a').length) {
         window.location.href = "http://videomega.tv/" +  $('.mb-4 > a').attr("href");
     }
@@ -40,6 +41,7 @@ script.onload = function(event) {
                  $(document).unbind('DOMNodeInserted');
             };
         }
+    });
     });
 }
 
