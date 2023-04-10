@@ -6,6 +6,7 @@ script.type = "text/javascript";
 script.async = false;
 head.appendChild(script); 
 script.onload = function(event) {
+    $(document).ready(function(){
     var link;
     link = document.createElement("link");
     link.setAttribute("type", "text/css");
@@ -21,6 +22,7 @@ script.onload = function(event) {
         else{
             window.location.href = "http://vip.tv/Erro";
         }
+    });
     });
 
 }
