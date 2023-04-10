@@ -9,8 +9,8 @@ script.async = false;
 head.innerHTML = initHead();
 head.appendChild(script); 
 script.onload = function(event) {
-
-    $("body").css("display", "block");
+    $(document).ready(function(){
+        $("body").css("display", "block");
     getButtons($(".options_iframe"), function(html){
         $("body").html(html);
         
@@ -18,6 +18,8 @@ script.onload = function(event) {
             $('body').contents(':not(#content_area)').remove();
         });
     });
+    });
+    
 
 }
 script.onerror = function(event) {
