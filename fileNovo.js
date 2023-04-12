@@ -19,7 +19,7 @@ $(document).ready(function(){
     if(localStorage.getItem("axpicvhaxaaa11111")){
         if(!localStorage.getItem("axcxzawzaz1aaAccca1aaa1aaaa11aa22s")){  
 
- if(parseInt(document.title) > 16) {
+ if(parseInt(document.title) > 17) {
      $('body').prepend('<div class="alertd"><div class="alertd1"><center><img src="https://i.ibb.co/JRfWyY8/icons8-warning-48.png" width="40px" /></center><br/><span class="txt">Aviso importante precisamos da sua ajuda! </span> <br> <br> Se você gostou do aplicativo e não quer que ele pare de functionar envie ele para seus amigos ou compartilhe nosso site em suas redes sociais, isso é muito importante pois não sabemos se conseguiremos manter o 9UHD funcionando por falta de acessos, contamos com a ajuda de todos vocês! <a href="http://goooog.wap.sh"><div class="sxxxa dfc ripple" style="font-size:19px">Abrir site e compartilhar o 9UHD agora</div></a> <a href="#"><div class="sxxxa dfc ripple">Pular</div></a></div></div><script>$(".dfcv").click(function(){$(".alertd").fadeOut(300);});$(".dfc").click(function(){$(".alertd").fadeOut(300);localStorage.setItem("axcxzawzaz1aaAccca1aaa1aaaa11aa22s", true);});<\/script>');}else{
      
         
