@@ -1,7 +1,7 @@
 document.body.style.display = "none";
 var local = window.location.hostname;
 var locations = [
-    "multicanais.vc bbbgratis.com", 
+    "multicanais.vc multicanais.fans bbbgratis.com", 
     "futemax.app",
     "megafilmeshd50.com megafilmeshd50.net",
     "canaisplay.com",
