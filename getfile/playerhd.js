@@ -1,5 +1,5 @@
 var local = window.location.href;
-var servers = [3,5,4,6];
+var servers = [5,3,6,4];
 var i = 0;
 var id = getID();
 var head= document.getElementsByTagName('head')[0]; 
