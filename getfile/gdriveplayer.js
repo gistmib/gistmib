@@ -23,6 +23,7 @@ function getLocation(uri, onResult){
         window.location=href= "//download.gdriveplayer.us/download.php?link=" + getParam("link");
     }else {
         var h = $(".panel-body a:last-of-type").attr("href");
+        alert(h);
         onResult(h);
     }
 }
