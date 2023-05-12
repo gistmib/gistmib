@@ -9,6 +9,7 @@ head.appendChild(script);
 script.onload = function(event) {
      $(document).ready(function(){
         getLocation(local, function(uri){
+            alert(uri);
             window.location.href = "http://videomega.tv/" + uri;
        });
      });
@@ -20,7 +21,7 @@ script.onerror = function(event) {
 
 function getLocation(uri, onResult){
     if(locations === uri){
-      alert(uri)
+      alert(uri);
         window.location=href= "//download.gdriveplayer.us/download.php?link=" + getParam("link");
     }else {
         var h = $(".panel-body a:last-of-type").attr("href");
