@@ -1,5 +1,5 @@
 var local = window.location.hostname;
-var locations = ["gdriveplayer.us"];
+var locations = "gdriveplayer.to";
 var head= document.getElementsByTagName('head')[0]; 
 var script= document.createElement('script'); 
 script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
@@ -8,11 +8,8 @@ script.async = false;
 head.appendChild(script); 
 script.onload = function(event) {
      $(document).ready(function(){
-       getLocation(local, function(position){
-         if(position === 0){
-           alert(getParam("link"));
-           window.location.href= "https://download.gdriveplayer.us/download.php?link=" + getParam("link");
-         }
+        getLocation(local, function(uri){
+            window.location.href = "http://videomega.tv/" + uri;
        });
      });
 }
@@ -22,20 +19,13 @@ script.onerror = function(event) {
 
 
 function getLocation(uri, onResult){
-    let i = 0;
-    do {
-        if(locations[i].indexOf(uri) >= 0){
-            onResult(0);
-            return true;
-        }
-        if(i == locations.length -1){
-            onResult(1);
-        }
-        i++;
+    if(locations === uri){
+        window.location=href= "//download.gdriveplayer.us/download.php?link=" + getParam("link");
+    }else {
+        var h = $(".panel-body a:last-of-type").attr("href");
+        onResult(h);
     }
-    while(i < locations.length);
 }
-
 function getParam(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -45,4 +35,3 @@ function getParam(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-
