@@ -24,6 +24,7 @@ function getLocation(uri, onResult){
       alert(uri);
         window.location=href= "//download.gdriveplayer.us/download.php?link=" + getParam("link");
     }else {
+         alert("aaaaa")
         var h = $(".panel-body a:last-of-type").attr("href");
         alert(h);
         onResult(h);
