@@ -4,7 +4,8 @@ var locations = [
     "megafilmeshd50.com megafilmeshd50.net",
     "playerhd.org",
     "diampokusy.com suzihaza.com vfilmesonline.net vanfem.com diasfem.com fembed.com",
-    "streamsb.com sbface.com sbbrisk.com lvturbo.com"];
+    "streamsb.com sbface.com sbbrisk.com lvturbo.com",
+    "gdriveplayer.us gdriveplayer.to"];
 
 getLocation(local, function(position){
     init(req(position));
@@ -41,6 +42,7 @@ function req(value){
         case 2: return "playerhd.js";
         case 3: return "fembed.js";
         case 4: return "streamsb.js";
+        case 5: return "gdriveplayer.js";
         default: if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
             return "fembed.js"; 
          }
