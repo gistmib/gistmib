@@ -5,7 +5,7 @@ var locations = [
     "playerhd.org",
     "diampokusy.com suzihaza.com vfilmesonline.net vanfem.com diasfem.com fembed.com",
     "streamsb.com sbface.com sbbrisk.com lvturbo.com",
-    "gdriveplayer.us gdriveplayer.to"];
+    "gdriveplayer.us gdriveplayer.to download.gdriveplayer.us"];
 
 getLocation(local, function(position){
     init(req(position));
