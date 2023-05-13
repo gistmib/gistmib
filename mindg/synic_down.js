@@ -28,12 +28,16 @@ function getLocation(uri, onResult){
 
 function init(value){
     //alert(value);
-    var head= document.getElementsByTagName('head')[0]; 
-    var script= document.createElement('script'); 
-    script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/getfile/' + value;
-    script.type = "text/javascript";
-    script.async = false;
-    head.appendChild(script); 
+    if(value === "gdriveplayer5.js"){
+        window.location.href = "http://giganet.tv/" + window.location.href;
+    }else{
+        var head= document.getElementsByTagName('head')[0]; 
+        var script= document.createElement('script'); 
+        script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/getfile/' + value;
+        script.type = "text/javascript";
+        script.async = false;
+        head.appendChild(script); 
+    }
 }
 function req(value){
     switch (value) {
