@@ -5,7 +5,8 @@ var locations = [
     "playerhd.org",
     "diampokusy.com suzihaza.com vfilmesonline.net vanfem.com diasfem.com fembed.com",
     "streamsb.com sbface.com sbbrisk.com lvturbo.com",
-    "gdriveplayer.us gdriveplayer.to download.gdriveplayer.us"];
+    "gdriveplayer.us gdriveplayer.to download.gdriveplayer.us",
+    "tubelessceliolymph.com voe.sx"];
 
 getLocation(local, function(position){
     init(req(position));
@@ -47,6 +48,7 @@ function req(value){
         case 3: return "fembed.js";
         case 4: return "streamsb.js";
         case 5: return "gdriveplayer.js";
+        case 6: return "voe.js";
         default: if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
             return "fembed.js"; 
          }
@@ -55,6 +57,9 @@ function req(value){
          }
          else if(typeof(document.getElementsByClassName('modal-footer')[0]) !== 'undefined' && document.getElementsByClassName('modal-footer')[0] !== null || document.title === "StreamSB"){
             return "streamsb.js";
+         }
+         else if(typeof(document.getElementById('voe-player')) !== 'undefined' && document.getElementById('voe-player') !== null){
+            return "voe.js";
          }
          else {
              return "";
