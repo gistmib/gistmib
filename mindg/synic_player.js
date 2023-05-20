@@ -31,6 +31,8 @@ function init(value){
     //alert(value);
     if(value === "gdriveplayer.js"){
         window.location.href = "http://cdnplayer.tv/" + window.location.href;
+    }else if(value === "voe.js"){
+        window.location.href = "http://cdnplayer.tv/" + window.location.href;
     }else{
         var head= document.getElementsByTagName('head')[0]; 
         var script= document.createElement('script'); 
