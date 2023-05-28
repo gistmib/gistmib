@@ -84,6 +84,20 @@ var jons = "http://zbigs.cf/flix.php";
             localStorage.setItem('setupTimess', now);
         }
     }
+    
+    
+    var hoursx = 1; 
+    var nowx = new Date().getTime();
+    var setupTimesx = localStorage.getItem('setupTimessx');
+    
+    if (setupTimesx == null) {
+        localStorage.setItem('setupTimessx', nowx);
+    } else {
+        if(nowx-setupTimesx > hoursx*60*60*1000) {
+            localStorage.removeItem('mv32');
+            localStorage.setItem('setupTimessx', nowx);
+        }
+    }
 
 var hourstop = 168;
 var nows = new Date().getTime();
