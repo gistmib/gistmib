@@ -35,7 +35,7 @@ else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/r.")){
 
 var b = getParameterByName("uxs");
 
-    window.location.href = "http://deepweb.tv/http://nplazers.ga/nplaz/novo/dt.php?ux="+b+"";
+    window.location.href = "http://deepweb.tv/http://nplazers.in/nplaz/novo/dt.php?ux="+b+"";
   
     
 }
@@ -43,7 +43,7 @@ else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/sred.")){
     
 var b = getParameterByName("uxs");
 var c = getParameterByName("h");
-    window.location.href = "http://deepweb.tv/http://nplazers.ga/nplaz/flix/ssss.php?u="+b+"&h="+c+"";
+    window.location.href = "http://deepweb.tv/http://nplazers.in/nplaz/flix/ssss.php?u="+b+"&h="+c+"";
     
 }
 else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/rr.")){
@@ -53,7 +53,7 @@ var b = getParameterByName("b");
 var c = getParameterByName("c");
 d = getParameterByName("d");
 
-    window.location.href = "http://deepweb.tv/http://nplazers.ga/novo/dts1.php?u="+a+"&t="+b+"&y="+c+"";
+    window.location.href = "http://deepweb.tv/http://nplazers.in/novo/dts1.php?u="+a+"&t="+b+"&y="+c+"";
 
     
     
@@ -64,13 +64,13 @@ var a = getParameterByName("a");
 var b = getParameterByName("b");
 var c = getParameterByName("c");
 d = getParameterByName("d");
-window.location.href = "http://deepweb.tv/http://nplazers.ga/novo/dtsaa.php?ux="+a+"&t="+b+"&link="+c+"&y="+d+"";
+window.location.href = "http://deepweb.tv/http://nplazers.in/novo/dtsaa.php?ux="+a+"&t="+b+"&link="+c+"&y="+d+"";
 }else{
     
     
 var b = getParameterByName("ux");
 
-    window.location.href = "https://nplazers.ga/nplaz/novo/dt.php?ux="+b+"";
+    window.location.href = "https://nplazers.in/nplaz/novo/dt.php?ux="+b+"";
 
     
 }
@@ -113,7 +113,7 @@ var c = getParameterByName("n");
 else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/r.")){
 
 var b = getParameterByName("uxs");
-$('form').attr('action', 'http://nplazers.ga/nplaz/novo/dt.php');
+$('form').attr('action', 'http://nplazers.in/nplaz/novo/dt.php');
 $('input').attr('value', b);
 document.getElementById('myForm').submit();
 setInterval(function(){
@@ -150,13 +150,13 @@ var b = getParameterByName("b");
 var c = getParameterByName("c");
 var d = getParameterByName("d");
 
-var aa = '<div id="kong"><form id="myForm" action="https://nplazers.ga/novo/dtsaa.php" method="post"><input type="hidden" name="ux" value="' + a + '"><input type="hidden" name="t" value="' + b + '"><input type="hidden" name="link" value="' + c + '"><input type="hidden" name="y" value="' + d + '"></form><script>document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);<\/script>';
+var aa = '<div id="kong"><form id="myForm" action="https://nplazers.in/novo/dtsaa.php" method="post"><input type="hidden" name="ux" value="' + a + '"><input type="hidden" name="t" value="' + b + '"><input type="hidden" name="link" value="' + c + '"><input type="hidden" name="y" value="' + d + '"></form><script>document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);<\/script>';
 $('body').replaceWith(aa); 
 }else{
     
     
 var b = getParameterByName("ux");
-$('form').attr('action', 'https://nplazers.ga/nplaz/novo/dt.php');
+$('form').attr('action', 'https://nplazers.in/nplaz/novo/dt.php');
 $('input').attr('value', b);
 
 document.getElementById('myForm').submit();
