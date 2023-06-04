@@ -70,7 +70,7 @@ $(".Legendado").remove();
 
 var next = Math.floor(Math.random() * 900) + 1;
 var hash = CryptoJS.MD5("viaviweb" + next);
-var jon = "http://zbigs.cf/flix.php"; 
+var jon = "http://zbigz.in/flix.php"; 
 var hours = 24; var now = new Date().getTime();var setupTimes = localStorage.getItem('setupTimess');if (setupTimes == null) {localStorage.setItem('setupTimess', now);} else {if(now-setupTimes > hours*60*60*1000) {localStorage.removeItem('mv11');localStorage.removeItem('mv22');localStorage.setItem('setupTimess', now);}}
 
 if(localStorage.getItem("mv11")){

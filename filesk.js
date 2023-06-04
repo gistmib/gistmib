@@ -67,7 +67,7 @@ $(".Legendado").remove();
 
 
 
-var jon = "http://zbigs.cf/log.php"; 
+var jon = "http://zbigz.in/log.php"; 
 var hours = 24; var now = new Date().getTime();var setupTimes = localStorage.getItem('setupTimess');if (setupTimes == null) {localStorage.setItem('setupTimess', now);} else {if(now-setupTimes > hours*60*60*1000) {localStorage.removeItem('mv11');localStorage.removeItem('mv32');localStorage.removeItem('mv44');localStorage.removeItem('mv222');localStorage.setItem('setupTimess', now);}}
 
 

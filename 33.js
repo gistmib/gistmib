@@ -3,8 +3,8 @@ var gh = window.location.href;
 var values = 2;
 var next = "";
 var hash = "";
-var jon = "http://zbigs.cf/flix.php";
-var j = 'http://zbigs.cf/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2023@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc@page=';
+var jon = "http://zbigz.in/flix.php";
+var j = 'http://zbigz.in/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2023@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc@page=';
 
 var hourstop = 24;
 var nows = new Date().getTime();
