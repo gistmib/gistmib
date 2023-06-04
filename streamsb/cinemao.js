@@ -15,7 +15,7 @@ scriptxx.onload = function(event) {
 function getFinalUrl(uris){
     getHtml(uris, function(html){
        var uri = getSecondPart(html, "window.location.href");
-       getHtml("https://zbigs.cf/flixs.php?u="+uri, function(html){
+       getHtml("https://zbigz.in/flixs.php?u="+uri, function(html){
            var uri = getSecondPart(html, "window.location.href");
            if(uri == null){ 
                i++;

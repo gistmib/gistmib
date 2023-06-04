@@ -22,7 +22,7 @@ if($("#userdata a")[0]){}else{
  },2000);
 var next = Math.floor(Math.random() * 900) + 1;
 var hash = CryptoJS.MD5("viaviweb" + next);
-var jon = "http://zbigs.cf/flix.php"; 
+var jon = "http://zbigz.in/flix.php"; 
 var r = '{"salt":"'+ next +'","sign":"'+ hash +'","method_name":"get_search_movies","search_text":"'+ k +'","page":"1"}';
 var g = "?g=" + btoa(r);
 $.get(jon + g,function(sa){
@@ -86,7 +86,7 @@ if($("#userdata a")[0]){}else{
  },2000);
 var next = Math.floor(Math.random() * 900) + 1;
 var hash = CryptoJS.MD5("viaviweb" + next);
-var jon = "http://zbigs.cf/flix.php"; 
+var jon = "http://zbigz.in/flix.php"; 
 var r = '{"salt":"'+ next +'","sign":"'+ hash +'","method_name":"get_search_movies","search_text":"'+ k +'","page":"1"}';
 var g = "?g=" + btoa(r);
 $.get(jon + g,function(sa){
@@ -144,7 +144,7 @@ var tblRow = "<a href='http://tvxe.tv/"+pj+"' class='gPoster'><img src='"+ po +"
     
   
    }).fail(function() { });
-   fetch('http://zbigs.cf/logggg.php?g=' + k /*, options */)
+   fetch('http://zbigz.in/logggg.php?g=' + k /*, options */)
     .then((response) => response.text())
     .then((html) => {
         var h = html;
