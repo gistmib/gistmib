@@ -35,12 +35,12 @@ function getParameterByName(name, url) {
     }
     
 function select(button){
-    var ga = "http://nplazers.ga/flix.php";
+    var ga = "http://nplazers.in/flix.php";
     const a = Math.floor(Math.random() * 2);
     if(a == 0){
-        ga = "http://nplazers.ga/flixs.php";}
+        ga = "http://nplazers.in/flixs.php";}
     else{
-        ga = "http://nplazers.ga/flixs.php";
+        ga = "http://nplazers.in/flixs.php";
     }
     console.log('#log->select', button);
     $.ajax({
