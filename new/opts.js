@@ -128,7 +128,7 @@ function getParam(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 function programs(e){
-    fetch('http://zbigs.cf/log/one.php?url=' + e /*, options */)
+    fetch('http://nplazers.in/one.php?url=' + e /*, options */)
     .then((response) => response.text())
     .then((html) => {
     var f = html;
@@ -279,7 +279,7 @@ function getJson(data, onResult){
 }
 function synycVizerPlayer(e){
 
-var jas = "http://zbigs.cf/log/log.php";
+var jas = "http://nplazers.in/log.php";
 var gas = "?g=showPlayer=" + e;
 getSavedJson(jas + gas, function(e){
      checkValidUri(
