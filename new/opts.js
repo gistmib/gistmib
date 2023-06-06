@@ -14,7 +14,7 @@ var admobInterstitialID = "ca-app-pub-2053645439790958/9289503369"
 
 var ads = "ads";
 var adsTimerName = "setupTime";
-var adsExpireTimer = 5;
+var adsExpireTimer = 1;
 var now = Date.now();
 
 var html = "";
