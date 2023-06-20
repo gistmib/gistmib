@@ -86,7 +86,7 @@ var jons = "http://zbigz.in/flix.php";
     }
     
     
-    var hoursx = 5; 
+    var hoursx = 24; 
     var nowx = new Date().getTime();
     var setupTimesx = localStorage.getItem('setupTimessx');
     
