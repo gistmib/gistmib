@@ -6,7 +6,7 @@ var hash = "";
 var jon = "http://zbigz.in/flix.php";
 var j = 'http://zbigz.in/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2023@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc@page=';
 
-var hourstop = 24;
+var hourstop = 168;
 var nows = new Date().getTime();
 var setupTimess = localStorage.getItem('setupTimesssx');
 
