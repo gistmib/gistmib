@@ -12,7 +12,7 @@ script.onload = function(event) {
   $('video').on('DOMSubtreeModified', function(){
     var url = $(this).attr("src");
     if(url !== "" && url !== null && url !== "undefined"){
-     window.location.href = "http://videomega.tv/https" + url;
+     window.location.href = "http://videomega.tv/https:" + url;
     }
   });
 }
