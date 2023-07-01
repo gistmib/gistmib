@@ -6,7 +6,8 @@ var locations = [
     "diampokusy.com suzihaza.com vfilmesonline.net vanfem.com diasfem.com fembed.com",
     "streamsb.com sbface.com sbbrisk.com lvturbo.com",
     "gdriveplayer.us gdriveplayer.to download.gdriveplayer.us",
-    "tubelessceliolymph.com voe.sx availedsmallest.com"];
+    "tubelessceliolymph.com voe.sx availedsmallest.com",
+    "mixdrop.co mixdrop mixdrop.com mixdrop.to"];
 
 getLocation(local, function(position){
     init(req(position));
@@ -51,6 +52,7 @@ function req(value){
         case 4: return "streamsb.js";
         case 5: return "gdriveplayer.js";
         case 6: return "voe.js";
+        case 7: return "mixdroper.js";
         default: if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
             return "fembed.js"; 
          }
@@ -62,6 +64,9 @@ function req(value){
          }
          else if(typeof(document.getElementById('voe-player')) !== 'undefined' && document.getElementById('voe-player') !== null){
             return "voe.js";
+         }
+         else if(typeof(document.getElementById('goUp')) !== 'undefined' && document.getElementById('goUp') !== null || typeof(document.getElementById('subfile')) !== 'undefined' && document.getElementById('subfile')){
+            return "mixdroper.js";
          }
          else {
              return "";
