@@ -287,13 +287,12 @@ getSavedJson(jas + gas, function(e){
         function(status){
             if(status == 404) { vizer = "https://coworkcayman.com"; }else { vizer = "https://vizer.tv"; }
             var site = "vizer";
-            var fembed = e.fembed;
             var streamtape = e.streamtape;
             var mixdrop = e.mixdrop;
             var video_id = e.id;
-            var url_principal = vizer+"/embed/getPlay.php?id="+video_id+"&sv=" + getServer(streamtape, fembed, mixdrop);
+            var url_principal = vizer+"/embed/getPlay.php?id="+video_id+"&sv=" + getServer(streamtape, mixdrop);
             var url_secondary = "https://embed.warezcdn.com/video/" + video_id;
-            if(streamtape == false && fembed == false && mixdrop == false){
+            if(streamtape == false && mixdrop == false){
         html = "<div id='pts'> <div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player de navegador <br/><div class='subTitle'>Opção recomendada.</div></div></div>                                                                                     <div class='plr_c'>                                              <div onclick='download(\""+site+"\", 2, \""+url_secondary+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div>            <div onclick='download(\""+site+"\", 1, \"https://href.li/?http://giganet.tv/"+url_secondary+"\")' class='pl_player bg_border' id='baixar'><img src='file:///android_asset/img/baixar_ff.png' class='plr' /></div>        <div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/"+url_secondary+"\")' class='pl_player bg_border removespace' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div></div></div> </div>";
         }
             else {
@@ -310,7 +309,7 @@ function getSavedJson(value, onResult){
     }else {
         $.getJSON(value, function(e){
             onResult(e)
-            if(e.streamtape.toString() !== "false" || e.mixdrop.toString() !== "false" || e.fembed.toString() !== "false"){
+            if(e.streamtape.toString() !== "false" || e.mixdrop.toString() !== "false"){
                 localStorage.setItem(value, JSON.stringify(e))
             }
         });
@@ -334,10 +333,9 @@ function getLang(type, count) {
         }
     }
 }
-function getServer(streamtape, fembed, mixdrop) {
+function getServer(streamtape, mixdrop) {
     if(streamtape == true) { return "streamtape"; }
     else if(mixdrop == true) { return "mixdrop"; }
-    //else if(fembed == true) { return "fembed"; }
     else { return "mixdrop"; }
 }
 
