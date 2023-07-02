@@ -336,8 +336,8 @@ function getLang(type, count) {
 }
 function getServer(streamtape, fembed, mixdrop) {
     if(streamtape == true) { return "streamtape"; }
-    else if(fembed == true) { return "fembed"; }
     else if(mixdrop == true) { return "mixdrop"; }
+    else if(fembed == true) { return "fembed"; }
     else { return "mixdrop"; }
 }
 
