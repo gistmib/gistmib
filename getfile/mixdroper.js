@@ -6,9 +6,9 @@ script.type = "text/javascript";
 script.async = false;
 head.appendChild(script); 
 script.onload = function(event) {
-  setTimeout(function(){
+  setInterval(function(){
     $(".vjs-big-play-button")[0].click();
-  },500); 
+  },1500); 
   $('video').on('DOMSubtreeModified', function(){
     var url = $(this).attr("src");
     if(url !== "" && url !== null && url !== "undefined"){
