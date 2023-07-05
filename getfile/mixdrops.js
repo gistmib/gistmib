@@ -8,7 +8,7 @@ head.appendChild(script);
 script.onload = function(event) {
   setInterval(function(){
     $(".vjs-big-play-button")[0].click();
-  },1500);
+  },2000);
   $('video').on('DOMSubtreeModified', function(){
     var url = $(this).attr("src");
     if(url !== "" && url !== null && url !== "undefined"){
