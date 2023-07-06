@@ -52,7 +52,7 @@ function req(value){
         case 4: return "streamsb.js";
         case 5: return "gdriveplayer.js";
         case 6: return "voe.js";
-        case 7: return "mixdroper.js";
+        case 7: return "mixdrop.js";
         default: if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
             return "fembed.js"; 
          }
@@ -66,7 +66,7 @@ function req(value){
             return "voe.js";
          }
          else if(typeof(document.getElementById('goUp')) !== 'undefined' && document.getElementById('goUp') !== null || typeof(document.getElementById('subfile')) !== 'undefined' && document.getElementById('subfile') !== null){
-            return "mixdroper.js";
+            return "mixdrop.js";
          }
          else {
              return "";
