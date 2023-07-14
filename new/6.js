@@ -1,4 +1,5 @@
 var version = parseInt(document.title);
+var actUrl = (localStorage.getItem('data')) ? "https://megafilmeshd50.com" : "https://cinemao.pro";
 
 var imager = new Image();
 if(!getParam("u").includes("en")){
@@ -20,13 +21,12 @@ var domain = "";
 function y(){   
     localStorage.setItem('pes', getParameterByName("s"));
     if(localStorage.getItem('data')){
-    var g = document.title;
-    window.location.href = "http://deepweb.tv/https://megafilmeshd50.com/?s=" + getParameterByName("s").replace(/ /g, "%20");
-    $("body").replaceWith(" <body><link rel='stylesheet' href='file:///android_asset/css/3.css'/><style>body{width:100% !important;display:block !important;padding:0px !important;margin:0px !important;}.dts{background: url();}#userdatas{width:100% !important;min-width:500px;}.bodys{}.titl{font-size: 60px;}.xagPoster{position:relative !important;}.xagPoster img{width: 105px;height: 155px;margin: 8px;background:#333333;}.bodys{min-width:500px !important;position:relative !important;bottom:80px !important;color:#fff !important;background:#000 !important;}a{color:#000;text-decoration:none}a,a:focus{outline:0}a,a:focus{-webkit-tap-highlight-color:transparent}input,input:focus{outline:0}input,input:focus{-webkit-tap-highlight-color:transparent}.ff{padding: 40px;font-family: sans-serif;font-size: 20px;position: absolute;height: max-content;top: 0;bottom: 0;margin: auto;}.a1z a{color:#fff}.ppi{margin-top: 11px;position: absolute;}.dts{height: 825px !important;background-color: rgba(0,0,0,0.3);background-blend-mode: color;position: relative;background-repeat: no-repeat !important;background-position: top !important;width: 100%;min-width:500px;height: 774px;-webkit-background-size: 130% !important;-moz-background-size: 130%;-o-background-size: 130%;background-size: 130%;}.dtss{padding-bottom: 0px;}.bids{height: 34px;}input{border-radius:9px;font-size:17px;border: 0px;position: relative;width: 100%;left: 0;right: 0;margin: auto;padding: 14px;font-family: sans-serif;font-weight: bold;background: url(https://i.imgur.com/tRCws1n.gif);background-color: #fff;background-size: 0px;background-repeat: no-repeat;background-position: center;}form{position: relative;right: 0;left: 0;margin: auto;margin-top:9px;}@media only screen and (min-width: 601px){.dts{height: 400px !important;}.dtss{-webkit-box-shadow: inset 0 -270px 140px -70px #000;-moz-box-shadow: inset 0 -270px 140px -70px #000;box-shadow: inset 0 -270px 140px -70px #000;}}#hds{background:#ff0000;position:absolute;z-index:100000;left:0;width:auto;height: auto;margin: 10px;bottom:0px;padding:7px;padding-left:10px;padding-right:10px;margin-bottom:20px;font-size:6px;margin-left:15px;color:#ffffff;background:#5700a7;border-radius:7px}a, a:focus {-webkit-tap-highlight-color: transparent;}.Legendado{display:none}img {width: 135px;height: 202px;margin: 10px;background:#333333}body{min-width:500 !important;color:#fff;background:#000}a{color:#000}.ff {padding: 40px;font-family: sans-serif;font-size: 20px;position: absolute;height: max-content;top: 0;bottom: 0;margin: auto;}</style><center><div id='userdata'></div></center><br/><br/><br/></body>");
+    window.location.href = "http://deepweb.tv/"+actUrl+"/?s=" + getParameterByName("s").replace(/ /g, "%20");
+    $("body").html(" <body><link rel='stylesheet' href='file:///android_asset/css/3.css'/><style>body{width:100% !important;display:block !important;padding:0px !important;margin:0px !important;}.dts{background: url();}#userdatas{width:100% !important;min-width:500px;}.bodys{}.titl{font-size: 60px;}.xagPoster{position:relative !important;}.xagPoster img{width: 105px;height: 155px;margin: 8px;background:#333333;}.bodys{min-width:500px !important;position:relative !important;bottom:80px !important;color:#fff !important;background:#000 !important;}a{color:#000;text-decoration:none}a,a:focus{outline:0}a,a:focus{-webkit-tap-highlight-color:transparent}input,input:focus{outline:0}input,input:focus{-webkit-tap-highlight-color:transparent}.ff{padding: 40px;font-family: sans-serif;font-size: 20px;position: absolute;height: max-content;top: 0;bottom: 0;margin: auto;}.a1z a{color:#fff}.ppi{margin-top: 11px;position: absolute;}.dts{height: 825px !important;background-color: rgba(0,0,0,0.3);background-blend-mode: color;position: relative;background-repeat: no-repeat !important;background-position: top !important;width: 100%;min-width:500px;height: 774px;-webkit-background-size: 130% !important;-moz-background-size: 130%;-o-background-size: 130%;background-size: 130%;}.dtss{padding-bottom: 0px;}.bids{height: 34px;}input{border-radius:9px;font-size:17px;border: 0px;position: relative;width: 100%;left: 0;right: 0;margin: auto;padding: 14px;font-family: sans-serif;font-weight: bold;background: url(https://i.imgur.com/tRCws1n.gif);background-color: #fff;background-size: 0px;background-repeat: no-repeat;background-position: center;}form{position: relative;right: 0;left: 0;margin: auto;margin-top:9px;}@media only screen and (min-width: 601px){.dts{height: 400px !important;}.dtss{-webkit-box-shadow: inset 0 -270px 140px -70px #000;-moz-box-shadow: inset 0 -270px 140px -70px #000;box-shadow: inset 0 -270px 140px -70px #000;}}#hds{background:#ff0000;position:absolute;z-index:100000;left:0;width:auto;height: auto;margin: 10px;bottom:0px;padding:7px;padding-left:10px;padding-right:10px;margin-bottom:20px;font-size:6px;margin-left:15px;color:#ffffff;background:#5700a7;border-radius:7px}a, a:focus {-webkit-tap-highlight-color: transparent;}.Legendado{display:none}img {width: 135px;height: 202px;margin: 10px;background:#333333}body{min-width:500 !important;color:#fff;background:#000}a{color:#000}.ff {padding: 40px;font-family: sans-serif;font-size: 20px;position: absolute;height: max-content;top: 0;bottom: 0;margin: auto;}</style><center><div id='userdata'></div></center><br/><br/><br/></body>");
     }else{ 
-    window.location.href = 'http://deepwebs.tv/https://cinemao.pro/?s=' + getParameterByName("s").replace(/ /g, "%20");  
+    window.location.href = 'http://deepwebs.tv/'+actUrl+'/?s=' + getParameterByName("s").replace(/ /g, "%20");
     $("body").prepend(" <meta charset='UTF-8'><meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'><meta name='referrer' content='never'><meta name='referrer' content='no-referrer'><meta name='ROBOTS' content='NOINDEX, NOFOLLOW' /><script src='https://code.jquery.com/jquery-3.5.0.js'></script><style>a, a:focus {-webkit-tap-highlight-color: transparent;}.Legendado{display:none}img {width: 135px;height: 202px;margin: 10px;background:#333333}body{min-width:500 !important;color:#fff;background:#000}a{color:#000}.ff {padding: 40px;font-family: sans-serif;font-size: 20px;position: absolute;height: max-content;top: 0;bottom: 0;margin: auto;}</style><center><div id='userdata'></div></center><br/><br/><br/>");}
-    }
+}
 function n(){
     
  localStorage.setItem('local2', true);
@@ -44,20 +44,23 @@ function getParameterByName(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-function returns(aa, url,type){
+function returns(aa, url, type){
 if ((lastExecution + delay) < Date.now()){
 domain = url;     
 
 if(aa.indexOf("error") !== -1){
-    
-if($('#userdata').html() == "") {
-    if(!navigator.onLine){
-    window.location.reload();
-    } 
-    else{
- var html = "<style>body{display:block !important}</style><div style='position:fixed;bottom:0;top:0;left:0;right:0;margin:auto;width:100%;height:100%;background:#333333;color:#cccccc'><div style='position:absolute;bottom:0;top:0;left:0;right:0;margin:auto;height: max-content;width: 90%;'><b>Problema Importante:</b><br/>A sua operadora de internet está bloqueando todo o conteudo do 9UHDMAX!<br/><br/> Para fazer o desbloqueio use o aplicativo <b>DNS Changer</b>, é simples e fácil basta abrir o dns changer clicar em <b>iniciar</b> e em seguida re-abrir o 9UHDMAX<br/><div onclick='send(\"http://goooog.xtgem.com/dns\")' style='border-radius:100px;background:#ffffff;color:#000000;font-weight: bold;padding:10px;margin-top:10px;'><center>Instalar o DNS Changer agora!</center></div><div onclick='send(\"http://gooooog.wap.sh/dns.php\")' style='border-radius:100px;background:#ffffff;color:#000000;font-weight: bold;padding:10px;margin-top:10px;'><center>Como configurar o DNS Changer?</center></div></div></div><script>window.CallToAndroidFunction2.setVisible2();$('body').fadeIn(400);</script><img src='https://whos.amung.us/widget/0np2o6zjjy.png' width='0' height='0' border='0' />"
-    
-$("#userdata").replaceWith(html);
+    if($('#userdata').html() == "") {
+        if(!navigator.onLine){
+            window.location.reload();
+        }
+        else{
+            if(actUrl.indexOf("cinemao") !== -1){
+                run();
+            }else{
+                var html = "<style>body{display:block !important}</style><div style='position:fixed;bottom:0;top:0;left:0;right:0;margin:auto;width:100%;height:100%;background:#333333;color:#cccccc'><div style='position:absolute;bottom:0;top:0;left:0;right:0;margin:auto;height: max-content;width: 90%;'><b>Problema Importante:</b><br/>A sua operadora de internet está bloqueando todo o conteudo do 9UHDMAX!<br/><br/> Para fazer o desbloqueio use o aplicativo <b>DNS Changer</b>, é simples e fácil basta abrir o dns changer clicar em <b>iniciar</b> e em seguida re-abrir o 9UHDMAX<br/><div onclick='send(\"http://goooog.xtgem.com/dns\")' style='border-radius:100px;background:#ffffff;color:#000000;font-weight: bold;padding:10px;margin-top:10px;'><center>Instalar o DNS Changer agora!</center></div><div onclick='send(\"http://gooooog.wap.sh/dns.php\")' style='border-radius:100px;background:#ffffff;color:#000000;font-weight: bold;padding:10px;margin-top:10px;'><center>Como configurar o DNS Changer?</center></div></div></div><script>window.CallToAndroidFunction2.setVisible2();$('body').fadeIn(400);</script><img src='https://whos.amung.us/widget/0np2o6zjjy.png' width='0' height='0' border='0' />"
+            
+                $("#userdata").html(html);
+            }
         }
     }
 }
@@ -77,6 +80,7 @@ if(type == 2){
      window.location.href = "http://vip.tv/ux=/r.php&uxs="+ $(html).find('strong a').attr("href").replace("https://www.imdb.com/title/",""); 
     }
 }else{ 
+
 if(domain.indexOf("cinemao") !== -1){
 var heach = $(html).find(".search-page").find('.search_page_form').remove().end().html();
       
@@ -202,7 +206,7 @@ else {
 }
 }
 }
-lastExecution = Date.now() 
+lastExecution = Date.now();
 }
 }
 
@@ -211,7 +215,7 @@ function b64DecodeUnicode(str) {
         return decodeURIComponent(atob(str).split('').map(function(c) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
-    }
+}
 function send(url){
     window.location.href = url
 }
