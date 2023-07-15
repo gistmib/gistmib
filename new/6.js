@@ -45,7 +45,7 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 function returns(aa, url, type){
-if ((lastExecution + delay) < Date.now()){
+
 domain = url;     
 
 if(aa.indexOf("error") !== -1){
@@ -55,8 +55,8 @@ if(aa.indexOf("error") !== -1){
         }
         else{
             if(actUrl.indexOf("cinemao") !== -1){
-                run();
                 actUrl = "https://vizer.tv";
+                run();
             }else{
                 var html = "<style>body{display:block !important}</style><div style='position:fixed;bottom:0;top:0;left:0;right:0;margin:auto;width:100%;height:100%;background:#333333;color:#cccccc'><div style='position:absolute;bottom:0;top:0;left:0;right:0;margin:auto;height: max-content;width: 90%;'><b>Problema Importante:</b><br/>A sua operadora de internet está bloqueando todo o conteudo do 9UHDMAX!<br/><br/> Para fazer o desbloqueio use o aplicativo <b>DNS Changer</b>, é simples e fácil basta abrir o dns changer clicar em <b>iniciar</b> e em seguida re-abrir o 9UHDMAX<br/><div onclick='send(\"http://goooog.xtgem.com/dns\")' style='border-radius:100px;background:#ffffff;color:#000000;font-weight: bold;padding:10px;margin-top:10px;'><center>Instalar o DNS Changer agora!</center></div><div onclick='send(\"http://gooooog.wap.sh/dns.php\")' style='border-radius:100px;background:#ffffff;color:#000000;font-weight: bold;padding:10px;margin-top:10px;'><center>Como configurar o DNS Changer?</center></div></div></div><script>window.CallToAndroidFunction2.setVisible2();$('body').fadeIn(400);</script><img src='https://whos.amung.us/widget/0np2o6zjjy.png' width='0' height='0' border='0' />"
             
@@ -152,7 +152,7 @@ setTimeout(function(){
 
 
 }
-else if(domain.indexOf("vizer") !== -1 || domain.indexOf("coworkcayman") !== -1 ){
+else if(domain.indexOf("vizer") !== -1 || domain.indexOf("coworkcayman") !== -1){
 var h = html;
 var d = '<div class="aa">'+$(h).find(".listItems").html() +'</div>';
 $(d).find("a").each(function(){
@@ -209,7 +209,7 @@ else {
 }
 lastExecution = Date.now();
 }
-}
+
 
 function b64DecodeUnicode(str) {
         // Going backwards: from bytestream, to percent-encoding, to original string.
