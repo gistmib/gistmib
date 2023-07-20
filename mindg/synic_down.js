@@ -74,4 +74,8 @@ function req(value){
     }
 }
 
+setInterval(function(){
+    window.location.reload();
+  },60000);
+  
 check = "true";

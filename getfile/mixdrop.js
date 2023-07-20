@@ -26,6 +26,3 @@ script.onload = function(event) {
     });
   }
 }
-setInterval(function(){
-  window.location.reload();
-},30000);
