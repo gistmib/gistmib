@@ -1,4 +1,3 @@
-
 var url = window.location.href;
 var local = window.location.hostname;
 var locations = [
