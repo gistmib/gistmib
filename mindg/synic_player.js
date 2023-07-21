@@ -1,3 +1,5 @@
+
+var url = window.location.href;
 var local = window.location.hostname;
 var locations = [
     "streamtape strcloud strtapeadblock adblockstrtech streamtape.net streamtape.com", 
@@ -75,7 +77,7 @@ function req(value){
 }
 
 setInterval(function(){
-    window.location.reload();
-  },60000);
-  
+    window.location.href = url;
+},40000);
+
 check = "true";
