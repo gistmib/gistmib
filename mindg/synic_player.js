@@ -55,24 +55,25 @@ function req(value){
         case 5: return "gdriveplayer.js";
         case 6: return "voe.js";
         case 7: return "mixdrop.js";
-        default: if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
+        default: 
+        if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
             return "fembed.js"; 
-         }
+        }
         else if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){
             return "streamtape.js";
-         }
-         else if(typeof(document.getElementsByClassName('modal-footer')[0]) !== 'undefined' && document.getElementsByClassName('modal-footer')[0] !== null || document.title === "StreamSB"){
+        }
+        else if(typeof(document.getElementsByClassName('modal-footer')[0]) !== 'undefined' && document.getElementsByClassName('modal-footer')[0] !== null || document.title === "StreamSB"){
             return "streamsb.js";
-         }
-         else if(typeof(document.getElementById('voe-player')) !== 'undefined' && document.getElementById('voe-player') !== null){
+        }
+        else if(typeof(document.getElementById('voe-player')) !== 'undefined' && document.getElementById('voe-player') !== null){
             return "voe.js";
-         }
-         else if(typeof(document.getElementById('goUp')) !== 'undefined' && document.getElementById('goUp') !== null || typeof(document.getElementById('subfile')) !== 'undefined' && document.getElementById('subfile') !== null){
+        }
+        else if(typeof(document.getElementById('goUp')) !== 'undefined' && document.getElementById('goUp') !== null || typeof(document.getElementById('subfile')) !== 'undefined' && document.getElementById('subfile') !== null){
             return "mixdrop.js";
-         }
-         else {
-             return "";
-         }
+        }
+        else {
+            return "";
+        }
     }
 }
 
