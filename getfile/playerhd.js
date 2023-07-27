@@ -24,14 +24,19 @@ function getFinalUrl(uris){
         var uri = getSecondPart(html, "window.location.href");
         getHtml("https://zbigz.in/flixs.php?u="+uri, function(html){
             var uri = getSecondPart(html, "window.location.href");
-            if(uri == null){ 
-               i++;
-               var link = "https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+id+"/none/none");
-               getFinalUrl(link);
-           }
-           else{
-              window.location.href = uri;
-           }
+            if(servers[i] == null || servers[i] == undefined){
+                window.location.href = "http://videomega.tv/https://playerhd.org/video/player.php?id=" + getParam("id");
+            }
+            else{
+                if(uri == null){ 
+                    i++;
+                    var link = "https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+id+"/none/none");
+                    getFinalUrl(link);
+                }
+                else{
+                    window.location.href = uri;
+                }
+            }
        });
    });
 }
