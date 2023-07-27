@@ -18,19 +18,28 @@ script.onload = function(event) {
 script.onerror = function(event) {
     window.location.reload();
 }
-
+function checkJsSrc(){
+    var result = false; // is no player;
+    $("script").each(function(index) {
+        if($(this).attr("src").indexOf('synic_player.js') > -1) {
+            result = true;
+            // is player;
+        }
+    });
+    return result;
+}
 function getFinalUrl(uris){
     getHtml(uris, function(html){
         var uri = getSecondPart(html, "window.location.href");
         getHtml("https://zbigz.in/flixs.php?u="+uri, function(html){
             var uri = getSecondPart(html, "window.location.href");
             if(servers[i] == null || servers[i] == undefined){
-                window.location.href = "http://videomega.tv/https://playerhd.org/video/player.php?id=" + getParam("id");
+                window.location.href = ((checkJsSrc()) ? "http://videomega.tv/" : "http://cdnplayer.tv/") + "https://playerhd.org/video/player.php?id=" + getParam("id");
             }
             else{
                 if(uri == null){ 
                     i++;
-                    var link = "https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+id+"/none/none");
+                    var link = "https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+id+"/none/none");0,
                     getFinalUrl(link);
                 }
                 else{
