@@ -33,7 +33,7 @@ function getFinalUrl(uris){
         getHtml("https://zbigz.in/flixs.php?u="+uri, function(html){
             var uri = getSecondPart(html, "window.location.href");
             if(servers[i] == null || servers[i] == undefined){
-                window.location.href = ((checkJsSrc()) ? "http://videomega.tv/" : "http://cdnplayer.tv/") + "https://playerhd.org/video/player.php?id=" + getParam("id");
+                window.location.href = ((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://videomega.tv/") + "https://playerhd.org/video/player.php?id=" + getParam("id");
             }
             else{
                 if(uri == null){ 
