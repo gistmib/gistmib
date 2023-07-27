@@ -22,8 +22,7 @@ function checkJsSrc(){
     var result = false; // is no player;
     $("script").each(function(index) {
         if($(this).attr("src").indexOf('synic_player.js') > -1) {
-            result = true;
-            // is player;
+            result = true; // is player;
         }
     });
     return result;
