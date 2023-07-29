@@ -10,15 +10,16 @@ script.onload = function(event) {
    $("body").show();
     $("body").append("<style>.geral {position: absolute;bottom: 0;width: 100%;background-color: rgba(0,0,0,0.7);}</style>");
     
-    $('button:contains("GD DUB"), button:contains("GD LEG")').each(function() {
+    $('button:contains("SD DUB"), button:contains("SD LEG")').each(function() {
     $(this).parent().prepend(this);
     
     //$('button:contains("VF DUB"), button:contains("VF LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Principal ");
-    $('button:contains("SD DUB"), button:contains("SD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional 1");
-    $('button:contains("GD DUB"), button:contains("GD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Principal");
+    $('button:contains("SD DUB"), button:contains("SD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Principal");
+    $('button:contains("GD DUB"), button:contains("GD LEG"), button:contains("NT DUB"), button:contains("NT LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional");
     
-    $('button:contains("NT DUB"), button:contains("NT LEG")').remove();
+    //$('button:contains("NT DUB"), button:contains("NT LEG")').remove();
     $('button:contains("VF DUB"), button:contains("VF LEG")').remove();
+    $('button:contains("BAIXAR")').remove();
 });
     if($(".footer")[0]){$(".footer").remove();}
     });
