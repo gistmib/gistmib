@@ -1,5 +1,5 @@
 var local = window.location.href;
-var servers = [5,3,6,4];
+var servers = [5,3,6,4,8];
 var i = 0;
 var id = getID();
 var head= document.getElementsByTagName('head')[0]; 
@@ -42,7 +42,7 @@ function getFinalUrl(uris){
                     getFinalUrl(link);
                 }
                 else{
-                    window.location.href = uri;
+                    window.location.href = (i == 4) ? ((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://videomega.tv/") + "https://nplayus.wap.sh/embed.php?" + uri.replace("/?v","/?v=").replace("https://","").replace("http://","") : uri;
                 }
             }
        });
