@@ -42,7 +42,7 @@ function getFinalUrl(uris){
                     getFinalUrl(link);
                 }
                 else{
-                    window.location.href = (i == 4) ? ((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://videomega.tv/") + "https://nplayus.wap.sh/embed.php?" + uri.replace("/?v","/?v=").replace("https://","").replace("http://","") : uri;
+                    window.location.href = (i == 4 || i == 5) ? ((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://videomega.tv/") + "https://nplayus.wap.sh/embed.php?" + uri.replace("/?v","/?v=").replace("https://","").replace("http://","") : uri;
                 }
             }
        });
