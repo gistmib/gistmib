@@ -1,5 +1,5 @@
 var local = window.location.href;
-var servers = [5,3,7,6,4,8];
+var servers = ["5","3","7","6","4","8"];
 var i = 0;
 var id = getID();
 var head= document.getElementsByTagName('head')[0]; 
@@ -8,10 +8,10 @@ script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
 script.type = "text/javascript";
 script.async = false;
 head.appendChild(script); 
+
 script.onload = function(event) {
     $(document).ready(function(){
-    var link = "https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+getParam("id")+"/none/none");
-    getFinalUrl(link);
+    getFinalUrl("https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+getParam("id")+"/none/none"));
     });
 }
 
@@ -29,20 +29,20 @@ function checkJsSrc(){
 }
 function getFinalUrl(uris){
     getHtml(uris, function(html){
-        var uri = getSecondPart(html, "window.location.href");
-        getHtml("https://zbigz.in/flixs.php?u="+uri, function(html){
+        var ura = getSecondPart(html, "window.location.href");
+        getHtml("https://zbigz.in/flixs.php?u="+ura, function(html){
             var uri = getSecondPart(html, "window.location.href");
-            if(servers[i] == null || servers[i] == undefined){
+            if(servers[i] == null || servers[i] == undefined || typeof servers[i] == "undefined"){
                 window.location.href = ((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://videomega.tv/") + "https://playerhd.org/video/player.php?id=" + getParam("id");
             }
             else{
-                if(uri == null){ 
-                    i++;
-                    var link = "https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+id+"/none/none");0,
-                    getFinalUrl(link);
+                if(uri == null){
+                    getFinalUrl("https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+id+"/none/none"));
+                    i+=1;
                 }
                 else{
-                    window.location.href = (i == 2 || i == 5) ? ((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://videomega.tv/") + "https://nplayus.wap.sh/embed.php?" + uri.replace("/?v","/?v=").replace("https://","").replace("http://","") : uri;
+                    var io = ((i == 2 || i == 4) ? (((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://videomega.tv/") + "https://nplayus.wap.sh/embed.php?" + uri.replace("/?v","/?v=").replace("https://","").replace("http://","")) : uri);
+                    window.location.href = io;
                 }
             }
        });
