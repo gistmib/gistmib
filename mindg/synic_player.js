@@ -40,7 +40,7 @@ function init(value){
     }else{
         var head= document.getElementsByTagName('head')[0]; 
         var script= document.createElement('script'); 
-        script.src= '//zbigz.in/9uhd/getfile/' + value + '?' + (Math.random() + 1).toString(36).substring(7);
+        script.src= 'https://cdn.jsdelivr.net/gh/gistmib/gistmib@master/getfile/' + value + '?' + (Math.random() + 1).toString(36).substring(7);
         script.type = "text/javascript";
         script.async = false;
         head.appendChild(script);
