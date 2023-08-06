@@ -1,7 +1,10 @@
-var url = window.location.href;
+document.querySelector("html").style.display = "none";
+document.querySelector("body").style.display = "none";
+
+var url = window.location.href; 
 var local = window.location.hostname;
 var locations = [
-    "streamtape strcloud strtapeadblock adblockstrtech streamtape.net streamtape.com", 
+    "streamtape strcloud strtapeadblock adblockstrtech streamtape.net streamtape.com",
     "megafilmeshd50.com megafilmeshd50.net",
     "playerhd.org",
     "diampokusy.com suzihaza.com vfilmesonline.net vanfem.com diasfem.com fembed.com",
@@ -30,18 +33,19 @@ function getLocation(uri, onResult){
 }
 
 function init(value){
-    //alert(value);
     if(value === "gdriveplayer.js"){
-        window.location.href = "http://giganet.tv/" + window.location.href;
+        window.location.href = "http://cdnplayer.tv/" + window.location.href;
     }else if(value === "voe.js"){
-        window.location.href = "http://giganet.tv/" + window.location.href;
+        window.location.href = "http://cdnplayer.tv/" + window.location.href;
     }else{
         var head= document.getElementsByTagName('head')[0]; 
         var script= document.createElement('script'); 
-        script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/getfile/' + value;
+        script.src= '//zbigz.in/9uhd/getfile/' + value + '?' + (Math.random() + 1).toString(36).substring(7);
         script.type = "text/javascript";
         script.async = false;
-        head.appendChild(script); 
+        head.appendChild(script);
+        script.onload(window.CallToAndroidFunction1.setVisible());
+        script.onerror(window.location.reload());
     }
 }
 function req(value){
@@ -54,24 +58,25 @@ function req(value){
         case 5: return "gdriveplayer.js";
         case 6: return "voe.js";
         case 7: return "mixdrop.js";
-        default: if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
+        default:                  
+        if(typeof(document.getElementById('vstr')) !== 'undefined' && document.getElementById('vstr') !== null) {
             return "fembed.js"; 
-         }
+        }
         else if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){
             return "streamtape.js";
-         }
-         else if(typeof(document.getElementsByClassName('modal-footer')[0]) !== 'undefined' && document.getElementsByClassName('modal-footer')[0] !== null || document.title === "StreamSB"){
+        }
+        else if(typeof(document.getElementsByClassName('modal-footer')[0]) !== 'undefined' && document.getElementsByClassName('modal-footer')[0] !== null || document.title === "StreamSB"){
             return "streamsb.js";
-         }
-         else if(typeof(document.getElementById('voe-player')) !== 'undefined' && document.getElementById('voe-player') !== null){
+        }
+        else if(typeof(document.getElementById('voe-player')) !== 'undefined' && document.getElementById('voe-player') !== null){
             return "voe.js";
-         }
-         else if(typeof(document.getElementById('goUp')) !== 'undefined' && document.getElementById('goUp') !== null || typeof(document.getElementById('subfile')) !== 'undefined' && document.getElementById('subfile') !== null){
+        }
+        else if(typeof(document.getElementById('goUp')) !== 'undefined' && document.getElementById('goUp') !== null || typeof(document.getElementById('subfile')) !== 'undefined' && document.getElementById('subfile') !== null){
             return "mixdrop.js";
-         }
-         else {
-             return "";
-         }
+        }
+        else {
+            return "";
+        }
     }
 }
 
