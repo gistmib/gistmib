@@ -130,7 +130,7 @@ function getParam(name, url) {
 
 function programs(e){
     var channel = getChannel(e);
-    var valueSaved = getExpireValue(channel, 120);
+    var valueSaved = getExpireValue(channel, 60);
     if(channel){
         if(valueSaved){
             showPrograms(valueSaved);
@@ -143,7 +143,7 @@ function programs(e){
                 var content = $(html).find("ul");
                 if(content[0]){
                     showPrograms(content.html());
-                    setExpireValue(channel, 120, content.html());
+                    setExpireValue(channel, 60, content.html());
                 }
             })
             .catch((error) => {
