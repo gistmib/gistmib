@@ -33,7 +33,7 @@ function getFinalUrl(uris){
         getHtml("https://zbigz.in/flixs.php?u="+ura, function(html){
             var uri = getSecondPart(html, "window.location.href");
             if(servers[i] == null || servers[i] == undefined || typeof servers[i] == "undefined"){
-                window.location.href = ((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://videomega.tv/") + "https://playerhd.org/video/player.php?id=" + getParam("id");
+                window.location.href = ((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://giganet.tv/") + "https://playerhd.org/video/player.php?id=" + getParam("id");
             }
             else{
                 if(uri == null){
@@ -41,7 +41,7 @@ function getFinalUrl(uris){
                     i+=1;
                 }
                 else{
-                    var io = ((i == 0 || i == 1) ? (((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://videomega.tv/") + "https://nplayus.wap.sh/embed.php?" + uri.replace("/?v","/?v=").replace("https://","").replace("http://","")) : uri);
+                    var io = ((i == 0 || i == 1) ? (((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://giganet.tv/") + "https://nplayus.wap.sh/embed.php?" + uri.replace("/?v","/?v=").replace("https://","").replace("http://","")) : uri);
                     window.location.href = io;
                 }
             }
