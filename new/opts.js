@@ -127,23 +127,138 @@ function getParam(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
 function programs(e){
-    fetch('http://nplazers.in/one.php?url=' + e /*, options */)
-    .then((response) => response.text())
-    .then((html) => {
-    var f = html;
-    if(f !== "" && f !== null){
-   $("#blus").replaceWith("<div id='blus' class='t'>"+html+"</div><script>$('.subheader, .ad, .divider').remove();$('.devicepadding').each(function(){if(!$(this).find('.liright')[0])$(this).append('<div class=\"liright\"><div class=\"noar\" style=\"background: #000;\">A SEGUIR</div></div>')});$('#blus>li:gt(10)').remove();$('#blus>li:gt(9)').after('<li style=\"margin-right:20px;color:transparent\">a</li>');<\/script>");
-     
-    $("#blus").animate({
-            height: $(".devicepadding").last().height() + parseInt($("#blus li").last().css("margin-top")) + parseInt($("#blus li").last().css("margin-bottom")),
-            opacity: '1.0'
-        }, 300);
+    var channel = getChannel(e);
+    var valueSaved = getExpireValue(channel, 120);
+    if(channel){
+        if(valueSaved){
+            showPrograms(valueSaved);
+            //$("body").append(`value exist: --- ${valueSaved}`);
+        }
+        else{
+            fetch(`https://app.zbigz.in/getreq?u=https://meuguia.tv/programacao/canal/${channel}`)
+            .then((response) => response.text())
+            .then((html) => {
+                var content = $(html).find("ul");
+                if(content[0]){
+                    showPrograms(content.html());
+                    setExpireValue(channel, 120, content.html());
+                }
+            })
+            .catch((error) => {
+                console.warn(error);
+            }); 
+            //$("body").append(`value no exist -- ${valueSaved}`);
+        }
+        
     }
-    })
-    .catch((error) => {
-        console.warn(error);
-    }); 
+}
+function showPrograms(html){
+    $("#blus").replaceWith("<div id='blus' class='t'>"+html+"</div><script>$('.subheader, .ad, .divider').remove();$('.devicepadding').each(function(){if(!$(this).find('.liright')[0])$(this).append('<div class=\"liright\"><div class=\"noar\" style=\"background: #000;\">A SEGUIR</div></div>')});$('#blus>li:gt(10)').remove();$('#blus>li:gt(9)').after('<li style=\"margin-right:20px;color:transparent\">a</li>');<\/script>");
+            
+    $("#blus").animate({
+        height: $(".devicepadding").last().height() + parseInt($("#blus li").last().css("margin-top")) + parseInt($("#blus li").last().css("margin-bottom")),
+        opacity: '1.0'
+    },
+    300);
+}
+function getChannel(e){
+    var jsonObj = {
+        'sbt': 'SBT',
+        'boborj':'GRD',
+        'record':'REC',
+        'band':'BAN',
+        'bandnews':'NEW',
+        'globonews':'GLN',
+        'viva':'VIV',
+        'gnt':'GNT',
+        'multishow':'MSW',
+        'mtv':'MTV',
+        'bis':'MSH',
+        'off':'OFF',
+        'warner':'WBT',
+        'fx':'CFX',
+        'telecinepremium':'TC1',
+        'telecineaction':'TC2',
+        'telecinepipoca':'TC4',
+        'telecinetouch':'TC3',
+        'telecinefun':'TC6',
+        'telecinecult':'TC5',
+        'hbo':'HBO',
+        'hbo2':'HB2',
+        'hboplus':'HPL',
+        'hbofamily':'HFA',
+        'hbosignature':'HFE',
+        'megapix':'MPX',
+        'tnt':'TNT',
+        'tntseries':'TNS',
+        'studiouniversal':'HAL',
+        'universal':'USA',
+        'tcm':'TCM',
+        'sony':'SET',
+        'space':'SPA',
+        'cinemax':'MNX',
+        'axn':'AXN',
+        'syfy':'SCI',
+        'comedycentral':'CCE',
+        'sportv1':'SPO',
+        'sportv2':'SP2',
+        'sportv3':'SP3',
+        'combate':'135',
+        'premiereclubes':'121',
+        'foxsports1':'FSP',
+        'foxsports2':'FS2',
+        'espn':'ESP',
+        'espnbrasil':'ESB',
+        'bandsports':'BSP',
+        'cartoon':'CAR',
+        'disney':'DNY',
+        'discoverykids':'DIK',
+        'gloob':'GOB',
+        'nick':'NIC',
+        'nickjr':'NJR',
+        'tooncast':'TOC',
+        'natgeo':'SUP',
+        'discovery':'DIS',
+        'discoverysience':'DSC',
+        'discoveryturbo':'DTU',
+        'discoveryworld':'DIW',
+        'animalplanet':'APL',
+        'tlc':'TRV'
+    };
+    try{
+        return jsonObj[e];
+    }
+    catch(err){
+        return "";
+    }
+}
+function setExpireValue(name, time, value){
+    var setupTime = localStorage.getItem(name);
+
+    if (setupTime == null) {
+        localStorage.setItem(name, now);
+        localStorage.setItem(name+"val", value);
+   }
+   else if (now - setupTime > time*60*1000) {
+       localStorage.removeItem(name);
+       localStorage.removeItem(name+"val");
+       localStorage.setItem(name, now);
+       localStorage.setItem(name+"val", value);
+   }
+}
+function getExpireValue(name, time){
+    var setupTime = localStorage.getItem(name);
+
+    if (setupTime == null || now - setupTime > time*60*1000) {
+        localStorage.removeItem(name);
+        localStorage.removeItem(name+"val");
+        return "";
+    }
+    else {
+        return localStorage.getItem(name+"val");
+    }
 }
 
 function localStorageExpire(timerName, timeExpire, returnCode){
