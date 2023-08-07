@@ -154,10 +154,18 @@ function programs(e){
         
     }
 }
+
 function showPrograms(html){
-    $("#blus").replaceWith("<div id='blus' class='t'>"+html+"</div><script>$('.subheader, .ad, .divider').remove();$('.devicepadding').each(function(){if(!$(this).find('.liright')[0])$(this).append('<div class=\"liright\"><div class=\"noar\" style=\"background: #000;\">A SEGUIR</div></div>')});$('#blus>li:gt(10)').remove();$('#blus>li:gt(9)').after('<li style=\"margin-right:20px;color:transparent\">a</li>');<\/script>");
-            
-    $("#blus").animate({
+    var element = $(`<div>${html}<li style="margin-right:20px;color:transparent">a</li></div>`);
+    element.find('.subheader, .ad, .divider').remove();
+    element.find('li:gt(10)').remove();
+    element.find('.devicepadding:gt(0)').append('<div class="liright"><div class="noar" style="background: #000;">A SEGUIR</div></div>');
+
+    $("#blus").addClass("t").html(element.html()).ready(showProgramsAnim());
+      
+}
+function showProgramsAnim(){
+    $("#blus").delay(100).animate({
         height: $(".devicepadding").last().height() + parseInt($("#blus li").last().css("margin-top")) + parseInt($("#blus li").last().css("margin-bottom")),
         opacity: '1.0'
     },
