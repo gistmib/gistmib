@@ -42,7 +42,6 @@ function getFinalUrl(uris){
                 }
                 else{
                     var io = ((i == 0 || i == 1) ? (((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://videomega.tv/") + "https://nplayus.wap.sh/embed.php?" + uri.replace("/?v","/?v=").replace("https://","").replace("http://","")) : uri);
-                    alert(io);
                     window.location.href = io;
                 }
             }
