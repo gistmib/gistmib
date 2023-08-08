@@ -31,9 +31,9 @@ else{
 if (getParameterByName("cat")){
 var kiba = getParameterByName("cat");
 kiba = kiba.replace("@","?")
-window.location.href = "http://deepweb.tv/https://cinemao.pro/"+ kiba +"";
+window.location.href = "http://deepweb.tv/https://vfilmesonline.net/"+ kiba +"";
 }else{
-var kiba = "http://deepweb.tv/https://cinemao.pro/filme/";
+var kiba = "http://deepweb.tv/https://vfilmesonline.net/filme/";
 $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\/script>");
      
    }
