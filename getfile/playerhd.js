@@ -1,23 +1,24 @@
-var local = window.location.href;
-var servers = ["7","8"]; //"5","3","7","6","4","8"
+var servers = ["7","8","9","10"]; //"5","3","7","6","4","8"
 var i = 0;
-var id = getID();
-var head= document.getElementsByTagName('head')[0]; 
-var script = document.createElement('script'); 
-script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
-script.type = "text/javascript";
-script.async = false;
-head.appendChild(script); 
+var id = getID(); 
+var childLocation = window.location.href;
+var childHead = document.querySelector('head');
+var childScript = document.createElement('script'); 
 
-script.onload = function(event) {
-    $(document).ready(function(){
+childScript.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
+childScript.type = "text/javascript";
+childScript.async = false;
+childScript.onload = () => init();
+childScript.onerror = () => fail();
+childHead.appendChild(childScript);
+
+function init() {
     getFinalUrl("https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+getParam("id")+"/none/none"));
-    });
 }
-
-script.onerror = function(event) {
+function fail() {
     window.location.reload();
 }
+
 function checkJsSrc(){
     var result = false; // is no player;
     $("script").each(function(index) {
@@ -41,7 +42,7 @@ function getFinalUrl(uris){
                     i+=1;
                 }
                 else{
-                    var io = ((i == 0 || i == 1) ? (((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://giganet.tv/") + "https://nplayus.wap.sh/embed.php?" + uri.replace("/?v","/?v=").replace("https://","").replace("http://","")) : uri);
+                    var io = (((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://giganet.tv/") + "https://nplayus.wap.sh/embed.php?" + uri.replace("/?v","/?v=").replace("https://","").replace("http://",""));
                     window.location.href = io;
                 }
             }
