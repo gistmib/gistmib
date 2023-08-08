@@ -9,7 +9,7 @@ const interval = setInterval(function(){
     }else{
         $(".vjs-big-play-button")[0].click();
     }
-}, 100);
+}, 1000);
 
 childScript.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
 childScript.type = "text/javascript";
