@@ -1,26 +1,32 @@
-var local = window.location.href;
-var head= document.getElementsByTagName('head')[0]; 
-var script= document.createElement('script'); 
-script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
-script.type = "text/javascript";
-script.async = false;
-head.appendChild(script); 
-script.onload = function(event) {
-     $(document).ready(function(){
-     getElement($(".metaframe"), function(elem){
-        if(checkIsNullValue(elem.attr("src"))) {
-            window.location.href = "http://giganet.tv/" + elem.attr("src");
-        }
-        else {
-            window.location.reload();
-        }
-     });
-    });
+var childLocation = window.location.href;
+var childHead = document.querySelector('head');
+var childScript = document.createElement('script'); 
+const interval = setInterval(function(){
+    var link = $(".metaframe").attr("src");
+    if(checkIsNullValue(link)){
+        window.location.href = `http://giganet.tv/${link}`;
+        clearInterval(interval);
+    }
+}, 100);
+
+childScript.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
+childScript.type = "text/javascript";
+childScript.async = false;
+childScript.onload = () => init();
+childScript.onerror = () => fail();
+childHead.appendChild(childScript);
+
+function init() {
+    var isTrailer = $("#player-option-1");
+    if(isTrailer[0]){
+        interval;
+    }else{
+        window.location.href = `http://vip.tv/Erro`;
+    }
 }
-script.onerror = function(event) {
+function fail(){
     window.location.reload();
 }
-
 function getElement(element, onResult){
     if(element.length) {
         onResult(element)
