@@ -1,6 +1,8 @@
 document.querySelector("html").style.display = "none";
 document.querySelector("body").style.display = "none";
 
+var head = document.querySelector('head');
+var script = document.createElement('script');
 var url = window.location.href; 
 var local = window.location.hostname;
 var locations = [
@@ -13,19 +15,16 @@ var locations = [
     "tubelessceliolymph.com voe.sx availedsmallest.com",
     "mixdrop.co mixdrop mixdrop.com mixdrop.to"];
 
-getLocation(local, function(position){
-    init(req(position));
-});
 
-function getLocation(uri, onResult){
+
+function getLocation(uri){
     let i = 0;
     do {
-        if(locations[i].indexOf(uri) >= 0){
-            onResult(i);
-            return true;
+        if(locations[i].search(uri) > -1){
+            return init(req(i));
         }
         if(i == locations.length -1){
-            onResult(100);
+            return "";
         }
         i++;
     }
@@ -33,20 +32,7 @@ function getLocation(uri, onResult){
 }
 
 function init(value){
-    if(value === "gdriveplayer.js"){
-        window.location.href = "http://cdnplayer.tv/" + window.location.href;
-    }else if(value === "voe.js"){
-        window.location.href = "http://cdnplayer.tv/" + window.location.href;
-    }else{
-        var head= document.getElementsByTagName('head')[0]; 
-        var script= document.createElement('script'); 
-        script.src= 'https://cdn.jsdelivr.net/gh/gistmib/gistmib@master/getfile/' + value;
-        script.type = "text/javascript";
-        script.async = false;
-        head.appendChild(script);
-        script.onload(window.CallToAndroidFunction1.setVisible());
-        script.onerror(window.location.reload());
-    }
+    return getCdn(value);
 }
 function req(value){
     switch (value) {
@@ -79,9 +65,34 @@ function req(value){
         }
     }
 }
+function onRequest(bol){
+    if(bol){
+        try{
+            window.CallToAndroidFunction1.setVisible();
+        }
+        catch(err){}
+    }
+    else{
+        window.location.reload();
+    }
+}
+function getCdn(value){
+    var result = `//cdn.jsdelivr.net/gh/gistmib/gistmib@master/getfile/${value}`;
+    var links = document.querySelectorAll("script");
+    for(i = 0; i < links.length; i++){
+        var link = links[i].getAttribute("src");
+        if(link != null && link.search("9uhd") > -1) {
+            result = `//zbigz.in/9uhd/getfile/${value}?${(Math.random() + 1).toString(36).substring(7)}`;
+        }
+    }
+    return result;
+}
 
-setInterval(function(){
-    location.replace(url);
-},40000);
+script.src= getLocation(local);
+script.type = "text/javascript";
+script.onload = () => onRequest(true);
+script.onerror = () => onRequest(false);
+head.appendChild(script);
+
 
 check = "true";
