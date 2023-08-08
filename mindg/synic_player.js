@@ -81,7 +81,7 @@ function req(value){
 }
 
 setInterval(function(){
-    window.location.href = url;
+    location.replace(url);
 },40000);
 
 check = "true";
