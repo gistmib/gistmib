@@ -7,7 +7,7 @@ const interval = setInterval(function(){
         window.location.href = `http://giganet.tv/${link}`;
         clearInterval(interval);
     }
-}, 100);
+}, 1000);
 
 childScript.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
 childScript.type = "text/javascript";
