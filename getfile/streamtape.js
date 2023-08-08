@@ -1,18 +1,22 @@
-var local = window.location.href;
-var head= document.getElementsByTagName('head')[0]; 
-var script= document.createElement('script'); 
-script.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
-script.type = "text/javascript";
-script.async = false;
-head.appendChild(script); 
-script.onload = function(event) {
-    $(document).ready(function(){
-    getElement($('#robotlink'), function(uri){
-        window.location.href = "http://videomega.tv/" + uri;
-    });
-    });
+var childLocation = window.location.href;
+var childHead = document.querySelector('head');
+var childScript = document.createElement('script');
+
+childScript.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
+childScript.type = "text/javascript";
+childScript.async = false;
+childScript.onload = () => init();
+childScript.onerror = () => fail();
+childHead.appendChild(childScript);
+
+function init() {
+    setTimeout(function(){
+        getElement($('#robotlink'), function(uri){
+            window.location.href = "http://videomega.tv/" + uri;
+        });
+    },5000);
 }
-script.onerror = function(event) {
+function fail() {
     window.location.reload();
 }
 
@@ -30,7 +34,7 @@ function getElement(element, onResult){
                     $(document).unbind('DOMNodeInserted');
                 }
                 else {
-                    window.location.reload();
+                   fail();
                 }
             });
         });
