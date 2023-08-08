@@ -1,5 +1,5 @@
 var version = parseInt(document.title);
-var actUrl = (localStorage.getItem('data')) ? "https://megafilmeshd50.com" : "https://cinemao.pro";
+var actUrl = (localStorage.getItem('data')) ? "https://megafilmeshd50.com" : "https://vfilmesonline.net";
 
 var imager = new Image();
 if(!getParam("u").includes("en")){
