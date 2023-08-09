@@ -54,7 +54,7 @@ if(aa.indexOf("error") !== -1){
             window.location.reload();
         }
         else{
-            if(actUrl.indexOf("cinemao") !== -1){
+            if(actUrl.indexOf("cinemao") !== -1 || actUrl.indexOf("vfilmesonline") !== -1){
                 actUrl = "https://vizer.tv";
                 run();
             }else{
@@ -82,7 +82,7 @@ if(type == 2){
     }
 }else{ 
 
-if(domain.indexOf("cinemao") !== -1){
+if(domain.indexOf("cinemao") !== -1 || domain.indexOf("vfilmesonline") !== -1){
 var heach = $(html).find(".search-page").find('.search_page_form').remove().end().html();
       
 setTimeout(function(){
