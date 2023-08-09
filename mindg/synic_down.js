@@ -32,7 +32,7 @@ function getLocation(uri){
 }
 
 function init(value){
-    return getCdn(value);
+    return `//cdn.jsdelivr.net/gh/gistmib/gistmib@master/getfile/${value}`;
 }
 function req(value){
     switch (value) {
