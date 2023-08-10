@@ -1,10 +1,11 @@
-var servers = ["7","8","9","10"]; //"5","3","7","6","4","8"
+var servers = ["7","9","8","10"]; //"5","3","7","6","4","8"
+var servers2 = ["9","7","10","8"];
 var i = 0;
 var id = getID(); 
 var childLocation = window.location.href;
 var childHead = document.querySelector('head');
 var childScript = document.createElement('script'); 
-
+var childServer;
 childScript.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
 childScript.type = "text/javascript";
 childScript.async = false;
@@ -12,8 +13,10 @@ childScript.onload = () => init();
 childScript.onerror = () => fail();
 childHead.appendChild(childScript);
 
+
 function init() {
-    getFinalUrl("https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+getParam("id")+"/none/none"));
+    childServer = (checkJsSrc()) ? servers : servers2
+    getFinalUrl("https://playerhd.org/video/playerfteste.php?url=" + window.btoa(childServer[i]+"/"+getParam("id")+"/none/none"));
 }
 function fail() {
     window.location.reload();
@@ -33,12 +36,12 @@ function getFinalUrl(uris){
         var ura = getSecondPart(html, "window.location.href");
         getHtml("https://zbigz.in/flixs.php?u="+ura, function(html){
             var uri = getSecondPart(html, "window.location.href");
-            if(servers[i] == null || servers[i] == undefined || typeof servers[i] == "undefined"){
+            if(childServer[i] == null || childServer[i] == undefined || typeof childServer[i] == "undefined"){
                 window.location.href = ((checkJsSrc()) ? "http://cdnplayer.tv/" : "http://giganet.tv/") + "https://playerhd.org/video/player.php?id=" + getParam("id");
             }
             else{
                 if(uri == null){
-                    getFinalUrl("https://playerhd.org/video/playerfteste.php?url=" + window.btoa(servers[i]+"/"+id+"/none/none"));
+                    getFinalUrl("https://playerhd.org/video/playerfteste.php?url=" + window.btoa(childServer[i] +"/"+id+"/none/none"));
                     i+=1;
                 }
                 else{
