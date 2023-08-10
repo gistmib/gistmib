@@ -1,25 +1,33 @@
 document.querySelector("html").style.display = "none";
 document.querySelector("body").style.display = "none";
 
-
-var head = document.querySelector('head');
-var script = document.createElement('script');
-var url = window.location.href; 
-var local = window.location.hostname;
-var objJson = [
+var parentHead = document.querySelector('head');
+var parentScript = document.createElement('script');
+var parentUrl = window.location.href; 
+var parentLocal = window.location.hostname;
+var parentObjJson = [
     {'search':'streamtape strcloud strtapeadblock adblockstrtech streamtape.net streamtape.com', 'value':'streamtape.js'},
     {'search':'megafilmeshd50.com megafilmeshd50.net', 'value':'mfhd50.js'},
     {'search':'playerhd.org', 'value':'playerhd.js'},
     {'search':'mixdrop.co mixdrop mixdrop.com mixdrop.to', 'value':'mixdrop.js'}
 ];
+
+function init() {
+    parentScript.src= getCdn(getLocationValue(parentLocal));
+    parentScript.type = "text/javascript";
+    parentScript.onload = () => onRequest(true);
+    parentScript.onerror = () => onRequest(false);
+    parentHead.appendChild(parentScript);
+}
+
 function getLocationValue(local){
     let i = 0;
     do {
-        if(objJson[i]['search'].search(local) > -1){
+        if(parentObjJson[i]['search'].search(local) > -1){
             
-            return objJson[i]['value'];
+            return parentObjJson[i]['value'];
         }
-        if(i == objJson.length -1){
+        if(i == parentObjJson.length -1){
             if(typeof(document.getElementById('adb')) !== 'undefined' && document.getElementById('adb') !== null){
                 return "streamtape.js";
             }
@@ -32,7 +40,7 @@ function getLocationValue(local){
         }
         i++;
     }
-    while(i < objJson.length);
+    while(i < parentObjJson.length);
 }
 function onRequest(bol){
     if(bol){
@@ -56,11 +64,6 @@ function getCdn(value){
     }
     return result;
 }
-
-script.src= getCdn(getLocationValue(local));
-script.type = "text/javascript";
-script.onload = () => onRequest(true);
-script.onerror = () => onRequest(false);
-head.appendChild(script);
+window.addEvent('load', init());
 
 check = "true";
