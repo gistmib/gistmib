@@ -27,7 +27,7 @@ function getLocationValue(local){
                 return "mixdrop.js";
             }
             else {
-                return "";
+                return "all.js";
             }
         }
         i++;
