@@ -24,9 +24,7 @@ function init() {
         parentHead.appendChild(parentScript);
     }
     else{
-        setTimeout(function() {
-            onRequest(false);
-        },20000);
+        setTimeout(onRequest(false),20000);
     }
 }
 
