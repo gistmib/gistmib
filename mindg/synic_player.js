@@ -9,15 +9,25 @@ var parentObjJson = [
     {'search':'streamtape strcloud strtapeadblock adblockstrtech streamtape.net streamtape.com', 'value':'streamtape.js'},
     {'search':'megafilmeshd50.com megafilmeshd50.net', 'value':'mfhd50.js'},
     {'search':'playerhd.org', 'value':'playerhd.js'},
-    {'search':'mixdrop.co mixdrop mixdrop.com mixdrop.to', 'value':'mixdrop.js'}
+    {'search':'mixdrop.co mixdrop mixdrop.com mixdrop.to', 'value':'mixdrop.js'},
+    {'search':'vizer.tv vizer vizer.in vizer.to flixei.com flixei coworkcayman.com coworkcayman', 'value':'vizer.js'}
 ];
 
 function init() {
-    parentScript.src= getCdn(getLocationValue(parentLocal));
-    parentScript.type = "text/javascript";
-    parentScript.onload = () => onRequest(true);
-    parentScript.onerror = () => onRequest(false);
-    parentHead.appendChild(parentScript);
+    var fileName = getLocationValue(parentLocal)
+    var cdn = getCdn(fileName);
+    if(fileName !== "vizer.js"){
+        parentScript.src= cdn;
+        parentScript.type = "text/javascript";
+        parentScript.onload = () => onRequest(true);
+        parentScript.onerror = () => onRequest(false);
+        parentHead.appendChild(parentScript);
+    }
+    else{
+        setTimeout(function() {
+            onRequest(false);
+        },20000);
+    }
 }
 
 function getLocationValue(local){
@@ -64,6 +74,11 @@ function getCdn(value){
     }
     return result;
 }
-window.addEvent('load', init());
 
+if(document.readyState === "complete" ||
+    (document.readyState !== "loading" && !document.documentElement.doScroll)) {
+        init();
+    }else{
+        window.addEvent('domready',init());
+    }
 check = "true";
