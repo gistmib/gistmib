@@ -1,0 +1,1 @@
+window.location.href = `http://giganet.tv/${window.location.href}`;
