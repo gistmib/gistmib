@@ -130,7 +130,6 @@ function getParam(name, url) {
 }
 
 function programs(e){
-    alert("qq");
     var channel = getChannel(e);
     var valueSaved = getExpireValue(channel, 180);
     if(channel){
