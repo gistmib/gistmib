@@ -6,7 +6,7 @@ var parentScript = document.createElement('script');
 var parentUrl = window.location.href; 
 var parentLocal = window.location.hostname;
 var parentObjJson = [
-    {'search':'streamtape strcloud strtapeadblock adblockstrtech streamtape.net streamtape.com', 'value':'streamtape.js'},
+    {'search':'streamtape strcloud strtapeadblock adblockstrtech streamtape.net streamtape.com antiadtape', 'value':'streamtape.js'},
     {'search':'megafilmeshd50.com megafilmeshd50.net', 'value':'mfhd50.js'},
     {'search':'playerhd.org', 'value':'playerhd.js'},
     {'search':'mixdrop.co mixdrop mixdrop.com mixdrop.to', 'value':'mixdrop.js'},
