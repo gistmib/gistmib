@@ -15,8 +15,10 @@ childHead.appendChild(childScript);
 
 
 function init() {
-    childServer = (checkJsSrc()) ? servers : servers2
-    getFinalUrl("https://playerhd.org/video/playerfteste.php?url=" + window.btoa(childServer[i]+"/"+getParam("id")+"/none/none"));
+    $(document).ready(() => {
+        childServer = (checkJsSrc()) ? servers : servers2
+        getFinalUrl("https://playerhd.org/video/playerfteste.php?url=" + window.btoa(childServer[i]+"/"+getParam("id")+"/none/none"));
+    });
 }
 function fail() {
     window.location.reload();
