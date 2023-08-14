@@ -1,7 +1,6 @@
 var childLocation = window.location.href;
 var childHead = document.querySelector('head');
 var childScript = document.createElement('script');
-var mInterval;
 
 childScript.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib@master/jquery.js';
 childScript.type = "text/javascript";
@@ -14,6 +13,7 @@ function init() {
     $(document).ready(() => {
         if($('#robotlink')[0] || $(".plyr__control")[0]){
             isVideo();
+            setInterval(() => isVideo(), 15000);
         }else{
             window.location.href = "http://vip.tv/Erro";
         }
@@ -46,7 +46,6 @@ function isVideo(){
                    fail();
                 }
         }, 3000);
-        clearInterval(mInterval); 
     }
 }
 
