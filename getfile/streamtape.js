@@ -23,20 +23,7 @@ function fail() {
     window.location.reload();
 }
 function isVideo(){
-    $(".plyr__control")[0].click();
     if($('video')[0]){
-        let vid = document.querySelector("video");
-        vid.play();
-        vid.oncanplay  = function() {
-            var link = $('#robotlink').text().replace("//","");
-            if(checkIsNullValue(link)) {
-                window.location.href = "http://videomega.tv/" + "https://" + link + '&stream=1';
-            }
-            else {
-               fail();
-            }
-        };
-        
         setTimeout(() => {
             var link = $('#robotlink').text().replace("//","");
                 if(checkIsNullValue(link)) {
@@ -46,6 +33,8 @@ function isVideo(){
                    fail();
                 }
         }, 3000);
+    }else {
+        fail();
     }
 }
 
