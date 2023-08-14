@@ -1,12 +1,22 @@
-document.querySelector("html").style.display = "none";
-document.querySelector("body").style.display = "none";
+let str = `<style>lander{color:#ffffff;font-size:20px;background: #000000;position: fixed;width: 100%;height: 100%;z-index: 2147483647;top: 0;bottom: 0;right: 0;left: 0;margin: auto;}lander div {position: absolute;bottom: 0;top: 0;right: 0;left: 0;margin: auto;width: max-content;height: max-content;}</style>
+<lander>
+<div>
+<center>
+<img src='//images2.imgbox.com/84/4f/GeEjnrtK_o.gif' width="70" height="70" />
+<br/>
+<br/>
+Finalizando...
+</center>
+</div>
+</lander>`;
+document.querySelector('html').insertAdjacentHTML('beforeend', str);
 
 var parentHead = document.querySelector('head');
 var parentScript = document.createElement('script');
 var parentUrl = window.location.href; 
 var parentLocal = window.location.hostname;
 var parentObjJson = [
-    {'search':'streamtape strcloud strtapeadblock adblockstrtech streamtape.net streamtape.com antiadtape', 'value':'streamtape.js'},
+    {'search':'streamtape strcloud strtapeadblock adblockstrtech streamtape.net streamtape.com', 'value':'streamtape.js'},
     {'search':'megafilmeshd50.com megafilmeshd50.net', 'value':'mfhd50.js'},
     {'search':'playerhd.org', 'value':'playerhd.js'},
     {'search':'mixdrop.co mixdrop mixdrop.com mixdrop.to', 'value':'mixdrop.js'},
@@ -77,6 +87,6 @@ if(document.readyState === "complete" ||
     (document.readyState !== "loading" && !document.documentElement.doScroll)) {
         init();
     }else{
-        window.addEvent('domready',init());
+        window.addEvent('domready', init());
     }
 check = "true";
