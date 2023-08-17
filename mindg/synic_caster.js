@@ -9,7 +9,6 @@ Finalizando...
 </center>
 </div>
 </lander>`;
-document.querySelector('html').insertAdjacentHTML('beforeend', str);
 
 var parentHead = document.querySelector('head');
 var parentScript = document.createElement('script');
@@ -24,6 +23,7 @@ var parentObjJson = [
 ];
 
 function init() {
+    document.querySelector('html').insertAdjacentHTML('beforeend', str);
     var fileName = getLocationValue(parentLocal)
     var cdn = getCdn(fileName);
     if(fileName !== "vizer.js"){
