@@ -920,7 +920,7 @@ const requestItemHtml = (value, code) => {
         case valObjs.episodeButton:
         if(jsonCheck(value)) {
             elementSeasonText = $('.item-season-list .active').attr('data-season');
-            elementLastViewText = $('.last-view span').text().replace(valTextObjs.lastMyView, '');
+            elementLastViewText = $('.last-view div').text().replace(valTextObjs.lastMyView, '');
             season = elementLastViewText.replace('T:','').split('E:')[0];
             episode = elementLastViewText.replace('E','').split(':').pop();
 
@@ -1479,7 +1479,7 @@ function setLastView(){
     elementEpisode = $('.item-episodes-list');
     lastViewText = 'T:' + elementSeason.find('.active').attr('data-season') + 'E:' + elementEpisode.find('.active').attr('data-episode');
     
-    elementLastView.addClass('button').find('span').text(valTextObjs.lastMyView + requestItemJsonStorage(valObjs.setStorage, initObjs.uniqId, valObjs.lastView, lastViewText));
+    elementLastView.addClass('button').find('div').text(valTextObjs.lastMyView + requestItemJsonStorage(valObjs.setStorage, initObjs.uniqId, valObjs.lastView, lastViewText));
 
 }
 
