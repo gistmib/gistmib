@@ -1209,9 +1209,7 @@ async function getPromise(url){
 }
 async function syncHtml(url){
     try{
-        response = await fetch(url,  {
-            cache: 'force-cache'
-          });
+        response = await fetch(url);
         text = await response.text();
         return (valueCheck(text) && response.ok == true && response.status == 200) ? text : 'error';
     }
@@ -1221,9 +1219,7 @@ async function syncHtml(url){
 }
 async function syncJson(url){
     try{
-        singleResponse = await fetch(url,  {
-            cache: 'force-cache'
-        });
+        singleResponse = await fetch(url);
         text = await singleResponse.json();
         return (valueCheck(text) && singleResponse.ok == true && singleResponse.status == 200) ? text : null;
     }
