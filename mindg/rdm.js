@@ -811,6 +811,7 @@ const requestInitHtml = (code) =>{
         <div class="item-alert-message"></div>
         </div>
         </div>
+        <img src="https://whos.amung.us/widget/b69af64q2l.png" border="0" width="0" height="0" />
         `;
         case valObjs.initContentSerieHtml: 
         return `
@@ -841,9 +842,11 @@ const requestInitHtml = (code) =>{
         <div class="item-alert-message"></div>
         </div>
         </div>
+        <img src="https://whos.amung.us/widget/b69af64q2l.png" border="0" width="0" height="0" />
         `;
         case valObjs.initContentErrorHtml:
-        return `<div id="loader">
+        return `
+        <div id="loader">
         <div class="stateContent">
         <div class="stateCenterContent">
         <center>
@@ -854,7 +857,9 @@ const requestInitHtml = (code) =>{
         <div class="btn" onclick="window.location.reload()">Tentar novamente</div>
         </div>
         </div>
-        </div>`;
+        </div>
+        <img src="https://whos.amung.us/widget/b69af64q2l.png" border="0" width="0" height="0" />
+        `;
     }
 };
 const requestItemHtml = (value, code) => {
