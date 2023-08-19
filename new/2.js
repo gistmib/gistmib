@@ -1,7 +1,7 @@
 var version = parseInt(document.title)
 
 if(!getParam("u").includes("en")){
-if(version > 16) {
+if(version > 17) {
     y();
 }else{
     window.top.location = "http://nplayus.wap.sh/";
@@ -15,6 +15,143 @@ var kk = false;
 var prevent = false;
 const delay = 500;
 let lastExecution = 0;
+
+const valObjs = {
+    lastView: 'lastView',
+    seasonList: 'seasonList',
+    episodesList: 'episodesList',
+    getStorage: 'getStorage',
+    setStorage: 'setStorage',
+    removeStorage: 'removeStorage',
+    ytplay: 'ytPlay',
+    play: 'play',
+    cast: 'cast',
+    down: 'down',
+    save: 'save',
+    share: 'share', 
+    all: 'all',
+    myList: 'myList',
+    seasons: 'seasons',
+    voteAverage: 'vote_average',
+    percentage: 'percentage',
+    rate: 'rate',
+    runtime: 'runtime',
+    date: 'date',
+    firstAirDate: 'first_air_date',
+    numberOfSeasons: 'number_of_seasons',
+    duration: 'duration',
+    playButton: 'playButton',
+    downButton: 'downButton',
+    castButton: 'castButton',
+    saveButton: 'saveButton',
+    shareButton: 'shareButton',
+    seasonButton: 'seasonButton',
+    episodeButton: 'episodeButton',
+    overview: 'overview',
+    genres: 'genres',
+    similarList: 'similarList',
+    seasonsList: 'seasonsList',
+    saveButton: 'saveButton',
+    ytPlayButton: 'ytPlayButton',
+    vizerFilme: 'reds',
+    vizerSerie: 'redss',
+    cinemaoFilme: 'r',
+    megaFilmes: 'ru',
+    megaSeries: 'rr',
+    list: 'list',
+    removeItem: 'removeItem',
+    addItem: 'addItem',
+    getItem: 'getItem',
+    initStyleHtml: 'initStyleHtml',
+    initTumbHtml: 'initTumbHtml',
+    initContentMovieHtml: 'initContentMovieHtml',
+    initContentSerieHtml: 'initContentSerieHtml',
+    lastPlayButton: 'lastPlayButton',
+    myLastView: 'myLastView',
+    mv112: 'mv112',
+    tmdbBusca: 'tmdbBusca',
+    tmdbId: 'tmdbId',
+    results: 'results',
+    n: 'n',
+    uxs: 'uxs',
+    d: 'd',
+    c: 'c',
+    b: 'b',
+    vizerGetFilme: 'https://nplazers.in/loggg.php?g=',
+    vizerGetEpisodes: 'https://nplazers.in/log.php?g=getEpisodes=',
+    vizerGetSeasons: 'https://nplazers.in/log.php?g=getSeasons=',
+    vizerGetEpisode: 'https://nplazers.in/log.php?g=getEpisodeLanguages=',
+    tmdbMovieUrl: 'https://api.themoviedb.org/3/movie/$?api_key=6b4357c41d9c606e4d7ebe2f4a8850ea&language=pt-BR',
+    tmdbMovieYTurl: 'https://api.themoviedb.org/3/movie/$/videos?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR',
+    tmdbMovieSearchUrl: 'https://api.themoviedb.org/3/search/movie?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR&page=1&include_adult=false&query=$query&year=$year',
+    tmdbTvUrl: 'https://api.themoviedb.org/3/tv/$?api_key=6b4357c41d9c606e4d7ebe2f4a8850ea&language=pt-BR',
+    tmdbTvYTurl: 'https://api.themoviedb.org/3/tv/$/videos?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR',
+    tmdbTvSearchUrl: 'https://api.themoviedb.org/3/search/tv?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR&page=1&include_adult=false&query=$query&year=$year',
+    errorSeasonList: 'errorSeasonList'
+};
+const requestItemJsonStorage = (action, key, name, value) => {
+    itemStorage = localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : {};
+    switch(action) {
+        case valObjs.getStorage: {
+            try {
+                return valueCheck(name) ? (jsonCheck(getJsonVal(itemStorage, name)) ? itemStorage[name] : null) : (jsonCheck(itemStorage) ? itemStorage : null);
+            }catch(err) {
+                return null;
+            }
+        }
+        case valObjs.setStorage: {
+            itemStorage[name] = value;
+            localStorage.setItem(key, JSON.stringify(itemStorage));
+            return value;
+        }
+        case valObjs.removeStorage: {
+            localStorage.removeItem(key);
+            break;
+        }
+    }
+
+};
+const getJsonVal = (json, key, position) => {
+    try{
+        return (valueCheck(key)) ? (valueCheck(position)) ? json[key][position] : json[key] : json;
+    }
+    catch(err){
+        return null;
+    }
+};
+function valueCheck(v){
+    return (v === '' || typeof v === 'undefined' || v === null) ? false : true;
+}
+function jsonCheck(v){
+    return (typeof v === 'undefined' || v === null) ? false : true;
+}
+function createJsonLists(elementt, id){
+    seasonJson = {};
+    episodesJson = {};
+
+    elementt.find('.se-c').each((position, element) => {
+        episodeJson = {};
+        elementEpisodesList = $(element).find('.episodios li');
+        seasonName = `${position+1}`;
+        seasonNameId = `${position}`;
+
+        
+        for(let i = 0; i < elementEpisodesList.length; i++){
+            elem = $(elementEpisodesList[i]);
+            episodeTitle = elem.find('.episodiotitle a').text();
+            episodeImg = elem.find('.imagen img').attr('src');
+            episodeId = `${i}`;
+            episodeName = `${i+1}`;
+            episodeUrl = elem.find('.episodiotitle a').attr('href');
+            episodeJson[episodeId] = {id: episodeId, title: episodeTitle, name: episodeName, img: episodeImg, url: episodeUrl}
+        }
+        episodesJson[position] = episodeJson;
+        seasonJson[position] = {id: seasonNameId, name: seasonName};
+    });
+    requestItemJsonStorage(valObjs.setStorage, id, valObjs.seasonsList, JSON.stringify({"list": seasonJson}));
+    requestItemJsonStorage(valObjs.setStorage, id, valObjs.episodesList, JSON.stringify(episodesJson));
+    //alert(JSON.stringify({"list": episodesJson}));
+}
 
 function y(){
 if(localStorage.getItem('data')){
@@ -65,13 +202,13 @@ if(aa.indexOf("error") !== -1){
 var html = $(b64DecodeUnicode(aa));
 if(type == 2){
     if((domain.indexOf("megafilmeshd50") !== -1)){
-    var jx = $(html).find("#info .custom_fields:first").text();
-    var yx = $(html).find(".extra .date").text();
-    jx = jx.replace('Título original','');    
-    var cod = $(html).find('#episodes').html();
-    var c = cod.replace(/"/g,'sim').replace(/'/g,'nao');
-    window.location.href = "http://vip.tv/ux=/rr.php&a=" + url + "&b=" +jx+ "&c=" +yx+ "&d=" +c;
-        
+        var title = $(html).find("#info .custom_fields:first").text();
+        title = title.replace('Título original','').replace(' Original title ','').replace('Original title ',''); 
+        var date = $(html).find(".extra .date").text();
+        var id = $(html).find('.starstruck-main').attr('data-id');
+        createJsonLists($(html).find('#episodes'), `rr${id}`);
+
+        window.location.href = "http://vip.tv/ux=/rr.php&a=" + url + "&b=" +title+ "&c=" +id+ "&d=" +date;
     }else{
      window.location.href = "http://vip.tv/ux=/r.php&uxs="+ $(html).find('strong a').attr("href").replace("https://www.imdb.com/title/",""); 
     }
@@ -103,8 +240,7 @@ if(type == 2){
        }}
        var link = $(html).find("a").attr("href");
        var alt = $(html).find("img").attr("alt");
-       var ano = $(html).find(".module .content .items .item .data span").text();
-       
+       var ano = $(html).find(".data span:last-of-type").text();
        if((domain.indexOf("megafilmeshd50") !== -1)){
        if((link.indexOf("/serie/") !== -1)){
        var gg = '<a class="xagPoster" href="http://deepwebsx.tv/'+link+'" rel="noreferrer"><img style="display:none"  /><img class="ximg" src="'+img+'" alt="'+alt+'"  onload="infos(\'http://deepwebsx.tv/'+link+'\',\''+img+'\',\''+alt+'\')" /><span id="hds">HD 1080p</span></a>';

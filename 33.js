@@ -3,10 +3,10 @@ var gh = window.location.href;
 var values = 2;
 var next = "";
 var hash = "";
-var jon = "http://zbigz.in/flix.php";
-var j = 'http://zbigz.in/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2023@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc@page=';
-
-var hourstop = 168;
+var jon = "http://zbigs.cf/flix.php";
+var j = 'http://zbigs.cf/logg.php?g=categoriesListSeries=all@anime=0@search=@saga=0@categoryFilterYearMin=1950@categoryFilterYearMax=2023@categoryFilterOrderBy=vzViews@categoryFilterOrderWay=desc@page=';  
+  
+var hourstop = 24;
 var nows = new Date().getTime();
 var setupTimess = localStorage.getItem('setupTimesssx');
 
@@ -33,7 +33,7 @@ $.each(sa.list, function(c, d) {
    
       var iu=d.url.replace(/-/g, " ");
      var it=d.id;
-      var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" /></a>';
+      var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'@d='+d.year+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" /></a>';
        $("#userdata").prepend(tt);
      
 });
@@ -50,7 +50,7 @@ $.each(sa.list, function(c, d) {
     
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
-            var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" /></a>';
+            var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'@d='+d.year+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" /></a>';
              $("#userdata").append(tt);
      
 });

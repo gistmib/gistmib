@@ -1,6 +1,6 @@
 var version = parseInt(document.title);
 if(!getParam("u").includes("en")){
-if(version > 16) {
+if(version > 17) {
     y();
 }else{
     window.top.location = "http://nplayus.wap.sh/";
@@ -14,6 +14,147 @@ var kk = false;
 var prevent = false;
 const delay = 500;
 let lastExecution = 0;
+
+const valObjs = {
+    lastView: 'lastView',
+    seasonList: 'seasonList',
+    episodesList: 'episodesList',
+    getStorage: 'getStorage',
+    setStorage: 'setStorage',
+    removeStorage: 'removeStorage',
+    ytplay: 'ytPlay',
+    play: 'play',
+    cast: 'cast',
+    down: 'down',
+    save: 'save',
+    share: 'share', 
+    all: 'all',
+    myList: 'myList',
+    seasons: 'seasons',
+    voteAverage: 'vote_average',
+    percentage: 'percentage',
+    rate: 'rate',
+    runtime: 'runtime',
+    date: 'date',
+    firstAirDate: 'first_air_date',
+    numberOfSeasons: 'number_of_seasons',
+    duration: 'duration',
+    playButton: 'playButton',
+    downButton: 'downButton',
+    castButton: 'castButton',
+    saveButton: 'saveButton',
+    shareButton: 'shareButton',
+    seasonButton: 'seasonButton',
+    episodeButton: 'episodeButton',
+    overview: 'overview',
+    genres: 'genres',
+    similarList: 'similarList',
+    seasonsList: 'seasonsList',
+    saveButton: 'saveButton',
+    ytPlayButton: 'ytPlayButton',
+    vizerFilme: 'reds',
+    vizerSerie: 'redss',
+    cinemaoFilme: 'r',
+    megaFilmes: 'ru',
+    megaSeries: 'rr',
+    list: 'list',
+    removeItem: 'removeItem',
+    addItem: 'addItem',
+    getItem: 'getItem',
+    initStyleHtml: 'initStyleHtml',
+    initTumbHtml: 'initTumbHtml',
+    initContentMovieHtml: 'initContentMovieHtml',
+    initContentSerieHtml: 'initContentSerieHtml',
+    lastPlayButton: 'lastPlayButton',
+    myLastView: 'myLastView',
+    mv112: 'mv112',
+    tmdbBusca: 'tmdbBusca',
+    tmdbId: 'tmdbId',
+    results: 'results',
+    n: 'n',
+    uxs: 'uxs',
+    d: 'd',
+    c: 'c',
+    b: 'b',
+    vizerGetFilme: 'https://nplazers.in/loggg.php?g=',
+    vizerGetEpisodes: 'https://nplazers.in/log.php?g=getEpisodes=',
+    vizerGetSeasons: 'https://nplazers.in/log.php?g=getSeasons=',
+    vizerGetEpisode: 'https://nplazers.in/log.php?g=getEpisodeLanguages=',
+    tmdbMovieUrl: 'https://api.themoviedb.org/3/movie/$?api_key=6b4357c41d9c606e4d7ebe2f4a8850ea&language=pt-BR',
+    tmdbMovieYTurl: 'https://api.themoviedb.org/3/movie/$/videos?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR',
+    tmdbMovieSearchUrl: 'https://api.themoviedb.org/3/search/movie?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR&page=1&include_adult=false&query=$query&year=$year',
+    tmdbTvUrl: 'https://api.themoviedb.org/3/tv/$?api_key=6b4357c41d9c606e4d7ebe2f4a8850ea&language=pt-BR',
+    tmdbTvYTurl: 'https://api.themoviedb.org/3/tv/$/videos?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR',
+    tmdbTvSearchUrl: 'https://api.themoviedb.org/3/search/tv?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR&page=1&include_adult=false&query=$query&year=$year',
+    errorSeasonList: 'errorSeasonList'
+};
+const requestItemJsonStorage = (action, key, name, value) => {
+    itemStorage = localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : {};
+    switch(action) {
+        case valObjs.getStorage: {
+            try {
+                return valueCheck(name) ? (jsonCheck(getJsonVal(itemStorage, name)) ? itemStorage[name] : null) : (jsonCheck(itemStorage) ? itemStorage : null);
+            }catch(err) {
+                return null;
+            }
+        }
+        case valObjs.setStorage: {
+            itemStorage[name] = value;
+            localStorage.setItem(key, JSON.stringify(itemStorage));
+            return value;
+        }
+        case valObjs.removeStorage: {
+            localStorage.removeItem(key);
+            break;
+        }
+    }
+
+};
+const getJsonVal = (json, key, position) => {
+    try{
+        return (valueCheck(key)) ? (valueCheck(position)) ? json[key][position] : json[key] : json;
+    }
+    catch(err){
+        return null;
+    }
+};
+function valueCheck(v){
+    return (v === '' || typeof v === 'undefined' || v === null) ? false : true;
+}
+function jsonCheck(v){
+    return (typeof v === 'undefined' || v === null) ? false : true;
+}
+function createJsonLists(elementt, id){
+    seasonJson = {};
+    episodesJson = {};
+
+    elementt.find('.se-c').each((position, element) => {
+        episodeJson = {};
+        elementEpisodesList = $(element).find('.episodios li');
+        seasonName = `${position+1}`;
+        seasonNameId = `${position}`;
+
+        
+        for(let i = 0; i < elementEpisodesList.length; i++){
+            elem = $(elementEpisodesList[i]);
+            episodeTitle = elem.find('.episodiotitle a').text();
+            episodeImg = elem.find('.imagen img').attr('src');
+            episodeId = `${i}`;
+            episodeName = `${i+1}`;
+            episodeUrl = elem.find('.episodiotitle a').attr('href');
+            episodeJson[episodeId] = {id: episodeId, title: episodeTitle, name: episodeName, img: episodeImg, url: episodeUrl}
+        }
+        episodesJson[position] = episodeJson;
+        seasonJson[position] = {id: seasonNameId, name: seasonName};
+    });
+    requestItemJsonStorage(valObjs.setStorage, id, valObjs.seasonsList, JSON.stringify({"list": seasonJson}));
+    requestItemJsonStorage(valObjs.setStorage, id, valObjs.episodesList, JSON.stringify(episodesJson));
+    //alert(JSON.stringify({"list": episodesJson}));
+}
+
+
+
+
 
 function y(){
 if(localStorage.getItem('data')){
@@ -31,8 +172,8 @@ $("body").append("<a href='"+ kiba +"' id='w'>g</a><script>$('#w')[0].click();<\
     var scriptxx= document.createElement('script');
     scriptxx.src= 'https://cdn.jsdelivr.net/gh/gistmib/gistmib/33.js';
     scriptxx.type = "text/javascript"; 
-    scriptxx.async = false; 
-    head.appendChild(scriptxx); 
+    scriptxx.async = false;
+    head.appendChild(scriptxx);
     scriptxx.onload = function(evt) {
         $("body").prepend("<html><head> <meta charset='UTF-8'><meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'><meta name='referrer' content='never'><meta name='referrer' content='no-referrer'><meta name='ROBOTS' content='NOINDEX, NOFOLLOW' /><link rel='stylesheet' hrefx='' /><style>.titl {font-size: 60px;}body{padding:0;margin:0}.agPoster img {width: 135px;height: 202px;margin: 10px;background:#333333}body{min-width:500 !important;position:relative;bottom:80px;color:#fff;background:#000}a{color:#000;text-decoration:none}a,a:focus{outline:0}a,a:focus{-webkit-tap-highlight-color:transparent}input,input:focus{outline:0}input,input:focus{-webkit-tap-highlight-color:transparent}.ff {padding: 40px;font-family: sans-serif;font-size: 20px;position: absolute;height: max-content;top: 0;bottom: 0;margin: auto;}.a1z a{color:#fff}.ppi {margin-top: 11px;position: absolute;}.dts{height: 825px !important;background-color: rgba(0,0,0,0.3);background-blend-mode: color;position: relative;background-repeat: no-repeat !important;background-position: top !important;width: 100%;height: 774px;-webkit-background-size: 130% !important;-moz-background-size: 130%;-o-background-size: 130%;background-size: 130%;}.dtss {padding-bottom: 0px;}.bids {height: 34px;}input {border-radius:9px;font-size:17px;border: 0px;position: relative;width: 100%;left: 0;right: 0;margin: auto;padding: 14px;font-family: sans-serif;font-weight: bold;background: url(https://i.imgur.com/tRCws1n.gif);background-color: #fff;background-size: 0px;background-repeat: no-repeat;background-position: center;}form{position: relative;right: 0;left: 0;margin: auto;margin-top:9px;width: 90%;}@media only screen and (min-width: 601px){.dts {height: 400px !important;}.dtss {-webkit-box-shadow: inset 0 -270px 140px -70px #000;-moz-box-shadow: inset 0 -270px 140px -70px #000;box-shadow: inset 0 -270px 140px -70px #000;}}</style></head><body><center><div id='userdata'></div></center><form><input type='hidden' id='number' value='1'/><input type='button' onclick='incrementValue()' class='ripple ght' value='Carregar mais' /></form></body></html>");
         
@@ -73,12 +214,14 @@ if(aa.indexOf("error") !== -1){
 var html = $(b64DecodeUnicode(aa));
 if(type == 2){
     if((domain.indexOf("megafilmeshd50") !== -1)){
-    var jx = $(html).find("#info .custom_fields:first").text();
-    var yx = $(html).find(".extra .date").text();
-    jx = jx.replace('Título original','');    
-    var cod = $(html).find('#episodes').html();
-    var c = cod.replace(/"/g,'sim').replace(/'/g,'nao');
-    window.location.href = "http://vip.tv/ux=/rr.php&a=" + url + "&b=" +jx+ "&c=" +yx+ "&d=" +c;
+    
+        var title = $(html).find("#info .custom_fields:first").text();
+        title = title.replace('Título original','').replace(' Original title ','').replace('Original title ',''); 
+        var date = $(html).find(".extra .date").text();
+        var id = $(html).find('.starstruck-main').attr('data-id');
+        createJsonLists($(html).find('#episodes'), `rr${id}`);
+
+        window.location.href = "http://vip.tv/ux=/rr.php&a=" + url + "&b=" +title+ "&c=" +id+ "&d=" +date;
         
     }else{
      window.location.href = "http://vip.tv/ux=/r.php&uxs="+ $(html).find('strong a').attr("href").replace("https://www.imdb.com/title/",""); 
@@ -111,7 +254,7 @@ if(type == 2){
        }}
        var link = $(html).find("a").attr("href");
        var alt = $(html).find("img").attr("alt");
-       var ano = $(html).find(".module .content .items .item .data span").text();
+       var ano = $(html).find(".data span:last-of-type").text();
        
        if((domain.indexOf("megafilmeshd50") !== -1)){
        if((link.indexOf("/serie/") !== -1)){
