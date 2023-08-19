@@ -1,7 +1,3 @@
-window.addEventListener('resume', (event) => {
-    alert('Storage event detected:');
-});
-
 const url = window.location.href.split('html?ux=').pop().replace('.php@', '.php?').replace('.php&', '.php?').replace(/@/g, '&');
 const parseJson = (value, key, position) => {
     try{
@@ -34,6 +30,83 @@ const requestInitHtml = (code) =>{
         return `
         <meta content="width=device-width" name="viewport">
         <style>
+        .btn {
+            text-align: center;
+            width: 50%;
+            position: absolute;
+            right: 0;
+            left: 0;
+            background: #ffffff;
+            color: #000000;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-weight: bold;
+            margin-top: 26px;
+            margin: 9px auto;
+        }
+        #loader {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            transition: all 0.3s;
+        }
+        .stateContent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .stateCenterContent {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: max-content;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            margin: auto;
+            padding: 10px 50px;
+        }
+        .imgMedium {
+            width: 130px;
+            height: 130px;
+        }
+        .stateContent .alertTitle {
+            font-size: 22px;
+            padding: 5px 5px;
+            border: 0px;
+        }
+        .alertTitle {
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+            padding: 25px 5px;
+            margin-top: 3px;
+            border-bottom: 1px #555555 solid;
+        }
+        .alertMessage {
+            font-size: 16px;
+            color: #cccccc;
+        }
+        .icon-button {
+            display: flex;
+        }
+        .icon-button-image {
+            width: 20px;
+            height: 20px;
+            flex: 0 0 20px;
+        }
+        .text-icon {
+            margin-left: 10px;
+            margin-top: 2px;
+            white-space: nowrap;                  
+            overflow: hidden; 
+            text-overflow: ellipsis;
+        }
         .episode-area {
             background-image: url(${valImgObjs.blankSrc});
             background-repeat: no-repeat;
@@ -222,6 +295,7 @@ const requestInitHtml = (code) =>{
         }
         .img-left-button {
             position: absolute;
+            left: 20px;
             top: 0;
             bottom: 0;
             margin: auto;
@@ -768,6 +842,19 @@ const requestInitHtml = (code) =>{
         </div>
         </div>
         `;
+        case valObjs.initContentErrorHtml:
+        return `<div id="loader">
+        <div class="stateContent">
+        <div class="stateCenterContent">
+        <center>
+        <img src="${valImgObjs.blankSrc}" data-lazysrc="${valImgObjs.error}" onload="lazyLoader()" class="imgMedium lazy">
+        <div class="alertTitle"><b>Ocorreu um erro</b></div>
+        <div class="alertMessage">Ocorreu um erro interno, verifique sua conexão com a internet e tente novamente.</div>
+        </center>
+        <div class="btn" onclick="window.location.reload()">Tentar novamente</div>
+        </div>
+        </div>
+        </div>`;
     }
 };
 const requestItemHtml = (value, code) => {
@@ -796,14 +883,14 @@ const requestItemHtml = (value, code) => {
         case valObjs.ytPlayButton: 
         return `<button class="button lazy" data-lazybg="${valImgObjs.playLight}" onclick="actionClick('${valObjs.ytplay}')" ></button>`;
         case valObjs.lastPlayButton:
-        return `<button class="${(initObjs.myLastViewText == valTextObjs.seasnos) ? '' : 'button'} semi-round-medium-button last-view" onclick="actionClick('${valObjs.myLastView}')">
-        <img class="img-left-button lazy" src="${valImgObjs.blankSrc}" data-lazysrc="${valImgObjs.eye}" onload="lazyLoader()" />
-        <span>${initObjs.myLastViewText}</span>
+        return `<button class="${(initObjs.myLastViewText == valTextObjs.seasnos) ? '' : 'button'} semi-round-medium-button last-view icon-button" onclick="actionClick('${valObjs.myLastView}')">
+        <img class="icon-button-image lazy" src="${valImgObjs.blankSrc}" data-lazysrc="${valImgObjs.eye}" onload="lazyLoader()" />
+        <div class="text-icon">${initObjs.myLastViewText}</div>
         </button>`;
         case valObjs.playButton:
-        return `<button class="button semi-round-medium-button" onclick="actionClick('${valObjs.play}')">
-        <img class="img-left-button lazy" src="${valImgObjs.blankSrc}" data-lazysrc="${valImgObjs.playDark}" onload="lazyLoader()" /> 
-        <span>Assistir</span>
+        return `<button class="button semi-round-medium-button icon-button" onclick="actionClick('${valObjs.play}')">
+        <img class="icon-button-image lazy" src="${valImgObjs.blankSrc}" data-lazysrc="${valImgObjs.playDark}" onload="lazyLoader()" /> 
+        <div class="text-icon">Assistir</div>
         </button>`;
         case valObjs.downButton: 
         return `<button class="button round-medium-button" onclick="actionClick('${valObjs.down}')">
@@ -899,7 +986,8 @@ const valImgObjs = {
     saved: 'https://i.ibb.co/pRCBMR9/saved.png',
     share: 'https://i.ibb.co/5B8RsPY/share.png',
     eye: 'https://i.ibb.co/bRxZxy7/eye.png',
-    retry: 'https://i.ibb.co/44XyD8X/retry.png'
+    retry: 'https://i.ibb.co/44XyD8X/retry.png',
+    error: 'https://i.ibb.co/ZYjCKBY/error.png'
 };
 const valObjs = {
     lastView: 'lastView',
@@ -951,6 +1039,7 @@ const valObjs = {
     initTumbHtml: 'initTumbHtml',
     initContentMovieHtml: 'initContentMovieHtml',
     initContentSerieHtml: 'initContentSerieHtml',
+    initContentErrorHtml: 'initContentErrorHtml',
     lastPlayButton: 'lastPlayButton',
     myLastView: 'myLastView',
     mv112: 'mv112',
@@ -1062,10 +1151,8 @@ function initType(fileName){
                 initObjs.tmdbYTJson = await syncTmdbJson(initObjs.tmdbYTurl, true);
                 initObjs.siteJson = parseJson(`{${data[1]}}`);
                 initMoviePage();
-                console.log(initObjs);
             }).catch((err) => {
                 initErrorPage();
-                console.log(err);
             });
             break;
         case valObjs.vizerSerie:
@@ -1087,7 +1174,6 @@ function initType(fileName){
                 initObjs.siteJson = parseJson(data[1]);
                 initObjs.myLastViewText = (requestItemJsonStorage(valObjs.getStorage, initObjs.uniqId, valObjs.lastView)) ? valTextObjs.lastMyView + requestItemJsonStorage(valObjs.getStorage, initObjs.uniqId, valObjs.lastView) : valTextObjs.seasnos;
                 initSeriePage();
-                console.log(initObjs);
             }).catch((err) => {
                 initErrorPage();
             });
@@ -1110,10 +1196,8 @@ function initType(fileName){
                 initObjs.tmdbYTJson = await syncTmdbJson(initObjs.tmdbYTurl, true);
                 initObjs.siteJson = null;
                 initMoviePage();
-                console.log(initObjs);
             }).catch((err) => {
                 initErrorPage();
-                console.log(err);
             });
             break;
         case valObjs.megaFilmes:
@@ -1134,10 +1218,8 @@ function initType(fileName){
                 initObjs.tmdbYTJson = await syncTmdbJson(initObjs.tmdbYTurl, true);
                 initObjs.siteJson = null;
                 initMoviePage();
-                console.log(initObjs);
             }).catch((err) => {
                 initErrorPage();
-                console.log(err);
             });
             break;
         case valObjs.megaSeries:
@@ -1159,10 +1241,8 @@ function initType(fileName){
                 initObjs.siteJson = parseJson(requestItemJsonStorage(valObjs.getStorage, initObjs.uniqId, valObjs.seasonsList));
                 initObjs.myLastViewText = (requestItemJsonStorage(valObjs.getStorage, initObjs.uniqId, valObjs.lastView)) ? valTextObjs.lastMyView + requestItemJsonStorage(valObjs.getStorage, initObjs.uniqId, valObjs.lastView) : valTextObjs.seasnos;
                 initSeriePage();
-                console.log(initObjs);
             }).catch((err) => {
                 initErrorPage();
-                console.log(err);
             });
             break;
     }
@@ -1182,8 +1262,9 @@ function initSeriePage(){
     });
 }
 function initErrorPage(){
-    alert('error' + url + getParam(valObjs.uxs, url));
-    console.log('error page');
+    var html = $('html');
+    html.find('head').append(requestInitHtml(valObjs.initStyleHtml));
+    html.find('body').html(requestInitHtml(valObjs.initContentErrorHtml)).ready(async () => init());
 }
 function initYTplayer() {
     if(valueCheck(initObjs.tmdbYTJson.id)){
@@ -1539,7 +1620,6 @@ function actionClick(value, data) {
                     elementSeason.addClass('active').ready(() => elementSeason.get(0).scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" }));
                 }
             }catch(err) {}
-            console.log(requestItemJsonStorage(valObjs.getStorage, initObjs.uniqId));
             break;
         }
     }
