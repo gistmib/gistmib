@@ -1,4 +1,3 @@
-alert('a')
 const url = window.location.href.split('html?ux=').pop().replace('.php@', '.php?').replace('.php&', '.php?').replace(/@/g, '&');
 const parseJson = (value, key, position) => {
     try{
