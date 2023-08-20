@@ -148,7 +148,7 @@ function programs(e){
             //$("body").append(`value exist: --- ${valueSaved}`);
         }
         else{
-            fetch(`https://api.zbigz.in/getreq?u=https://meuguia.tv/programacao/canal/${channel}`)
+            fetch(`https://api.zbigz.in/getreq?u=https://meuguia.tv/programacao/canal/${channel}`, {cache: 'force-cache'})
             .then((response) => response.text())
             .then((html) => {
                 var content = $(html).find("ul");
