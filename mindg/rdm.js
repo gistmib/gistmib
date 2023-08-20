@@ -1,3 +1,10 @@
+let ytPlayer;
+let singleResponse;
+let showAlertTimer;
+let initObjs = {};
+let ytObjs = {};
+let randomServer = (Math.random() > 0.5) ? true : false;
+
 const url = window.location.href.split('html?ux=').pop().replace('.php@', '.php?').replace('.php&', '.php?').replace(/@/g, '&');
 const parseJson = (value, key, position) => {
     try{
@@ -1057,10 +1064,10 @@ const valObjs = {
     d: 'd',
     c: 'c',
     b: 'b',
-    vizerGetFilme: 'https://nplazers.in/loggg.php?g=',
-    vizerGetEpisodes: 'https://nplazers.in/log.php?g=getEpisodes=',
-    vizerGetSeasons: 'https://nplazers.in/log.php?g=getSeasons=',
-    vizerGetEpisode: 'https://nplazers.in/log.php?g=getEpisodeLanguages=',
+    vizerGetFilme: `https://${randomServer ? 'nplazers' : 'zbigz'}.in/loggg.php?g=`,
+    vizerGetEpisodes: `https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodes=`,
+    vizerGetSeasons: `https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getSeasons=`,
+    vizerGetEpisode: `https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodeLanguages=`,
     tmdbMovieUrl: 'https://api.themoviedb.org/3/movie/$?api_key=6b4357c41d9c606e4d7ebe2f4a8850ea&language=pt-BR',
     tmdbMovieYTurl: 'https://api.themoviedb.org/3/movie/$/videos?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR',
     tmdbMovieSearchUrl: 'https://api.themoviedb.org/3/search/movie?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR&page=1&include_adult=false&query=$query&year=$year',
@@ -1083,12 +1090,6 @@ const valTextObjs = {
     addedMyListAlert: 'Esse item foi adicionado a sua lista com sucesso.',
     removedMyListAlert: 'Esse item foi removido da sua lista com sucesso.'
 };
-
-let singleResponse;
-let showAlertTimer;
-let initObjs = {};
-let ytObjs = {};
-
 
 class YTPlayer {
     ytTag = document.createElement('script');
@@ -1132,9 +1133,8 @@ class YTPlayer {
         }
     }
 }
-let ytPlayer;
 
-$(document).ready(initType(file().name));
+$(document).ready(() => initType(file().name));
 
 function initType(fileName){
     switch(fileName){
@@ -1179,6 +1179,7 @@ function initType(fileName){
                 initObjs.siteJson = parseJson(data[1]);
                 initObjs.myLastViewText = (requestItemJsonStorage(valObjs.getStorage, initObjs.uniqId, valObjs.lastView)) ? valTextObjs.lastMyView + requestItemJsonStorage(valObjs.getStorage, initObjs.uniqId, valObjs.lastView) : valTextObjs.seasnos;
                 initSeriePage();
+                //console.log(initObjs);
             }).catch((err) => {
                 initErrorPage();
             });
@@ -1250,7 +1251,10 @@ function initType(fileName){
                 initErrorPage();
             });
             break;
-    }
+        default:
+            initErrorPage();
+            break;
+        }
 }
 
 function initMoviePage(){
