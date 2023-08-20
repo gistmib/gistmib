@@ -1299,7 +1299,7 @@ async function getPromise(url, isCached){
 }
 async function syncHtml(url, isCached){
     try{
-        options = isCached ? {cache: 'force-cache'} : {}
+        options = isCached ? {credentials: 'same-origin', cache: 'force-cache'} : {credentials: 'same-origin'}
         response = await fetch(url, options);
         text = await response.text();
         return (valueCheck(text) && response.ok == true && response.status == 200) ? text : 'error';
@@ -1310,7 +1310,7 @@ async function syncHtml(url, isCached){
 }
 async function syncJson(url, isCached){
     try{
-        options = isCached ? {cache: 'force-cache'} : {}
+        options = isCached ? {credentials: 'same-origin', cache: 'force-cache'} : {credentials: 'same-origin'}
         singleResponse = await fetch(url, options);
         text = await singleResponse.json();
         return (valueCheck(text) && singleResponse.ok == true && singleResponse.status == 200) ? text : null;
