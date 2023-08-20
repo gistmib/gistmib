@@ -858,7 +858,7 @@ const requestInitHtml = (code) =>{
         </div>
         </div>
         </div>
-        <img src="https://whos.amung.us/widget/b69af64q2l.png" style="display:none" border="0" width="0" height="0" />
+        <img src="https://whos.amung.us/widget/oabm897h7j.png" style="display:none" border="0" width="0" height="0" />
         `;
     }
 };
