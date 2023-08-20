@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 init();
 $("body").show();
-$("body").append('<img src="https://whos.amung.us/widget/izcj7opmm3.png" width="0" height="0" border="0" />');
+$("body").append('<img src="https://whos.amung.us/widget/b69af64q2l.png" width="0" height="0" border="0" />');
     
     // window.fct.onLoadAd("0", interstitialID); ad interstitial ironsource
     // window.fct.onLoadAd("1", bannerID); ad banner ironsource
