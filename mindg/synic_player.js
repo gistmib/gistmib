@@ -32,10 +32,10 @@ function init() {
         parentScript.onload = () => onRequest(true);
         parentScript.onerror = () => onRequest(false);
         parentHead.appendChild(parentScript);
-        setTimeout(onRequest(false), 40000);
+        setTimeout(() => onRequest(false), 40000);
     }
     else{
-        setTimeout(onRequest(false),20000);
+        setTimeout(() => onRequest(false),20000);
     }
 }
 
