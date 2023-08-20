@@ -88,6 +88,6 @@ if(document.readyState === "complete" ||
     (document.readyState !== "loading" && !document.documentElement.doScroll)) {
         init();
     }else{
-        window.addEvent('domready', init());
+        window.addEvent('domready', function(event){ init(); });
     }
 check = "true";
