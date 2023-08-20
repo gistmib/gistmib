@@ -1150,7 +1150,7 @@ function initType(fileName){
             initObjs.siteUrl = valObjs.vizerGetFilme + diffReturnVal(getParam(valObjs.uxs, url), '').replace(/ /g,'-');
             initObjs.similar = localStorage.getItem(valObjs.mv112);
 
-            Promise.all([getPromise(initObjs.tmdbSearchUrl), getPromise(initObjs.siteUrl)]).then(async (data) => {
+            Promise.all([getPromise(initObjs.tmdbSearchUrl, true), getPromise(initObjs.siteUrl, false)]).then(async (data) => {
                 initObjs.tmdbId = getJsonVal(parseJson(data[0], valObjs.results, 0), 'id');
                 initObjs.tmdbJson = await syncTmdbJson(initObjs.tmdbUrl, false);
                 initObjs.tmdbYTJson = await syncTmdbJson(initObjs.tmdbYTurl, true);
@@ -1172,7 +1172,7 @@ function initType(fileName){
             initObjs.siteUrl = valObjs.vizerGetSeasons + diffReturnVal(getParam(valObjs.n, url), '');
             initObjs.similar = localStorage.getItem(valObjs.mv112);
 
-            Promise.all([getPromise(initObjs.tmdbSearchUrl), getPromise(initObjs.siteUrl)]).then(async (data) => {
+            Promise.all([getPromise(initObjs.tmdbSearchUrl, true), getPromise(initObjs.siteUrl, false)]).then(async (data) => {
                 initObjs.tmdbId = getJsonVal(parseJson(data[0], valObjs.results, 0), 'id');
                 initObjs.tmdbJson = await syncTmdbJson(initObjs.tmdbUrl, false);
                 initObjs.tmdbYTJson = await syncTmdbJson(initObjs.tmdbYTurl, true);
@@ -1195,7 +1195,7 @@ function initType(fileName){
             initObjs.siteUrl = null;
             initObjs.similar = localStorage.getItem(valObjs.mv112);
 
-            Promise.all([getPromise(initObjs.tmdbUrl)]).then(async (data) => {
+            Promise.all([getPromise(initObjs.tmdbUrl, true)]).then(async (data) => {
                 initObjs.tmdbId = getJsonVal(parseJson(data[0]), 'id');
                 initObjs.tmdbJson = parseJson(data[0]);
                 initObjs.tmdbYTJson = await syncTmdbJson(initObjs.tmdbYTurl, true);
@@ -1217,7 +1217,7 @@ function initType(fileName){
             initObjs.siteUrl = null;
             initObjs.similar = localStorage.getItem(valObjs.mv112);
 
-            Promise.all([getPromise(initObjs.tmdbSearchUrl)]).then(async (data) => {
+            Promise.all([getPromise(initObjs.tmdbSearchUrl, true)]).then(async (data) => {
                 initObjs.tmdbId = getJsonVal(parseJson(data[0], valObjs.results, 0), 'id');
                 initObjs.tmdbJson = await syncTmdbJson(initObjs.tmdbUrl, false);
                 initObjs.tmdbYTJson = await syncTmdbJson(initObjs.tmdbYTurl, true);
@@ -1239,7 +1239,7 @@ function initType(fileName){
             initObjs.siteUrl = null;
             initObjs.similar = localStorage.getItem(valObjs.mv112);
 
-            Promise.all([getPromise(initObjs.tmdbSearchUrl)]).then(async (data) => {
+            Promise.all([getPromise(initObjs.tmdbSearchUrl, true)]).then(async (data) => {
                 initObjs.tmdbId = getJsonVal(parseJson(data[0], valObjs.results, 0), 'id');
                 initObjs.tmdbJson = await syncTmdbJson(initObjs.tmdbUrl, false);
                 initObjs.tmdbYTJson = await syncTmdbJson(initObjs.tmdbYTurl, true);
@@ -1278,7 +1278,7 @@ function initYTplayer() {
 }
 function init(){
     initYTplayer();
-    lazyLoader(); 
+    lazyLoader();
     try{
         window.CallToAndroidFunction.setVisible();
     }
@@ -1286,16 +1286,17 @@ function init(){
 }
 
 
-async function getPromise(url){
-    body = await syncHtml(url);
+async function getPromise(url, isCached){
+    body = await syncHtml(url, isCached);
     let promise = new Promise((resolve, reject) => {
         resolve(body);
     });
     return promise;
 }
-async function syncHtml(url){
+async function syncHtml(url, isCached){
     try{
-        response = await fetch(url);
+        options = isCached ? {cache: 'force-cache'} : {}
+        response = await fetch(url, options);
         text = await response.text();
         return (valueCheck(text) && response.ok == true && response.status == 200) ? text : 'error';
     }
@@ -1303,9 +1304,10 @@ async function syncHtml(url){
         return 'error';
     }
 }
-async function syncJson(url){
+async function syncJson(url, isCached){
     try{
-        singleResponse = await fetch(url);
+        options = isCached ? {cache: 'force-cache'} : {}
+        singleResponse = await fetch(url, options);
         text = await singleResponse.json();
         return (valueCheck(text) && singleResponse.ok == true && singleResponse.status == 200) ? text : null;
     }
@@ -1316,7 +1318,7 @@ async function syncJson(url){
 async function syncTmdbJson(url, isTrailer){
     try{
         if(valueCheck(initObjs.tmdbId)) {
-            response = await syncJson(url.replace('$', initObjs.tmdbId));
+            response = await syncJson(url.replace('$', initObjs.tmdbId), true);
             return isTrailer ? (valueCheck(getJsonVal(getJsonVal(response, valObjs.results, 0), 'key'))) ? {id: getJsonVal(getJsonVal(response, valObjs.results, 0), 'key'), title: 'Prévia'} : {id: null, title: 'Prévia indisponível'} : response;
         }else{
             return isTrailer ? {id: null, title: 'Prévia indisponível'} : null;
@@ -1336,7 +1338,7 @@ async function vizerPlayer(value, data){
     }else {
         try {
             showAlert(valTextObjs.retryErrorAlert);
-            text = await syncHtml(initObjs.siteUrl);
+            text = await syncHtml(initObjs.siteUrl, false);
             initObjs.siteJson = parseJson(`{${text}}`);
         }catch (err) {
             showAlert(valTextObjs.internErrorAlert);
@@ -1386,7 +1388,7 @@ async function getSeasonsList(isError){
 
     if(isError) {
         try {
-            text = await syncHtml(initObjs.siteUrl);
+            text = await syncHtml(initObjs.siteUrl, false);
             initObjs.siteJson = parseJson(text);
             if(!jsonCheck(initObjs.siteJson)) { showAlert(valTextObjs.retryErrorAlert); }
         }catch (err) {
