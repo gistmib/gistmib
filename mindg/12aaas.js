@@ -498,7 +498,7 @@ function getLocationValue(local){
             return parentObjJson[i]['value'];
         }
         if(i == parentObjJson.length -1){
-            return "all.js";
+            return "initAll()";
         }
         i++;
     }
@@ -637,7 +637,12 @@ function initFuteMax() {
     }
 }
 function initAll() {
-
+    const elemBody = $('body');
+    try {
+        elemBody.find('lander').remove();
+    }catch(err) {
+        elemBody.html(requestHtml(val.statePlayerError));
+    }
 }
 function initPlayerHd() {
     const elemBody = $('body');
