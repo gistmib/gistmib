@@ -3,6 +3,8 @@ const parentHead = document.querySelector('head');
 const parentScript = document.createElement('script');
 const parentUrl = window.location.href;
 const parentLocal = window.location.hostname;
+const parentIsValidLink = ('https:' === location.protocol || 'htttp:' === location.protocol) ? true : false;
+const parentProtocol = parentIsValidLink ? location.protocol : 'https:';
 const parentObjJson = [
     {'search':'multicanais.vc multicanais.fans bbbgratis.com', 'value':'initMultiCanais()'},
     {'search':'futemax.app', 'value':'initFuteMax()'},
@@ -58,7 +60,7 @@ const requestHtml = (type, data) => {
             <lander>
             <div>
             <center>
-            <img src='//images2.imgbox.com/84/4f/GeEjnrtK_o.gif' width="70" height="70" />
+            <img src='${parentProtocol}//images2.imgbox.com/84/4f/GeEjnrtK_o.gif' width="70" height="70" />
             </center>
             </div>
             </lander>`;
@@ -156,7 +158,7 @@ const requestHtml = (type, data) => {
             <div class="stateContent">
             <div class="stateCenterContent">
             <center>
-            <img src="//i.ibb.co/ZYjCKBY/error.png" class="imgMedium lazy">
+            <img src="${parentProtocol}//i.ibb.co/ZYjCKBY/error.png" class="imgMedium lazy">
             <div class="alertTitle"><b>Ocorreu um erro</b></div>
             <div class="alertMessage">Ocorreu um erro interno, parece que há um problema temporário com esse player ou esse video não existe.</div>
             </center>
@@ -259,7 +261,7 @@ const requestHtml = (type, data) => {
             <div class="stateContent">
             <div class="stateCenterContent">
             <center>
-            <img src="//i.ibb.co/ZYjCKBY/error.png" class="imgMedium lazy">
+            <img src="${parentProtocol}//i.ibb.co/ZYjCKBY/error.png" class="imgMedium lazy">
             <div class="alertTitle"><b>Esse video não existe</b></div>
             <div class="alertMessage">O video que você esta tentando assistir ainda nao foi adicionado, tente mais tarde.</div>
             </center>
@@ -293,7 +295,7 @@ const requestHtml = (type, data) => {
                 border: 0px transparent solid;
                 width:100%;
                 height: 100%;
-                background-image: url('//images2.imgbox.com/84/4f/GeEjnrtK_o.gif');
+                background-image: url('${parentProtocol}//images2.imgbox.com/84/4f/GeEjnrtK_o.gif');
                 background-repeat: no-repeat;
                 background-size: 70px;
                 background-position: center;
@@ -400,7 +402,7 @@ const requestHtml = (type, data) => {
                 margin: auto;
             }
             .btnClose {
-                background-image: url(https://i.ibb.co/0yFRwdv/close.png);
+                background-image: url(${parentProtocol}//i.ibb.co/0yFRwdv/close.png);
                 background-repeat: no-repeat;
                 background-size: 20px;
                 background-position: center;
@@ -426,7 +428,7 @@ const requestHtml = (type, data) => {
                 border: 0px transparent solid;
                 width:100%;
                 height: 100%;
-                background-image: url('//images2.imgbox.com/84/4f/GeEjnrtK_o.gif');
+                background-image: url('${parentProtocol}//images2.imgbox.com/84/4f/GeEjnrtK_o.gif');
                 background-repeat: no-repeat;
                 background-size: 70px;
                 background-position: center;
@@ -461,7 +463,7 @@ const val = {
 }
 
 parentScript.type = 'text/javascript';
-parentScript.src= '//cdn.jsdelivr.net/gh/gistmib/gistmib/jquery.js';
+parentScript.src= parentProtocol + '//cdn.jsdelivr.net/gh/gistmib/gistmib/jquery.js';
 parentScript.onload = () => parentInit();
 parentScript.onerror = () => parentInitFail();
 parentScript.onabort = () => parentInitFail();
@@ -486,7 +488,7 @@ if(document.readyState === 'complete') {
 }
 
 function parentInit() {
-   eval(getLocationValue(parentLocal));
+   eval(parentIsValidLink ? getLocationValue(parentLocal) : initAll());
 }
 function parentInitFail() {
     window.location.reload();
