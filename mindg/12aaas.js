@@ -302,13 +302,13 @@ const requestHtml = (type, data) => {
             }
             </style>
             <lander>
-            <iframe id="frame" src="${data}">
+            <iframe id="frame" src="${data}" allowfullscreen="true" allow="encrypted-media">
             </iframe>
             </lander>`;
         case val.statePlayerIframeReplace:
             return `
             <button class="btn btnClose" onclick="closePlayer('#myPlayer')"></button>
-            <iframe id="frame" src="${data}"></iframe>
+            <iframe id="frame" src="${data}" allowfullscreen="true" allow="encrypted-media"></iframe>
             `;
         case val.statePlayerButton:
             return `<button class="btn" onclick="getPlayer('${data.url}', '#myPlayer')">${data.title}</button>`;
