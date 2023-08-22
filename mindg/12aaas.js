@@ -162,7 +162,7 @@ const requestHtml = (type, data) => {
             <div class="alertTitle"><b>Ocorreu um erro</b></div>
             <div class="alertMessage">Ocorreu um erro interno, parece que há um problema temporário com esse player ou esse video não existe.</div>
             </center>
-            <div class="btn" onclick="window.location.reload()">Tentar novamente</div>
+            <div class="btn" onclick="navigateToUrl('${parentUrl}')">Tentar novamente</div>
             </div>
             </div>
             </div>
@@ -300,18 +300,76 @@ const requestHtml = (type, data) => {
                 background-size: 70px;
                 background-position: center;
             }
+            .btn {
+                color: #cccccc;
+                font-size: 13px;
+                font-weight: bold;
+                margin: 5px;
+                background: #2a2a2a;
+                border: 1px #8a8a8a solid;
+                border-radius: 50px;
+                padding: 9px 23px;
+                transition: all 0.3s ease-in-out;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .btn:active {
+                scale: 0.95;
+            }
+            .btnImage {
+                background-repeat: no-repeat;
+                background-size: 20px;
+                background-position: center;
+                width: 45px;
+                height: 45px;
+                background-color: rgba(0,0,0, 30%);
+                border: 1px rgba(66,66,66, 50%) solid;
+                padding: 10px;
+                margin: 10px 5px;
+            }
+            .btnClose {
+                background-image: url(${parentProtocol}//i.ibb.co/pJFZb0z/close.png);
+            }
+            .btnBack {
+                background-image: url(${parentProtocol}//i.ibb.co/bs5zTPp/back.png);
+            }
+            .btnReload {
+                background-image: url(${parentProtocol}//i.ibb.co/6wv8znf/reload.png);
+            }
+            #playerButtons {
+                width: 100%;
+                height: auto;
+                position: fixed;
+                top: 0;
+                right: 0;
+                opacity: 0;
+                z-index: -10;
+                display: flex;
+                padding: 0px 10px;
+              }
+            .itemsRight {
+                margin-left: auto;
+            }
+            * :has(#frame) #playerButtons {
+                opacity: 1;
+                z-index: 10;
+            }
             </style>
             <lander>
             <iframe id="frame" src="${data}" allowfullscreen="true" allow="encrypted-media">
             </iframe>
+            <div id="playerButtons">
+            <button class="btn btnImage btnReload itemsRight" onclick="reloadPlayer('#frame')"></button>
+            <button class="btn btnImage btnClose" onclick="removeDiv('#playerButtons')"></button>
+            </div>
             </lander>`;
         case val.statePlayerIframeReplace:
             return `
-            <button class="btn btnClose" onclick="closePlayer('#myPlayer')"></button>
             <iframe id="frame" src="${data}" allowfullscreen="true" allow="encrypted-media"></iframe>
             `;
         case val.statePlayerButton:
-            return `<button class="btn" onclick="getPlayer('${data.url}', '#myPlayer')">${data.title}</button>`;
+            return `<button class="btn" onclick="getPlayer('${data.url}', '#playerFrame')">${data.title}</button>`;
         case val.statePlayerOptions:
             return `<style>
             *{
@@ -371,23 +429,6 @@ const requestHtml = (type, data) => {
                 display: inline-block;
                 margin: 10px;
             }
-            .btn {
-                color: #cccccc;
-                font-size: 13px;
-                font-weight: bold;
-                margin: 5px;
-                background: #2a2a2a;
-                border: 1px #8a8a8a solid;
-                border-radius: 50px;
-                padding: 9px 23px;
-                transition: all 0.3s ease-in-out;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-            }
-            .btn:active {
-                scale: 0.95;
-            }
             lander {
                 color:#ffffff;
                 font-size:20px;
@@ -400,22 +441,6 @@ const requestHtml = (type, data) => {
                 right: 0;
                 left: 0;
                 margin: auto;
-            }
-            .btnClose {
-                background-image: url(${parentProtocol}//i.ibb.co/0yFRwdv/close.png);
-                background-repeat: no-repeat;
-                background-size: 20px;
-                background-position: center;
-                width: 45px;
-                height: 45px;
-                background-color: rgba(0,0,0, 30%);
-                border: 1px rgba(66,66,66, 50%) solid;
-                padding: 10px;
-                margin: 10px 15px;
-                position: fixed;
-                top: 0;
-                right: 0;
-                z-index: 10;
             }
             #frame {
                 background: #000000;
@@ -433,6 +458,61 @@ const requestHtml = (type, data) => {
                 background-size: 70px;
                 background-position: center;
             }
+            .btn {
+                color: #cccccc;
+                font-size: 13px;
+                font-weight: bold;
+                margin: 5px;
+                background: #2a2a2a;
+                border: 1px #8a8a8a solid;
+                border-radius: 50px;
+                padding: 9px 23px;
+                transition: all 0.3s ease-in-out;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .btn:active {
+                scale: 0.95;
+            }
+            .btnImage {
+                background-repeat: no-repeat;
+                background-size: 20px;
+                background-position: center;
+                width: 45px;
+                height: 45px;
+                background-color: rgba(0,0,0, 30%);
+                border: 1px rgba(66,66,66, 50%) solid;
+                padding: 10px;
+                margin: 10px 5px;
+            }
+            .btnClose {
+                background-image: url(${parentProtocol}//i.ibb.co/pJFZb0z/close.png);
+            }
+            .btnBack {
+                background-image: url(${parentProtocol}//i.ibb.co/bs5zTPp/back.png);
+            }
+            .btnReload {
+                background-image: url(${parentProtocol}//i.ibb.co/6wv8znf/reload.png);
+            }
+            #playerButtons {
+                width: 100%;
+                height: auto;
+                position: fixed;
+                top: 0;
+                right: 0;
+                opacity: 0;
+                z-index: -10;
+                display: flex;
+                padding: 0px 10px;
+              }
+            .itemsRight {
+                margin-left: auto;
+            }
+            * :has(#frame) #playerButtons {
+                opacity: 1;
+                z-index: 10;
+            }
             </style>
             <lander>
             <div id="loader">
@@ -445,7 +525,12 @@ const requestHtml = (type, data) => {
             </div>
             </div>
             </div>
-            <div id="myPlayer">
+            <div id="playerFrame">
+            </div>
+            <div id="playerButtons">
+            <button class="btn btnImage btnBack" onclick="removeDiv('#playerFrame')"></button>
+            <button class="btn btnImage btnReload itemsRight" onclick="reloadPlayer('#frame')"></button>
+            <button class="btn btnImage btnClose" onclick="removeDiv('#playerButtons')"></button>
             </div>
             </lander>`;
         }
@@ -537,11 +622,15 @@ function navigateToUrl(url) {
     f.submit();
 }
 function getPlayer(url, id) {
-    $(id).html(requestHtml(id === '#myPlayer' ? val.statePlayerIframeReplace : val.statePlayerIframe, url));
+    $(id).html(requestHtml(id === '#playerFrame' ? val.statePlayerIframeReplace : val.statePlayerIframe, url));
 }
-function closePlayer(id) {
+function removeDiv(id) {
     $(id).html('');
-}   
+}
+function reloadPlayer(id) {
+    $(id).attr("src", $(id).attr("src"));
+}
+
 function select(button){
     const elemBody = $('body');
     const elemUrl = 'http://nplazers.in/flix.php';
