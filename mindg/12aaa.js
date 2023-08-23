@@ -740,11 +740,10 @@ function normalize(string){
     }catch(err) {
         return '';
     }
-  }
+}
 
 
 function initMegaFilmesHd() {
-    
     const elemBody = $('body');
     try {
         const elemOptionList = $("#playeroptionsul li[data-type='tv'], #playeroptionsul li[data-type='movie']");
