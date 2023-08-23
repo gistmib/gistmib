@@ -10,7 +10,7 @@ const parentObjJson = [
     {'search':'futemax.app', 'value':'initFuteMax()'},
     {'search':'megafilmeshd50.com megafilmeshd50.net', 'value':'initMegaFilmesHd()'},
     {'search':'canaisplay.com', 'value':'initAll()'},
-    {'search':'embed.warezcdn.net embed.warezcdn.com warezcdn.com warezcdn.net', 'value':'initAll()'},
+    {'search':'embed.warezcdn.net embed.warezcdn.com warezcdn.com warezcdn.net', 'value':'initVizer()'},
     {'search':'playerhd.org playerhd', 'value':'initPlayerHd()'},
     {'search':'link.encrypted-encrypted-encrypted-encrypted-encrypted-encrypted.link', 'value':'initAll()'}
 ];
@@ -661,7 +661,7 @@ function select(button){
 }
 
 
-function initMegaFilmesHd(){
+function initMegaFilmesHd() {
     const elemBody = $('body');
     const elemPlayerBtn = $('#player-option-1');
     let elemLimitRetry = 0;
@@ -689,7 +689,7 @@ function initMegaFilmesHd(){
     }
     window.history.pushState("object or string", "Title", "/wp-content/");
 }
-function initMultiCanais(){
+function initMultiCanais() {
     const elemBody = $('body');
     const elemOptionList = $(".wp-block-button.aligncenter, .wp-block-calendar");
     let elemHtml = '';
@@ -727,14 +727,6 @@ function initFuteMax() {
         elemBody.html(requestHtml(val.statePlayerError));
     }
 }
-function initAll() {
-    const elemBody = $('body');
-    try {
-        elemBody.find('lander').remove();
-    }catch(err) {
-        elemBody.html(requestHtml(val.statePlayerError));
-    }
-}
 function initPlayerHd() {
     const elemBody = $('body');
     const elemOptionList = $(".dublado, .legendado");
@@ -754,6 +746,35 @@ function initPlayerHd() {
         elemBody.html(valueCheck(elemHtml) ? requestHtml(val.statePlayerOptions, elemHtml) : requestHtml(val.statePlayerError));
     }
     else {
+        elemBody.html(requestHtml(val.statePlayerError));
+    }
+}
+function initVizer() {
+    const elemBody = $('body');
+    const elemOptionList = $(".hostList");
+    let elemHtml = '';
+    let elemPos = 0;
+    if(elemOptionList[0]) {
+        elemOptionList.find('.buttonLoadHost').each(function(){
+            elemPos++;
+            const url = `https://warezcdn.com/embed/getEmbed.php?id=${$(this).attr("data-load-embed")}&sv=${$(this).attr("data-load-embed-host")}`;
+            const title = 'Opção ' + elemPos;
+            if(valueCheck(url) && valueCheck(title)) {
+                const data = {url: url, title: title};
+                elemHtml += requestHtml(val.statePlayerButton, data);
+            }
+        });
+        elemBody.html(valueCheck(elemHtml) ? requestHtml(val.statePlayerOptions, elemHtml) : requestHtml(val.statePlayerError));
+    }
+    else {
+        elemBody.html(requestHtml(val.statePlayerError));
+    }
+}
+function initAll() {
+    const elemBody = $('body');
+    try {
+        elemBody.find('lander').remove();
+    }catch(err) {
         elemBody.html(requestHtml(val.statePlayerError));
     }
 }
