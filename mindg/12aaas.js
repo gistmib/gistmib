@@ -378,7 +378,7 @@ const requestHtml = (type, data) => {
             </div>
             </div>
             </div>`;
-            case val.statePlayerIframeReplace:
+        case val.statePlayerIframeReplace:
             return `
             <iframe id="frame" src="${data}" allowfullscreen="true" allow="encrypted-media"></iframe>
             `;
@@ -535,7 +535,7 @@ const requestHtml = (type, data) => {
                 opacity: 0;
                 z-index: -10;
             }
-            .selector, .selector:focus-visible {
+            .selector, .selector:focus-visible, .selector:focus, .selector:active, .selector:hover {
                 font-weight: bold;
                 color: #cccccc;
                 width: auto;
@@ -734,7 +734,13 @@ function removeDiv(id) {
 function reloadPlayer(id) {
     $(id).attr("src", $(id).attr("src"));
 }
-
+function normalize(string){
+    try {
+        return string.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    }catch(err) {
+        return '';
+    }
+  }
 
 
 function initMegaFilmesHd() {
@@ -749,7 +755,7 @@ function initMegaFilmesHd() {
                 if($(this).attr("data-nume") !== 'trailer') {
                     elemPos++;
                     const url = btoa(`{"type": "${$(this).attr("data-type")}", "nume":"${$(this).attr("data-nume")}", "post": "${$(this).attr("data-post")}"}`);
-                    const title = `Opção ${elemPos} ${('opção '+ elemPos != $(this).text().toLowerCase()) ? '- ' + $(this).text().toLowerCase() : ''}`;
+                    const title = `Opção ${elemPos} ${(normalize($(this).text()).search('opcao') > -1) ? '' : '- ' + $(this).text().toLowerCase()}`;
                     if(valueCheck(url) && valueCheck(title)) {
                         const data = {url: url, title: title, type: val.typeMegaFilmes};
                         elemData.buttons += requestHtml(val.statePlayerButton, data);
@@ -777,7 +783,7 @@ function initMultiCanais() {
             elemOptionList.each(function(){
                 elemPos++;
                 const url = $(this).attr("data-id");
-                const title = `Opção ${elemPos} ${('opção '+ elemPos != $(this).text().toLowerCase()) ? '- ' + $(this).text().toLowerCase() : ''}`;
+                const title = `Opção ${elemPos} ${(normalize($(this).text()).search('opcao') > -1) ? '' :'- ' + $(this).text().toLowerCase()}`;
                 if(valueCheck(url) && valueCheck(title)) {
                     const data = {url: url, title: title, type: val.typeNormal};
                     elemData.buttons += requestHtml(val.statePlayerButton, data);
@@ -803,7 +809,7 @@ function initFuteMax() {
             elemOptionList.each(function(){
                 elemPos++;
                 const url = $(this).attr("data-url");
-                const title = `Opção ${elemPos} ${('opção '+ elemPos != $(this).text().toLowerCase()) ? '- ' + $(this).text().toLowerCase() : ''}`;
+                const title = `Opção ${elemPos} ${(normalize($(this).text()).search('opcao') > -1) ? '' : '- ' + $(this).text().toLowerCase()}`;
                 if(valueCheck(url) && valueCheck(title)) {
                     const data = {url: url, title: title, type: val.typeNormal};
                     elemData.buttons += requestHtml(val.statePlayerButton, data);
@@ -829,7 +835,7 @@ function initCinemao() {
             elemOptionList.each(function(){
                 elemPos++;
                 const url = $(this).attr("onclick").replace(/[^\d]/g, '');
-                const title = `Opção ${elemPos} ${('opção '+ elemPos != $(this).text().toLowerCase()) ? '- ' + $(this).text().toLowerCase() : ''}`;
+                const title = `Opção ${elemPos} ${(normalize($(this).text()).search('opcao') > -1) ? '' : '- ' + $(this).text().toLowerCase()}`;
                 if(valueCheck(url) && valueCheck(title)) {
                     const data = {url: url, title: title, type: val.typeCinemao};
                     elemData.buttons += requestHtml(val.statePlayerButton, data);
@@ -855,7 +861,7 @@ function initVizer() {
             elemOptionList.each(function(){
                 elemPos++;
                 const url = `https://warezcdn.com/embed/getEmbed.php?id=${$(this).attr("data-load-embed")}&sv=${$(this).attr("data-load-embed-host")}`;
-                const title = `Opção ${elemPos} ${('opção '+ elemPos != $(this).find('.t').text().toLowerCase()) ? '- ' + $(this).find('.t').text().toLowerCase() : ''}`;
+                const title = `Opção ${elemPos} ${(normalize($(this).find('.t').text()).search('opcao') > -1) ? '' : '- ' + $(this).find('.t').text().toLowerCase()}`;
                 if(valueCheck(url) && valueCheck(title)) {
                     const data = {url: url, title: title, type: val.typeNormal};
                     elemData.buttons += requestHtml(val.statePlayerButton, data);
