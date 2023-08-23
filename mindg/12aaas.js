@@ -11,7 +11,7 @@ const parentObjJson = [
     {'search':'megafilmeshd50.com megafilmeshd50.net', 'value':'initMegaFilmesHd()'},
     {'search':'canaisplay.com', 'value':'initAll()'},
     {'search':'embed.warezcdn.net embed.warezcdn.com warezcdn.com warezcdn.net', 'value':'initVizer()'},
-    {'search':'playerhd.org playerhd', 'value':'initPlayerHd()'},
+    {'search':'playerhd.org playerhd', 'value':'initCinemao()'},
     {'search':'link.encrypted-encrypted-encrypted-encrypted-encrypted-encrypted.link', 'value':'initAll()'}
 ];
 const getJsonVal = (json, key, position) => {
@@ -366,27 +366,38 @@ const requestHtml = (type, data) => {
             <button class="btn btnImage btnClose" onclick="removeDiv('#playerButtons')"></button>
             </div>
             </lander>`;
-        case val.statePlayerIframeReplace:
+        case val.statePlayerEmptyReplace:
+            return `<div id="loader">
+            <div class="stateContent">
+            <div class="stateCenterContent">
+            <center>
+            <img src="${parentProtocol}//i.ibb.co/ZYjCKBY/error.png" class="imgMedium lazy">
+            <div class="alertTitle"><b>Esse video não existe</b></div>
+            <div class="alertMessage">O video que você esta tentando assistir ainda nao foi adicionado, tente mais tarde.</div>
+            </center>
+            </div>
+            </div>
+            </div>`;
+            case val.statePlayerIframeReplace:
             return `
             <iframe id="frame" src="${data}" allowfullscreen="true" allow="encrypted-media"></iframe>
             `;
         case val.statePlayerButton:
-            return `<button class="btn" onclick="getPlayer('${data.url}', '#playerFrame')">${data.title}</button>`;
-        case val.statePlayerButton2:
-            return `<button class="btn" onclick="${data.url}">${data.title}</button>`;
+            return `<button class="btn" onclick="getPlayer('${data.url}', ${data.type}, '#playerFrame')">${data.title}</button>`;
+        case val.statePlayerOption:
+            return `<option class="option" value="getPlayer('${data.url}', ${data.type}, '#playerFrame')">${data.title}</button>`;
         case val.statePlayerOptions:
             return `<style>
             *{
                 line-height: 1;
             }
             body {
+                pointer-events: none;
                 overflow: hidden;
             }
-            a {
-                pointer-events:none;
-            }
             #loader {
-                position: relative;
+                background: #000000;
+                position: absolute;
                 width: 100%;
                 height: 100%;
                 overflow: auto;
@@ -429,11 +440,16 @@ const requestHtml = (type, data) => {
                 margin-top: 3px;
                 border-bottom: 1px #555555 solid;
             }
+            .alertMessage {
+                font-size: 17px;
+                color: #cccccc;
+            }
             .buttonsArea {
                 display: inline-block;
                 margin: 10px;
             }
             lander {
+                pointer-events: all !important;
                 color:#ffffff;
                 font-size:20px;
                 background: #000000;
@@ -507,18 +523,43 @@ const requestHtml = (type, data) => {
                 right: 0;
                 left: 0;
                 margin: auto;
-                opacity: 0;
-                z-index: -10;
+                opacity: 1;
+                z-index: 10;
                 display: flex;
                 padding: 0px 10px;
               }
             .itemsRight {
                 margin-left: auto;
             }
-            * :has(#frame) #playerButtons {
-                opacity: 1;
-                z-index: 10;
+            xx* :has(#playerFrame:empty) #playerButtons {
+                opacity: 0;
+                z-index: -10;
             }
+            .selector, .selector:focus-visible {
+                font-weight: bold;
+                color: #cccccc;
+                width: auto;
+                height: 45px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background: transparent;
+                background-image: url(https://img.icons8.com/ios-glyphs/100/cccccc/expand-arrow--v1.png);
+                background-size: 25px;
+                background-repeat: no-repeat;
+                background-position-x: calc(100% - 15px);
+                background-position-y: center;
+                background-color: rgba(0,0,0, 30%);
+                border: 1px rgba(66,66,66, 50%) solid;
+                padding: 10px 50px 10px 15px;
+                margin: 10px 5px;
+                border-radius: 50px;
+                line-height: normal;
+            }
+            .option {
+                font-weight: bold !important;
+                color: #cccccc !important;
+                background: #2a2a2a !important;
+              }
             </style>
             <lander>
             <div id="loader">
@@ -526,19 +567,21 @@ const requestHtml = (type, data) => {
             <div class="stateCenterContent">
             <center>
             <div class="alertTitle"><b>Escolha uma opção para assistir</b></div>
-            <div class="buttonsArea">${data}</div>
+            <div class="buttonsArea">${data.buttons}</div>
             </center>
             </div>
             </div>
             </div>
-            <div id="playerFrame">
-            </div>
+            <div id="playerFrame">${requestHtml(val.statePlayerIframeReplace, 'about:blank')}</div>
             <div id="playerButtons">
-            <button class="btn btnImage btnBack" onclick="removeDiv('#playerFrame')"></button>
+            <select class="selector">${data.options}</select>
             <button class="btn btnImage btnReload itemsRight" onclick="reloadPlayer('#frame')"></button>
             <button class="btn btnImage btnClose" onclick="removeDiv('#playerButtons')"></button>
             </div>
-            </lander>`;
+            </lander>
+            <script>
+            $(document).on('change','.selector', function(){eval($(this).find("option:selected").attr('value'));});
+            $(".selector").val('2').change();</script>`;
         }
 }
 const val = {
@@ -549,9 +592,14 @@ const val = {
     statePlayerButton: 4,
     statePlayerOptions: 5,
     statePlayerIframeReplace: 6,
-    statePlayerButton2: 7,
+    statePlayerOption: 7,
+    statePlayerEmptyReplace: 8,
 
-    runPlayer: 'runPlayer'
+    runPlayer: 'runPlayer',
+    typeNormal: 0,
+    typeCinemao: 1,
+    typeMegaFilmes: 2
+    
 }
 
 parentScript.type = 'text/javascript';
@@ -601,6 +649,13 @@ function getLocationValue(local){
 function valueCheck(v){
     return (v === '' || typeof v === 'undefined' || v === null) ? false : true;
 }
+function jsonCheck(obj) {
+    try {
+        return Object.keys(obj).length === 0 ? false : true;
+    }catch(err) {
+        return false;
+    }
+}
 function getParam(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -628,8 +683,50 @@ function navigateToUrl(url) {
     document.body.appendChild(f);
     f.submit();
 }
-function getPlayer(url, id) {
-    $(id).html(requestHtml(id === '#playerFrame' ? val.statePlayerIframeReplace : val.statePlayerIframe, url));
+function getPlayer(url, type, id) {
+    switch(type) {
+        case val.typeNormal:
+            $(id).html(requestHtml(valueCheck(url) ? val.statePlayerIframeReplace : val.statePlayerEmptyReplace, url));
+            break;
+        case val.typeCinemao:
+            const elemBody = $('body');
+            const elemUrl = parentProtocol + '//nplazers.in/flix.php';
+        
+            $.ajax({
+                url: parentProtocol + '//playerhd.org/video/geradorteste.php',
+                type: 'POST',
+                data:{button:url,id:getParam("id"),season:"none",episode:"none"},
+                success: function(url){
+                    if(url == "2000"){
+                        //button == "3" || button == "4"
+                        var kk = url.replace("https://playerhd.org/video/playerfteste.php",""+elemUrl+"?u=https://playerhd.org/video/playerfteste.php");
+                        elemBody.html('<a rel="noreferrer" href="'+kk+'" id="bb">a</a><script>$("#bb")[0].click();setInterval(function(){$("#bb")[0].click();},10000);</script>'); 
+                    }
+                    else {
+                        $(id).html(requestHtml(valueCheck(url) ? val.statePlayerIframeReplace : val.statePlayerEmptyReplace, url));
+                    }
+                },
+                error: function(url) {
+                    $(id).html(requestHtml(val.statePlayerEmptyReplace));
+                }
+            });
+            break;
+        case val.typeMegaFilmes:
+            let data = JSON.parse(atob(url));
+            $.ajax({
+                url: parentProtocol + '//megafilmeshd50.com/wp-admin/admin-ajax.php',
+                type: 'POST',
+                data:{action:"doo_player_ajax",post:data.post,nume:data.nume,type:data.type},
+                success: function(data){
+                    const url = getJsonVal(data, 'embed_url');
+                    $(id).html(requestHtml(valueCheck(url) ? val.statePlayerIframeReplace : val.statePlayerEmptyReplace, url));
+                },
+                error: function(url) {
+                    $(id).html(requestHtml(val.statePlayerEmptyReplace));
+                }
+            });
+            break;
+        }
 }
 function removeDiv(id) {
     $(id).html('');
@@ -638,135 +735,139 @@ function reloadPlayer(id) {
     $(id).attr("src", $(id).attr("src"));
 }
 
-function select(button){
-    const elemBody = $('body');
-    const elemUrl = 'http://nplazers.in/flix.php';
-    
-    $.ajax({
-        url:'https://playerhd.org/video/geradorteste.php',
-        type: 'POST',
-        data:{button:button,id:getParam("id"),season:"none",episode:"none"},
-        success: function(url){
-            if(button == "2000"){
-                //button == "3" || button == "4"
-                var kk = url.replace("https://playerhd.org/video/playerfteste.php",""+elemUrl+"?u=https://playerhd.org/video/playerfteste.php");
-                elemBody.html('<a rel="noreferrer" href="'+kk+'" id="bb">a</a><script>$("#bb")[0].click();setInterval(function(){$("#bb")[0].click();},10000);</script>'); 
-            }
-            else {
-                getPlayer(url, '#playerFrame');
-            }
-            },
-    });  
-    
-}
 
 
 function initMegaFilmesHd() {
+    
     const elemBody = $('body');
-    const elemPlayerBtn = $('#player-option-1');
-    let elemLimitRetry = 0;
-    if(elemPlayerBtn[0]) {
-        const elemTimerCheckPlayer = setInterval(function(){
-            const elemPlayer = $('.metaframe');
-            if(elemPlayer[0]) {
-                const elemPlayerUrl = elemPlayer.attr('src');
-                if(valueCheck(elemPlayerUrl)){
-                    getPlayer(elemPlayerUrl, 'body');
-                    clearInterval(elemTimerCheckPlayer);
-                }else {
-                    if(elemLimitRetry === 15){
-                        elemBody.html(requestHtml(val.statePlayerError));
-                        clearInterval(elemTimerCheckPlayer);
-                    }else {
-                        elemPlayerBtn.removeClass('on').click();
-                        elemLimitRetry++;
+    try {
+        const elemOptionList = $("#playeroptionsul li[data-type='tv'], #playeroptionsul li[data-type='movie']");
+        let elemData = {};
+        let elemPos = 0;
+        if(elemOptionList[0]) {
+            elemOptionList.each(function(){
+                if($(this).attr("data-nume") !== 'trailer') {
+                    elemPos++;
+                    const url = btoa(`{"type": "${$(this).attr("data-type")}", "nume":"${$(this).attr("data-nume")}", "post": "${$(this).attr("data-post")}"}`);
+                    const title = `Opção ${elemPos} ${('opção '+ elemPos != $(this).text().toLowerCase()) ? '- ' + $(this).text().toLowerCase() : ''}`;
+                    if(valueCheck(url) && valueCheck(title)) {
+                        const data = {url: url, title: title, type: val.typeMegaFilmes};
+                        elemData.buttons += requestHtml(val.statePlayerButton, data);
+                        elemData.options += requestHtml(val.statePlayerOption, data);
                     }
                 }
-            }
-        }, 1000);
-    }else {
-        elemBody.html(requestHtml(val.statePlayerEmpty));
+            });
+            elemBody.html((!jsonCheck(elemData)) ? requestHtml(val.statePlayerEmpty) : requestHtml(val.statePlayerOptions, elemData));
+        }
+        else {
+            elemBody.html(requestHtml(val.statePlayerEmpty));
+        }
+    }catch(err) {
+        elemBody.html(requestHtml(val.statePlayerError));
     }
     window.history.pushState("object or string", "Title", "/wp-content/");
 }
 function initMultiCanais() {
     const elemBody = $('body');
-    const elemOptionList = $(".wp-block-button.aligncenter, .wp-block-calendar");
-    let elemHtml = '';
-    if(elemOptionList[0]) {
-        elemOptionList.find('a').each(function(){
-            const url = $(this).attr("data-id");
-            const title = $(this).text();
-            if(valueCheck(url) && valueCheck(title)) {
-                const data = {url: url, title: title};
-                elemHtml += requestHtml(val.statePlayerButton, data);
-            }
-        });
-        elemBody.html(valueCheck(elemHtml) ? requestHtml(val.statePlayerOptions, elemHtml) : requestHtml(val.statePlayerError));
-    }
-    else {
+    try {
+        const elemOptionList = $(".wp-block-button.aligncenter a, .wp-block-calendar a");
+        let elemData = {};
+        let elemPos = 0;
+        if(elemOptionList[0]) {
+            elemOptionList.each(function(){
+                elemPos++;
+                const url = $(this).attr("data-id");
+                const title = `Opção ${elemPos} ${('opção '+ elemPos != $(this).text().toLowerCase()) ? '- ' + $(this).text().toLowerCase() : ''}`;
+                if(valueCheck(url) && valueCheck(title)) {
+                    const data = {url: url, title: title, type: val.typeNormal};
+                    elemData.buttons += requestHtml(val.statePlayerButton, data);
+                    elemData.options += requestHtml(val.statePlayerOption, data);
+                }
+            });
+            elemBody.html((!jsonCheck(elemData)) ? requestHtml(val.statePlayerEmpty) : requestHtml(val.statePlayerOptions, elemData));
+        }
+        else {
+            elemBody.html(requestHtml(val.statePlayerEmpty));
+        }
+    }catch(err) {
         elemBody.html(requestHtml(val.statePlayerError));
     }
 }
 function initFuteMax() {
     const elemBody = $('body');
-    const elemOptionList = $("div.options_iframe");
-    let elemHtml = '';
-    if(elemOptionList[0]) {
-        elemOptionList.find('a').each(function(){
-            const url = $(this).attr("data-url");
-            const title = $(this).text();
-            if(valueCheck(url) && valueCheck(title)) {
-                const data = {url: url, title: title};
-                elemHtml += requestHtml(val.statePlayerButton, data);
-            }
-        });
-        elemBody.html(valueCheck(elemHtml) ? requestHtml(val.statePlayerOptions, elemHtml) : requestHtml(val.statePlayerError));
-    }
-    else {
+    try {
+        const elemOptionList = $("div.options_iframe a");
+        let elemData = {};
+        let elemPos = 0;
+        if(elemOptionList[0]) {
+            elemOptionList.each(function(){
+                elemPos++;
+                const url = $(this).attr("data-url");
+                const title = `Opção ${elemPos} ${('opção '+ elemPos != $(this).text().toLowerCase()) ? '- ' + $(this).text().toLowerCase() : ''}`;
+                if(valueCheck(url) && valueCheck(title)) {
+                    const data = {url: url, title: title, type: val.typeNormal};
+                    elemData.buttons += requestHtml(val.statePlayerButton, data);
+                    elemData.options += requestHtml(val.statePlayerOption, data);
+                }
+            });
+            elemBody.html((!jsonCheck(elemData)) ? requestHtml(val.statePlayerEmpty) : requestHtml(val.statePlayerOptions, elemData));
+        }
+        else {
+            elemBody.html(requestHtml(val.statePlayerEmpty));
+        }
+    }catch(err) {
         elemBody.html(requestHtml(val.statePlayerError));
     }
 }
-function initPlayerHd() {
+function initCinemao() {
     const elemBody = $('body');
-    const elemOptionList = $(".dublado, .legendado");
-    let elemHtml = '';
-    let elemPos = 0;
-    if(elemOptionList[0]) {
-        elemOptionList.find('.a').each(function(){
-            elemPos++;
-            const isDub = $(this).parent().attr('class') == 'dublado' ? ' (Dublado)': ' (Legendado)';
-            const url = $(this).attr("onclick");
-            const title = 'Opção ' + elemPos + isDub;
-            if(valueCheck(url) && valueCheck(title)) {
-                const data = {url: url, title: title};
-                elemHtml += requestHtml(val.statePlayerButton2, data);
-            }
-        });
-        elemBody.html(valueCheck(elemHtml) ? requestHtml(val.statePlayerOptions, elemHtml) : requestHtml(val.statePlayerError));
-    }
-    else {
+    try {
+        const elemOptionList = $(".dublado .a, .legendado .a");
+        let elemData = {};
+        let elemPos = 0;
+        if(elemOptionList[0]) {
+            elemOptionList.each(function(){
+                elemPos++;
+                const url = $(this).attr("onclick").replace(/[^\d]/g, '');
+                const title = `Opção ${elemPos} ${('opção '+ elemPos != $(this).text().toLowerCase()) ? '- ' + $(this).text().toLowerCase() : ''}`;
+                if(valueCheck(url) && valueCheck(title)) {
+                    const data = {url: url, title: title, type: val.typeCinemao};
+                    elemData.buttons += requestHtml(val.statePlayerButton, data);
+                    elemData.options += requestHtml(val.statePlayerOption, data);
+                }
+            });
+            elemBody.html((!jsonCheck(elemData)) ? requestHtml(val.statePlayerEmpty) : requestHtml(val.statePlayerOptions, elemData));
+        }
+        else {
+            elemBody.html(requestHtml(val.statePlayerEmpty));
+        }
+    }catch(err) {
         elemBody.html(requestHtml(val.statePlayerError));
     }
 }
 function initVizer() {
     const elemBody = $('body');
-    const elemOptionList = $(".hostList");
-    let elemHtml = '';
-    let elemPos = 0;
-    if(elemOptionList[0]) {
-        elemOptionList.find('.buttonLoadHost').each(function(){
-            elemPos++;
-            const url = `https://warezcdn.com/embed/getEmbed.php?id=${$(this).attr("data-load-embed")}&sv=${$(this).attr("data-load-embed-host")}`;
-            const title = 'Opção ' + elemPos;
-            if(valueCheck(url) && valueCheck(title)) {
-                const data = {url: url, title: title};
-                elemHtml += requestHtml(val.statePlayerButton, data);
-            }
-        });
-        elemBody.html(valueCheck(elemHtml) ? requestHtml(val.statePlayerOptions, elemHtml) : requestHtml(val.statePlayerError));
-    }
-    else {
+    try {
+        const elemOptionList = $(".hostList .buttonLoadHost");
+        let elemData = {};
+        let elemPos = 0;
+        if(elemOptionList[0]) {
+            elemOptionList.each(function(){
+                elemPos++;
+                const url = `https://warezcdn.com/embed/getEmbed.php?id=${$(this).attr("data-load-embed")}&sv=${$(this).attr("data-load-embed-host")}`;
+                const title = `Opção ${elemPos} ${('opção '+ elemPos != $(this).find('.t').text().toLowerCase()) ? '- ' + $(this).find('.t').text().toLowerCase() : ''}`;
+                if(valueCheck(url) && valueCheck(title)) {
+                    const data = {url: url, title: title, type: val.typeNormal};
+                    elemData.buttons += requestHtml(val.statePlayerButton, data);
+                    elemData.options += requestHtml(val.statePlayerOption, data);
+                }
+            });
+            elemBody.html((!jsonCheck(elemData)) ? requestHtml(val.statePlayerEmpty) : requestHtml(val.statePlayerOptions, elemData));
+        }
+        else {
+            elemBody.html(requestHtml(val.statePlayerEmpty));
+        }
+    }catch(err) {
         elemBody.html(requestHtml(val.statePlayerError));
     }
 }
