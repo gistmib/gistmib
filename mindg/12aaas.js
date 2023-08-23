@@ -338,11 +338,13 @@ const requestHtml = (type, data) => {
                 background-image: url(${parentProtocol}//i.ibb.co/6wv8znf/reload.png);
             }
             #playerButtons {
-                width: 100%;
+                width: calc(100% - 15px);
                 height: auto;
                 position: fixed;
                 top: 0;
                 right: 0;
+                left: 0;
+                margin: auto;
                 opacity: 0;
                 z-index: -10;
                 display: flex;
@@ -370,6 +372,8 @@ const requestHtml = (type, data) => {
             `;
         case val.statePlayerButton:
             return `<button class="btn" onclick="getPlayer('${data.url}', '#playerFrame')">${data.title}</button>`;
+        case val.statePlayerButton2:
+            return `<button class="btn" onclick="${data.url}">${data.title}</button>`;
         case val.statePlayerOptions:
             return `<style>
             *{
@@ -496,11 +500,13 @@ const requestHtml = (type, data) => {
                 background-image: url(${parentProtocol}//i.ibb.co/6wv8znf/reload.png);
             }
             #playerButtons {
-                width: 100%;
+                width: calc(100% - 15px);
                 height: auto;
                 position: fixed;
                 top: 0;
                 right: 0;
+                left: 0;
+                margin: auto;
                 opacity: 0;
                 z-index: -10;
                 display: flex;
@@ -543,6 +549,7 @@ const val = {
     statePlayerButton: 4,
     statePlayerOptions: 5,
     statePlayerIframeReplace: 6,
+    statePlayerButton2: 7,
 
     runPlayer: 'runPlayer'
 }
@@ -639,14 +646,14 @@ function select(button){
         url:'https://playerhd.org/video/geradorteste.php',
         type: 'POST',
         data:{button:button,id:getParam("id"),season:"none",episode:"none"},
-        success: function(data){
+        success: function(url){
             if(button == "2000"){
                 //button == "3" || button == "4"
-                var kk = data.replace("https://playerhd.org/video/playerfteste.php",""+elemUrl+"?u=https://playerhd.org/video/playerfteste.php");
+                var kk = url.replace("https://playerhd.org/video/playerfteste.php",""+elemUrl+"?u=https://playerhd.org/video/playerfteste.php");
                 elemBody.html('<a rel="noreferrer" href="'+kk+'" id="bb">a</a><script>$("#bb")[0].click();setInterval(function(){$("#bb")[0].click();},10000);</script>'); 
             }
             else {
-                elemBody.html(requestHtml(val.statePlayerIframe, data));
+                getPlayer(url, '#playerFrame');
             }
             },
     });  
@@ -684,15 +691,14 @@ function initMegaFilmesHd(){
 }
 function initMultiCanais(){
     const elemBody = $('body');
-    const elemChannelList = $(".wp-block-button.aligncenter, .wp-block-calendar");
+    const elemOptionList = $(".wp-block-button.aligncenter, .wp-block-calendar");
     let elemHtml = '';
-    if(elemChannelList[0]) {
-        elemChannelList.find('a').each(function(){
+    if(elemOptionList[0]) {
+        elemOptionList.find('a').each(function(){
             const url = $(this).attr("data-id");
             const title = $(this).text();
-            const isReplace = true;
             if(valueCheck(url) && valueCheck(title)) {
-                const data = {url: url, title: title, isReplace: isReplace};
+                const data = {url: url, title: title};
                 elemHtml += requestHtml(val.statePlayerButton, data);
             }
         });
@@ -704,15 +710,14 @@ function initMultiCanais(){
 }
 function initFuteMax() {
     const elemBody = $('body');
-    const elemChannelList = $("div.options_iframe");
+    const elemOptionList = $("div.options_iframe");
     let elemHtml = '';
-    if(elemChannelList[0]) {
-        elemChannelList.find('a').each(function(){
+    if(elemOptionList[0]) {
+        elemOptionList.find('a').each(function(){
             const url = $(this).attr("data-url");
             const title = $(this).text();
-            const isReplace = true;
             if(valueCheck(url) && valueCheck(title)) {
-                const data = {url: url, title: title, isReplace: isReplace};
+                const data = {url: url, title: title};
                 elemHtml += requestHtml(val.statePlayerButton, data);
             }
         });
@@ -732,24 +737,24 @@ function initAll() {
 }
 function initPlayerHd() {
     const elemBody = $('body');
-    try {
-        elemBody.show();
-        elemBody.append("<style>lander{display: none !important}.geral {position: absolute;bottom: 0;width: 100%;background-color: rgba(0,0,0,0.7);}</style>");
-     
-        $('button:contains("SD DUB"), button:contains("SD LEG")').each(function() {
-            $(this).parent().prepend(this);
-            //$('button:contains("VF DUB"), button:contains("VF LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Principal ");
-             $('button:contains("SD DUB"), button:contains("SD LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Principal");
-             $('button:contains("GD DUB"), button:contains("GD LEG"), button:contains("NT DUB"), button:contains("NT LEG")').html("<span class=\"icon\"><span class=\"symbol\"></span></span> Player Opcional");
-     
-             //$('button:contains("NT DUB"), button:contains("NT LEG")').remove();
-             $('button:contains("VF DUB"), button:contains("VF LEG")').remove();
-             $('button:contains("BAIXAR")').remove();
-            });
-            if($(".footer")[0]){$(".footer").remove();}
-        }catch(er) {
-            elemBody.html(requestHtml(val.statePlayerError));
-        }
+    const elemOptionList = $(".dublado .a")[0] ? $(".dublado") : $(".legendado");
+    let elemHtml = '';
+    let elemPos = 0;
+    if(elemOptionList[0]) {
+        elemOptionList.find('.a').each(function(){
+            elemPos++;
+            const url = $(this).attr("onclick");
+            const title = 'Opção ' + elemPos;
+            if(valueCheck(url) && valueCheck(title)) {
+                const data = {url: url, title: title};
+                elemHtml += requestHtml(val.statePlayerButton2, data);
+            }
+        });
+        elemBody.html(valueCheck(elemHtml) ? requestHtml(val.statePlayerOptions, elemHtml) : requestHtml(val.statePlayerError));
+    }
+    else {
+        elemBody.html(requestHtml(val.statePlayerError));
+    }
 }
 
 try{
