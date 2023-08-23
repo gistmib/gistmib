@@ -737,14 +737,15 @@ function initAll() {
 }
 function initPlayerHd() {
     const elemBody = $('body');
-    const elemOptionList = $(".dublado .a")[0] ? $(".dublado") : $(".legendado");
+    const elemOptionList = $(".dublado, .legendado");
     let elemHtml = '';
     let elemPos = 0;
     if(elemOptionList[0]) {
         elemOptionList.find('.a').each(function(){
             elemPos++;
+            const isDub = $(this).parent().attr('class') == 'dublado' ? ' (Dublado)': ' (Legendado)';
             const url = $(this).attr("onclick");
-            const title = 'Opção ' + elemPos;
+            const title = 'Opção ' + elemPos + isDub;
             if(valueCheck(url) && valueCheck(title)) {
                 const data = {url: url, title: title};
                 elemHtml += requestHtml(val.statePlayerButton2, data);
