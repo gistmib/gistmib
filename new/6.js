@@ -138,18 +138,19 @@ function createJsonLists(elementt, id){
         seasonName = `${position+1}`;
         seasonNameId = `${position}`;
 
-        
-        for(let i = 0; i < elementEpisodesList.length; i++){
-            elem = $(elementEpisodesList[i]);
-            episodeTitle = elem.find('.episodiotitle a').text();
-            episodeImg = elem.find('.imagen img').attr('src');
-            episodeId = `${i}`;
-            episodeName = `${i+1}`;
-            episodeUrl = elem.find('.episodiotitle a').attr('href');
-            episodeJson[episodeId] = {id: episodeId, title: episodeTitle, name: episodeName, img: episodeImg, url: episodeUrl}
+        if(!$(element).find('.episodios li').hasClass('none')) {
+            for(let i = 0; i < elementEpisodesList.length; i++){
+                elem = $(elementEpisodesList[i]);
+                episodeTitle = elem.find('.episodiotitle a').text();
+                episodeImg = elem.find('.imagen img').attr('src');
+                episodeId = `${i}`;
+                episodeName = `${i+1}`;
+                episodeUrl = elem.find('.episodiotitle a').attr('href');
+                episodeJson[episodeId] = {id: episodeId, title: episodeTitle, name: episodeName, img: episodeImg, url: episodeUrl}
+            }
+            episodesJson[position] = episodeJson;
+            seasonJson[position] = {id: seasonNameId, name: seasonName};
         }
-        episodesJson[position] = episodeJson;
-        seasonJson[position] = {id: seasonNameId, name: seasonName};
     });
     requestItemJsonStorage(valObjs.setStorage, id, valObjs.seasonsList, JSON.stringify({"list": seasonJson}));
     requestItemJsonStorage(valObjs.setStorage, id, valObjs.episodesList, JSON.stringify(episodesJson));
