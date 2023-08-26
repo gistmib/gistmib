@@ -1086,7 +1086,6 @@ const valTextObjs = {
     episodesErrorAlert: 'Ocorreu um erro ao carregar os episódios, tente novamente.',
     episodeErrorAlert: 'Ocorreu um erro ao carregar esse episódio, tente novamente.',
     internErrorAlert: 'Ocorreu um erro interno, tente novamente mais tarde.',
-    undefinedErrorAlert: 'Ocorreu um erro interno, tente novamente mais tarde.',
     addedMyListAlert: 'Esse item foi adicionado a sua lista com sucesso.',
     removedMyListAlert: 'Esse item foi removido da sua lista com sucesso.'
 };
@@ -1256,31 +1255,30 @@ function initType(fileName){
             break;
         }
 }
-
 function initMoviePage(){
     var html = $('html');
     html.find('head').append(requestInitHtml(valObjs.initStyleHtml));
-    html.find('body').html(requestInitHtml(valObjs.initTumbHtml) + requestInitHtml(valObjs.initContentMovieHtml)).ready(init());
+    html.find('body').html(requestInitHtml(valObjs.initTumbHtml) + requestInitHtml(valObjs.initContentMovieHtml)).ready(childInit());
 }
 function initSeriePage(){
     var html = $('html');
     html.find('head').append(requestInitHtml(valObjs.initStyleHtml));
     html.find('body').html(requestInitHtml(valObjs.initTumbHtml) + requestInitHtml(valObjs.initContentSerieHtml)).ready(async () => {
         await getSeasonsList(false);
-        init();
+        childInit();
     });
 }
 function initErrorPage(){
     var html = $('html');
     html.find('head').append(requestInitHtml(valObjs.initStyleHtml));
-    html.find('body').html(requestInitHtml(valObjs.initContentErrorHtml)).ready(async () => init());
+    html.find('body').html(requestInitHtml(valObjs.initContentErrorHtml)).ready(async () => childInit());
 }
-function initYTplayer() {
+function initYTplayer(){
     if(valueCheck(initObjs.tmdbYTJson.id)){
         ytPlayer = new YTPlayer();
     }
 }
-function init(){
+function childInit(){
     initYTplayer();
     lazyLoader();
     try{
@@ -1290,14 +1288,14 @@ function init(){
 }
 
 
-async function getPromise(url, isCached){
+async function getPromise(url, isCached) {
     body = await syncHtml(url, isCached);
     let promise = new Promise((resolve, reject) => {
         resolve(body);
     });
     return promise;
 }
-async function syncHtml(url, isCached){
+async function syncHtml(url, isCached) {
     try{
         options = isCached ? {credentials: 'same-origin', cache: 'force-cache'} : {credentials: 'same-origin'}
         response = await fetch(url, options);
@@ -1308,7 +1306,7 @@ async function syncHtml(url, isCached){
         return 'error';
     }
 }
-async function syncJson(url, isCached){
+async function syncJson(url, isCached) {
     try{
         options = isCached ? {credentials: 'same-origin', cache: 'force-cache'} : {credentials: 'same-origin'}
         singleResponse = await fetch(url, options);
@@ -1319,7 +1317,7 @@ async function syncJson(url, isCached){
         return null;
     }
 }
-async function syncTmdbJson(url, isTrailer){
+async function syncTmdbJson(url, isTrailer) {
     try{
         if(valueCheck(initObjs.tmdbId)) {
             response = await syncJson(url.replace('$', initObjs.tmdbId), true);
@@ -1332,7 +1330,7 @@ async function syncTmdbJson(url, isTrailer){
         return isTrailer ? {id: null, title: 'Prévia indisponível'} : null;
     }
 }
-async function vizerPlayer(value, data){
+async function vizerPlayer(value, data) {
     if(jsonCheck(data)) {
         try{
             window.CallToAndroidFunction.data("Opções para assistir", `{"val": "${value}", "site":"vizer","id":"0","fembed":0,"streamtape":0, "type":"filme", "lang": "${window.btoa(JSON.stringify(data))}"}`, false);
@@ -1385,8 +1383,7 @@ function requestSerieJsonReturn(url, onRetrun) {
         }
     }
 }
-
-async function getSeasonsList(isError){
+async function getSeasonsList(isError) {
     elementSeasons = $('.item-season-list');
     html = '';
 
@@ -1414,7 +1411,7 @@ async function getSeasonsList(isError){
     }
     if($(html).text() !== elementSeasons.text()) { elementSeasons.html(html); }
 }
-function getEpisodesList(season){
+function getEpisodesList(season) {
     element = $(`[data-season='${season}']`);
     elementParent = element.parent();
     elementEpisodes = $('.item-episodes-list');
@@ -1478,7 +1475,7 @@ function getEpisode(episode) {
         });
     }
 }
-function setLastView(){
+function setLastView() {
     elementLastView = $('.last-view');
 
     elementSeason = $('.item-season-list');
@@ -1488,14 +1485,13 @@ function setLastView(){
     elementLastView.addClass('button').find('div').text(valTextObjs.lastMyView + requestItemJsonStorage(valObjs.setStorage, initObjs.uniqId, valObjs.lastView, lastViewText));
 
 }
-
-function valueCheck(v){
+function valueCheck(v) {
     return (v === '' || typeof v === 'undefined' || v === null) ? false : true;
 }
-function diffReturnVal(oldValue, newValue){
+function diffReturnVal(oldValue, newValue) {
     return (oldValue === '' || typeof oldValue === 'undefined' || oldValue === null) ? newValue : oldValue;
 }
-function jsonCheck(v){
+function jsonCheck(v) {
     return (typeof v === 'undefined' || v === null) ? false : true;
 }
 function getParam(name, url) {
@@ -1533,10 +1529,10 @@ function toLowerCaseVal(str) {
         return '';
     }
 }
-function percentageCaucule(rate, total){
+function percentageCaucule(rate, total) {
     return parseInt((rate / total) * 100).toString();
 }
-function getGenres(value){
+function getGenres(value) {
     var names = '';
     try {
          for(let i = 0; i < value.length; i++) { 
@@ -1546,7 +1542,7 @@ function getGenres(value){
     catch (err) {}
     return names; 
 }
-function getSimilarList(value){
+function getSimilarList(value) {
     try {
         html = $(`<div>${value}</div/>`);
         newHtml = '';
@@ -1562,7 +1558,7 @@ function getSimilarList(value){
         return '';
     }
 }
-function showAlert(message){
+function showAlert(message) {
     showAlertelement = $('.item-alert-message');
     showAlertelementText = $('.item-alert-message').text();
     
@@ -1613,12 +1609,12 @@ function actionClick(value, data) {
         }
         case valObjs.save: {
             try { (requestMyList(initObjs.id, valObjs.getItem)) ? requestMyList(initObjs.id, valObjs.removeItem) : requestMyList(initObjs.id, valObjs.addItem); }
-            catch (err) { showAlert(valTextObjs.undefinedErrorAlert); }
+            catch (err) { showAlert(valTextObjs.internErrorAlert); }
             break;
         }
         case valObjs.share: {
             try { window.location.href = 'https://goooog.wap.sh/'; } 
-            catch (err) { showAlert(valTextObjs.undefinedErrorAlert); }
+            catch (err) { showAlert(valTextObjs.internErrorAlert); }
             break;
         }
         case valObjs.myLastView: {
@@ -1635,7 +1631,6 @@ function actionClick(value, data) {
         }
     }
 }
-
 function removeMyListItem(key) {
     element = $('#save');
     myJson = requestMyList(null, valObjs.list);
@@ -1647,7 +1642,7 @@ function removeMyListItem(key) {
     element.html(requestItemHtml(null, valObjs.saveChange));
     showAlert(valTextObjs.removedMyListAlert);
 }
-function addMyListItem(key){
+function addMyListItem(key) {
     element = $('#save');
     myJson = requestMyList(null, valObjs.list);
 
@@ -1665,8 +1660,6 @@ function addMyListItem(key){
 }
 
 
-
-
 function onPlayerReady(event) {
     ytPlayer.elementTumbArea = $('.tumb-area');
     ytPlayer.elementPlayerImg = $('.player-img');
@@ -1675,9 +1668,9 @@ function onPlayerReady(event) {
         lazyLoader();
     });
 }
-function onPlayerStateChange(event){
+function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING){
-        if(ytPlayer.elementTumbArea.find('.tumb-info').css('opacity') == '1'){
+        if(ytPlayer.elementTumbArea.find('.tumb-info').css('opacity') == '1') {
             ytPlayer.ytTimer = setInterval(() => onPlayerProgress(), 0);
         }
     }
@@ -1686,16 +1679,16 @@ function onPlayerStateChange(event){
         ytPlayer.player.pauseVideo();
         ytPlayer.player.seekTo(0);
 
-        if(ytPlayer.elementTumbArea.find('.tumb-info').css('opacity') == '0'){
+        if(ytPlayer.elementTumbArea.find('.tumb-info').css('opacity') == '0') {
             ytPlayer.elementTumbArea.find('.tumb-info').css('opacity', '1');
             ytPlayer.elementTumbArea.find('.player-progress-area').css('opacity', '0');
         }
     }
 }
-function onPlayerError(event){
+function onPlayerError(event) {
     ytPlayer.isError = true;
 }
-function onPlayerProgress(){
+function onPlayerProgress() {
     ytPlayer.progress = ytPlayer.elementTumbArea.width() * (ytPlayer.player.getCurrentTime() / ytPlayer.player.getDuration());
     ytPlayer.percentage = parseInt((100 * parseInt(ytPlayer.progress)) / parseInt(ytPlayer.elementTumbArea.width()));
     ytPlayer.elementTumbArea.find('.tumb-info').css('opacity', (ytPlayer.percentage >= 0 && ytPlayer.percentage <= 98) ? '0' : '1');
