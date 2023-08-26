@@ -295,7 +295,7 @@ function infos(a,b,c){
     $("input").css('color',"#000");
     $("input").css('background-size',"0px"); 
     if(limit == false){
-    $(".titl").text(c)
+    $(".titl").text(c);
     $("#w").attr("href", a);
     $("#ww").attr("href", a);
     $(".dts").css("background-image", "url("+b.replace('w185','w500').replace('-185x278','')+")"); 
