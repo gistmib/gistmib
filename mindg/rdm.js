@@ -1681,7 +1681,7 @@ function onPlayerStateChange(event){
             ytPlayer.ytTimer = setInterval(() => onPlayerProgress(), 0);
         }
     }
-    if(event.data === 0) {
+    if(event.data === 0 || event.data == YT.PlayerState.PAUSED) {
         clearInterval(ytPlayer.ytTimer);
         ytPlayer.player.pauseVideo();
         ytPlayer.player.seekTo(0);
