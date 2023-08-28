@@ -14,6 +14,7 @@ const val = {
     initMixdrop: 'initMixdrop()',
     initStreamtape: 'initStreamtape()',
     initMfhd50: 'initMfhd50()',
+    initVizer: 'initVizer()',
     initAll: 'initAll()',
 
     jsonErrorDeleted: `{"img": "${parentProtocol}//i.ibb.co/ZYjCKBY/error.png", "title": "Vídeo deletado", "message": "Infelizmente esse vídeo foi excluido por sites terceiros, volte e escolha uma outra opção para assistir."}`,
@@ -22,6 +23,7 @@ const val = {
 }
 const parentObjJson = [
     {'search':'streamtape strcloud strtapeadblock adblockstrtech antiadtape antiadtape.com streamtape.net streamtape.com', 'value': val.initStreamtape},
+    {'search':'vizer coworkcayman vizer.tv vizer.in coworkcayman.com', 'value': val.initVizer},
     {'search':'megafilmeshd50 megafilmeshd50.com megafilmeshd50.net', 'value': val.initMfhd50},
     {'search':'mixdrop mixdrop.co mixdrop mixdrop.com mixdrop.to', 'value': val.initMixdrop}
 ];
@@ -453,5 +455,7 @@ function initMfhd50() {
         }
     });
 }
+function initVizer(){}
+
 function initAll() {parentInitBrowser();}
 check = "true";
