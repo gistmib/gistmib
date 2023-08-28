@@ -6,13 +6,13 @@ const parentLocal = window.location.hostname;
 const parentIsValidLink = ('https:' === location.protocol || 'htttp:' === location.protocol) ? true : false;
 const parentProtocol = parentIsValidLink ? location.protocol : 'https:';
 const parentObjJson = [
-    {'search':'multicanais.vc multicanais.fans bbbgratis.com', 'value':'initMultiCanais()'},
-    {'search':'futemax.app', 'value':'initFuteMax()'},
-    {'search':'megafilmeshd50.com megafilmeshd50.net', 'value':'initMegaFilmesHd()'},
-    {'search':'canaisplay.com', 'value':'initAll()'},
-    {'search':'embed.warezcdn.net embed.warezcdn.com warezcdn.com warezcdn.net', 'value':'initVizer()'},
-    {'search':'playerhd.org playerhd', 'value':'initCinemao()'},
-    {'search':'link.encrypted-encrypted-encrypted-encrypted-encrypted-encrypted.link', 'value':'initAll()'}
+    {'search':'multicanais multicanais.vc multicanais.fans bbbgratis.com', 'value':'initMultiCanais()'},
+    {'search':'futemax futemax.app futemax.to', 'value':'initFuteMax()'},
+    {'search':'megafilmeshd50 megafilmeshd50.com megafilmeshd50.net', 'value':'initMegaFilmesHd()'},
+    {'search':'canaisplay canaisplay.com', 'value':'initAll()'},
+    {'search':'warezcdn embed.warezcdn.net embed.warezcdn.com warezcdn.com warezcdn.net', 'value':'initVizer()'},
+    {'search':'playerhd playerhd.org playerhd', 'value':'initCinemao()'},
+    {'search':'encrypted-encrypted-encrypted-encrypted-encrypted-encrypted link.encrypted-encrypted-encrypted-encrypted-encrypted-encrypted.link', 'value':'initAll()'}
 ];
 const getJsonVal = (json, key, position) => {
     try{
@@ -628,7 +628,7 @@ if(document.readyState === 'complete') {
 }
 
 function parentInit() {
-   eval(parentIsValidLink ? getLocationValue(parentLocal) : initAll());
+    eval(parentIsValidLink ? getLocationValue(getDomainName(parentLocal)) : initAll());
 }
 function parentInitFail() {
     window.location.reload();
@@ -741,7 +741,14 @@ function normalize(string){
         return '';
     }
 }
-
+function getDomainName(url) {
+    try {
+        let domain = url.match(/^(?:.*?\.)?([a-zA-Z0-9\-_]{3,}\.(?:\w{2,8}|\w{2,4}\.\w{2,4}))$/)[1];
+        return valueCheck(domain) ? domain.split('.')[0] : parentLocal;
+    }catch(err) {
+        return parentLocal;
+    }
+}
 
 function initMegaFilmesHd() {
     const elemBody = $('body');
