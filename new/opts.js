@@ -516,11 +516,16 @@ function getSavedJson(value, onResult){
     if(localStorage.getItem(value)) {
         onResult(JSON.parse(localStorage.getItem(value)))
     }else {
-        $.getJSON(value, function(e){
-            onResult(e)
+        fetch(value)
+        .then((response) => response.json())
+        .then((e) => {
+            onResult(e);
             if(e.streamtape.toString() !== "false" || e.mixdrop.toString() !== "false"){
-                localStorage.setItem(value, JSON.stringify(e))
+                localStorage.setItem(value, JSON.stringify(e));
             }
+        })
+        .catch((error) => {
+                
         });
     }
 }
