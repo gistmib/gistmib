@@ -1,5 +1,3 @@
-
-try { window.CallToAndroidFunction1.setVisible(); }catch(err) {}
 let tentativas = 0;
 const parentBody = document.querySelector('body');
 const parentHead = document.querySelector('head');
