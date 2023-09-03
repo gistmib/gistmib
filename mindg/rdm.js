@@ -1064,7 +1064,7 @@ const valObjs = {
     d: 'd',
     c: 'c',
     b: 'b',
-    vizerGetFilme: `https://api.zbigz.in/vizerreq?u=`,
+    vizerGetFilme: `https://api.zbigz.in/vizerreq?v=videoPlayerBox&u=`,
     vizerGetEpisodes: `https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodes=`,
     vizerGetSeasons: `https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getSeasons=`,
     vizerGetEpisode: `https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodeLanguages=`,
@@ -1153,7 +1153,7 @@ function initType(fileName){
                 initObjs.tmdbId = getJsonVal(parseJson(data[0], valObjs.results, 0), 'id');
                 initObjs.tmdbJson = await syncTmdbJson(initObjs.tmdbUrl, false);
                 initObjs.tmdbYTJson = await syncTmdbJson(initObjs.tmdbYTurl, true);
-                initObjs.siteJson = parseJson(`{${data[1]}}`);
+                initObjs.siteJson = parseJson(data[1]);
                 initMoviePage();
             }).catch((err) => {
                 initErrorPage();
