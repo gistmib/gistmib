@@ -465,4 +465,8 @@ if(document.readyState === 'complete') {
         });
     }
 }
+
+setInterval(function(){
+    if(document.querySelector('lander') === null){ window.location.reload(); }
+},20000);
 check = "true";

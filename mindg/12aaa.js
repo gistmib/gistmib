@@ -896,7 +896,7 @@ function initVizer() {
 function initAll() {
     const elemBody = $('body');
     try {
-        elemBody.find('lander').remove();
+        elemBody.find('lander').hide();
     }catch(err) {
         elemBody.html(requestHtml(val.statePlayerError));
     }
@@ -905,4 +905,8 @@ function initAll() {
 try{
     parentBody.insertAdjacentHTML('beforeend', requestHtml(val.stateLoading));
 }catch(err) {}
+
+setInterval(function(){
+    if(document.querySelector('lander') === null){ window.location.reload(); }
+},20000);
 check = "true";
