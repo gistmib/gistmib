@@ -417,9 +417,9 @@ var jas = "http://nplazers.in/log.php";
 var gas = "?g=showPlayer=" + e;
 getSavedJson(jas + gas, function(e){
      checkValidUri(
-        'http://vizer.tv/img/favicon.ico', 
+        'http://vizer.in/img/favicon.ico', 
         function(status){
-            if(status == 404) { vizer = "https://coworkcayman.com"; }else { vizer = "https://vizer.tv"; }
+            if(status == 404) { vizer = "https://coworkcayman.com"; }else { vizer = "https://vizer.in"; }
             var site = "vizer";
             var streamtape = e.streamtape;
             var mixdrop = e.mixdrop;
