@@ -435,7 +435,7 @@ function initMfhd50() {
                         if(valueCheck(playerUrl)) {
                             setPercentage(99);
                             setTimeout(function(){
-                                window.location.href = (isPlayer() ? 'http://cdnplayer.tv/' : 'http://giganet.tv/') + 'https:' + playerUrl;
+                                window.location.href = (isPlayer() ? 'http://cdnplayer.tv/' : 'http://giganet.tv/') + playerUrl;
                             },1000);
                         }
                         else {
