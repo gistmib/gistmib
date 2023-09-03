@@ -1178,7 +1178,6 @@ function initType(fileName){
                 initObjs.siteJson = parseJson(data[1]);
                 initObjs.myLastViewText = (requestItemJsonStorage(valObjs.getStorage, initObjs.uniqId, valObjs.lastView)) ? valTextObjs.lastMyView + requestItemJsonStorage(valObjs.getStorage, initObjs.uniqId, valObjs.lastView) : valTextObjs.seasnos;
                 initSeriePage();
-                //console.log(initObjs);
             }).catch((err) => {
                 initErrorPage();
             });
