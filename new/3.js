@@ -76,16 +76,6 @@ const valObjs = {
     d: 'd',
     c: 'c',
     b: 'b',
-    vizerGetFilme: 'https://nplazers.in/loggg.php?g=',
-    vizerGetEpisodes: 'https://nplazers.in/log.php?g=getEpisodes=',
-    vizerGetSeasons: 'https://nplazers.in/log.php?g=getSeasons=',
-    vizerGetEpisode: 'https://nplazers.in/log.php?g=getEpisodeLanguages=',
-    tmdbMovieUrl: 'https://api.themoviedb.org/3/movie/$?api_key=6b4357c41d9c606e4d7ebe2f4a8850ea&language=pt-BR',
-    tmdbMovieYTurl: 'https://api.themoviedb.org/3/movie/$/videos?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR',
-    tmdbMovieSearchUrl: 'https://api.themoviedb.org/3/search/movie?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR&page=1&include_adult=false&query=$query&year=$year',
-    tmdbTvUrl: 'https://api.themoviedb.org/3/tv/$?api_key=6b4357c41d9c606e4d7ebe2f4a8850ea&language=pt-BR',
-    tmdbTvYTurl: 'https://api.themoviedb.org/3/tv/$/videos?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR',
-    tmdbTvSearchUrl: 'https://api.themoviedb.org/3/search/tv?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR&page=1&include_adult=false&query=$query&year=$year',
     errorSeasonList: 'errorSeasonList'
 };
 const requestItemJsonStorage = (action, key, name, value) => {
