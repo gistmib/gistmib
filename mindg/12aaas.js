@@ -601,6 +601,7 @@ const val = {
     typeMegaFilmes: 2
     
 }
+let tentativas = 0;
 
 parentScript.type = 'text/javascript';
 parentScript.src= parentProtocol + '//cdn.jsdelivr.net/gh/gistmib/gistmib/jquery.js';
@@ -712,14 +713,20 @@ function getPlayer(url, type, id) {
             });
             break;
         case val.typeMegaFilmes:
+            tentativas++;
             let data = JSON.parse(atob(url));
             $.ajax({
                 url: parentProtocol + '//megafilmeshd50.com/wp-admin/admin-ajax.php',
                 type: 'POST',
                 data:{action:"doo_player_ajax",post:data.post,nume:data.nume,type:data.type},
                 success: function(data){
-                    const url = getJsonVal(data, 'embed_url');
-                    $(id).html(requestHtml(valueCheck(url) ? val.statePlayerIframeReplace : val.statePlayerEmptyReplace, url));
+                    const aUrl = getJsonVal(data, 'embed_url');
+                    if(valueCheck(aUrl)){
+                        $(id).html(requestHtml(val.statePlayerIframeReplace, aUrl));
+                    }else {
+                        if(tentativas === 15) $(id).html(requestHtml(val.statePlayerEmptyReplace, aUrl));
+                        else getPlayer(url, type, id);
+                    }
                 },
                 error: function(url) {
                     $(id).html(requestHtml(val.statePlayerEmptyReplace));
@@ -874,13 +881,16 @@ function initVizer() {
                     elemData.options += requestHtml(val.statePlayerOption, data);
                 }
             });
-            elemBody.html((!jsonCheck(elemData)) ? requestHtml(val.statePlayerEmpty) : requestHtml(val.statePlayerOptions, elemData));
+            if(!$('.zone-name-title')[0]) elemBody.html((!jsonCheck(elemData)) ? requestHtml(val.statePlayerEmpty) : requestHtml(val.statePlayerOptions, elemData));
+            else initAll();
         }
         else {
-            elemBody.html(requestHtml(val.statePlayerEmpty));
+            if(!$('.zone-name-title')[0]) elemBody.html(requestHtml(val.statePlayerEmpty));
+            else initAll();
         }
     }catch(err) {
-        elemBody.html(requestHtml(val.statePlayerError));
+        if(!$('.zone-name-title')[0]) elemBody.html(requestHtml(val.statePlayerError));
+        else initAll();
     }
 }
 function initAll() {

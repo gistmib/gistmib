@@ -1,3 +1,6 @@
+
+try { window.CallToAndroidFunction1.setVisible(); }catch(err) {}
+let tentativas = 0;
 const parentBody = document.querySelector('body');
 const parentHead = document.querySelector('head');
 const parentScript = document.createElement('script');
@@ -173,25 +176,9 @@ parentScript.onabort = () => parentInitFail();
 parentScript.oncancel = () => parentInitFail();
 
 
-if(document.readyState === 'complete') {
-    parentHead.appendChild(parentScript);
-    parentHead.insertAdjacentHTML('beforeend', requestHtml(val.css));
-} else {
-    if (window.addEventListener) {
-        window.addEventListener('load', function(event) { 
-            parentHead.appendChild(parentScript);
-            parentHead.insertAdjacentHTML('beforeend', requestHtml(val.css));
-        }, false);
-    } else {
-        window.attachEvent('onload', function(event) { 
-            parentHead.appendChild(parentScript);
-            parentHead.insertAdjacentHTML('beforeend', requestHtml(val.css));
-        });
-    }
-}
 
 function parentInit() {
-    eval(parentIsValidLink ? getLocationValue(getDomainName(parentLocal)) : initAll());
+    eval(parentIsValidLink ? getLocationValue(getDomainName(parentLocal)) : initAll()); 
 }
 function parentInitFail() {
     window.location.reload();
@@ -421,6 +408,7 @@ function initMfhd50() {
         try {
             const elemContentPlayer = $("#playeroptionsul li[data-nume='1']");
             if(valueCheck(elemContentPlayer)) {
+                tentativas++;
                 const elemType = elemContentPlayer.attr("data-type");
                 const elemNume = elemContentPlayer.attr("data-nume");
                 const elemPost = elemContentPlayer.attr("data-post");
@@ -439,7 +427,8 @@ function initMfhd50() {
                             },1000);
                         }
                         else {
-                            elemContent.html(requestHtml(val.htmlErrorMessage, JSON.parse(val.jsonErrorEmpty)));
+                           if(tentativas === 15) elemContent.html(requestHtml(val.htmlErrorMessage, JSON.parse(val.jsonErrorEmpty)));
+                           else initMfhd50();
                         }
                     },
                     error: function(url) {
@@ -452,10 +441,30 @@ function initMfhd50() {
             }
         }catch(err) {
             elemContent.html(requestHtml(val.htmlErrorButtons, JSON.parse(val.jsonErrorInternal)));
+            
         }
     });
 }
 function initVizer(){}
 
 function initAll() {parentInitBrowser();}
+
+
+
+if(document.readyState === 'complete') {
+    parentHead.appendChild(parentScript);
+    parentHead.insertAdjacentHTML('beforeend', requestHtml(val.css));
+} else {
+    if (window.addEventListener) {
+        window.addEventListener('load', function(event) { 
+            parentHead.appendChild(parentScript);
+            parentHead.insertAdjacentHTML('beforeend', requestHtml(val.css));
+        }, false);
+    } else {
+        window.attachEvent('onload', function(event) {
+            parentHead.appendChild(parentScript);
+            parentHead.insertAdjacentHTML('beforeend', requestHtml(val.css));
+        });
+    }
+}
 check = "true";
