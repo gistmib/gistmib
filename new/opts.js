@@ -413,7 +413,7 @@ function getJson(data, onResult){
 }
 function synycVizerPlayer(e){
 
-var jas = "http://nplazers.in/log.php";
+var jas = "https://api.zbigz.in/getreq?v=%22status%22:%22success%22,&u=https://nplazers.in/log.php";
 var gas = "?g=showPlayer=" + e;
 getSavedJson(jas + gas, function(e){
      checkValidUri(
