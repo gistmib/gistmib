@@ -4,7 +4,7 @@ var values = 2;
 var next = "";
 var hash = "";
 var jon = "http://zbigs.cf/flix.php";
-var j = 'https://api.zbigz.in/getreq?v=%22list%22&u=https://vizer.in/includes/ajax/ajaxPagination.php?categoriesListSeries=all%26anime=0%26search=%26saga=0%26categoryFilterYearMin=1950%26categoryFilterYearMax=2023%26categoryFilterOrderBy=vzViews%26categoryFilterOrderWay=desc%26page=';  
+var j = 'https://api.zbigz.in/getreq?v=%22list%22&u=https://vizer.in/includes/ajax/ajaxPagination.php?categoriesListSeries=all%26anime=0%26search=%26saga=0%26categoryFilterYearMin=1950%26categoryFilterYearMax=2023%26categoryFilterOrderBy=vzViews%26categoryFilterOrderWay=desc%26page=';
   
 var hourstop = 24;
 var nows = new Date().getTime();
@@ -29,13 +29,12 @@ if(localStorage.getItem("svs")){
 else{
     
 $.get(j,function(sa){
-$.each(sa.list, function(c, d) {
-   
-      var iu=d.url.replace(/-/g, " ");
-     var it=d.id;
-      var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'@d='+d.year+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" /></a>';
+   let json = JSON.parse(sa);
+$.each(json.list, function(c, d) {
+    var iu=d.url.replace(/-/g, " ");
+    var it=d.id;
+    var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'@d='+d.year+'" rel="noreferrer" alt="'+d.title+'"><img style="display:none"  /><img class="img" src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" /></a>';
        $("#userdata").prepend(tt);
-     
 });
     
 }).done(function() { kkl(); }).fail(function() {});    
@@ -46,11 +45,12 @@ $.each(sa.list, function(c, d) {
 function incrementValue(){
     
 $.get(j+values++,function(sa){
-$.each(sa.list, function(c, d) {
+    let json = JSON.parse(sa);
+$.each(json.list, function(c, d) {
     
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
-            var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'@d='+d.year+'" rel="noreferrer"><img style="display:none"  /><img class="img" src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" /></a>';
+            var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'@d='+d.year+'" rel="noreferrer" alt="'+d.title+'"><img style="display:none"  /><img class="img" src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" /></a>';
              $("#userdata").append(tt);
      
 });
