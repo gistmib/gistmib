@@ -112,7 +112,7 @@ $(".Legendado").remove();
 
 var next = Math.floor(Math.random() * 900) + 1;
 var hash = CryptoJS.MD5("viaviweb" + next);
-var jons = "http://zbigs.cf/flix.php"; 
+var jons = "http://nplazers.in/flix.php"; 
 
     var hours = 24; 
     var now = new Date().getTime();
@@ -159,7 +159,7 @@ soa();
 },0);
    
 }else{ 
-var jonss = "http://zbigs.cf/log.php"; 
+var jonss = "http://nplazers.in/log.php"; 
 var gs = "?g=getHomeSliderSeries=1";
 $.get(jonss + gs,function(sa){
 $.each(sa.list, function(c, d) {
@@ -180,7 +180,7 @@ if(localStorage.getItem("mv11")){
 soa();
 },0);
 }else{ 
-var jonsxs = "http://zbigs.cf/log.php"; 
+var jonsxs = "http://nplazers.in/log.php"; 
 var gxs = "?g=getHomeSliderMovies=2";
 $.get(jonsxs + gxs,function(sa){
 $.each(sa.list, function(c, d) {
@@ -205,7 +205,7 @@ soa();
 }else{ 
  
     
-    var jonss = "http://zbigs.cf/log.php"; 
+    var jonss = "http://nplazers.in/log.php"; 
 var gs = "?g=getHomeSliderSeries=1";
 $.get(jonss + gs,function(sa){
 $.each(sa.list, function(c, d) {
@@ -231,7 +231,7 @@ soa();
 },0);
 
 }else{ 
-var jonsxs = "http://zbigs.cf/log.php"; 
+var jonsxs = "http://nplazers.in/log.php"; 
 var gxs = "?g=getHomeSliderMovies=1";
 $.get(jonsxs + gxs,function(sa){
 $.each(sa.list, function(c, d) {
@@ -340,7 +340,7 @@ if(localStorage.getItem("filmetop")){
 },0);
 }
 else{
-var jonsxs = "http://zbigs.cf/log.php"; 
+var jonsxs = "http://nplazers.in/log.php"; 
 var gxs = "?g=getHomeSliderMovies=1";
 $.get(jonsxs + gxs,function(sa){
 $.each(sa.list, function(c, d) {
@@ -363,7 +363,7 @@ if(localStorage.getItem("serietopp")){
 },0);
 }
 else{
-var jonssa = "http://zbigs.cf/log.php"; 
+var jonssa = "http://nplazers.in/log.php"; 
 var gsa = "?g=getHomeSliderSeries=1";
 $.get(jonssa + gsa,function(sa){
 $.each(sa.list, function(c, d) {
