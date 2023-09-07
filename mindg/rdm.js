@@ -1064,7 +1064,7 @@ const valObjs = {
     d: 'd',
     c: 'c',
     b: 'b',
-    vizerGetFilme: `https://api.zbigz.in/vizerreq?v=videoPlayerBox&u=`,
+    vizerGetFilme: `https://api.zbigz.in/vizerreq?v=%22list%22&u=`,
     vizerGetEpisodes: `https://api.zbigz.in/getreq?v=%22list%22&u=https://nplazers.in/log.php?g=getEpisodes=`,
     vizerGetSeasons: `https://api.zbigz.in/getreq?v=%22list%22&u=https://nplazers.in/log.php?g=getSeasons=`,
     vizerGetEpisode: `https://api.zbigz.in/getreq?v=%22list%22&u=https://nplazers.in/log.php?g=getEpisodeLanguages=`,
