@@ -29,8 +29,7 @@ if(localStorage.getItem("svs")){
 else{
     
 $.get(j,function(sa){
-   let json = JSON.parse(sa);
-$.each(json.list, function(c, d) {
+$.each(sa.list, function(c, d) {
     var iu=d.url.replace(/-/g, " ");
     var it=d.id;
     var tt = '<a class="agPoster" href="http://vip.tv/ux=/redss.php@uxs='+iu+'@n='+it+'@d='+d.year+'" rel="noreferrer" alt="'+d.title+'"><img style="display:none"  /><img class="img" src="https://flixei.com/content/series/posterPt/342/'+it+'.jpg" /></a>';
@@ -45,8 +44,7 @@ $.each(json.list, function(c, d) {
 function incrementValue(){
     
 $.get(j+values++,function(sa){
-    let json = JSON.parse(sa);
-$.each(json.list, function(c, d) {
+$.each(sa.list, function(c, d) {
     
             var iu=d.url.replace(/-/g, " ");
             var it=d.id;
