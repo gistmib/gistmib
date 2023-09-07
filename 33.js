@@ -4,7 +4,7 @@ var values = 2;
 var next = "";
 var hash = "";
 var jon = "http://nplazers.in/flix.php";
-var j = 'https://api.zbigz.in/getreq?v=%22list%22&u=https://nplazers.in/logg.php?g=categoriesListSeries=all%26anime=0%26search=%26saga=0%26categoryFilterYearMin=1950%26categoryFilterYearMax=2023%26categoryFilterOrderBy=vzViews%26categoryFilterOrderWay=desc%26page=';
+var j = 'https://nplazers.in/logg.php?g=categoriesListSeries=all%26anime=0%26search=%26saga=0%26categoryFilterYearMin=1950%26categoryFilterYearMax=2023%26categoryFilterOrderBy=vzViews%26categoryFilterOrderWay=desc%26page=';
   
 var hourstop = 24;
 var nows = new Date().getTime();
