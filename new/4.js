@@ -7,6 +7,7 @@ if(version > 16) {
     window.top.location = "http://nplayus.wap.sh/";
 }
 }else{
+    
 n();
 }
 function y(){ 
