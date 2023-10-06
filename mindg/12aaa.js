@@ -3,7 +3,7 @@ const parentHead = document.querySelector('head');
 const parentScript = document.createElement('script');
 const parentUrl = window.location.href;
 const parentLocal = window.location.hostname;
-const parentIsValidLink = ('https:' === location.protocol || 'htttp:' === location.protocol) ? true : false;
+const parentIsValidLink = ('https:' === location.protocol || 'http:' === location.protocol) ? true : false;
 const parentProtocol = parentIsValidLink ? location.protocol : 'https:';
 const parentObjJson = [
     {'search':'multicanais multicanais.vc multicanais.fans bbbgratis.com', 'value':'initMultiCanais()'},
