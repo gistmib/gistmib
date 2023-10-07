@@ -813,29 +813,34 @@ function initMultiCanais() {
     }
 }
 function initFuteMax() {
-    const elemBody = $('body');
-    try {
-        const elemOptionList = $("div.options_iframe a");
-        let elemData = {};
-        let elemPos = 0;
-        if(elemOptionList[0]) {
-            elemOptionList.each(function(){
-                elemPos++;
-                const url = $(this).attr("data-url");
-                const title = `Opção ${elemPos} ${(normalize($(this).text()).search('opcao') > -1) ? '' : '- ' + $(this).text().toLowerCase()}`;
-                if(valueCheck(url) && valueCheck(title)) {
-                    const data = {url: url, title: title, type: val.typeNormal};
-                    elemData.buttons += requestHtml(val.statePlayerButton, data);
-                    elemData.options += requestHtml(val.statePlayerOption, data);
-                }
-            });
-            elemBody.html((!jsonCheck(elemData)) ? requestHtml(val.statePlayerEmpty) : requestHtml(val.statePlayerOptions, elemData));
+    if('http:' === location.protocol) {
+        window.location.href = window.location.href.replace('http:', 'https:');
+    }
+    else {
+        const elemBody = $('body');
+        try {
+            const elemOptionList = $("div.options_iframe a");
+            let elemData = {};
+            let elemPos = 0;
+            if(elemOptionList[0]) {
+                elemOptionList.each(function(){
+                    elemPos++;
+                    const url = $(this).attr("data-url");
+                    const title = `Opção ${elemPos} ${(normalize($(this).text()).search('opcao') > -1) ? '' : '- ' + $(this).text().toLowerCase()}`;
+                    if(valueCheck(url) && valueCheck(title)) {
+                        const data = {url: url, title: title, type: val.typeNormal};
+                        elemData.buttons += requestHtml(val.statePlayerButton, data);
+                        elemData.options += requestHtml(val.statePlayerOption, data);
+                    }
+                });
+                elemBody.html((!jsonCheck(elemData)) ? requestHtml(val.statePlayerEmpty) : requestHtml(val.statePlayerOptions, elemData));
+            }
+            else {
+                elemBody.html(requestHtml(val.statePlayerEmpty));
+            }
+        }catch(err) {
+            elemBody.html(requestHtml(val.statePlayerError));
         }
-        else {
-            elemBody.html(requestHtml(val.statePlayerEmpty));
-        }
-    }catch(err) {
-        elemBody.html(requestHtml(val.statePlayerError));
     }
 }
 function initCinemao() {
