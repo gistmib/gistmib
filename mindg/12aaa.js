@@ -853,11 +853,13 @@ function initCinemao() {
             elemOptionList.each(function(){
                 elemPos++;
                 const url = $(this).attr("onclick").replace(/[^\d]/g, '');
-                const title = `Opção ${elemPos} ${(normalize($(this).text()).search('opcao') > -1) ? '' : '- ' + $(this).text().toLowerCase()}`;
-                if(valueCheck(url) && valueCheck(title)) {
-                    const data = {url: url, title: title, type: val.typeCinemao};
-                    elemData.buttons += requestHtml(val.statePlayerButton, data);
-                    elemData.options += requestHtml(val.statePlayerOption, data);
+                if(url !== '9' && url !== '10') {
+                    const title = `Opção ${elemPos} ${(normalize($(this).text()).search('opcao') > -1) ? '' : '- ' + $(this).text().toLowerCase()}`;
+                    if(valueCheck(url) && valueCheck(title)) {
+                        const data = {url: url, title: title, type: val.typeCinemao};
+                        elemData.buttons += requestHtml(val.statePlayerButton, data);
+                        elemData.options += requestHtml(val.statePlayerOption, data);
+                    }
                 }
             });
             elemBody.html((!jsonCheck(elemData)) ? requestHtml(val.statePlayerEmpty) : requestHtml(val.statePlayerOptions, elemData));
