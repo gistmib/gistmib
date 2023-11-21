@@ -1064,10 +1064,10 @@ const valObjs = {
     d: 'd',
     c: 'c',
     b: 'b',
-    vizerGetFilme: `https://api.zbigz.in/vizerreq?v=%22list%22&u=`,
-    vizerGetEpisodes: `https://api.zbigz.in/getreq?v=%22list%22&u=https://nplazers.in/log.php?g=getEpisodes=`,
-    vizerGetSeasons: `https://api.zbigz.in/getreq?v=%22list%22&u=https://nplazers.in/log.php?g=getSeasons=`,
-    vizerGetEpisode: `https://api.zbigz.in/getreq?v=%22list%22&u=https://nplazers.in/log.php?g=getEpisodeLanguages=`,
+    vizerGetFilme: `https://nplazers.in/req.php?data=`,
+    vizerGetEpisodes: `https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodes=`,
+    vizerGetSeasons: `https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getSeasons=`,
+    vizerGetEpisode: `https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodeLanguages=`,
     tmdbMovieUrl: 'https://api.themoviedb.org/3/movie/$?api_key=6b4357c41d9c606e4d7ebe2f4a8850ea&language=pt-BR',
     tmdbMovieYTurl: 'https://api.themoviedb.org/3/movie/$/videos?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR',
     tmdbMovieSearchUrl: 'https://api.themoviedb.org/3/search/movie?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR&page=1&include_adult=false&query=$query&year=$year',
@@ -1146,14 +1146,19 @@ function initType(fileName){
             initObjs.tmdbSearchUrl = valObjs.tmdbMovieSearchUrl.replace('$query', diffReturnVal(getParam(valObjs.uxs, url), '')).replace('$year', diffReturnVal(getParam(valObjs.d, url), '').split(',').pop().split(' ').pop());
             initObjs.tmdbYTurl = valObjs.tmdbMovieYTurl;
             initObjs.tmdbUrl = valObjs.tmdbMovieUrl;
-            initObjs.siteUrl = valObjs.vizerGetFilme + diffReturnVal(getParam(valObjs.uxs, url), '').replace(/ /g,'-');
+            initObjs.siteUrl = valObjs.vizerGetFilme + btoa(JSON.stringify({
+                method: 0,
+                url: 'https://vizer.tv/filme/online/' + diffReturnVal(getParam(valObjs.uxs, url), '').replace(/ /g,'-'),
+                params: '',
+                validator: '"list":',
+                timeExpire: 0
+            }));
             initObjs.similar = localStorage.getItem(valObjs.mv112);
-
             Promise.all([getPromise(initObjs.tmdbSearchUrl, true), getPromise(initObjs.siteUrl, false)]).then(async (data) => {
                 initObjs.tmdbId = getJsonVal(parseJson(data[0], valObjs.results, 0), 'id');
                 initObjs.tmdbJson = await syncTmdbJson(initObjs.tmdbUrl, false);
                 initObjs.tmdbYTJson = await syncTmdbJson(initObjs.tmdbYTurl, true);
-                initObjs.siteJson = parseJson(data[1]);
+                initObjs.siteJson = parseJson(getVizerMovieData(data[1]));
                 initMoviePage();
             }).catch((err) => {
                 initErrorPage();
@@ -1657,7 +1662,12 @@ function addMyListItem(key) {
     element.html(requestItemHtml(null, valObjs.saveChange));
     showAlert(valTextObjs.addedMyListAlert);
 }
-
+function getVizerMovieData (html) {
+    try {
+        return `{${html.split('videoPlayerBox({')[1].split('}}});')[0]}}`;
+    } catch (err) {}
+    return '';
+}
 
 function onPlayerReady(event) {
     ytPlayer.elementTumbArea = $('.tumb-area');
