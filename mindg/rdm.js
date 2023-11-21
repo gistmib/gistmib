@@ -1064,7 +1064,7 @@ const valObjs = {
     d: 'd',
     c: 'c',
     b: 'b',
-    vizerGetFilme: `https://nplazers.in/req.php?data=`,
+    vizerGetFilme: `https://api.zbigz.in/vizerreq?v=videoPlayerBox&u=`,
     vizerGetEpisodes: `https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodes=`,
     vizerGetSeasons: `https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getSeasons=`,
     vizerGetEpisode: `https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodeLanguages=`,
@@ -1146,19 +1146,14 @@ function initType(fileName){
             initObjs.tmdbSearchUrl = valObjs.tmdbMovieSearchUrl.replace('$query', diffReturnVal(getParam(valObjs.uxs, url), '')).replace('$year', diffReturnVal(getParam(valObjs.d, url), '').split(',').pop().split(' ').pop());
             initObjs.tmdbYTurl = valObjs.tmdbMovieYTurl;
             initObjs.tmdbUrl = valObjs.tmdbMovieUrl;
-            initObjs.siteUrl = valObjs.vizerGetFilme + btoa(JSON.stringify({
-                method: 0,
-                url: 'https://vizer.tv/filme/online/' + diffReturnVal(getParam(valObjs.uxs, url), '').replace(/ /g,'-'),
-                params: '',
-                validator: '"list":',
-                timeExpire: 0
-            }));
+            initObjs.siteUrl = valObjs.vizerGetFilme + diffReturnVal(getParam(valObjs.uxs, url), '').replace(/ /g,'-');
             initObjs.similar = localStorage.getItem(valObjs.mv112);
+
             Promise.all([getPromise(initObjs.tmdbSearchUrl, true), getPromise(initObjs.siteUrl, false)]).then(async (data) => {
                 initObjs.tmdbId = getJsonVal(parseJson(data[0], valObjs.results, 0), 'id');
                 initObjs.tmdbJson = await syncTmdbJson(initObjs.tmdbUrl, false);
                 initObjs.tmdbYTJson = await syncTmdbJson(initObjs.tmdbYTurl, true);
-                initObjs.siteJson = parseJson(getVizerMovieData(data[1]));
+                initObjs.siteJson = parseJson(data[1]);
                 initMoviePage();
             }).catch((err) => {
                 initErrorPage();
@@ -1464,6 +1459,7 @@ function getEpisode(episode) {
             showAlert(valTextObjs.episodeErrorAlert);
         }
     }else {
+        console.log(link);
         requestSerieJsonReturn(link,
         (response, url) => {
             if(url == link) {
@@ -1662,12 +1658,7 @@ function addMyListItem(key) {
     element.html(requestItemHtml(null, valObjs.saveChange));
     showAlert(valTextObjs.addedMyListAlert);
 }
-function getVizerMovieData (html) {
-    try {
-        return `{${html.split('videoPlayerBox({')[1].split('}}});')[0]}}}}`;
-    } catch (err) {}
-    return '{}';
-}
+
 
 function onPlayerReady(event) {
     ytPlayer.elementTumbArea = $('.tumb-area');
