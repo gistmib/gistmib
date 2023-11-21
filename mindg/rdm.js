@@ -1664,9 +1664,9 @@ function addMyListItem(key) {
 }
 function getVizerMovieData (html) {
     try {
-        return `{${html.split('videoPlayerBox({')[1].split('}}});')[0]}}`;
+        return `{${html.split('videoPlayerBox({')[1].split('}}});')[0]}}}}`;
     } catch (err) {}
-    return '';
+    return '{}';
 }
 
 function onPlayerReady(event) {
