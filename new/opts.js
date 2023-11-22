@@ -323,7 +323,7 @@ if(isUpdated()){
             case 0:
                 //window.fct.onLoadAd("2", "ca-app-pub-3940256099942544/1033173712");
                 //$("body").append("time expired or null" + userID)
-                //isPremiumUser();
+                isPremiumUser();
                 // time expired or null.
                 break;
             case 2:
