@@ -323,7 +323,7 @@ if(isUpdated()){
             case 0:
                 //window.fct.onLoadAd("2", "ca-app-pub-3940256099942544/1033173712");
                 //$("body").append("time expired or null" + userID)
-                isPremiumUser();
+                //isPremiumUser();
                 // time expired or null.
                 break;
             case 2:
@@ -413,8 +413,8 @@ function getJson(data, onResult){
 }
 function synycVizerPlayer(e){
 
-var jas = "https://api.zbigz.in/getreq?v=%22status%22:%22success%22,&u=https://nplazers.in/log.php";
-var gas = "?g=showPlayer=" + e;
+var jas = "https://zbigz.in/log.php";
+var gas = "?v=%22status%22:%22success%22,&g=showPlayer=" + e;
 getSavedJson(jas + gas, function(e){
      checkValidUri(
         'http://vizer.in/img/favicon.ico', 
@@ -515,7 +515,8 @@ getSavedJson(jas + gas, function(e){
 function getSavedJson(value, onResult){
     if(localStorage.getItem(value)) {
         onResult(JSON.parse(localStorage.getItem(value)))
-    }else {
+    }
+    else {
         fetch(value)
         .then((response) => response.json())
         .then((e) => {
