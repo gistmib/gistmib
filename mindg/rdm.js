@@ -1064,7 +1064,7 @@ const valObjs = {
     d: 'd',
     c: 'c',
     b: 'b',
-    vizerGetFilme: `https://${randomServer ? 'zbigz' : 'zbigz'}.in/loggg.php?v=%22list%22g=`, //`https://api.zbigz.in/vizerreq?v=videoPlayerBox&u=`,
+    vizerGetFilme: `https://${randomServer ? 'zbigz' : 'zbigz'}.in/loggg.php?v=%22list%22&g=`, //`https://api.zbigz.in/vizerreq?v=videoPlayerBox&u=`,
     vizerGetEpisodes: `https://${randomServer ? 'zbigz' : 'zbigz'}.in/log.php?v=%22list%22&g=getEpisodes=`, //`https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodes=`,
     vizerGetSeasons: `https://${randomServer ? 'zbigz' : 'zbigz'}.in/log.php?v=%22list%22&g=getSeasons=`, //`https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getSeasons=`,
     vizerGetEpisode: `https://${randomServer ? 'zbigz' : 'zbigz'}.in/log.php?v=%22list%22&g=getEpisodeLanguages=`, //`https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodeLanguages=`,
