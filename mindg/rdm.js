@@ -1064,10 +1064,10 @@ const valObjs = {
     d: 'd',
     c: 'c',
     b: 'b',
-    vizerGetFilme: `https://api.zbigz.in/vizerreq?v=videoPlayerBox&u=`,
-    vizerGetEpisodes: `https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'nplazers'}.in/log.php?g=getEpisodes=`,
-    vizerGetSeasons: `https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'nplazers'}.in/log.php?g=getSeasons=`,
-    vizerGetEpisode: `https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'nplazers'}.in/log.php?g=getEpisodeLanguages=`,
+    vizerGetFilme: `https://${randomServer ? 'zbigz' : 'zbigz'}.in/loggg.php?v=%22list%22g=`, //`https://api.zbigz.in/vizerreq?v=videoPlayerBox&u=`,
+    vizerGetEpisodes: `https://${randomServer ? 'zbigz' : 'zbigz'}.in/log.php?v=%22list%22&g=getEpisodes=`, //`https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodes=`,
+    vizerGetSeasons: `https://${randomServer ? 'zbigz' : 'zbigz'}.in/log.php?v=%22list%22&g=getSeasons=`, //`https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getSeasons=`,
+    vizerGetEpisode: `https://${randomServer ? 'zbigz' : 'zbigz'}.in/log.php?v=%22list%22&g=getEpisodeLanguages=`, //`https://api.zbigz.in/getreq?v=%22list%22&u=https://${randomServer ? 'nplazers' : 'zbigz'}.in/log.php?g=getEpisodeLanguages=`,
     tmdbMovieUrl: 'https://api.themoviedb.org/3/movie/$?api_key=6b4357c41d9c606e4d7ebe2f4a8850ea&language=pt-BR',
     tmdbMovieYTurl: 'https://api.themoviedb.org/3/movie/$/videos?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR',
     tmdbMovieSearchUrl: 'https://api.themoviedb.org/3/search/movie?api_key=fcc1be0c88f74c3478f6d09f36bb9a37&language=pt-BR&page=1&include_adult=false&query=$query&year=$year',
@@ -1170,7 +1170,6 @@ function initType(fileName){
             initObjs.tmdbUrl = valObjs.tmdbTvUrl;
             initObjs.siteUrl = valObjs.vizerGetSeasons + diffReturnVal(getParam(valObjs.n, url), '');
             initObjs.similar = localStorage.getItem(valObjs.mv112);
-
             Promise.all([getPromise(initObjs.tmdbSearchUrl, true), getPromise(initObjs.siteUrl, false)]).then(async (data) => {
                 initObjs.tmdbId = getJsonVal(parseJson(data[0], valObjs.results, 0), 'id');
                 initObjs.tmdbJson = await syncTmdbJson(initObjs.tmdbUrl, false);
@@ -1296,7 +1295,7 @@ async function getPromise(url, isCached) {
 }
 async function syncHtml(url, isCached) {
     try{
-        options = isCached ? {credentials: 'same-origin', cache: 'force-cache'} : {credentials: 'same-origin'}
+        options = isCached ? {credentials: 'same-origin', cache: 'force-cache'} : {credentials: 'same-origin', cache: 'force-cache'}
         response = await fetch(url, options);
         text = await response.text();
         return (valueCheck(text) && response.ok == true && response.status == 200) ? text : 'error';
@@ -1307,7 +1306,7 @@ async function syncHtml(url, isCached) {
 }
 async function syncJson(url, isCached) {
     try{
-        options = isCached ? {credentials: 'same-origin', cache: 'force-cache'} : {credentials: 'same-origin'}
+        options = isCached ? {credentials: 'same-origin', cache: 'force-cache'} : {credentials: 'same-origin', cache: 'force-cache'}
         singleResponse = await fetch(url, options);
         text = await singleResponse.json();
         return (valueCheck(text) && singleResponse.ok == true && singleResponse.status == 200) ? text : null;
@@ -1459,7 +1458,6 @@ function getEpisode(episode) {
             showAlert(valTextObjs.episodeErrorAlert);
         }
     }else {
-        console.log(link);
         requestSerieJsonReturn(link,
         (response, url) => {
             if(url == link) {
