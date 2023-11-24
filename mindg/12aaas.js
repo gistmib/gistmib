@@ -7,7 +7,7 @@ const parentIsValidLink = ('https:' === location.protocol || 'http:' === locatio
 const parentProtocol = parentIsValidLink ? location.protocol : 'https:';
 const parentObjJson = [
     {'search':'multicanais multicanais.vc multicanais.fans bbbgratis.com', 'value':'initMultiCanais()'},
-    {'search':'futemax futemax.app futemax.to', 'value':'initFuteMax()'},
+    {'search':'futemax futemax.app futemax.to futemax.la', 'value':'initFuteMax()'},
     {'search':'megafilmeshd50 megafilmeshd50.com megafilmeshd50.net', 'value':'initMegaFilmesHd()'},
     {'search':'canaisplay canaisplay.com', 'value':'initAll()'},
     {'search':'warezcdn embed.warezcdn.net embed.warezcdn.com warezcdn.com warezcdn.net', 'value':'initVizer()'},
@@ -813,13 +813,51 @@ function initMultiCanais() {
     }
 }
 function initFuteMax() {
+    $('body').append(`<style>
+       #player {
+            display: flex !important;
+            flex-direction: column !important;
+            position: fixed !important;
+            width: -webkit-fill-available !important;
+            height: -webkit-fill-available !important;
+            top: 0 !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            z-index: 10000000000 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        #fp {
+            width: 100% !important;
+            height: 100% !important;
+            flex: 1 !important;
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+        #options{
+            width: 100% !important;
+        }
+        #aside-player {
+            display: none !important;
+        }
+        .container-player {
+            padding: 0px !important;
+            height: 100% !important;
+        }
+    </style>`).ready(function() {
+        $('lander').hide();
+    });
+}
+function initFuteMaxOld() {
+    
     if('http:' === location.protocol) {
         window.location.href = window.location.href.replace('http:', 'https:');
     }
     else {
         const elemBody = $('body');
         try {
-            const elemOptionList = $("div.options_iframe a");
+            const elemOptionList = $("#options .container-options");
             let elemData = {};
             let elemPos = 0;
             if(elemOptionList[0]) {
