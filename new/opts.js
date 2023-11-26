@@ -341,7 +341,7 @@ window.fct.onLoadSuccess(ads);
 function isPremiumUser(){
     setTimeout(() => {
         window.fct.onLoadAd("0", interstitialID);
-        window.fct.onLoadAd("2", admobInterstitialID);
+        //window.fct.onLoadAd("2", admobInterstitialID);
     }, 1000);
 }
 function kxcv() {
