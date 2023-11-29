@@ -119,6 +119,7 @@ function fois(e){
     window.fct.onLoadProgress(ads);
    // window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Baixar o 9UHDMAX oficial agora","Atenção seu acesso foi bloqueado pois detectamos que você está usando um aplicativo modificado, para desbloquear nosso aplicativo baixe a versão oficial do <b>9UHDMAX</b> disponível em nosso site.", 1, true, 0); //
     }
+    window.fct.onLoadSuccess(ads);
 }
 function statusAd(statusAd, typeAd){
     if(typeAd == "0" && (statusAd == "1" || statusAd == "5")) {
@@ -128,6 +129,7 @@ function statusAd(statusAd, typeAd){
         $("body").append('<img src="https://whos.amung.us/widget/29lgbbtjsj.png" width="0" height="0" border="0" />');
         window.fct.onLoadAd("0", interstitialID);
     }
+    window.fct.onLoadSuccess(ads);
 }
 function getParam(name, url) {
     if (!url) url = window.location.href;
@@ -332,7 +334,7 @@ if(isUpdated()){
                 break;
         }
     });
-    window.fct.onLoadSuccess(ads);
+    //window.fct.onLoadSuccess(ads);
 }
 else {
 window.fct.onLoadSuccess(ads);
