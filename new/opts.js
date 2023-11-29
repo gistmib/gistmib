@@ -1,5 +1,6 @@
 var version = parseInt(document.title)
 let i = 0;
+let foier = false;
 
 var imager = new Image();
 var userID = synicUID();
@@ -37,70 +38,73 @@ $("body").append('<img src="https://whos.amung.us/widget/b69af64q2l.png" width="
 });
 
 function loadData(e, isDownload){
-    if(isUpdated()) {
-    var obj = jQuery.parseJSON(''+e+'');
-    var site = obj.site;
-    if(isDownload){
-        isDown = "<style>#assistir{display:none}#transmitir{display:none}</style>";
-    }
-    else {
-        if(obj.type == "filme") {
-            isDown = "<style>#baixar{display:none}</style>";
+    if(!foier) {
+        if(isUpdated()) {
+            var obj = jQuery.parseJSON(''+e+'');
+            var site = obj.site;
+            if(isDownload){
+                isDown = "<style>#assistir{display:none}#transmitir{display:none}</style>";
+            }
+            else {
+                if(obj.type == "filme") {
+                    isDown = "<style>#baixar{display:none}</style>";
+                }
+            }
+            var hide;
+            try {
+                hide = (valueCheck(obj.val)) ? `.plr_c div {display:none !important}.plr_c ${(obj.val == 'all') ? '#baixar, #assistir, #transmitir' : (obj.val == 'play') ? '#assistir' : (obj.val == 'down') ? '#baixar' : '#transmitir'}{display: block !important}` : '';
+            } catch (error) { hide = ''; }
+            isDown += "<style>"+hide+".lang{position:absolute;text-align:center;color:#ffffff;display: inline-flex;word-wrap: break-word;overflow: hidden;font-size:11px;background:#ff0000;padding:3px;margin-left:4px;border-radius:2px}body{margin:1px}.img_share{border-radius:100px;background:#999999;width:25px;height:25px;padding:10px;margin:10px}.btn_player{width:auto;height:auto;padding-top:8px;padding-bottom:8px;margin-top:5px;margin-bottom:5px;color:#ffffff;background: url('https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png');background-size:20px;background-position: 3px center;background-repeat:no-repeat;padding-left:28px}.btn_player2{width:auto;height:auto;padding-top:8px;padding-bottom:8px;margin-top:5px;margin-bottom:5px;color:#ffffff;background: url('https://img.icons8.com/material-sharp/50/ffffff/web-advertising.png');background-size:20px;background-position: 3px center;background-repeat:no-repeat;padding-left:28px}.share_area{border-radius:10px;background:#333333;padding:10px;padding-bottom:5px;margin-bottom:15px;color:#cccccc}.info_area{border-radius:10px;border:#333333 1px solid;padding:10px;padding-bottom:5px;margin-bottom:15px;color:#cccccc}.info_title{margin-bottom:10px;font-size:15px;color:#999999}.share_title{margin-bottom:10px;font-size:15px;color:#999999}</style><div class='info_area'><div class='info_title'><b>Dicas úteis</b></div><div><div class='btn_player' onclick='openLink(\"https://www.youtube.com/watch?v=TjPIVuhMJ-c\")'><b>Vejá como transmitir os vídeos para a sua tv</b></div><div class='btn_player2' style='display:none' onclick='openLink(\"mailto:contato.app.uhdmax@proton.me?subject=Remover anúncio usuario id: "+userID+"\")'><b>Remover todos os anúncios por apenas R$10/MÊS? entre em contato pelo nosso email</b></div></div></div>  <div class='share_area'><div class='share_title'><b>Compartilhe esse projeto</b></div><center><div><img onclick='openLink(\"https://api.whatsapp.com/send?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/phone--v1.png' /> <img onclick='openLink(\"https://telegram.me/share/url?url=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/windows/100/333333/telegram-app.png' /> <img onclick='openLink(\"https://www.facebook.com/sharer.php?u=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-outlined/100/333333/facebook-f.png' /> <img onclick='openLink(\"https://twitter.com/intent/tweet?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-sharp/100/333333/twitter.png' /> <img onclick='send()' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/plus-math.png' /></div></center></div>";
+            if(site == "vizer"){
+                var data = JSON.parse(window.atob(obj.lang));
+                getJson(data, function(html){ $("#pts").append(html) });
+            }
+            if(site == "cinemao"){
+                var video_id = obj.id;
+                var url_principal = "https://playerhd.org/video/embedteste2.php?id=" + video_id;
+                var url_secondary = "https://playerhd.org/video/player.php?id=" + video_id;
+                html = "<div id='pts'><div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player de navegador <br/><div class='subTitle'>Opção recomendada.</div></div></div><div class='plr_c'><div onclick='download(\""+site+"\", 2, \""+url_secondary+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div  onclick='download(\""+site+"\", 1, \"https://href.li/?http://giganet.tv/"+url_secondary+"\")' class='pl_player bg_border' id='baixar'><img src='file:///android_asset/img/baixar_ff.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/"+url_secondary+"\")' class='pl_player bg_border removespace' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div></div></div></div>";
+                $("#pts").wrap(html+isDown);                                        
+            }
+            if(site == "mfhd"){
+                var video_id = obj.id;
+                var url_secondary = video_id;
+                html = "<div id='pts'>                                                                                                                      <div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player de navegador <br/><div class='subTitle'>Opção recomendada.</div></div></div>                                                                                                                  <div class='plr_c'>                                               <div onclick='download(\""+site+"\", 2, \""+url_secondary+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div>            <div  onclick='download(\""+site+"\", 1, \""+url_secondary+"\")' class='pl_player bg_border' id='baixar'><img src='file:///android_asset/img/baixar_ff.png' class='plr' /></div>        <div onclick='download(\""+site+"\", 3, \""+url_secondary+"\")' class='pl_player bg_border removespace' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div></div></div></div>";
+                $("#pts").wrap(html+isDown);
+            }
+            if(site == "tv"){
+            var video_id = obj.id;
+            var player_0 = getParam("no", video_id);
+            var player_1 = "https://" + getParam("uc", video_id);
+            var player_2 = getParam("casd", video_id);
+            var player_3 = getParam("pix", video_id);
+            var player_4 = getParam("hd2", video_id);
+            if(player_1 !== "" && player_1 !== null){
+            //html += "<div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player normal 1 (720p) <br/><div class='subTitle'>Opção recomendada.</div></div></div>                                                                                                                                 <div class='plr_c'>                                                  <div onclick='download(\""+site+"\", 2, \""+player_1+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_border' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div>  </div></div></div>";   
+            }
+            if(player_2 !== "" && player_2 !== null){
+            html += "<div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player normal 2 (720p) <br/><div class='subTitle'>Opção recomendada.</div></div></div>                                                                                                                                 <div class='plr_c'>                                                  <div onclick='download(\""+site+"\", 2, \""+player_2+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_border' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div>  </div></div></div>";   
+            }
+            if(player_4 !== "" && player_4 !== null){
+            html += "<div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player normal HD (1080p) <br/><div class='subTitle'>Opção recomendada.</div></div></div>                                                                                                                                 <div class='plr_c'>                                                  <div onclick='download(\""+site+"\", 2, \"https://"+player_4+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_border' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div>  </div></div></div>";   
+            }
+            if(player_3 !== "" && player_3 !== null){
+            html += "<div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player normal 3 (720p) <br/><div class='subTitle'>Opção recomendada.</div></div></div>                                                                                                                                 <div class='plr_c'>                                                  <div onclick='download(\""+site+"\", 2, \""+player_3+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_border' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div>  </div></div></div>";   
+            }
+            
+            if(player_0 !== "" && player_0 !== null){
+            html += "<div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player HD (1080p) <br/><div class='subTitle'>Opção de alta qualidade.</div></div></div>                                                                                                                                 <div class='plr_c'>                                                  <div onclick='download(\""+site+"\", 2, \"https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_border' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div>  </div></div> ";   
+            }
+        
+        
+            html = "<div id='pts'> "+html+" </div><div id='blus'></div><script>programs(\""+player_0+"\")<\/script>";
+            
+            $("#pts").wrap(html+isDown);
+        } }
+        else {
+            window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Acessar site e atualizar agora","<big><b>Seu aplicativo está desatualizado!</b></big><br/><br/> Acesse o nosso site e baixe já a nossa nova versão atualizada repleta de melhorias e novidades.", 1, true, 0);
         }
-    }
-    var hide;
-    try {
-        hide = (valueCheck(obj.val)) ? `.plr_c div {display:none !important}.plr_c ${(obj.val == 'all') ? '#baixar, #assistir, #transmitir' : (obj.val == 'play') ? '#assistir' : (obj.val == 'down') ? '#baixar' : '#transmitir'}{display: block !important}` : '';
-    } catch (error) { hide = ''; }
-    isDown += "<style>"+hide+".lang{position:absolute;text-align:center;color:#ffffff;display: inline-flex;word-wrap: break-word;overflow: hidden;font-size:11px;background:#ff0000;padding:3px;margin-left:4px;border-radius:2px}body{margin:1px}.img_share{border-radius:100px;background:#999999;width:25px;height:25px;padding:10px;margin:10px}.btn_player{width:auto;height:auto;padding-top:8px;padding-bottom:8px;margin-top:5px;margin-bottom:5px;color:#ffffff;background: url('https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png');background-size:20px;background-position: 3px center;background-repeat:no-repeat;padding-left:28px}.btn_player2{width:auto;height:auto;padding-top:8px;padding-bottom:8px;margin-top:5px;margin-bottom:5px;color:#ffffff;background: url('https://img.icons8.com/material-sharp/50/ffffff/web-advertising.png');background-size:20px;background-position: 3px center;background-repeat:no-repeat;padding-left:28px}.share_area{border-radius:10px;background:#333333;padding:10px;padding-bottom:5px;margin-bottom:15px;color:#cccccc}.info_area{border-radius:10px;border:#333333 1px solid;padding:10px;padding-bottom:5px;margin-bottom:15px;color:#cccccc}.info_title{margin-bottom:10px;font-size:15px;color:#999999}.share_title{margin-bottom:10px;font-size:15px;color:#999999}</style><div class='info_area'><div class='info_title'><b>Dicas úteis</b></div><div><div class='btn_player' onclick='openLink(\"https://www.youtube.com/watch?v=TjPIVuhMJ-c\")'><b>Vejá como transmitir os vídeos para a sua tv</b></div><div class='btn_player2' style='display:none' onclick='openLink(\"mailto:contato.app.uhdmax@proton.me?subject=Remover anúncio usuario id: "+userID+"\")'><b>Remover todos os anúncios por apenas R$10/MÊS? entre em contato pelo nosso email</b></div></div></div>  <div class='share_area'><div class='share_title'><b>Compartilhe esse projeto</b></div><center><div><img onclick='openLink(\"https://api.whatsapp.com/send?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/phone--v1.png' /> <img onclick='openLink(\"https://telegram.me/share/url?url=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/windows/100/333333/telegram-app.png' /> <img onclick='openLink(\"https://www.facebook.com/sharer.php?u=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-outlined/100/333333/facebook-f.png' /> <img onclick='openLink(\"https://twitter.com/intent/tweet?text=https://9uhdmax.wap.sh\")' class='img_share' src='https://img.icons8.com/material-sharp/100/333333/twitter.png' /> <img onclick='send()' class='img_share' src='https://img.icons8.com/ios-glyphs/100/333333/plus-math.png' /></div></center></div>";
-    if(site == "vizer"){
-        var data = JSON.parse(window.atob(obj.lang));
-        getJson(data, function(html){ $("#pts").append(html) });
-    }
-    if(site == "cinemao"){
-        var video_id = obj.id;
-        var url_principal = "https://playerhd.org/video/embedteste2.php?id=" + video_id;
-        var url_secondary = "https://playerhd.org/video/player.php?id=" + video_id;
-        html = "<div id='pts'><div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player de navegador <br/><div class='subTitle'>Opção recomendada.</div></div></div><div class='plr_c'><div onclick='download(\""+site+"\", 2, \""+url_secondary+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div  onclick='download(\""+site+"\", 1, \"https://href.li/?http://giganet.tv/"+url_secondary+"\")' class='pl_player bg_border' id='baixar'><img src='file:///android_asset/img/baixar_ff.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/"+url_secondary+"\")' class='pl_player bg_border removespace' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div></div></div></div>";
-        $("#pts").wrap(html+isDown);                                        
-    }
-    if(site == "mfhd"){
-        var video_id = obj.id;
-        var url_secondary = video_id;
-        html = "<div id='pts'>                                                                                                                      <div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player de navegador <br/><div class='subTitle'>Opção recomendada.</div></div></div>                                                                                                                  <div class='plr_c'>                                               <div onclick='download(\""+site+"\", 2, \""+url_secondary+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div>            <div  onclick='download(\""+site+"\", 1, \""+url_secondary+"\")' class='pl_player bg_border' id='baixar'><img src='file:///android_asset/img/baixar_ff.png' class='plr' /></div>        <div onclick='download(\""+site+"\", 3, \""+url_secondary+"\")' class='pl_player bg_border removespace' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div></div></div></div>";
-        $("#pts").wrap(html+isDown);
-    }
-    if(site == "tv"){
-    var video_id = obj.id;
-    var player_0 = getParam("no", video_id);
-    var player_1 = "https://" + getParam("uc", video_id);
-    var player_2 = getParam("casd", video_id);
-    var player_3 = getParam("pix", video_id);
-    var player_4 = getParam("hd2", video_id);
-    if(player_1 !== "" && player_1 !== null){
-    //html += "<div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player normal 1 (720p) <br/><div class='subTitle'>Opção recomendada.</div></div></div>                                                                                                                                 <div class='plr_c'>                                                  <div onclick='download(\""+site+"\", 2, \""+player_1+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_border' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div>  </div></div></div>";   
-    }
-    if(player_2 !== "" && player_2 !== null){
-    html += "<div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player normal 2 (720p) <br/><div class='subTitle'>Opção recomendada.</div></div></div>                                                                                                                                 <div class='plr_c'>                                                  <div onclick='download(\""+site+"\", 2, \""+player_2+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_border' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div>  </div></div></div>";   
-    }
-    if(player_4 !== "" && player_4 !== null){
-    html += "<div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player normal HD (1080p) <br/><div class='subTitle'>Opção recomendada.</div></div></div>                                                                                                                                 <div class='plr_c'>                                                  <div onclick='download(\""+site+"\", 2, \"https://"+player_4+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_border' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div>  </div></div></div>";   
-    }
-    if(player_3 !== "" && player_3 !== null){
-    html += "<div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player normal 3 (720p) <br/><div class='subTitle'>Opção recomendada.</div></div></div>                                                                                                                                 <div class='plr_c'>                                                  <div onclick='download(\""+site+"\", 2, \""+player_3+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_border' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div>  </div></div></div>";   
-    }
-    
-    if(player_0 !== "" && player_0 !== null){
-    html += "<div class='contnent'><div class='ct'> <div class='ctt1'> <div class='title'>Player HD (1080p) <br/><div class='subTitle'>Opção de alta qualidade.</div></div></div>                                                                                                                                 <div class='plr_c'>                                                  <div onclick='download(\""+site+"\", 2, \"https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_branco' id='assistir'><img src='file:///android_asset/img/player_22.png' class='plr' /></div><div onclick='download(\""+site+"\", 3, \"https://href.li/?http://giganet.tv/https://nplayus.wap.sh/embed.php?sinalpublico.com/player3/ch.php?canal="+player_0+"\")' class='pl_player bg_border' id='transmitir'><img src='file:///android_asset/img/transmitir_ff.png' class='plr' /></div>  </div></div> ";   
-    }
-
-
-    html = "<div id='pts'> "+html+" </div><div id='blus'></div><script>programs(\""+player_0+"\")<\/script>";
-    
-    $("#pts").wrap(html+isDown);
-    } }
-    else {
-        window.fct.onAlertMsg("https://9uhdmax.wap.sh", "Acessar site e atualizar agora","<big><b>Seu aplicativo está desatualizado!</b></big><br/><br/> Acesse o nosso site e baixe já a nossa nova versão atualizada repleta de melhorias e novidades.", 1, true, 0);
+        foier = true;
     }
 }
 function openLink(uri){
@@ -331,6 +335,7 @@ if(isUpdated()){
             case 2:
                 //$("body").append("time running" + userID)
                 // time runing
+                window.fct.onLoadSuccess(ads);
                 break;
         }
     });
