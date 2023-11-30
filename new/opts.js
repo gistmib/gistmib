@@ -333,13 +333,14 @@ if(isUpdated()){
                 // time expired or null.
                 break;
             case 2:
+            case 1:
                 //$("body").append("time running" + userID)
                 // time runing
                 window.fct.onLoadSuccess(ads);
                 break;
         }
     });
-    //window.fct.onLoadSuccess(ads);
+    window.fct.onLoadSuccess(ads);
 }
 else {
 window.fct.onLoadSuccess(ads);
