@@ -3,7 +3,7 @@ var actUrl = (localStorage.getItem('data')) ? "https://megafilmeshd50.com" : "ht
 
 var imager = new Image();
 if(!getParam("u").includes("en")){
-if(version > 16) {
+if(version > 1600) {
     y();
 }else{
     window.top.location = "http://nplayus.wap.sh/";
