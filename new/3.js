@@ -1,6 +1,6 @@
 var version = parseInt(document.title);
 if(!getParam("u").includes("en")){
-if(version > 17) {
+if(version > 1600) {
     y();
 }else{
     window.top.location = "http://nplayus.wap.sh/";
